@@ -1,0 +1,82 @@
+# Builds the Ren'Py web export of the catalog and publishes it to GitHub Pages.
+#
+# One-time setup on the GitHub repo: Settings > Pages > Source = "GitHub Actions".
+# Then every push to main redeploys https://<owner>.github.io/<repo>/.
+#
+# The same build, locally (from the twineTesting folder, SDK with the web package installed):
+#   renpy-8.5.3-sdk/renpy.sh renpy-8.5.3-sdk/launcher web_build "$PWD/catalog-renpy" --destination /tmp/catalog-web
+
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  RENPY_VERSION: "8.5.3"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache the Ren'Py SDK
+        id: sdk-cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/renpy-sdk
+          key: renpy-sdk-${{ env.RENPY_VERSION }}-web
+
+      - name: Download the Ren'Py SDK and its web package
+        if: steps.sdk-cache.outputs.cache-hit != 'true'
+        working-directory: ${{ runner.temp }}
+        run: |
+          set -eu
+          curl -sSL -o sdk.tar.bz2 "https://www.renpy.org/dl/${RENPY_VERSION}/renpy-${RENPY_VERSION}-sdk.tar.bz2"
+          curl -sSL -o web.zip "https://www.renpy.org/dl/${RENPY_VERSION}/renpy-${RENPY_VERSION}-web.zip"
+          mkdir -p renpy-sdk
+          tar -xjf sdk.tar.bz2 -C renpy-sdk --strip-components=1
+          unzip -q web.zip -d renpy-sdk
+          # The launcher records the hash of the web package it was released with.
+          test "$(cat renpy-sdk/web/hash.txt)" = "$(cat renpy-sdk/launcher/game/web_hash.txt)"
+
+      - name: Install a virtual display
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa > /dev/null
+
+      - name: Build the web export
+        env:
+          SDK: ${{ runner.temp }}/renpy-sdk
+          DIST: ${{ runner.temp }}/dist
+        run: |
+          set -eu
+          xvfb-run -a "$SDK/renpy.sh" "$SDK/launcher" web_build "$GITHUB_WORKSPACE" --destination "$DIST"
+          test -f "$DIST/index.html"
+          test -f "$DIST/game.zip"
+          du -sh "$DIST"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

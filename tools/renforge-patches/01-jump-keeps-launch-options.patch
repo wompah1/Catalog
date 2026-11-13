@@ -1,0 +1,43 @@
+--- a/renforge/tool_registration/lifecycle.py	2026-11-11 13:56:36
++++ b/renforge/tool_registration/lifecycle.py	2026-11-11 13:56:36
+@@ -129,9 +129,20 @@
+         return delegated if delegated is not None else live.launch_status(project_path)
+ 
+ 
++    # catalog local patch (2026-11-11): remember each project's launch options, so a jump or a
++    # new game relaunches the way the session was launched (editor mode, display, audio, savedir,
++    # persistent) instead of the defaults; a jump into an editor=False session used to fail with
++    # SESSION_MODE_MISMATCH.
++    _launch_options: dict[str, dict] = {}
++    _REMEMBERED = ("editor", "display", "audio", "savedir", "persistent", "cleanup_on_stop")
++
++    def _remembered(project_path: str) -> dict:
++        return dict(_launch_options.get(live._key(project_path), {}))
++
+     def _start_launch(project_path: str, **kwargs: Any) -> dict:
+         requested_editor = bool(kwargs.get("editor", True))
+         kwargs["editor"] = requested_editor
++        _launch_options[live._key(project_path)] = {k: kwargs[k] for k in _REMEMBERED if k in kwargs}
+ 
+         def _launch(project_root: Path, cancel_event: threading.Event) -> dict:
+             return _launch_game(
+@@ -227,8 +238,7 @@
+                 return resolved
+             return _start_launch(
+                 project_path,
+-                version=version,
+-                warp=str(resolved["target"]),
++                **{**_remembered(project_path), "version": version, "warp": str(resolved["target"])},
+             )
+ 
+         return _log_tool_call(
+@@ -251,8 +261,7 @@
+                 return resolved
+             return _start_launch(
+                 project_path,
+-                version=version,
+-                warp=str(resolved["target"]),
++                **{**_remembered(project_path), "version": version, "warp": str(resolved["target"])},
+             )
+ 
+         return _log_tool_call(
