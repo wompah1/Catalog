@@ -459,6 +459,12 @@ pauses its run (SIGSTOP) when one of theirs starts.
 | 3.48 | twinetesting-ff | summoning v1 (Vanripper only, full TSF), 315 (105 × 3: 7 rooms, 3 portraits, 31 sprites, 64 frames), then cutouts | `route-covers/pipeline/runs-summoning-v1.log` | queued: nqff/347, after rematch v1 | 2026-11-13 3:05 pm |
 | 3.49 | twinetesting-ff | council v1 (Vanripper only, full TSF), 246 (82 × 3: 3 rooms, 6 portraits, 14 sprites, 59 frames), then cutouts | `route-covers/pipeline/runs-council-v1.log` | queued: nqff/348, after summoning v1 | 2026-11-13 3:22 pm |
 | 3.50 | twinetesting-ff | clover v1 (Vanripper only, animal TF; two bodies, traced via runs/_ff/clv_pretrace.py), 381 (127 × 3: 14 rooms, 4 portraits, 35 sprites, 74 frames), then cutouts | `route-covers/pipeline/runs-clover-v1.log` | queued: nqff/349, after council v1 | 2026-11-13 3:29 pm |
+| 3.51 | twinetesting-ff | respec v1 (Vanripper only, full TSF), 306 (102 × 3: 5 rooms, 3 portraits, 32 sprites, 62 frames), then cutouts | `route-covers/pipeline/runs-respec-v1.log` | queued: nqff/350, after clover v1 | 2026-11-13 4:00 pm |
+| 3.52 | twinetesting-ff | newgirl v1 (Vanripper, femboy), 276 (92 × 3: 4 rooms, 4 portraits, 29 sprites, 55 frames), then cutouts | `route-covers/pipeline/runs-newgirl-v1.log` | queued: nqff/351, after respec v1 | 2026-11-13 4:04 pm |
+| 3.53 | twinetesting-ff | newgirl a1 (Abarus set, femboy), 264 (88 × 3, no rooms), then cutouts | `route-covers/pipeline/runs-newgirl-a1.log` | queued: nqff/352, after newgirl v1 | 2026-11-13 4:04 pm |
+| 3.54 | twinetesting-ff | lacey v1 (Vanripper, femboy), 306 (102 × 3: 8 rooms, 5 portraits, 32 sprites, 57 frames), then cutouts | `route-covers/pipeline/runs-lacey-v1.log` | queued: nqff/353, after newgirl a1 | 2026-11-13 4:08 pm |
+| 3.55 | twinetesting-ff | lacey a1 (Abarus set, femboy), 282 (94 × 3, no rooms), then cutouts | `route-covers/pipeline/runs-lacey-a1.log` | queued: nqff/354, after lacey v1 | 2026-11-13 4:08 pm |
+| 3.56 | twinetesting-ff | fever v1 (Vanripper only, full TSF), 282 (94 × 3: 10 rooms, 2 portraits, 22 sprites, 60 frames), then cutouts | `route-covers/pipeline/runs-fever-v1.log` | queued: nqff/355, after lacey a1 | 2026-11-13 4:11 pm |
 
 twinetesting-32's logs are in its scratchpad (its session scratchpad). Its passes
 waiting on m8 start together when m8 ends and take turns at the slot.
