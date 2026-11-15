@@ -8,7 +8,7 @@
 - Every character is an adult.
 
 *The Target Only Likes Real Women, So the Service Kept Making Me More Real*
-- **Offence:** Rory Morgan, 29, a field agent, blew his last cover by sleeping with the target's sister.
+- **Offence:** Alasdair Morgan, 29 (renamed from Rory, which is taken), a field agent, blew his last cover by sleeping with the target's sister.
 - **Who forces it:**
   - Ms Vance, his controller: the only way back into the operation is as a woman.
   - Lucas Strand, 35, a Swiss private banker who holds a dirty ledger. He only goes for real women, and real sluts.

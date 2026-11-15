@@ -59,6 +59,18 @@ def route_sizes(t="HEAD"):
     return sizes
 
 
+def site_live(s):
+    """The shard's Pages site serves its marker (shard.txt): its repo exists, holds a snapshot and has Pages on.
+    A route is never sent to a site that isn't serving, or its pictures would be missing on the live game."""
+    import urllib.request
+    url = "https://%s.github.io/%s/shard.txt" % tuple(s["repo"].split("/", 1))
+    try:
+        with urllib.request.urlopen(url, timeout=15) as r:
+            return r.status == 200
+    except Exception:
+        return False
+
+
 def assign(dry):
     """Every route in HEAD with art that's neither in a shard nor already on GitHub (origin/main, set by a real
     publish) goes to the first shard with room under CAP_MB. A published route never moves: its pictures'
@@ -69,11 +81,15 @@ def assign(dry):
     live = {p.split("/")[2].split(".", 1)[0]
             for p in git("ls-tree", "--name-only", "refs/remotes/origin/main", "game/art/").split() if p.count("/") >= 2}
     load = {s["n"]: sum(sizes.get(r, 0) for r in s.get("routes", [])) for s in SHARDS}
+    open_ = [s for s in SHARDS if site_live(s)]
     new = []
     for r in sorted(sizes):
         if r in SHARDED or r in live:
             continue
-        s = next((s for s in SHARDS if load[s["n"]] + sizes[r] <= CAP_MB * 1e6), None)
+        if not open_:
+            print(f"shards: no art site is serving yet; {r} stays in Catalog", file=sys.stderr)
+            continue
+        s = next((s for s in open_ if load[s["n"]] + sizes[r] <= CAP_MB * 1e6), None)
         if s is None:
             sys.exit(f"shards: no shard has room for {r} ({sizes[r] / 1e6:.0f} MB): add one to tools/shards.json")
         s.setdefault("routes", []).append(r)
@@ -90,6 +106,8 @@ def tree(n, t):
     if n != 0:
         blob = git("hash-object", "-w", "--stdin", inp="").strip()
         keep.append(f"100644 blob {blob}\t.nojekyll")
+        mark = git("hash-object", "-w", "--stdin", inp=f"Catalog art {n}\n").strip()   # assign() checks the site serves it
+        keep.append(f"100644 blob {mark}\tshard.txt")
     with tempfile.TemporaryDirectory() as d:
         env = dict(os.environ, GIT_INDEX_FILE=os.path.join(d, "index"))
         git("read-tree", "--empty", env=env)
