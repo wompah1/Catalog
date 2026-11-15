@@ -277,6 +277,16 @@ init -50 python:
     def _vn_talk(event, interact=True, who=None, **kw):
         if event == "begin":
             store.vn_talk = who
+            # the speaker's sprite must be in the box (the owner, 2026-11-15): in a test walk (vntrace sets
+            # _vn_trace_path) a cast speaker whose sprite isn't showing writes a speaker_miss row to the trace, which
+            # runs/_c9/trace_speaker.py turns into a failure. The global trace callback runs before this one, so the
+            # check lives here, where `who` is known.
+            tp = getattr(store, "_vn_trace_path", None)
+            if tp and who and who != "pc" and not renpy.showing(who):
+                import json as _j
+                with open(tp, "a") as _f:
+                    _f.write(_j.dumps({"speaker_miss": who, "label": getattr(store, "_vn_label", None),
+                                       "what": (kw.get("what") or "")[:80]}) + "\n")
 
     def VNChar(name, who=None, plate="#6b6b78", **kw):
         """A speaker: a name plate in `plate`'s colour; `who` is the sprite tag that lights up."""

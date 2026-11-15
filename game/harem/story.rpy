@@ -15,9 +15,11 @@ label hrm_ch1:
     vn_sfx "{i}Clang. Clang. CLANG.{/i}"
     "Somewhere below, a bell. Then a shout. Then the whole palace guard is shouting, and lamps are swinging in every courtyard at once."
     show cg hrm_chase onlayer cgl
+    show hrm_brask earnest at vn_cast_slot
     hrm_brask "\"STOP, THIEF! In the name of the Sultan!\""
     "Captain Brask of the palace guard, square-jawed, breastplate flashing in the moon, already on the roof two domes back and coming fast."
     hrm_you "\"Evening, Captain! Lovely night for it!\""
+    show hrm_brask earnest at vn_cast_slot
     hrm_brask "\"You'll be counting cobbles in the dungeon for this! I'll have you, thief!\""
     menu:
         "The roofs split ahead: a forest of washing lines one way, a long copper gutter the other."
@@ -34,6 +36,7 @@ label hrm_ch1:
     hide cg onlayer cgl
     show cg hrm_brask_roof onlayer cgl
     "But he's good, Captain Brask. He's earnest and he's sweating and he jumps a gap you'd have thought twice about, and he's gaining."
+    show hrm_brask earnest at vn_cast_slot
     hrm_brask "\"There's nowhere to go, thief! Every gate's shut! I'll turn this palace inside out!\""
     "He's right. You're running out of roof. There's only one way left, and it's down."
     jump hrm_skylight
@@ -85,7 +88,11 @@ label hrm_orhan1:
     hrm_orhan "\"A new arrival! At this hour! Let's have a look at you, flower.\""
     "He comes forward, beaming, hands already out. The velvet case swings at his hip."
     vn_th "Don't look at the case. Whatever's in it, don't look at the case."
+    hide hrm_orhan
+    show hrm_dilara brisk at vn_cast_slot
     hrm_dilara "\"Not {i}now{/i}, Orhan, she's still being oiled. Look at her. She's half drowned. Shoo.\""
+    hide hrm_dilara
+    show hrm_orhan jolly at vn_cast_slot
     hrm_orhan "\"Of course, of course. Tomorrow, then. Or the day after. There's no hurry, flower. There's never any hurry.\""
     "He pats the velvet case again, very gently, smiling at you over it, and goes away humming."
     "You let out a breath you'd been holding since the skylight."
@@ -95,8 +102,14 @@ label hrm_orhan1:
     "The matron claps her hands, and three women drift in out of the steam in silk wraps, eyeing you."
     "Zarina, sharp-eyed, a heavy dark braid over one shoulder and a mouth that looks like it's about to say something wicked. Leyla, chestnut-haired, who giggles the second she sees you. Nasrin, black curls, the biggest breasts you've seen on land or sea, who yawns."
     hrm_dilara "\"The new girl. Dahlia. Oil her, girls. All of her. I want her soft by morning.\""
+    hide hrm_dilara
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"She's so {i}tall!{/i}\""
+    hide hrm_dilara
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"She's so wet.\""
+    hide hrm_dilara
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"She's so {i}interesting.{/i}\""
     "And the matron leaves you with them, and her keys jingle away down the corridor, and the door swings shut."
     hide hrm_dilara
@@ -113,22 +126,36 @@ label hrm_ch2:
     $ hrm.fit = "nude"
     $ vn_enter(bg="hrm_bathhouse", pc="flushed", pc_tag="hrm_pc", cast=[("hrm_zarina", "wicked")], cg="hrm_oil_2")
     "The morning oiling. A marble slab, warm from the pool, and you on your back on it with nothing on, and Zarina, Leyla and Nasrin round you with their sleeves pushed up and a jar each."
+    hide hrm_zarina
+    show hrm_dilara brisk at vn_cast_slot
     hrm_dilara "\"Oil, girls. All of her.\""
     if hrm.greet == "curtsey":
+        hide hrm_zarina
+        show hrm_dilara brisk at vn_cast_slot
         hrm_dilara "\"And when you're done, Dahlia, we'll do that curtsey again. Properly.\""
     else:
+        hide hrm_zarina
+        show hrm_dilara brisk at vn_cast_slot
         hrm_dilara "\"And when you're done, Dahlia, no more sailor's bows. Girls curtsey.\""
     "The matron sits by the door with her big book, and the three of them keep their backs between her and the slab, and get to work. By hand. Everywhere."
     if hrm.help1 == "call":
+        hide hrm_dilara
+        show hrm_zarina wicked at vn_cast_slot
         hrm_zarina "\"Morning, flower. Going to shout for help again?\""
     else:
+        hide hrm_dilara
+        show hrm_zarina wicked at vn_cast_slot
         hrm_zarina "\"Morning, flower. Going to bite your lip again?\""
     hrm_you "\"{i}Shh!{/i}\""
     $ hrm_body(2)
     show cg hrm_oil_2_waist onlayer cgl
     "{color=#f0a0c0}The rose oil goes on warm and sinks in hot. Under six slick hands your skin goes soft, softer than any sailor's has a right to be, soft as the inside of a wrist all over. Your waist softens where Nasrin's palms go round it. You put a hand to your jaw and the stubble is gone, and it doesn't come back. It never will.{/color}"
+    hide hrm_zarina
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"Look at that waist. Yesterday that was a plank.\""
     "And inside a minute you're hard. Rock hard and leaking on your own belly, in the Sultan's bathhouse, with the matron just across the room."
+    hide hrm_zarina
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"Eep! Towel! {i}Towel!{/i}\""
     "Leyla giggles and drops a towel over it, which helps nobody, because it stands the towel up like a tent."
     menu:
@@ -139,8 +166,18 @@ label hrm_ch2:
         "Turn to the wall":
             $ hrm.hide2 = "wall"
             "You roll over and face the tiles like a guilty man. Nasrin oils your backside instead, both hands, and laughs, low and lazy."
+    hide hrm_dilara
+    hide hrm_leyla
+    hide hrm_nasrin
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Hold still, Dahlia. You're being oiled.\""
+    hide hrm_zarina
+    show hrm_dilara brisk at vn_cast_slot
     hrm_dilara "\"Is she soft yet?\""
+    hide hrm_dilara
+    hide hrm_leyla
+    hide hrm_nasrin
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Getting there, Matron. Some parts are very {i}hard{/i} work.\""
     "Leyla has to put her face in a towel of her own."
     jump hrm_ch2_dress
@@ -157,7 +194,11 @@ label hrm_ch2_dress:
     show cg hrm_belt_jingle onlayer cgl
     "You try a step. The coins go {i}shhing{/i}. You try another, and Zarina walks past in the doorway, and you think about the night before, and the coins go {i}shhing-shhing-shhing{/i} all on their own."
     vn_sfx "{i}Shhing. Shhing.{/i}"
+    hide hrm_dilara
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"It jingles when she's hard! Zarina! It {i}jingles{/i} when she's—\""
+    hide hrm_dilara
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"I heard, Leyla. The whole palace heard.\""
     "Forty women in this harem, the rose oil every morning, and a sultan who summons one of them a month. And three of them have found the only cock in the palace, and it rings like a shop bell."
     jump hrm_ch2_dance
@@ -182,6 +223,7 @@ label hrm_ch2_dance:
             "You dance straight at the awning, hips first, because if you're going to hide in the man's harem you might as well be the best thing in it."
             show cg hrm_sultan_yawn onlayer cgl
             "Sultan Kasim watches you over his cup for a while with a lazy smile. Then he yawns, enormously, and flicks a gold coin onto the tiles at your feet."
+            show hrm_kasim lazy at vn_cast_slot
             hrm_kasim "\"The jingling one. Charming.\""
         "Dance at Zarina":
             $ hrm.danceat = "zarina"
@@ -200,10 +242,16 @@ label hrm_ch2_inspect:
     hrm_orhan "\"Ah! The new girl! The {i}jingling{/i} girl! Marvellous jingling, Dahlia. Truly. I've never heard the like. Now let's just have a look under—\""
     "His hand is at the hem of your sheer skirt. The velvet case is right there at his hip."
     vn_th "This is it. Not even a day. A personal best."
+    hide hrm_orhan
+    show hrm_kasim lazy at vn_cast_slot
     hrm_kasim "\"Orhan! Wine!\""
     "The Sultan, from under the awning, holding up an empty cup."
+    hide hrm_kasim
+    show hrm_orhan jolly at vn_cast_slot
     hrm_orhan "\"Majesty! At once!\""
     "And Orhan pats your cheek, and pats the velvet case, and hurries off to find the wine, and forgets you entirely."
+    hide hrm_orhan
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"Lucky.\""
     hrm_you "\"I'm the luckiest man— the luckiest {i}girl{/i} in the world.\""
     hide hrm_orhan
@@ -221,19 +269,31 @@ label hrm_ch3:
     $ vn_enter(bg="hrm_bathhouse", pc="flushed", pc_tag="hrm_pc", cast=[("hrm_zarina", "wicked")], cg="hrm_oil_3")
     "The morning oiling. You don't even pretend to mind any more. You climb onto the warm slab on your own and lie back and let six oiled hands go everywhere."
     if hrm.promise2 == "every":
+        hide hrm_zarina
+        show hrm_leyla giggle at vn_cast_slot
         hrm_leyla "\"You promised {i}every{/i} night, Dahlia. Every! I'm holding you to it.\""
     else:
+        hide hrm_zarina
+        show hrm_leyla giggle at vn_cast_slot
         hrm_leyla "\"You said {i}same again tonight{/i}, Dahlia. I'm holding you to it.\""
     hrm_you "\"Have I ever let you down, Leyla?\""
+    hide hrm_zarina
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"You've known me two days!\""
     $ hrm_body(3)
     "{color=#f0a0c0}The oil burns sweet, and under their hands your chest goes soft and full: two soft swells where it was flat, rising into Zarina's palms, with puffy nipples that stand right up. Your hips push out wider under Nasrin's hands. Your ass rounds. And your cock, hard and leaking in Zarina's slick fist, is smaller than it was yesterday.{/color}"
+    hide hrm_leyla
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"It's shrinking, Dahlia. Look at it. Still leaking, though. Still {i}so{/i} keen.\""
     "She pinches your new nipple, just to watch, and you leak like a squeezed lemon, and Leyla applauds."
     hrm_you "\"{i}Hah{/i}— that's— those are new—\""
+    hide hrm_zarina
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"They suit you.\""
     show cg hrm_oil_3_hips onlayer cgl
     "Nasrin takes your hips in both hands and rocks them, side to side, lazily, considering."
+    hide hrm_zarina
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"Wider. You'll need new silks.\""
     jump hrm_ch3_move
 
@@ -258,11 +318,19 @@ label hrm_ch3_gate:
     "At midday there's shouting at the harem gate. You go out on Zarina's balcony to look, in her silks, with a bowl of figs."
     "Captain Brask, sweating in his breastplate, and Orhan, very large and very calm, filling the gateway."
     hrm_brask "\"I'll find him, Majesty! He's in the palace, I know he is! I want to search the harem!\""
+    hide hrm_brask
+    show hrm_orhan jolly at vn_cast_slot
     hrm_orhan "\"No man enters the harem, Captain. Not one. Not ever.\""
     if hrm.route1 == "lines":
+        hide hrm_orhan
+        show hrm_brask earnest at vn_cast_slot
         hrm_brask "\"He went over the washing lines like a monkey! He could be anywhere! He could be in the {i}laundry!{/i}\""
     else:
+        hide hrm_orhan
+        show hrm_brask earnest at vn_cast_slot
         hrm_brask "\"He went down the east gutter on his backside! He could be anywhere! He could be in the {i}drains!{/i}\""
+    hide hrm_brask
+    show hrm_orhan jolly at vn_cast_slot
     hrm_orhan "\"Then search the laundry and the drains, Captain. Not my ladies.\""
     show cg hrm_brask_look onlayer cgl
     "The captain looks up, at last, red-faced, and sees a tall girl on the balcony above the gate in wine-red silks, eating a fig."
@@ -282,8 +350,14 @@ label hrm_ch3_orhan:
     "Then, in the afternoon, Orhan comes to inspect the handmaidens. He finds you in Zarina's rooms folding silks, and rubs his hands."
     hrm_orhan "\"Ah! Zarina's new handmaiden! Now, flower, let's just have that look we never—\""
     "Zarina, Leyla and Nasrin come through the screen at once, as if they'd been waiting behind it, which they had, and crowd round him and talk."
+    hide hrm_orhan
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Orhan, the matron's out of the good oil again—\""
+    hide hrm_orhan
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"Orhan, there's a {i}cat{/i} in the bathhouse, a real one, a big orange one—\""
+    hide hrm_orhan
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"Orhan. Is that a new robe.\""
     menu:
         "Orhan's eyes are sliding back to you over their heads."
@@ -296,11 +370,17 @@ label hrm_ch3_orhan:
             hrm_you "\"Orhan, did I ever tell you about the time I saw a sea serpent off the Pearl Coast? Big as a palace. Eyes like lamps.\""
             "He sits down on the end of the bed to hear it. It gets longer. It acquires a mermaid. Then a second mermaid, and a storm."
     "By the time the four of you are done, he's forgotten why he came. He gets up, puzzled and pleased, and goes to the door."
+    hide hrm_leyla
+    hide hrm_nasrin
+    hide hrm_zarina
+    show hrm_orhan jolly at vn_cast_slot
     hrm_orhan "\"Well! I'll come back another day. There's no hurry. There's never any hurry.\""
     "He pats the velvet case on his way out, and smiles at you over it."
     hide hrm_orhan
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Close. Too close. We'll have to keep him busy.\""
     hrm_you "\"Till when?\""
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Till we're bored of you, flower. Don't hold your breath.\""
     jump hrm_jade
 
@@ -321,6 +401,8 @@ label hrm_ch4:
     "{color=#f0a0c0}And under her hands it fills. Small full breasts now, a real handful each, round and high and soft, that she weighs and squeezes and lifts. Your hips are wide under Leyla's oil. Your ass is round under Zarina's. Your thighs thicken where their palms go. And your cock is small, small and stiff and leaking, poking up at the steam like it's asking a question.{/color}"
     show cg hrm_oil_4_weigh onlayer cgl
     hrm_nasrin "\"A B. Nearly. Look at that. Leyla, feel.\""
+    hide hrm_nasrin
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"Oh, they're {i}heavy!{/i} Dahlia, you're getting {i}heavy!{/i}\""
     hrm_you "\"{i}Hah{/i}— Nasrin— if you keep doing that I'm going to—\""
     "She keeps doing it until you whimper, then wanders off satisfied, wiping her hands on Leyla."
@@ -335,8 +417,10 @@ label hrm_ch4_sheer:
     hide screen hrm_rank
     "You look at yourself in Zarina's mirror. Smooth all over. Breasts. Hips. That hair, black and glossy and down past your shoulder blades now."
     vn_th "The lads on the {i}Gull{/i} wouldn't know me. I barely know me. I look {i}expensive.{/i}"
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Don't get comfortable. Concubines get Orhan's full inspection.\""
     hrm_you "\"How full?\""
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"All the way full.\""
     jump hrm_ch4_inspect
 
@@ -373,10 +457,13 @@ label hrm_ch4_inspect:
     hide hrm_orhan
     show cg hrm_cage_women onlayer cgl
     "When he's gone, the three of them come through the screen and kneel round you to look."
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"It's so {i}shiny!{/i}\""
     "She taps it. It goes {i}ting.{/i} You leak through the bars, and Nasrin laughs so hard she has to lie down."
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Well. That's the cock gone, then.\""
     hrm_you "\"It's not {i}gone{/i}, it's—\""
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Busy. It's busy, Dahlia. We'll think of something else.\""
     jump hrm_ch4_note
 
@@ -386,8 +473,12 @@ label hrm_ch4_note:
     hrm_dilara "\"The Sultan wants the new concubine. Tonight. Now. Hair, girls! Oil! The good jar!\""
     "There's a stampede. Your hair's brushed by three people at once. The good oil goes on every inch of you that shows, which in sheer silks is every inch."
     vn_th "No. No, no. Not him. He'll see. Anyone who gets that close will see."
+    hide hrm_dilara
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Keep the silks down at the front, and lie on your belly, and he'll never look. Men like him never look.\""
     hrm_you "\"I can't— Zarina, I can't go, I'm not—\""
+    hide hrm_zarina
+    show hrm_dilara brisk at vn_cast_slot
     hrm_dilara "\"Nobody {i}can't{/i} go, flower. Off you go.\""
     hide hrm_dilara
     jump hrm_summons
@@ -408,6 +499,8 @@ label hrm_ch5:
     $ hrm_body(5)
     "{color=#f0a0c0}Big breasts now, under the women's hands, big enough to fill both of Nasrin's and spill: heavy and soft and swaying when she breathes. A waist going in where it never used to, an hourglass forming under Leyla's palms. A big round ass. Thick soft thighs. Long glossy black hair down to her waist, that Zarina oils strand by strand. And the small golden cage, shining with rose oil.{/color}"
     hrm_dahlia "\"{i}Mmh.{/i} Harder on the left, Nasrin.\""
+    hide hrm_zarina
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"Bossy.\""
     hrm_dahlia "\"Favoured.\""
     jump hrm_ch5_check
@@ -430,9 +523,13 @@ label hrm_ch5_milk:
     "Dahlia rolls over onto her hands and knees on the slab, ass up, breasts hanging heavy, and Zarina's oiled fingers slide into her, two of them, and curl, and press."
     "And press. And press, slow and deliberate, right on the spot, until Dahlia's mouth falls open and her thighs shake and she leaks through the bars of the cage, a thin warm string of it, and Leyla catches it in a small silver dish."
     hrm_dahlia "\"{i}Ahh{/i}— Zarina— {i}ahh{/i}— oh, it's {i}coming{/i}—\""
+    hide hrm_zarina
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"Got it! Got it all!\""
     show cg hrm_dish_feed onlayer cgl
     "Leyla holds the dish to Dahlia's lips."
+    hide hrm_leyla
+    show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Open your mouth. Swallow.\""
     hrm_dahlia "\"{i}Mmh{/i}— yes, ma'am—\""
     "She drinks it down off the silver, every drop, and licks the rim, and grins up at them."
@@ -450,6 +547,8 @@ label hrm_ch5_game:
             $ hrm.bet = "leyla"
             "You bet on Leyla. Leyla tries so hard her tongue sticks out. Nasrin wins anyway, lazily, without sitting up."
     show cg hrm_game_rematch onlayer cgl
+    hide hrm_nasrin
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"Rematch! I want a rematch! She wasn't {i}ready!{/i}\""
     hrm_dahlia "\"I'm always ready, Leyla— {i}ahh{/i}— oh, you're doing it {i}now{/i}— {i}ahh{/i}—\""
     "Leyla gets her rematch, and loses it, and gets another, and Dahlia leaks into the dish three times before breakfast and drinks every one."
@@ -491,18 +590,32 @@ label hrm_ch6:
     "The morning oiling, for the festival. Every lamp in the bathhouse lit, the good jars open, petals on the water."
     $ hrm_body(6)
     "{color=#f0a0c0}And Dahlia at her biggest. Huge breasts, heavy and high, spilling through the women's fingers however they hold them, rolling when she laughs. A true hourglass, the waist small between the wide hips. A big round ass that Zarina slaps for the sound of it. Thick soft thighs. Long glossy black hair pooled on the marble. And the small golden cage, gleaming.{/color}"
+    hide hrm_leyla
+    show hrm_nasrin lazy at vn_cast_slot
     hrm_nasrin "\"Biggest yet.\""
     hrm_dahlia "\"Biggest {i}ever.{/i}\""
     show cg hrm_oil_6_milk onlayer cgl
     "Then the milking, and for the festival they milk her twice for luck: Zarina's fingers and then Nasrin's, and Dahlia on her knees on the slab leaking twice into the silver dish, moaning both times, and twice Leyla feeds it to her."
+    hide hrm_nasrin
+    show hrm_leyla giggle at vn_cast_slot
     hrm_leyla "\"Twice for luck! Open up, Dahlia!\""
     hrm_dahlia "\"{i}Mmh{/i}— lucky— {i}ahh{/i}— so lucky—\""
     if hrm.bet == "leyla":
+        hide hrm_nasrin
+        show hrm_leyla giggle at vn_cast_slot
         hrm_leyla "\"And I was faster that time. Nasrin, say I was faster.\""
+        hide hrm_leyla
+        show hrm_nasrin lazy at vn_cast_slot
         hrm_nasrin "\"You were faster.\""
+        hide hrm_nasrin
+        show hrm_leyla giggle at vn_cast_slot
         hrm_leyla "\"Thank you!\""
     else:
+        hide hrm_leyla
+        show hrm_nasrin lazy at vn_cast_slot
         hrm_nasrin "\"Still faster.\""
+        hide hrm_nasrin
+        show hrm_leyla giggle at vn_cast_slot
         hrm_leyla "\"Nobody {i}asked{/i}, Nasrin.\""
     jump hrm_ch6_court
 
@@ -514,6 +627,8 @@ label hrm_ch6_court:
     "Dahlia goes up the steps, every eye in the hall on her hips. He stands, and fastens a gold collar at her throat with his own hands."
     show screen hrm_rank(6)
     hrm_kasim "\"First of the harem. Over every woman in the Saffron Palace. Let it be written.\""
+    hide hrm_kasim
+    show hrm_dilara brisk at vn_cast_slot
     hrm_dilara "\"It is written, Majesty.\""
     hide screen hrm_rank
     if hrm.greet == "curtsey":
@@ -521,8 +636,12 @@ label hrm_ch6_court:
     else:
         "Dahlia bows from the waist like a sailor to a harbourmaster, and the whole harem laughs, and the matron puts her face in her book."
     show cg hrm_court_ruby onlayer cgl
+    hide hrm_dilara
+    show hrm_kasim lazy at vn_cast_slot
     hrm_kasim "\"And a gift. My captain found it only this morning, can you believe it? Under a loose tile in the bathhouse.\""
     "He hangs it round her neck on a gold chain: a ruby the size of a hen's egg, warm from his hand. {i}The{/i} ruby. The very one."
+    hide hrm_dilara
+    show hrm_kasim lazy at vn_cast_slot
     hrm_kasim "\"Under a {i}blue tile{/i}, by the hot pool. The thief must have dropped it running. Where he went after, nobody knows!\""
     "Dahlia laughs. She tries not to. She laughs so hard she has to sit down on the steps of the throne, the ruby bouncing between her breasts, laughing till she can't breathe."
     "Captain Brask, by the throne in his best breastplate, has no idea why the favourite is laughing."
@@ -531,6 +650,8 @@ label hrm_ch6_court:
         "\"To the thief!\"":
             $ hrm.toast6 = "thief"
             hrm_dahlia "\"To the thief!\""
+            hide hrm_dilara
+            show hrm_kasim lazy at vn_cast_slot
             hrm_kasim "\"Ha! Wicked girl! To the thief, and may I catch him!\""
         "\"To the captain!\"":
             $ hrm.toast6 = "captain"
@@ -540,18 +661,32 @@ label hrm_ch6_court:
 
 label hrm_ch6_brask:
     $ vn_enter(bg="hrm_throneroom", pc="smug", pc_tag="hrm_pc", cast=[("hrm_brask", "earnest")], cg="hrm_brask_bow")
+    hide hrm_brask
+    show hrm_kasim lazy at vn_cast_slot
     hrm_kasim "\"And for finding it, Captain, an honour no man has ever had. A night in the harem. In the great bath. With my favourite.\""
     "A gasp all down the line of women. Orhan drops his wine. Captain Brask goes white, then red, then white."
+    hide hrm_kasim
+    show hrm_brask earnest at vn_cast_slot
     hrm_brask "\"Majesty— I— thank you, Majesty. Thank you.\""
     if hrm.route1 == "lines":
+        hide hrm_kasim
+        show hrm_brask earnest at vn_cast_slot
         hrm_brask "\"I only wish I'd caught him. Over the washing lines like a monkey, he went. I'll never forget it.\""
     else:
+        hide hrm_kasim
+        show hrm_brask earnest at vn_cast_slot
         hrm_brask "\"I only wish I'd caught him. Down the east gutter on his backside, he went. I'll never forget it.\""
     if hrm.wave == "wave":
+        hide hrm_kasim
+        show hrm_brask earnest at vn_cast_slot
         hrm_brask "\"And then there was a girl on the harem balcony, waving at me, and I lost my place in the whole—\""
     else:
+        hide hrm_kasim
+        show hrm_brask earnest at vn_cast_slot
         hrm_brask "\"And then there was a girl on the harem balcony, blowing me a kiss, and I lost my place in the whole—\""
     hrm_dahlia "\"Was she pretty, Captain?\""
+    hide hrm_kasim
+    show hrm_brask earnest at vn_cast_slot
     hrm_brask "\"...Very, my lady.\""
     "Dahlia has to sit down on the steps again."
     hide hrm_brask
