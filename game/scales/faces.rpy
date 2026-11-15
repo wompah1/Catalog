@@ -2,6 +2,48 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define scales_face_crops = {
+    "ahning-grin": [
+        113,
+        37,
+        253,
+        253
+    ],
+    "ahning-quiet": [
+        35,
+        69,
+        253,
+        253
+    ],
+    "boyan-bored": [
+        178,
+        7,
+        253,
+        253
+    ],
+    "boyan-delighted": [
+        229,
+        104,
+        253,
+        253
+    ],
+    "longqi-calm": [
+        198,
+        3,
+        253,
+        253
+    ],
+    "longqi-intent": [
+        170,
+        33,
+        253,
+        253
+    ],
+    "longqi-warm": [
+        194,
+        6,
+        253,
+        253
+    ],
     "pc-r0-robe-flushed": [
         24,
         45,
@@ -281,6 +323,18 @@ define scales_face_crops = {
     "pc-r7-nude-soft": [
         196,
         3,
+        253,
+        253
+    ],
+    "tieshan-blunt": [
+        176,
+        108,
+        253,
+        253
+    ],
+    "tieshan-booming": [
+        189,
+        82,
         253,
         253
     ]

@@ -120,6 +120,9 @@ label vt_one_night:
     "So you go again, straight away, with your phone in your other hand, thumbing back to the channel, the video, the comments, scrolling to the top. The pinned one."
     show screen vt_phone("duet", reply="|")
     "{i}best girl? teal or red{/i}. Your thumb's on the reply box. You're close again already."
+    ## the phone goes before the menu: drawn over the choices it covered "teal" and the ending line
+    ## (owner, 2026-11-15 1:33 pm ET); it comes back with the answer typed in
+    hide screen vt_phone
     menu:
         "You type it with your thumb."
         "teal" (ending=True):

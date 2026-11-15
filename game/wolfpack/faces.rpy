@@ -2,6 +2,72 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define wolfpack_face_crops = {
+    "alpha-dark": [
+        104,
+        15,
+        253,
+        253
+    ],
+    "alpha-flat": [
+        150,
+        10,
+        253,
+        253
+    ],
+    "bramble-grin": [
+        114,
+        12,
+        253,
+        253
+    ],
+    "bramble-sleepy": [
+        81,
+        36,
+        253,
+        253
+    ],
+    "gil-flat": [
+        63,
+        16,
+        253,
+        253
+    ],
+    "grey-flat": [
+        126,
+        8,
+        253,
+        253
+    ],
+    "grey-snarl": [
+        131,
+        9,
+        253,
+        253
+    ],
+    "notch-eager": [
+        82,
+        6,
+        253,
+        253
+    ],
+    "notch-grin": [
+        104,
+        28,
+        253,
+        253
+    ],
+    "oldman-flat": [
+        45,
+        36,
+        253,
+        253
+    ],
+    "oldman-kind": [
+        80,
+        20,
+        253,
+        253
+    ],
     "pc-r0-own-flushed": [
         46,
         46,
@@ -233,6 +299,18 @@ define wolfpack_face_crops = {
     "pc-r6-nude-smug": [
         128,
         6,
+        253,
+        253
+    ],
+    "scrap-eager": [
+        158,
+        15,
+        253,
+        253
+    ],
+    "scrap-shy": [
+        52,
+        12,
         253,
         253
     ]

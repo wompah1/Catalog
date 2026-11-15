@@ -2,6 +2,60 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define vote_face_crops = {
+    "andre-quiet": [
+        111,
+        33,
+        253,
+        253
+    ],
+    "darren-calm": [
+        126,
+        22,
+        253,
+        253
+    ],
+    "darren-dazed": [
+        87,
+        32,
+        253,
+        253
+    ],
+    "jesse-cos-kiki": [
+        128,
+        24,
+        253,
+        253
+    ],
+    "jesse-cos-mio": [
+        134,
+        17,
+        253,
+        253
+    ],
+    "jesse-flushed": [
+        56,
+        20,
+        253,
+        253
+    ],
+    "jesse-grinning": [
+        108,
+        29,
+        253,
+        253
+    ],
+    "nico-dazed": [
+        41,
+        57,
+        253,
+        253
+    ],
+    "nico-grin": [
+        66,
+        29,
+        253,
+        253
+    ],
     "pc-c0-home-grinning": [
         38,
         55,
@@ -93,44 +147,44 @@ define vote_face_crops = {
         253
     ],
     "pc-r3-home-grinning": [
-        68,
-        17,
+        53,
+        16,
         253,
         253
     ],
     "pc-r3-home-horny": [
-        68,
-        22,
+        61,
+        39,
         253,
         253
     ],
     "pc-r3-nude-grinning": [
-        123,
-        43,
+        118,
+        20,
         253,
         253
     ],
     "pc-r3-nude-smirk": [
-        123,
-        33,
+        111,
+        26,
         253,
         253
     ],
     "pc-r3-work-grinning": [
-        120,
-        38,
+        85,
+        5,
         253,
         253
     ],
     "pc-r3-work-protesting": [
-        77,
-        76,
+        91,
+        6,
         253,
         253
     ],
     "pc-r3-work-smirk": [
-        104,
-        76,
+        77,
+        5,
         253,
         253
     ],
@@ -219,20 +273,20 @@ define vote_face_crops = {
         253
     ],
     "pc-r6-nude-grinning": [
-        182,
-        47,
+        160,
+        23,
         253,
         253
     ],
     "pc-r6-nude-moaning": [
-        193,
-        42,
+        160,
+        23,
         253,
         253
     ],
     "pc-r6-nude-smirk": [
-        174,
-        33,
+        160,
+        28,
         253,
         253
     ],
@@ -339,7 +393,7 @@ define vote_face_crops = {
         253
     ],
     "pc-t4-home-moaning": [
-        38,
+        39,
         16,
         253,
         253
@@ -413,6 +467,18 @@ define vote_face_crops = {
     "pc-t6-nude-shy": [
         225,
         29,
+        253,
+        253
+    ],
+    "rafe-dazed": [
+        108,
+        52,
+        253,
+        253
+    ],
+    "rafe-laugh": [
+        132,
+        58,
         253,
         253
     ]

@@ -2,6 +2,12 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define bait_face_crops = {
+    "maren-calm": [
+        37,
+        91,
+        253,
+        253
+    ],
     "pc-r0-nude-alarmed": [
         15,
         22,
@@ -161,6 +167,12 @@ define bait_face_crops = {
     "pc-r9-nude-regal": [
         115,
         2,
+        253,
+        253
+    ],
+    "sable-polite": [
+        130,
+        27,
         253,
         253
     ]

@@ -2,6 +2,36 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define hypno_face_crops = {
+    "cass-neutral": [
+        42,
+        65,
+        253,
+        253
+    ],
+    "liam-neutral": [
+        76,
+        41,
+        253,
+        253
+    ],
+    "liam-smile": [
+        66,
+        39,
+        253,
+        253
+    ],
+    "liam-stern": [
+        73,
+        41,
+        253,
+        253
+    ],
+    "mike-neutral": [
+        96,
+        48,
+        253,
+        253
+    ],
     "pc-r1-blueshirt-eager": [
         46,
         11,
@@ -722,6 +752,42 @@ define hypno_face_crops = {
         253,
         253
     ],
+    "ruth-neutral": [
+        40,
+        50,
+        253,
+        253
+    ],
+    "abarus:cass-neutral": [
+        61,
+        14,
+        253,
+        253
+    ],
+    "abarus:liam-neutral": [
+        51,
+        0,
+        253,
+        253
+    ],
+    "abarus:liam-smile": [
+        47,
+        0,
+        253,
+        253
+    ],
+    "abarus:liam-stern": [
+        65,
+        7,
+        253,
+        253
+    ],
+    "abarus:mike-neutral": [
+        134,
+        18,
+        253,
+        253
+    ],
     "abarus:pc-r1-blueshirt-eager": [
         69,
         13,
@@ -1439,6 +1505,12 @@ define hypno_face_crops = {
     "abarus:pc-r6f-trance": [
         244,
         21,
+        253,
+        253
+    ],
+    "abarus:ruth-neutral": [
+        75,
+        23,
         253,
         253
     ]

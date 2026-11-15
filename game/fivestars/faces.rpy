@@ -2,6 +2,72 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define fivestars_face_crops = {
+    "ade-grin": [
+        82,
+        43,
+        253,
+        253
+    ],
+    "ade-talking": [
+        65,
+        44,
+        253,
+        253
+    ],
+    "clive-grumbling": [
+        71,
+        14,
+        253,
+        253
+    ],
+    "clive-sour": [
+        72,
+        13,
+        253,
+        253
+    ],
+    "deb-bored": [
+        30,
+        14,
+        253,
+        253
+    ],
+    "deb-intent": [
+        32,
+        14,
+        253,
+        253
+    ],
+    "jodie-grin": [
+        82,
+        13,
+        253,
+        253
+    ],
+    "jodie-hungry": [
+        50,
+        35,
+        253,
+        253
+    ],
+    "jodie-rating": [
+        50,
+        35,
+        253,
+        253
+    ],
+    "kieran-grin": [
+        35,
+        47,
+        253,
+        253
+    ],
+    "kieran-talking": [
+        35,
+        57,
+        253,
+        253
+    ],
     "pc-r0-nude-eager": [
         0,
         71,
@@ -9,7 +75,7 @@ define fivestars_face_crops = {
         253
     ],
     "pc-r0-own-eager": [
-        8,
+        9,
         118,
         253,
         253
@@ -239,6 +305,30 @@ define fivestars_face_crops = {
     "pc-r6-prentice-protesting": [
         146,
         34,
+        253,
+        253
+    ],
+    "regan-flat": [
+        38,
+        62,
+        253,
+        253
+    ],
+    "regan-intent": [
+        38,
+        62,
+        253,
+        253
+    ],
+    "rich-grin": [
+        71,
+        77,
+        253,
+        253
+    ],
+    "rich-talking": [
+        65,
+        77,
         253,
         253
     ]

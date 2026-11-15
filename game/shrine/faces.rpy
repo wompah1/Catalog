@@ -2,6 +2,18 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define shrine_face_crops = {
+    "flint-flat": [
+        158,
+        13,
+        253,
+        253
+    ],
+    "flint-soft": [
+        146,
+        23,
+        253,
+        253
+    ],
     "pc-r0-own-furious": [
         57,
         27,
@@ -233,6 +245,18 @@ define shrine_face_crops = {
     "pc-r7-robes-flushed": [
         272,
         6,
+        253,
+        253
+    ],
+    "slate-grin": [
+        42,
+        5,
+        253,
+        253
+    ],
+    "slate-stare": [
+        49,
+        5,
         253,
         253
     ]

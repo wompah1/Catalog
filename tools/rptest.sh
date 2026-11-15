@@ -49,3 +49,24 @@ status=$?
 grep -E '^\[rpytest\] (Test cases|Status)|FAIL|Error' "$out.log" | head -8
 [ -f "$here/traceback.txt" ] && { echo "--- traceback.txt"; grep -A4 'While running' "$here/traceback.txt" | head -8; }
 echo "lines traced: $( [ -f "$out" ] && wc -l < "$out" || echo 0 )  exit: $status"
+
+# The owner (2026-11-15): the person talking has the right picture in the box, checked on every walk. vn.rpy writes a
+# speaker_miss row when a cast speaker's sprite isn't on stage and a face_miss row when a cast speaker over a CG has no
+# face crop (faces.rpy needs `tools/sync_art.py <route> --faces-only`). Either fails the walk.
+if [ -f "$out" ] && [ "$status" = 0 ]; then
+  chk="$here/../route-covers/pipeline/runs/_c9/trace_speaker.py"
+  if [ -f "$chk" ]; then
+    res=$(python3 -I "$chk" "$out"); rc=$?
+    echo "$res" | tail -12
+    [ "$rc" = 0 ] || status=1
+  else
+    grep -q '"speaker_miss"' "$out" && { echo "speaker_miss rows in $out (the speaker's sprite isn't up)"; status=1; }
+  fi
+  if grep -q '"face_miss"' "$out"; then
+    echo "face_miss: a cast speaker over a CG with no face crop (run tools/sync_art.py <route> --faces-only):"
+    grep '"face_miss"' "$out" | head -8
+    status=1
+  fi
+  [ "$status" = 0 ] || echo "walk FAILED the speaker check"
+fi
+exit "$status"

@@ -433,5 +433,59 @@ define neighbour_face_crops = {
         31,
         253,
         253
+    ],
+    "tessa-nude-certain": [
+        49,
+        8,
+        253,
+        253
+    ],
+    "tessa-nude-grin": [
+        54,
+        8,
+        253,
+        253
+    ],
+    "tessa-nude-mortified": [
+        54,
+        8,
+        253,
+        253
+    ],
+    "tessa-shorts-certain": [
+        49,
+        9,
+        253,
+        253
+    ],
+    "tessa-shorts-grin": [
+        66,
+        14,
+        253,
+        253
+    ],
+    "tessa-shorts-mortified": [
+        62,
+        9,
+        253,
+        253
+    ],
+    "tessa-sweats-certain": [
+        57,
+        6,
+        253,
+        253
+    ],
+    "tessa-sweats-grin": [
+        69,
+        15,
+        253,
+        253
+    ],
+    "tessa-sweats-mortified": [
+        67,
+        14,
+        253,
+        253
     ]
 }

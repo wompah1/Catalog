@@ -2,6 +2,66 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define livestock_face_crops = {
+    "angus-still": [
+        157,
+        30,
+        253,
+        253
+    ],
+    "bart-grin": [
+        92,
+        58,
+        253,
+        253
+    ],
+    "billy-grin": [
+        96,
+        21,
+        253,
+        253
+    ],
+    "buttercup-grin": [
+        115,
+        38,
+        253,
+        253
+    ],
+    "buttercup-soft": [
+        96,
+        38,
+        253,
+        253
+    ],
+    "hester-flat": [
+        43,
+        2,
+        253,
+        253
+    ],
+    "hester-smile": [
+        46,
+        2,
+        253,
+        253
+    ],
+    "marigold-fond": [
+        145,
+        17,
+        253,
+        253
+    ],
+    "marigold-pleased": [
+        153,
+        16,
+        253,
+        253
+    ],
+    "marigold-stern": [
+        145,
+        17,
+        253,
+        253
+    ],
     "pc-r0-blanket-defiant": [
         27,
         43,
@@ -311,6 +371,18 @@ define livestock_face_crops = {
     "pc-r9-sundress-flushed": [
         138,
         20,
+        253,
+        253
+    ],
+    "petal-bossy": [
+        130,
+        32,
+        253,
+        253
+    ],
+    "petal-grin": [
+        194,
+        34,
         253,
         253
     ]

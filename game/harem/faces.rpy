@@ -2,6 +2,42 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define harem_face_crops = {
+    "brask-earnest": [
+        128,
+        29,
+        253,
+        253
+    ],
+    "dilara-brisk": [
+        122,
+        31,
+        253,
+        253
+    ],
+    "kasim-lazy": [
+        75,
+        22,
+        253,
+        253
+    ],
+    "leyla-giggle": [
+        79,
+        46,
+        253,
+        253
+    ],
+    "nasrin-lazy": [
+        44,
+        80,
+        253,
+        253
+    ],
+    "orhan-jolly": [
+        144,
+        33,
+        253,
+        253
+    ],
     "pc-r0-shift-startled": [
         57,
         3,
@@ -147,8 +183,14 @@ define harem_face_crops = {
         253
     ],
     "pc-r6-nude-flushed": [
-        106,
+        107,
         23,
+        253,
+        253
+    ],
+    "zarina-wicked": [
+        46,
+        25,
         253,
         253
     ]

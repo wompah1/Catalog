@@ -92,7 +92,7 @@ label vt_red_three:
     $ vt.fit = "nude"
     $ vn_enter(bg="vt_bedroom", pc="smirk", pc_tag="vt_pc", cast=[], cg="vt_r3_handfuls")
     "{color=#ff5fb8}Friday morning. Your ass is round. Properly round, in your jeans. Your thighs are thicker. There are small soft handfuls on your chest, and you squeeze them in bed and laugh out loud.{/color}"
-    "{color=#ff5fb8}Your red hair's at your shoulders, curling at the ends. And one of your canines has sharpened. A small fang, poking out over your lip when you grin. You grin at it in the mirror for a long time.{/color}"
+    "{color=#ff5fb8}Your hair's at your shoulders now, red from halfway down to the ends. And one of your canines has sharpened. A small fang, poking out over your lip when you grin. You grin at it in the mirror for a long time.{/color}"
     "{color=#ff5fb8}Your lips are fuller. Your cock, when you check, is smaller. You shrug. Still works. And your mouth. Brushing your teeth feels unbelievable, the bristles on your tongue, the roof of your mouth. You stand at the sink with your knees going.{/color}"
     $ vt.fit = "work"
     show cg vt_r3_earbud onlayer cgl
@@ -113,6 +113,8 @@ label vt_red_three_bar:
     vt_nico "\"Alright, alright, I'm coming—\""
     vt_you "\"No, you're— I'm not— Jesse, I'm not doing this—\""
     "You're dragging him to the bathroom by his belt. You're telling him, the whole way, that you're not."
+    hide vt_nico
+    show vt_jesse grinning at vn_cast_slot
     vt_jesse "\"Go on, [vt_pc_name]!\""
     jump vt_red_three_scene
 
@@ -135,10 +137,14 @@ label vt_red_three_scene:
     vt_nico "\"Christ, the {i}teeth{/i} on you.\""
     call vt_voice(3)
     vn_sfx "Bang bang bang."
+    hide vt_nico
+    show vt_jesse grinning at vn_cast_slot
     vt_jesse "\"[vt_pc_name]! Are you in there with the {i}bartender{/i}?\""
     vt_you "\"Busy!\""
     "Your mouth's full. It comes out as {i}bmmf{/i}. Jesse cackles through the door."
     "Nico doesn't touch your cock. Nobody does. It's small and hard and straining in your jeans and you couldn't care less about it."
+    hide vt_jesse
+    show vt_nico grin at vn_cast_slot
     vt_nico "\"I'm close. Where d'you want—\""
     show cg vt_r3_peak onlayer cgl
     "You pull off. You grin up at him, fang and all, spit on your chin. And what comes out isn't a protest."
@@ -173,7 +179,7 @@ label vt_red_four:
     $ vt.fit = "nude"
     $ vn_enter(bg="vt_bedroom", pc="smirk", pc_tag="vt_pc", cast=[], cg="vt_r4_jeans")
     "{color=#ff5fb8}Your jeans won't button over your ass any more. They won't go near it. You stand there with them round your thighs, laughing.{/color}"
-    "{color=#ff5fb8}Your chest has outgrown your shirts. Your waist has pulled in. Your thighs are thick. Your hair's long now, and it's curling into drills on its own, two big red spirals either side of your face. Your cock is tiny. Your voice is nearly not yours.{/color}"
+    "{color=#ff5fb8}Your chest has outgrown your shirts. Your waist has pulled in. Your thighs are thick. Your hair's long now, red right up to the roots, and it's curling into drills on its own, two big red spirals either side of your face. Your cock is tiny. Your voice is nearly not yours.{/color}"
     "You put on the spare leggings Jesse left at yours. They're obscene on you. You love it."
     $ vt.fit = "work"
     $ vn_until(13)
@@ -205,8 +211,12 @@ label vt_red_four_couch:
     "The video plays. And on the screen Kiki gets onto all fours on a couch—"
     "—and you're on all fours on the couch, before you've decided anything."
     vt_you "\"Wait— what am I— no, I'm not— Jesse, turn it {i}off{/i}—\""
+    hide vt_rafe
+    show vt_jesse grinning at vn_cast_slot
     vt_jesse "\"Ha! Go on!\""
     "She thinks it's your bit. Nico's flatmate comes in from the balcony: big, loud, a backwards cap. Rafe. He looks at you on all fours, at the telly, at you, and bursts out laughing."
+    hide vt_jesse
+    show vt_rafe laugh at vn_cast_slot
     vt_rafe "\"Is this a dare? You doing the video?\""
     vt_you "\"I'm not doing anything! It's not— I don't—\""
     $ vn_enter(bg="vt_party", pc="protesting", pc_tag="vt_pc", cast=[("vt_nico", "grin")], cg="vt_r4_nico")
@@ -356,12 +366,21 @@ label vt_red_six_scene:
     vt_you "\"{i}Ohhh{/i}— yes— both— {i}both{/i}— fuck—\""
     "Jesse sits up on the back of the couch, legs either side of your head, and you get your mouth on her and eat her out through it. Still into her. Loud about it, between licks."
     vt_you "\"Jesse— you taste so— {i}mmf{/i}— I'm still— I still want {i}you{/i}—\""
+    hide vt_nico
+    show vt_jesse grinning at vn_cast_slot
     vt_jesse "\"I know, babe. I know.\""
     vn_sfx "Pap. Pap. Pap."
     show cg vt_r6_face onlayer cgl
     "{color=#ff5fb8}And it happens on the couch, with both of them in you. Your jaw softens. Your nose. Your eyes. Your lips. Your face finishes, and it's hers. Your drills spring out to her full length, bouncing. The waveform on your lower back goes dark red. And your yell comes out, and it's wholly hers.{/color}"
+    hide vt_nico
+    show vt_andre quiet at vn_cast_slot
     vt_andre "\"Is she always like this?\""
+    hide vt_andre
+    hide vt_jesse
+    show vt_nico grin at vn_cast_slot
     vt_nico "\"Yes.\""
+    hide vt_nico
+    show vt_rafe laugh at vn_cast_slot
     vt_rafe "\"Yes.\""
     vn_sfx "Bzzt."
     show cg vt_r6_phone onlayer cgl

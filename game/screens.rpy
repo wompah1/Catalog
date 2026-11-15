@@ -106,8 +106,11 @@ screen say(who, what, plate=None):
         hbox:
             spacing 26
 
-            if vn_cg_on() and vn_face_ready():
-                use vn_face
+            ## the speaker's face (vn_line_face): a cast member's own, the PC's for the PC and narration, none
+            ## for a voice without a sprite (owner, 2026-11-15)
+            $ _vn_tab = vn_line_face() if vn_cg_on() else None
+            if _vn_tab is not None:
+                use vn_face(_vn_tab)
 
             fixed:
                 fit_first True

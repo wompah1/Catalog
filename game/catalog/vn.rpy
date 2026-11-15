@@ -142,9 +142,12 @@ init -50 python:
             d = Transform(d, matrixcolor=VN_DIM)
         return d, None
 
+    vn_sprite_resolvers = {}   # sprite tag -> resolve(face), for a cast speaker's face in the box (vn_cast_face)
+
     def vn_sprite_image(tag, faces, resolve, who=None):
         """Register `tag face` for each face; resolve(face) gives the file at show time, so a
         sprite follows the route's rung and outfit without a new show statement."""
+        vn_sprite_resolvers[tag] = resolve
         for f in faces:
             renpy.image((tag, f), DynamicDisplayable(_vn_sprite, resolve, who or tag, f))
 
@@ -274,15 +277,33 @@ init -50 python:
         return (f() + " · " + day) if f else day
 
     # ---- characters -----------------------------------------------------------------------
+    def _vn_line_reset(event, interact=True, **kw):
+        """Every say line starts with no speaker; a VNChar's own callback (which runs after this one) names it.
+        So narration never inherits the last speaker's face (vn_talk stays as it was: it drives the dimming)."""
+        if event == "begin":
+            store.vn_line_who = None
+
+    config.all_character_callbacks.insert(0, _vn_line_reset)
+
     def _vn_talk(event, interact=True, who=None, **kw):
         if event == "begin":
             store.vn_talk = who
+            store.vn_line_who = who
+            tp_ = getattr(store, "_vn_trace_path", None)
+            # a cast speaker over a CG whose face can't be cut (no head crop: faces.rpy not regenerated) shows no tab
+            if tp_ and who and who != "pc" and who in vn_sprite_resolvers and renpy.showing(who) and vn_cg_on() \
+                    and vn_cast_face(who) is None:
+                import json as _j
+                with open(tp_, "a") as _f:
+                    _f.write(_j.dumps({"face_miss": who, "label": getattr(store, "_vn_label", None),
+                                       "what": (kw.get("what") or "")[:80]}) + "\n")
             # the speaker's sprite must be in the box (the owner, 2026-11-15): in a test walk (vntrace sets
             # _vn_trace_path) a cast speaker whose sprite isn't showing writes a speaker_miss row to the trace, which
             # runs/_c9/trace_speaker.py turns into a failure. The global trace callback runs before this one, so the
             # check lives here, where `who` is known.
             tp = getattr(store, "_vn_trace_path", None)
-            if tp and who and who != "pc" and not renpy.showing(who):
+            # only a speaker with a registered sprite can be missing it (vote's "screen" or "man" voices have none)
+            if tp and who and who != "pc" and who in vn_sprite_resolvers and not renpy.showing(who):
                 import json as _j
                 with open(tp, "a") as _f:
                     _f.write(_j.dumps({"speaker_miss": who, "label": getattr(store, "_vn_label", None),
@@ -304,6 +325,33 @@ init -50 python:
 
     def vn_face_ready():
         return store.vn_route in vn_portraits
+
+    def vn_cast_face(tag):
+        """A cast speaker's face for the box's tab while a CG is up (owner, 2026-11-15: the person talking has the right
+        picture in the box): the head crop (tools/sync_art.py's <route>_face_crops) of the sprite they're showing.
+        None when their sprite isn't up or the file has no crop: then no tab, never another character's face."""
+        resolve = vn_sprite_resolvers.get(tag)
+        attrs = renpy.get_attributes(tag) if resolve else None
+        if not attrs:
+            return None
+        path = vn_art_file(resolve(attrs[0]))
+        crops = getattr(store, (store.vn_route or "") + "_face_crops", None) or {}
+        stem = path.rsplit("/", 1)[-1].rsplit(".", 1)[0]
+        folder = path.split("/")[1] if path.count("/") >= 2 else ""
+        key = (folder.split(".", 1)[1] + ":" + stem) if "." in folder else stem
+        c = crops.get(key) or crops.get(stem)
+        if not c:
+            return None
+        return Transform(Crop(tuple(c), vn_pic(path)), xysize=(VN_FACE, VN_FACE))
+
+    def vn_line_face():
+        """The face for the box's tab on this line: a cast speaker's own; the PC's for the PC, thoughts and narration;
+        None (no tab) for a speaker without a sprite."""
+        who = store.vn_line_who
+        if who and who != "pc":
+            return vn_cast_face(who) if who in vn_sprite_resolvers else None
+        f = vn_portraits.get(store.vn_route)
+        return f() if f else None
 
     # ---- the route select: every route registers its card in its own route.rpy -----------
     vn_routes = []
@@ -341,6 +389,7 @@ image vn_main_bg = DynamicDisplayable(_vn_main_bg)
 image vn_missing = Fixed(Solid("#1b1b23"), Text("?", size=120, color="#3a3a46", xalign=0.5, yalign=0.5), xysize=(1216, 832))
 
 default vn_talk = None
+default vn_line_who = None   # this line's speaker tag (None for narration); the box's face follows it
 default vn_clock = VNState(day=0, hour=12, minute=0)
 default vn_route = None
 default vn_art = {}
@@ -419,11 +468,11 @@ style vn_hud_text is default:
 ## The PC's face beside the box over a CG: the route's portrait displayable (vn_face_portrait). A
 ## tab standing on the box's bottom edge and rising above it, so it keeps its size (216) while the
 ## box is shorter than it (2026-11-12).
-screen vn_face():
+screen vn_face(face=None):
     fixed:
         xysize (VN_FACE + 8, VN_FACE + 8)
         yalign 1.0
-        add vn_face_portrait() xysize (VN_FACE, VN_FACE) xalign 0.5 yalign 0.5
+        add (face if face is not None else vn_face_portrait()) xysize (VN_FACE, VN_FACE) xalign 0.5 yalign 0.5
         add "gui/vn/face_frame.png" xysize (VN_FACE + 8, VN_FACE + 8)
 
 ## The route select (DoL's New Game cards): the cover left of the title, the blurb and Play.

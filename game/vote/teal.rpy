@@ -363,6 +363,8 @@ label vt_teal_six_scene:
     "Your bed. Darren kneeling over you with his cock between your huge new tits, and Jesse kneeling beside you, holding them together round him with both hands, squeezing, narrating."
     vt_jesse "\"Look at that. He's disappearing. You can't even see him. [vt_pc_name], he's {i}gone{/i}.\""
     vt_you "\"Thank you— thank you both— sorry, is it too much? Are they too big? Sorry—\""
+    hide vt_jesse
+    show vt_darren calm at vn_cast_slot
     vt_darren "\"Don't you dare say sorry.\""
     vn_sfx "Shlp. Shlp. Shlp."
     "The head of him pops up between them at your chin every stroke, and you stick your tongue out for it, blushing, and say thank you every time."
@@ -373,12 +375,18 @@ label vt_teal_six_scene:
     $ vn_enter(bg="vt_bedroom", pc="moaning", pc_tag="vt_pc", cast=[("vt_darren", "dazed")], cg="vt_t6_bed")
     "Then Darren's between your legs, and in you, your pussy, slow and deep, and Jesse's lying beside you, kissing you, her hand down between you on your clit."
     vt_you "\"Jesse— I still— I want you, I still want {i}you{/i}—\""
+    hide vt_darren
+    show vt_jesse grinning at vn_cast_slot
     vt_jesse "\"I know, babe.\""
     "She grins against your mouth."
     vn_sfx "Pap. Pap. Pap."
     show cg vt_t6_face onlayer cgl
     "{color=#ff5fb8}And it happens on the bed, while he's in you. Your jaw softens. Your nose. Your eyes, wider, lashes thick. Your lips. Your face finishes, and it's hers. Your hair pours out past the ends of the twin tails, longer, longer, to her full length, spilling off the bed. The quaver on your thigh goes dark teal. Your moan comes out, and it's wholly hers.{/color}"
+    hide vt_darren
+    show vt_jesse grinning at vn_cast_slot
     vt_jesse "\"Oh my God. Darren. Look at her.\""
+    hide vt_jesse
+    show vt_darren calm at vn_cast_slot
     vt_darren "\"I'm looking. God, she's— she's—\""
     vn_sfx "Bzzt."
     show cg vt_t6_phone onlayer cgl

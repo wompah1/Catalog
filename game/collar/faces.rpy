@@ -2,6 +2,24 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define collar_face_crops = {
+    "cal-grin": [
+        74,
+        36,
+        253,
+        253
+    ],
+    "cal-hungry": [
+        67,
+        36,
+        253,
+        253
+    ],
+    "cal-soft": [
+        65,
+        36,
+        253,
+        253
+    ],
     "pc-r0-content": [
         34,
         31,

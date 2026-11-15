@@ -2,6 +2,24 @@
 ## portrait in the box while a CG is up. Do not edit; re-run the tool.
 
 define redlightning_face_crops = {
+    "miles-blush": [
+        36,
+        65,
+        253,
+        253
+    ],
+    "miles-hungry": [
+        48,
+        65,
+        253,
+        253
+    ],
+    "miles-neutral": [
+        78,
+        38,
+        253,
+        253
+    ],
     "pc-r1-flushed": [
         39,
         14,
