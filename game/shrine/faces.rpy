@@ -8,6 +8,12 @@ define shrine_face_crops = {
         253,
         253
     ],
+    "pc-r0-robes-furious": [
+        96,
+        5,
+        253,
+        253
+    ],
     "pc-r1-open-dazed": [
         44,
         30,

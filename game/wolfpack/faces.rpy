@@ -74,6 +74,12 @@ define wolfpack_face_crops = {
         253,
         253
     ],
+    "pc-r2-nude-proud": [
+        41,
+        7,
+        253,
+        253
+    ],
     "pc-r2-nude-smug": [
         40,
         7,
