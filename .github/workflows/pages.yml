@@ -39,7 +39,10 @@ jobs:
           set -eu
           python3 tools/shards.py list | while read -r N REPO KEY; do
             git clone -q --depth 1 "https://github.com/$REPO.git" "$RUNNER_TEMP/art-$N"
-            cp -R "$RUNNER_TEMP/art-$N/game/art/." game/art/
+            # a new art repo holds only .nojekyll until its first route is published
+            if [ -d "$RUNNER_TEMP/art-$N/game/art" ]; then
+              cp -R "$RUNNER_TEMP/art-$N/game/art/." game/art/
+            fi
           done
           python3 tools/shards.py map > game/catalog/webshards.json
           cat game/catalog/webshards.json
