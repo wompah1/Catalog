@@ -7,8 +7,9 @@
 
 Each picture is encoded from its original in ../route-covers/vn/<route>[@<set>]/<name>.png when that is the
 same picture (a thumbnail check; a re-landed pick not yet synced fails it), resized to the game file's size;
-otherwise from the game file itself. A file already AVIF is skipped, so a second run changes nothing. A
-folder with uncommitted changes (another session mid-landing) is skipped and reported. Each file keeps its
+otherwise from the game file itself. Only tracked files are converted. A file already AVIF is skipped, so a
+second run changes nothing. A folder with uncommitted changes (another session mid-landing) is skipped and
+reported; untracked files a commit deleted (orphan art put back by a sync) don't count. Each file keeps its
 mtime, which sync_art.py compares. Run it on a route right after it merges to main (publish-when-done)."""
 import argparse
 import io
@@ -54,15 +55,23 @@ def source_for(f, game_im, folder):
     return o if same_picture(o, game_im) else None
 
 
+def git(*args):
+    return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True).stdout
+
+
 def dirty(folder):
-    out = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain", "--", f"game/art/{folder}"],
-                         capture_output=True, text=True).stdout
-    return bool(out.strip())
+    """Uncommitted changes in the folder, leaving out untracked files a commit deleted: orphan art
+    (tools/orphan_art.py) that sync_art.py's whole-set copy puts back on disk, nobody's landing."""
+    for line in git("status", "--porcelain", "--untracked-files=all", "--", f"game/art/{folder}").splitlines():
+        if not line.startswith("?? ") or not git("log", "-1", "--format=%h", "--diff-filter=D", "--", line[3:]).strip():
+            return True
+    return False
 
 
 def convert(folder, dry):
-    d = ART / folder
-    files = sorted(p for p in d.rglob("*") if p.suffix in (".jpg", ".png") and p.is_file())
+    tracked = set(git("ls-files", "-z", "--", f"game/art/{folder}").split("\0"))
+    files = sorted(p for p in (ART / folder).rglob("*") if p.suffix in (".jpg", ".png") and p.is_file()
+                   and p.relative_to(ROOT).as_posix() in tracked)
     before = after = n = from_orig = 0
     for f in files:
         if artformat.is_avif(f):

@@ -460,6 +460,37 @@ pauses its run (SIGSTOP) when one of theirs starts.
 | 2.99 | twinetesting-32 (bc) | institut ins1 (Lady Honoria, Minty, Madame Aubert, Frau Brandt, Fabre, Bassi, the bridesmaids, 15 rooms, 11 sprites, the cover), 148 (37 × 4) | `_q32/ins1.log` | **part three**, after oiran oir2 | 2026-11-14 9:25 pm |
 | 2.100 | twinetesting-32 (bc) | institut ins2 (77 frames), 154 (77 × 2) | `_q32/ins2.log` | waiting on ins1 | 2026-11-14 9:25 pm |
 | 2.101 | twinetesting-32 (bc) | institut ins3 (Abarus: portraits, sprites, frames; names scrubbed), 196 (98 × 2) | `_q32/ins3.log` | **held** in c9's nqalt as `064` (ab32_job.sh), after every main set | 2026-11-14 9:25 pm |
+| 2.102 | twinetesting-32 (bc) | bounty bty1 (Skarr, the gang, Hagga, Nix, Brenna, Osric, Halloran, Dace, 13 rooms, 6 seed sprites, the cover), 128 (32 × 4) | `_q32/bty1.log` | **part four** (`_q32/tfq32.sh`, waits for part three, then the yield watcher; altq32 yields to it) | 2026-11-15 8:47 am |
+| 2.103 | twinetesting-32 (bc) | bounty bty2 (130 frames), 260 (130 × 2) | `_q32/bty2.log` | waiting on bty1 | 2026-11-15 8:47 am |
+| 2.104 | twinetesting-32 (bc) | burglar brg1 (Seraphine, Mirren, Talia, Wren, Fenwick, 14 rooms, 6 seed sprites, the cover), 120 (30 × 4) | `_q32/brg1.log` | part four, after bounty bty2 | 2026-11-15 8:47 am |
+| 2.105 | twinetesting-32 (bc) | burglar brg2 (109 frames), 218 (109 × 2) | `_q32/brg2.log` | waiting on brg1 | 2026-11-15 8:47 am |
+| 2.106 | twinetesting-32 (bc) | jelly jly1 (Aspic, Quince, Lime, Ostrander, Hilde, Cadogan, 7 rooms, 6 seed sprites, the cover), 92 (23 × 4) | `_q32/jly1.log` | part four, after burglar brg2 | 2026-11-15 8:47 am |
+| 2.107 | twinetesting-32 (bc) | jelly jly2 (97 frames), 194 (97 × 2) | `_q32/jly2.log` | waiting on jly1 | 2026-11-15 8:47 am |
+| 2.108 | twinetesting-32 (bc) | hunt hnt1 (the Hart, Fenna, the hound-folk, Pellow, 8 rooms, 6 seed sprites, the cover), 88 (22 × 4) | `_q32/hnt1.log` | part four, after jelly jly2 | 2026-11-15 8:47 am |
+| 2.109 | twinetesting-32 (bc) | hunt hnt2 (88 frames), 176 (88 × 2) | `_q32/hnt2.log` | waiting on hnt1 | 2026-11-15 8:47 am |
+| 2.110 | twinetesting-32 (bc) | patchnotes pnt1 (Sallow, Tomasz, Marta, Achterberg, 12 rooms, 7 seed sprites, the cover), 104 (26 × 4) | `_q32/pnt1.log` | part four, after hunt hnt2 | 2026-11-15 8:47 am |
+| 2.111 | twinetesting-32 (bc) | patchnotes pnt2 (101 frames), 202 (101 × 2) | `_q32/pnt2.log` | waiting on pnt1 | 2026-11-15 8:47 am |
+| 2.112 | twinetesting-32 (bc) | spinning spn1 (Onodera, Sayo, Fumi, Natsu, Yae, Haru, Marchal, Lacombe, 6 rooms, 6 seed sprites, the cover), 100 (25 × 4) | `_q32/spn1.log` | part four, after patchnotes pnt2 | 2026-11-15 8:47 am |
+| 2.113 | twinetesting-32 (bc) | spinning spn2 (87 frames), 174 (87 × 2) | `_q32/spn2.log` | waiting on spn1 | 2026-11-15 8:47 am |
+| 2.114 | twinetesting-32 (bc) | templecat tmc1 (Nebet, Ipi, Merit, Pabasa, the boatman, 12 rooms, 6 seed sprites, the cover), 108 (27 × 4) | `_q32/tmc1.log` | part four, after spinning spn2 | 2026-11-15 8:47 am |
+| 2.115 | twinetesting-32 (bc) | templecat tmc2 (75 frames), 150 (75 × 2) | `_q32/tmc2.log` | waiting on tmc1 | 2026-11-15 8:47 am |
+| 2.116 | twinetesting-32 (bc) | sleeper slp1 (Larkin, Dmitri, Marchetti, the Minister, Hargreaves, 10 rooms, 6 seed sprites, the cover), 100 (25 × 4) | `_q32/slp1.log` | part four, after templecat tmc2 | 2026-11-15 8:47 am |
+| 2.117 | twinetesting-32 (bc) | sleeper slp2 (80 frames), 160 (80 × 2) | `_q32/slp2.log` | waiting on slp1 | 2026-11-15 8:47 am |
+| 2.118 | twinetesting-32 (bc) | escaperoom esc1 (Freya, Rob, the lads, 9 rooms, 6 seed sprites, the cover), 88 (22 × 4) | `_q32/esc1.log` | part four, after sleeper slp2 | 2026-11-15 8:47 am |
+| 2.119 | twinetesting-32 (bc) | escaperoom esc2 (63 frames), 126 (63 × 2) | `_q32/esc2.log` | waiting on esc1 | 2026-11-15 8:47 am |
+| 2.120 | twinetesting-32 (bc) | slipper slr1 (Hesper, Ella, Leopold, the Duke, the coachman, 14 rooms, 6 seed sprites, the cover), 120 (30 × 4) | `_q32/slr1.log` | part four, after escaperoom esc2 | 2026-11-15 8:47 am |
+| 2.121 | twinetesting-32 (bc) | slipper slr2 (67 frames), 134 (67 × 2) | `_q32/slr2.log` | waiting on slr1 | 2026-11-15 8:47 am |
+| 2.122 | twinetesting-32 (bc) | witness wtn1 (Nic, Bran, Kit, Morwenna, 10 rooms, 6 seed sprites, the cover), 100 (25 × 4) | `_q32/wtn1.log` | part four, after slipper slr2 | 2026-11-15 8:47 am |
+| 2.123 | twinetesting-32 (bc) | witness wtn2 (57 frames), 114 (57 × 2) | `_q32/wtn2.log` | waiting on wtn1 | 2026-11-15 8:47 am |
+| 2.124 | twinetesting-32 (bc) | profile prf1 (Anjali, the courier, Rhian, Kwame, 9 rooms, 6 seed sprites, the cover), 96 (24 × 4) | `_q32/prf1.log` | part four, after witness wtn2 | 2026-11-15 8:47 am |
+| 2.125 | twinetesting-32 (bc) | profile prf2 (52 frames), 104 (52 × 2) | `_q32/prf2.log` | waiting on prf1 | 2026-11-15 8:47 am |
+| 2.126 | twinetesting-32 (bc) | honeypot hpt1 (Vance, Lucas, Kemp, the friends, 9 rooms, 6 seed sprites, the cover), 92 (23 × 4) | `_q32/hpt1.log` | part four, after profile prf2 | 2026-11-15 8:47 am |
+| 2.127 | twinetesting-32 (bc) | honeypot hpt2 (52 frames), 104 (52 × 2) | `_q32/hpt2.log` | waiting on hpt1 | 2026-11-15 8:47 am |
+| 2.128 | twinetesting-32 (bc) | the 13 routes' stage-two sprites (`<p>s`: each body's other outfits at n=1 on the seed picked in `<p>1`; 69's ledger item 15), 61 in all | `_q32/<p>s.log` | **not yet queued**: added per route after its `<p>1` review and `tools/seedfill.py` | 2026-11-15 8:47 am |
+| 2.129 | twinetesting-32 (bc) | sleeper slp3 (Abarus: portraits, sprites, frames; names scrubbed), 198 (99 × 2) | `_q32/slp3.log` | **held** in c9's nqalt as `065` (ab32_job.sh), after every main set | 2026-11-15 8:47 am |
+| 2.130 | twinetesting-32 (bc) | escaperoom esc3 (Abarus: portraits, sprites, frames; names scrubbed), 158 (79 × 2) | `_q32/esc3.log` | **held** in c9's nqalt as `066` (ab32_job.sh), after every main set | 2026-11-15 8:47 am |
+| 2.131 | twinetesting-32 (bc) | slipper slr3 (Abarus: portraits, sprites, frames; names scrubbed), 174 (87 × 2) | `_q32/slr3.log` | **held** in c9's nqalt as `067` (ab32_job.sh), after every main set | 2026-11-15 8:47 am |
+| 2.132 | twinetesting-32 (bc) | profile prf3 (Abarus: portraits, sprites, frames; names scrubbed), 144 (72 × 2) | `_q32/prf3.log` | **held** in c9's nqalt as `068` (ab32_job.sh), after every main set | 2026-11-15 8:47 am |
 | 2.C | twinetesting-32 (bc) | **the new covers** (owner's ruling, 1:02 am): **all 32 landed, 3:50 am**, every candidate eye-checked at full size; three rounds (cv1 96 images done 3:15 am; cv2 `nq92/0037` done 3:34 am; cv3 `nq92/0039b` done 3:46 am, which landed mistaken, corps, venus, fitting, borrowed and a better spincycle). Picks and rejections in each route config, route-covers/SCENES.md and `runs/_q32/cover_picks.md`; prompting lessons in route-covers/pipeline/PROMPTING.md | done | 2026-11-13 3:50 am |
 | 2.A1 | twinetesting-32 (bc) | practice prcA1 ("Tell him": the pc-r10-home sprite), 4 (1 × 4) | `_q32/prcA.log` | **alternate, last**: waits for my main chain and part three (2.73-2.83), then yields to every main-route job | 2026-11-14 12:06 am |
 | 2.A2 | twinetesting-32 (bc) | practice prcA2 ("Tell him": 25 frames), 50 (25 × 2) | `_q32/prcA.log` | **alternate, last**: after prcA1 | 2026-11-13 2:04 pm |
