@@ -26,6 +26,18 @@ if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
     echo "publish: commit or stash tracked changes first (the snapshot is HEAD's tree)" >&2; exit 1
 fi
 
+# A route published for the first time gets its connected art repo (tools/shards.py assign); the
+# assignment is committed so the snapshot, and the web build's redirect map, carry it.
+if [ "$DRY" = 1 ]; then
+    python3 -I tools/shards.py assign --dry-run | sed 's/^/publish: would assign /'
+else
+    ASSIGNED=$(python3 -I tools/shards.py assign)
+    if [ -n "$ASSIGNED" ]; then
+        echo "$ASSIGNED" | sed 's/^/publish: assigned /'
+        git commit -q -m "shards: $(echo "$ASSIGNED" | tr '\n' ';' | sed 's/;$//')" -- tools/shards.json
+    fi
+fi
+
 TREE=$(git rev-parse 'HEAD^{tree}')
 if [ -s "$DENY" ]; then
     hits=$(git grep -I -n -i -E -f "$DENY" "$TREE" -- . || true)

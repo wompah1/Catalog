@@ -7,6 +7,7 @@
     python3 tools/shards.py tree catalog <T>   # tree T without the sharded routes' art (covers stay): Catalog's snapshot
     python3 tools/shards.py tree <n> <T>       # shard n's snapshot: its routes' art from tree T, plus .nojekyll
     python3 tools/shards.py strip <dist>       # delete the sharded routes' art from a web build (after web_build)
+    python3 tools/shards.py assign [--dry-run] # give each never-published route a shard (publish.sh runs it)
 
 Every site lives on wompah1.github.io, one origin, so the game fetches a sharded route's pictures from
 ../<repo>/game/art/... with no CORS and the same saves (game/catalog/webshards.rpy redirects the web
@@ -44,6 +45,45 @@ def which(path):
     return 0 if route is None or cover else SHARDED.get(route, 0)
 
 
+CAP_MB = 750   # fill a shard to this, then open the next: Pages rejects a site over 1 GB
+
+
+def route_sizes(t="HEAD"):
+    """Each route's art in tree t, covers left out (they stay in Catalog)."""
+    sizes = {}
+    for line in git("ls-tree", "-r", "-l", "--full-tree", t, "--", "game/art").splitlines():
+        meta, path = line.split("\t", 1)
+        route, cover = art_of(path)
+        if route and not cover:
+            sizes[route] = sizes.get(route, 0) + int(meta.split()[3])
+    return sizes
+
+
+def assign(dry):
+    """Every route in HEAD with art that's neither in a shard nor already on GitHub (origin/main, set by a real
+    publish) goes to the first shard with room under CAP_MB. A published route never moves: its pictures'
+    URLs, and the browsers that cached them, stay valid. Returns [(route, n)]."""
+    if not SHARDS:
+        return []
+    sizes = route_sizes()
+    live = {p.split("/")[2].split(".", 1)[0]
+            for p in git("ls-tree", "--name-only", "refs/remotes/origin/main", "game/art/").split() if p.count("/") >= 2}
+    load = {s["n"]: sum(sizes.get(r, 0) for r in s.get("routes", [])) for s in SHARDS}
+    new = []
+    for r in sorted(sizes):
+        if r in SHARDED or r in live:
+            continue
+        s = next((s for s in SHARDS if load[s["n"]] + sizes[r] <= CAP_MB * 1e6), None)
+        if s is None:
+            sys.exit(f"shards: no shard has room for {r} ({sizes[r] / 1e6:.0f} MB): add one to tools/shards.json")
+        s.setdefault("routes", []).append(r)
+        load[s["n"]] += sizes[r]
+        new.append((r, s["n"]))
+    if new and not dry:
+        (ROOT / "tools" / "shards.json").write_text(json.dumps(CFG, indent=1) + "\n")
+    return new
+
+
 def tree(n, t):
     out = git("ls-tree", "-r", "-z", "--full-tree", t)
     keep = [e for e in out.split("\0") if e and which(e.split("\t", 1)[1]) == n]
@@ -77,6 +117,9 @@ def main():
                 if not any(d.iterdir()):
                     d.rmdir()
         print("stripped", len(SHARDED), "sharded routes' art from", art)
+    elif cmd == "assign":
+        for r, n in assign("--dry-run" in sys.argv):
+            print(f"{r} -> {next(s['repo'] for s in SHARDS if s['n'] == n)}")
     elif cmd == "sizes":
         sizes = {}
         for line in git("ls-tree", "-r", "-l", "--full-tree", "HEAD", "--", "game/art").splitlines():

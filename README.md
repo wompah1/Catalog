@@ -82,11 +82,7 @@ route cards draw every cover. `publish.sh` pushes each art repo an orphan snapsh
 snapshot without that art. `pages.yml` fetches the art repos before `web_build` (so the download list
 knows every picture's size), writes `game/catalog/webshards.json`, strips the sharded art from the
 artifact and fails over 950 MB. In the web build, `game/catalog/webshards.rpy` sends those routes' picture
-downloads to `../Catalog-art-<n>/`. `python3 tools/shards.py sizes` says how full each site is; add a shard
-before Catalog passes about 850 MB, and never move a route once it's published. **A new shard, once:** the
-owner creates the public repo on wompah1, adds its deploy key (write access) and turns on Pages (Deploy
-from a branch: `main`, `/`). Then add `{"n": 1, "repo": "wompah1/Catalog-art-1", "key":
-"~/.ssh/id_ed25519_wompah1_catalog_art_1", "routes": [...]}` to `tools/shards.json`.
+downloads to `../Catalog-art-<n>/`. **Two art repos exist (2026-11-15): `wompah1/Catalog-art-1` and `-2`.** The nine routes published before them stay in Catalog. Every route published from then on is placed by `publish.sh`, which runs `tools/shards.py assign`: at a route's first publish it takes the first art repo with room (750 MB each) and commits `tools/shards.json`. A route never moves once it's published. `python3 tools/shards.py sizes` says how full each site is. When both art repos near 750 MB, the owner makes `Catalog-art-3` once: create the public repo on wompah1, add its deploy key (write access), and after the first push creates `main`, turn on Pages (Deploy from a branch: `main`, `/`). Then add its entry to `tools/shards.json`. Keys live in `~/.ssh/id_ed25519_wompah1_catalog_art_<n>`.
 
 Locally, with the web package unpacked at `../renpy-8.5.3-sdk/web/` (installed 2026-11-13):
 
