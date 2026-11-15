@@ -5,7 +5,9 @@
    "n": 1,
    "repo": "wompah1/Catalog-art-1",
    "key": "~/.ssh/id_ed25519_wompah1_catalog_art_1",
-   "routes": []
+   "routes": [
+    "fivestars"
+   ]
   },
   {
    "n": 2,
