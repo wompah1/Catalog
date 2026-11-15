@@ -69,4 +69,11 @@ if [ -f "$out" ] && [ "$status" = 0 ]; then
   fi
   [ "$status" = 0 ] || echo "walk FAILED the speaker check"
 fi
+
+# The owner (2026-11-15): gradual TF, and the prose agrees with the picture at every line. trace_looks.py compares each
+# line's claims about the PC's hair colour, hair length and breast size with the prompt of the CG or sprite shown then.
+# A heuristic, so it reports and doesn't fail the walk; look at each flag at the line.
+if [ -f "$out" ] && [ -f "$here/tools/trace_looks.py" ]; then
+  python3 -I "$here/tools/trace_looks.py" "$out" --game "$here/game" | tail -16
+fi
 exit "$status"

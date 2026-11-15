@@ -365,7 +365,7 @@ label co_stairwell_after:
     "His hands are still round the front of you. They've been there the whole time."
     co_voice "{=co_hypno}“Tell me what you see.”{/=co_hypno}"
     "It gasps it, and he tells you."
-    co_cal "\"Your chest is full now. Real handfuls. Spilling out of my grip, soft and heavy, bouncing every time I went in.\""
+    co_cal "\"There's a chest on you now. A handful each, small and perky and soft, bouncing every time I went in.\""
     "He says it into your ear while he's still inside you, and you clench on him so hard he laughs."
     co_cal "\"And this.\""
     "One hand drops to your ass and squeezes."
