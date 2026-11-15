@@ -233,7 +233,10 @@ screen choice(items):
         ## The choice that decides the ending (owner, 2026-11-11: "could you mark the decision
         ## where the two endings split"): a menu item written `"..." (ending=True):` puts this line
         ## over the choices, and its button reads in gold.
-        if any(i.kwargs.get("ending") for i in items):
+        ## `(ending="counts")`: one of several choices that add up to the ending (celestia's forks).
+        if any(i.kwargs.get("ending") == "counts" for i in items):
+            text "\u2726  This choice counts toward your ending  \u2726" style "choice_ending"
+        elif any(i.kwargs.get("ending") for i in items):
             text "\u2726  This choice decides your ending  \u2726" style "choice_ending"
         for i in items:
             if i.kwargs.get("ending"):
