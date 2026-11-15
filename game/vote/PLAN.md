@@ -193,3 +193,33 @@ None. Every beat the VN needs is in the two packages' outlines.
   the script and a placeholder cover. Sprites add a **protesting** face (rungs 3-4).
 
 Built on its own branch and worktree; this file moves to `game/vote/PLAN.md`.
+
+## No Abarus set (owner, 2026-11-12, about 11:40 am ET)
+
+"no abarus for routes untss I say so": the Abarus alternate set is dropped. The route registers no
+second art set.
+
+## Built (2026-11-12, about 11:45 am ET)
+
+The script is done, on branch `vote`:
+- `route.rpy`: the uploads table, the phone panel (`screen vt_phone`), the in-voice tables, the
+  weekday HUD.
+- `script.rpy`: the shared first night and the vote.
+- `teal.rpy` and `red.rpy`: each path's rungs 2-6 and their scenes.
+
+Four walks pass:
+- `vote_teal_a` and `vote_teal_b`: 305 lines, days 1 to 34.
+- `vote_red_a` and `vote_red_b`: 281 lines, days 1 to 39.
+
+Every menu, the vote and both endings are covered. Lint is clean apart from the pictures not drawn
+yet: 125 frames and 17 backgrounds are named, with a placeholder cover.
+
+The 【】 on the title cards come from `SourceHanSansLite.ttf` (the SDK's sdk-fonts, OFL) in a
+font group over DejaVuSans; checked by screenshot.
+
+As written:
+- The chorus is sung once in each upload and said once by him at the peak. The last line is a
+  joint speaker, him and the phone.
+- He/him until the face finishes in the finale. From that beat the narration calls him "she"
+  instead of "you" (the package's switch, carried into second person).
+- The narration never compares him to the singer.
