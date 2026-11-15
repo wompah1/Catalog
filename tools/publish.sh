@@ -26,6 +26,18 @@ if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
     echo "publish: commit or stash tracked changes first (the snapshot is HEAD's tree)" >&2; exit 1
 fi
 
+# Owner, 2026-11-15: "walk throughs should be done after redraws to ensure quality". Every route whose art changed since
+# the last publish (a redraw, a re-encode, a reused room) gets the full play-order walk first: walksheet in play order,
+# every frame against its line, plus its rptest walks. This lists them; it can't check that the walks were done.
+# main as it was at the last publish (origin/main itself leaves the art-repo routes out, so it can't be diffed)
+LAST=$(git log -1 --format=%ct refs/remotes/origin/main 2>/dev/null || true)
+BASE=$(git rev-list -1 --first-parent --before="@${LAST:-0}" HEAD 2>/dev/null || true)
+CHANGED=$([ -n "$BASE" ] && git diff --name-only "$BASE" HEAD -- game/art | cut -d/ -f3 | sort -u | tr '\n' ' ')
+if [ -n "$CHANGED" ]; then
+    echo "publish: art changed since the last publish: $CHANGED"
+    echo "publish: each walked in play order since its last redraw (walksheet + rptest walks)? If not, stop here."
+fi
+
 # A route published for the first time gets its connected art repo (tools/shards.py assign); the
 # assignment is committed so the snapshot, and the web build's redirect map, carry it.
 if [ "$DRY" = 1 ]; then
