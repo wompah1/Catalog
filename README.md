@@ -21,7 +21,11 @@ plays them:
 - **Livestock**, "Marsh Farm Filed Me as a Heifer, So They Milk Me at Both Ends Until I Match the Paperwork"
   (`game/livestock/`, prefix `ls_`), Vanripper only (an animal-TF route, so no Abarus set).
 
-Nothing in `../catalog/` is changed: the tools only read it (twee, art, DoL traces).
+`../catalog/` is only the art landing folder since the DoL games were retired (2026-11-15): `img/vn/`,
+`img/scenes/` and `imagepacks/_custom/ui/route-covers/`, where `sceneart.py vnland` and the cover
+landers write and `tools/sync_art.py` reads. The one-time migration tools that read the DoL game
+(`tools/twee2rpy.py`, `tools/trace_dol.py`, `tools/check.py`'s DoL side) no longer run. The twee they
+read is in `../story-archive/storylines/catalog/`.
 
 ## Play it
 
@@ -39,9 +43,19 @@ Each route worktree (`../catalog-renpy-<route>`) is a sparse checkout that leave
 routes' art (`tools/slim_worktree.py`; 96 worktrees went from 21 GB to under 1 GB on 2026-11-12).
 Run it on a new worktree after `git worktree add`; `--undo` restores a full checkout; see
 CLAIMS.md "Worktrees are slimmed". `tools/orphan_art.py` lists art no script names (a report; the
-templated names it flags "check by hand" are mostly in use). Later, when the merge wave is over:
-WebP would take `game/art` from 238 MB to about 90 MB, but every route.rpy hardcodes `.png`/`.jpg`,
-so it wants a central `vn_pic()`-by-stem and a `tools/convert_art.py`, one route at a time.
+templated names it flags "check by hand" are mostly in use).
+
+**Picture format (2026-11-15): AVIF at quality 65, under each file's existing `.jpg`/`.png` name**
+(`tools/artformat.py`). Ren'Py picks an image's decoder from its contents, not its name. That was tested
+on desktop, in a web build, through progressive download (placeholder, then the file) and with sprite
+alpha, and the web build decodes inside renpy.wasm, so a phone's own codecs don't matter. So no route's
+code, gallery list, frames.json or slim pattern changes. A frame is about a fifth of its old JPEG and a
+sprite a tenth of its PNG, with no visible difference at full size; the nine published routes went from
+389 MB to 95 MB. `tools/sync_art.py` writes every new landing as AVIF. Art landed before the switch
+converts with `python3 tools/convert_art.py <route>` (from the `../route-covers/vn/` originals where
+they're the same picture; skips a folder with uncommitted changes; a second run changes nothing). Run
+it on a route right after it merges to main. `file x.jpg` says "AVIF Image"; open pictures with PIL,
+which reads them.
 
 ## Publish (GitHub Pages)
 
@@ -58,7 +72,21 @@ Actions**. The page is public to anyone with the link.
 `progressive_download.txt` (project root, kept in git) decides what goes in `game.zip` and what the
 browser fetches on demand: GUI images are packed, every other image and the audio stream in as a
 scene needs them. That keeps `game.zip` near 10 MB with the art (about 284 MB) fetched per file,
-so nothing goes near GitHub's 100 MB file cap and the whole site stays under Pages' 1 GB.
+so nothing goes near GitHub's 100 MB file cap.
+
+**Connected art repos** (`tools/shards.json`, `tools/shards.py`, 2026-11-15). Pages rejects a site over
+1 GB, and the whole catalog's art is more than that. So a route's art can be published from an art-only repo,
+`wompah1/Catalog-art-<n>`, with its own Pages site on the same origin. A route listed under a shard has
+`game/art/<route>/` (and `<route>.<set>/`) published there; its `cover.jpg` stays in Catalog because the
+route cards draw every cover. `publish.sh` pushes each art repo an orphan snapshot first, then Catalog's
+snapshot without that art. `pages.yml` fetches the art repos before `web_build` (so the download list
+knows every picture's size), writes `game/catalog/webshards.json`, strips the sharded art from the
+artifact and fails over 950 MB. In the web build, `game/catalog/webshards.rpy` sends those routes' picture
+downloads to `../Catalog-art-<n>/`. `python3 tools/shards.py sizes` says how full each site is; add a shard
+before Catalog passes about 850 MB, and never move a route once it's published. **A new shard, once:** the
+owner creates the public repo on wompah1, adds its deploy key (write access) and turns on Pages (Deploy
+from a branch: `main`, `/`). Then add `{"n": 1, "repo": "wompah1/Catalog-art-1", "key":
+"~/.ssh/id_ed25519_wompah1_catalog_art_1", "routes": [...]}` to `tools/shards.json`.
 
 Locally, with the web package unpacked at `../renpy-8.5.3-sdk/web/` (installed 2026-11-13):
 

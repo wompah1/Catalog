@@ -1,0 +1,4 @@
+{
+ "_doc": "Connected art repos (owner's storage plan, 2026-11-15). A GitHub Pages site may be no larger than 1 GB, so routes' art can live in art-only repos beside wompah1/Catalog, each its own Pages site on the same origin (wompah1.github.io). A route listed under a shard has its game/art/<route>/ (and <route>.<set>/) published there instead of in Catalog; its cover.jpg stays in Catalog (the route cards draw every cover). A route never moves once published. Empty: everything is in Catalog. Before adding a shard the owner creates the public repo on wompah1, adds the deploy key (key below, write access) and turns on Pages (Deploy from a branch: main, /). See tools/shards.py.",
+ "shards": []
+}

@@ -37,6 +37,16 @@ else
     echo "publish: no deny list at $DENY, skipping the text check" >&2
 fi
 
+# Connected art repos (tools/shards.json, 2026-11-15): a sharded route's art is published from its own
+# art repo, so Catalog's snapshot leaves it out (covers stay). Each art repo gets an orphan snapshot (no
+# parent: the repo stays the size of its content), pushed before Catalog's so the game never points at
+# pictures that aren't up yet.
+HEAD_TREE=$TREE
+SHARD_LIST=$(python3 -I tools/shards.py list)
+if [ -n "$SHARD_LIST" ]; then
+    TREE=$(python3 -I tools/shards.py tree catalog "$HEAD_TREE")
+fi
+
 PARENT=$(git rev-parse -q --verify "refs/heads/$PUBLIC_BRANCH" 2>/dev/null || true)
 if [ -n "$PARENT" ] && [ "$(git rev-parse "$PARENT^{tree}")" = "$TREE" ]; then
     echo "publish: tree unchanged since the last snapshot ($PARENT)"; COMMIT=$PARENT
@@ -49,6 +59,25 @@ else
     echo "publish: snapshot $COMMIT on $PUBLIC_BRANCH"
 fi
 git log -1 --format='  %an <%ae>  %ad  %s' "$COMMIT"
+
+while read -r N REPO KEY; do
+    [ -n "$N" ] || continue
+    STREE=$(python3 -I tools/shards.py tree "$N" "$HEAD_TREE")
+    SPREV=$(git rev-parse -q --verify "refs/heads/public-art-$N" 2>/dev/null || true)
+    if [ -n "$SPREV" ] && [ "$(git rev-parse "$SPREV^{tree}")" = "$STREE" ]; then
+        echo "publish: art $N ($REPO) unchanged"
+    else
+        NOW="$(date -u +%s) +0000"
+        SC=$(GIT_AUTHOR_NAME=$IDENT_NAME GIT_AUTHOR_EMAIL=$IDENT_EMAIL GIT_AUTHOR_DATE="$NOW" \
+             GIT_COMMITTER_NAME=$IDENT_NAME GIT_COMMITTER_EMAIL=$IDENT_EMAIL GIT_COMMITTER_DATE="$NOW" \
+             git commit-tree "$STREE" -m "The Catalog's art ($N), $(date -u +%Y-%m-%d)")
+        git update-ref "refs/heads/public-art-$N" "$SC"
+        echo "publish: art $N snapshot $SC for $REPO"
+    fi
+    if [ "$DRY" = 1 ]; then echo "publish: dry run, not pushing art $N"; continue; fi
+    GIT_SSH_COMMAND="ssh -F /dev/null -i $KEY -o IdentitiesOnly=yes" \
+        git push --force "git@github.com:$REPO.git" "refs/heads/public-art-$N:refs/heads/main"
+done <<< "$SHARD_LIST"
 
 if [ "$DRY" = 1 ]; then echo "publish: dry run, not pushing"; exit 0; fi
 git push --force "$REMOTE" "refs/heads/$PUBLIC_BRANCH:refs/heads/$REMOTE_BRANCH"
