@@ -36,6 +36,12 @@ CHANGED=$([ -n "$BASE" ] && git diff --name-only "$BASE" HEAD -- game/art | cut 
 if [ -n "$CHANGED" ]; then
     echo "publish: art changed since the last publish: $CHANGED"
     echo "publish: each walked in play order since its last redraw (walksheet + rptest walks)? If not, stop here."
+    # Owner, 2026-11-16: a chat other than the builder walks every route before it publishes, and each such route
+    # needs "passed at <commit>" in ../route-covers/pipeline/REVIEWS.md for the route as it is in HEAD.
+    if ! python3 -I tools/review_gate.py $CHANGED; then
+        if [ "$DRY" = 1 ]; then echo "publish: a real publish stops here (review gate)"; else
+            echo "publish: not publishing: a route above hasn't passed review at this commit (route-covers/pipeline/REVIEWS.md)" >&2; exit 1; fi
+    fi
 fi
 
 # A route published for the first time gets its connected art repo (tools/shards.py assign); the
