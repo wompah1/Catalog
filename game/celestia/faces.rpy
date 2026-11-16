@@ -177,7 +177,7 @@ define celestia_face_crops = {
         253
     ],
     "luna-deadpan": [
-        102,
+        101,
         28,
         253,
         253
