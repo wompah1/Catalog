@@ -69,26 +69,26 @@ define sister_face_crops = {
         253
     ],
     "pc-r0h-neutral": [
-        40,
-        14,
+        41,
+        16,
         253,
         253
     ],
     "pc-r0h-puzzled": [
-        41,
-        23,
+        32,
+        17,
         253,
         253
     ],
     "pc-r1h-neutral": [
-        41,
-        14,
+        54,
+        57,
         253,
         253
     ],
     "pc-r1h-puzzled": [
-        31,
-        54,
+        36,
+        41,
         253,
         253
     ],
@@ -99,8 +99,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r1m-blissful": [
-        50,
-        56,
+        37,
+        46,
         253,
         253
     ],
@@ -189,8 +189,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r3m-blueskirt-beaming": [
-        71,
-        14,
+        60,
+        40,
         253,
         253
     ],
@@ -219,8 +219,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r4h-puzzled": [
-        107,
-        36,
+        50,
+        38,
         253,
         253
     ],
@@ -243,8 +243,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r5h-neutral": [
-        48,
-        17,
+        42,
+        33,
         253,
         253
     ],
@@ -273,14 +273,14 @@ define sister_face_crops = {
         253
     ],
     "pc-r6h-neutral": [
-        51,
-        28,
+        42,
+        33,
         253,
         253
     ],
     "pc-r6h-puzzled": [
-        55,
-        22,
+        88,
+        38,
         253,
         253
     ],
@@ -309,8 +309,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r6m-skirt-blissful": [
-        127,
-        13,
+        74,
+        48,
         253,
         253
     ],
@@ -327,8 +327,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r7m-blissful": [
-        132,
-        30,
+        111,
+        14,
         253,
         253
     ],
@@ -339,8 +339,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r7m-nude-blissful": [
-        154,
-        5,
+        124,
+        14,
         253,
         253
     ],

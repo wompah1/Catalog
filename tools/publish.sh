@@ -101,6 +101,8 @@ while read -r N REPO KEY; do
     if [ "$DRY" = 1 ]; then echo "publish: dry run, not pushing art $N"; continue; fi
     GIT_SSH_COMMAND="ssh -F /dev/null -i $KEY -o IdentitiesOnly=yes" \
         git push --force "git@github.com:$REPO.git" "refs/heads/public-art-$N:refs/heads/main"
+    # what the art site serves (public-art-N also moves on a dry run); sceneart.py prune reads it
+    git update-ref "refs/published/art-$N" "refs/heads/public-art-$N"
 done <<< "$SHARD_LIST"
 
 if [ "$DRY" = 1 ]; then echo "publish: dry run, not pushing"; exit 0; fi
