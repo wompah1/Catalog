@@ -165,8 +165,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r3h-neutral": [
-        61,
-        23,
+        58,
+        41,
         253,
         253
     ],
@@ -177,8 +177,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r3m-beaming": [
-        74,
-        47,
+        63,
+        46,
         253,
         253
     ],
@@ -213,8 +213,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r4h-neutral": [
-        50,
-        57,
+        59,
+        26,
         253,
         253
     ],
@@ -225,8 +225,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r4m-beaming": [
-        65,
-        14,
+        102,
+        23,
         253,
         253
     ],

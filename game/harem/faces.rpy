@@ -45,26 +45,26 @@ define harem_face_crops = {
         253
     ],
     "pc-r0-shirt-grin": [
-        89,
-        34,
+        69,
+        57,
         253,
         253
     ],
     "pc-r0-shirt-startled": [
-        86,
-        34,
+        73,
+        58,
         253,
         253
     ],
     "pc-r1-nude-flushed": [
-        39,
-        36,
+        57,
+        32,
         253,
         253
     ],
     "pc-r1-nude-startled": [
-        79,
-        7,
+        65,
+        33,
         253,
         253
     ],
@@ -105,8 +105,8 @@ define harem_face_crops = {
         253
     ],
     "pc-r4-nude-flushed": [
-        46,
-        24,
+        58,
+        44,
         253,
         253
     ],
@@ -123,14 +123,14 @@ define harem_face_crops = {
         253
     ],
     "pc-r4c-nude-flushed": [
-        43,
-        21,
+        60,
+        44,
         253,
         253
     ],
     "pc-r4c-sheer-flushed": [
-        32,
-        13,
+        57,
+        45,
         253,
         253
     ],
@@ -141,50 +141,50 @@ define harem_face_crops = {
         253
     ],
     "pc-r5-jewels-flushed": [
-        157,
-        24,
+        96,
+        56,
         253,
         253
     ],
     "pc-r5-jewels-smug": [
-        171,
-        12,
+        116,
+        45,
         253,
         253
     ],
     "pc-r5-nude-flushed": [
-        122,
-        23,
+        83,
+        57,
         253,
         253
     ],
     "pc-r5-nude-smug": [
-        109,
-        23,
+        110,
+        28,
         253,
         253
     ],
     "pc-r6-collar-flushed": [
-        91,
-        20,
+        82,
+        43,
         253,
         253
     ],
     "pc-r6-collar-grin": [
-        112,
-        23,
+        111,
+        55,
         253,
         253
     ],
     "pc-r6-collar-smug": [
-        108,
-        24,
+        86,
+        31,
         253,
         253
     ],
     "pc-r6-nude-flushed": [
-        107,
-        23,
+        82,
+        55,
         253,
         253
     ],
