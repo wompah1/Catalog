@@ -22,6 +22,7 @@ label rl_blue_sex:
     vn_sfx "Shlk. Shlk. Shlk."
     "His fist pumps yours up and down him. Root to tip. Your knuckles squeak on wet skin."
     rl_rory "\"Rematch— fine, rematch, but you can't just— {i}hah{/i}— grab a man's—\"" with vnfx("shake")
+    show miles neutral at vn_cast_slot
     rl_miles "\"Stop squirming.\""
     rl_rory "\"Two-handed hold! That's illegal! Ref! {i}REF{/i}—!\""
     show cg rl_blue_mid onlayer cgl
@@ -30,13 +31,16 @@ label rl_blue_sex:
     "Then his mouth comes down on your new tit."
     vn_sfx "Zzzt."
     rl_rory "\"Why is this— why does WRESTLING feel like— {i}nnngh{/i}—\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"You really don't get it, do you.\""
     rl_rory "\"I'm winning— I'm still winning— {i}ahh{/i}— why are my legs—\""
     show cg rl_blue_peak onlayer cgl
     "Chest to chest under the spray. Your fist on him, his fist on you, both of you going faster."
     rl_rory "\"...Oh. {i}OH{/i}. Is THAT what this— okay. OKAY. Don't you DARE stop.\"" with vnfx("shake")
+    show miles neutral at vn_cast_slot
     rl_miles "\"You drive me insane. You know that? Insane.\""
     rl_rory "\"Ohh— yeah— YEAH, like that, Thorne— I'm winning this one too—!\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Let me—\""
     show cg rl_blue_cum onlayer cgl
     "He hauls you back against his chest and lifts you half off the tiles, his fist flying on you."
@@ -52,6 +56,7 @@ label rl_stretches_sex:
     $ rl_enc = VNState(partner_came=True, pc_orgasms=0)
     vn_sfx "Glk. Glk. Glk."
     "He holds your head and rocks in slow. Your lips stretch round him. You glare up the whole length of him."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Two years. Two years of watching you. Hold {i}still{/i}.\""
     rl_rory "\"Mmf— {i}MMF{/i}—!\"" with vnfx("shake")
     vn_th "(Cheap shot— he's going DEEPER— I wasn't READY—)"
@@ -62,13 +67,16 @@ label rl_stretches_sex:
     "Every stroke drags over your tongue and your whole mouth goes {i}zzzt{/i}, straight down your spine."
     show rory flushed
     rl_rory "\"Okay— okay you're good at this— you're TOO good at this— {i}hah{/i}—\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Breathe. Breathe, you menace. That's it.\""
     show cg rl_stretches_peak onlayer cgl
     "Your bra's gone somewhere. Your tits sway every time he pulls you down. Spit everywhere."
     rl_rory "\"Mmh— {i}mmh{/i}—?!\"" with vnfx("shake")
     vn_th "(Oh. OH. Is THAT what this—)"
     "It lands, mouth full. You stop shoving his thighs and grab them instead, and go down on him like it's a race."
+    show miles neutral at vn_cast_slot
     rl_miles "\"You idiot. Even now you're grinning round it—\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Look up. Look at me. Fuck.\""
     show cg rl_stretches_cum onlayer cgl
     "Your little cock's throbbing in your shorts, untouched, every time he hits the back of your throat."
@@ -88,6 +96,7 @@ label rl_shed_sex:
     "He pushes in."
     rl_rory "\"Oi— that's a FOUL, Thorne— that's a {i}foul{/i}—!\"" with vnfx("shake")
     "He doesn't stop. Slow and thick and all the way, your back on the siding, your legs locked round him because he put them there."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Stop squirming.\""
     rl_rory "\"I'm not tapping— I'm NOT tapping out— get {i}off{/i}—!\""
     "You buck. He doesn't budge an inch."
@@ -97,9 +106,11 @@ label rl_shed_sex:
     show rory flushed
     "You're still shoving him. Every shove rides you harder onto him."
     rl_rory "\"Th-that doesn't count— {i}ohh{/i}—\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Second place, my arse. Who's on top now?\""
     "Your tiny cock bounces between you, leaking, forgotten. He finds the spot his fingers found and hits it. And hits it."
     rl_rory "\"Is this— a special technique— Coach never taught us {i}THIS{/i}—!\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"It's not a wrestling move, you idiot.\""
     show cg rl_shed_peak onlayer cgl
     show rory grin
@@ -108,9 +119,11 @@ label rl_shed_sex:
     rl_rory "\"Anything for my best mate. Go on.\""
     "Louder."
     rl_rory "\"GO ON.\"" with vnfx("shake")
+    show miles neutral at vn_cast_slot
     rl_miles "\"Mine. Say it. You're— {i}mine{/i}—\""
     show rory flushed
     rl_rory "\"Haa— go on— GO ON— you call that a pace? {i}Faster{/i}—!\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"So tight— you're so— fuck, you're perfect—\""
     show cg rl_shed_cum onlayer cgl
     rl_rory "\"Don't— don't you DARE stop— I mean— that's not what I— {i}AHH{/i}—!\""
@@ -125,17 +138,21 @@ label rl_girlfriend_sex:
     $ rl_enc = VNState(partner_came=True, pc_orgasms=0)
     "He pushes in. Slow. All the way. Your first time, and your new pussy takes him like it's been waiting all week."
     rl_rory "\"Ohh— {i}ohh{/i}— Miles— MILES—\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Let me— let me feel all of it. All of you.\""
     show cg rl_girlfriend_mid onlayer cgl
     vn_sfx "Shlk. Shlk. Shlk."
     "He kisses you while he moves, deep and slow, like he's got all morning. He has."
     rl_rory "\"Harder, Miles. Come ON. I've seen you run faster than that.\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"If you won't get it with words…\""
     "Slow, all the way in."
+    show miles neutral at vn_cast_slot
     rl_miles "\"…I'll keep showing you.\""
     show cg rl_girlfriend_peak onlayer cgl
     "Your hips find it before you do: up, down, squeeze. You've never done this in your life, and your body's known it for a week."
     rl_rory "\"Ahh— that's a personal best— that's a personal {i}BEST{/i}— again—!\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Every version of you. Every single one. Mine.\""
     rl_rory "\"Please— Miles— {i}please{/i}, more, I'll let you have the warm-up lap—!\""
     show cg rl_girlfriend_cum onlayer cgl
@@ -151,6 +168,7 @@ label rl_go_counter_sex:
     $ rl_enc = VNState(partner_came=True, pc_orgasms=0)
     "You squeeze your tits together round him and grin up the whole length of him."
     rl_rory "\"Bit slow off the blocks this morning, Miles. Want a head start?\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Let me—\""
     show cg rl_gocounter_mid onlayer cgl
     vn_sfx "Squish. Squish. Squish."
@@ -158,10 +176,12 @@ label rl_go_counter_sex:
     show rory flushed
     rl_rory "\"Look at you, all sweaty. Did I do that? I did that.\""
     "You crow it at him."
+    show miles neutral at vn_cast_slot
     rl_miles "\"You drive me insane. You know that? Insane.\""
     show cg rl_gocounter_peak onlayer cgl
     "Every stroke drags him over your nipples, and your whole chest goes {i}zzzt{/i}."
     rl_rory "\"Ohh— yeah— YEAH, like that, Miles— I'm winning this one too—!\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"You idiot. Even now—\""
     rl_rory "\"Don't make me beg— okay, I'm begging— I'm BEGGING— {i}please{/i}—!\""
     show cg rl_gocounter_cum onlayer cgl

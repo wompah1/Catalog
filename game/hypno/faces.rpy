@@ -789,8 +789,8 @@ define hypno_face_crops = {
         253
     ],
     "abarus:pc-r1-blueshirt-eager": [
-        69,
-        13,
+        107,
+        9,
         253,
         253
     ],

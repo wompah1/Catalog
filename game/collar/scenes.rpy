@@ -14,14 +14,17 @@ label co_couch_sex:
     show cg co_couch_sex_open onlayer cgl
     "His fingers are still in you when the voice tips you back down onto him."
     vn_th "(You were DONE. You were done—)"
+    show co_cal grin at vn_cast_slot
     co_cal "\"Eyes up. That's it. God, that mouth.\""
     vn_sfx "Glk. Glk. Glk."
     "Slow and wet. Your lips are sealed round him before you can find any way to say no that the collar won't turn into a moan."
     show cg co_couch_sex_mid onlayer cgl
+    show co_cal grin at vn_cast_slot
     co_cal "\"Keep talking round it. I love that voice on my cock.\""
     co_voice "\"Mmhh— {i}mmh{/i}— so {i}thick{/i}—\""
     "It talks round him in muffled purrs. He curls his fingers inside you in time, and your hips push back onto them."
     vn_th "(Stop moving. STOP moving. Why are you—)"
+    show co_cal grin at vn_cast_slot
     co_cal "\"You can't even look down at it, can you? Just take it by feel.\""
     show cg co_couch_sex_peak onlayer cgl
     "Your throat opens. Your nose finds his belly. Your cock is straining in your jeans and nobody's touched it."
@@ -42,6 +45,7 @@ label co_stairwell_sex:
     "Cal tugs your jeans down to your thighs. Cold air on your ass, and then his hands, warm, spreading you."
     vn_th "(Not here. Not on the STAIRS. Anyone could—)"
     "You try to twist away. Your hips push back toward him instead."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Easy. I've got you.\""
     vn_sfx "Shlk."
     "Slick, then the blunt head of him, then the push. Big. So big. Your whole body tries to close round the stretch and your ass just takes it."
@@ -49,11 +53,14 @@ label co_stairwell_sex:
     "You meant {i}stop{/i}. Every word you try comes out as his name."
     show cg co_stairs_mid onlayer cgl
     vn_sfx "Pap. Pap. Pap."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Fuck, you're tight. You're gripping me like you never want me out.\""
     "You can't shout. Every door on every floor would hear. So you grit your teeth, and the voice moans through them anyway."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Listen to you. The whole building can hear that voice.\""
     vn_th "(Let go of the rail. Let GO. Walk away. Walk—)"
     "Your knees are shaking. Your cock's leaking down your thigh. Your ass squeezes him on every stroke like it's been doing this for years."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Chin up. Look at me while I fuck you.\""
     "He laughs, because the collar's already doing it."
     show cg co_stairs_peak onlayer cgl
@@ -61,6 +68,7 @@ label co_stairwell_sex:
     "You hold the rail because you need something to hold. You stop fighting your hips. You let it happen to you, and it happens, all of it, faster."
     co_voice "\"Again— again— harder, Cal, {i}harder{/i}—\"" with vnfx("shake")
     vn_th "(You don't want this. You don't. You just can't stop it any more.)"
+    show co_cal grin at vn_cast_slot
     co_cal "\"You want to know what I see? I see you taking every inch and begging for more.\""
     show cg co_stairs_cum onlayer cgl
     co_voice "\"{i}Ahhh{/i}— Cal— I'm— {i}AHH{/i}—!\""
@@ -76,12 +84,15 @@ label co_roof_sex:
     show cg co_roof_sex_open onlayer cgl
     "You sink back down on him. All the way. Your choice."
     co_you "\"Again. I want it again.\""
+    show co_cal grin at vn_cast_slot
     co_cal "\"Look at you up there. Look at you.\""
     vn_sfx "Pap. Pap."
     show cg co_roof_sex_mid onlayer cgl
     "You ride him slow, then not slow, your hands on his shoulders, the stars swinging overhead."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Your tits are bouncing. You can't see them, but trust me, they're bouncing.\""
     co_you "\"Tell me— tell me how much—\""
+    show co_cal grin at vn_cast_slot
     co_cal "\"{i}Chin up{/i}.\""
     "He says it against your throat, right at the edge of the collar, and you shiver all the way down onto him."
     show cg co_roof_sex_peak onlayer cgl
@@ -99,11 +110,13 @@ label co_whole_day_sex:
     $ co_enc = VNState(partner_came=True, pc_orgasms=0)
     show cg co_day_sex_open onlayer cgl
     "He's still in you. You bend back over the worktop and push back onto him, and he laughs, and starts again."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Your ass is filling out, you know that? I can feel it every time I pull back.\""
     vn_sfx "Pap. Pap. Pap."
     show cg co_day_sex_mid onlayer cgl
     co_you "\"Harder— make them bounce— {i}harder{/i}—\""
     "Your tits drag on the worktop. His hand finds your soft little cock again and just holds it, fondly, while he fucks you."
+    show co_cal grin at vn_cast_slot
     co_cal "\"You're softer every time I get my hands on you.\""
     show cg co_day_sex_peak onlayer cgl
     co_you "\"Cal— {i}Cal{/i}— I'm— oh, {i}fuck{/i}—!\"" with vnfx("shake")

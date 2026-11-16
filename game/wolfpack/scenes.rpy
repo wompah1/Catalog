@@ -10,6 +10,7 @@
 label wlf_round_one_sex:
     $ vn_enter(bg="wlf_den_night", pc="furious", pc_tag="wlf_pc", cast=[], cg="wlf_r1_round")
     "He never pulled out. He just starts again, slow, the whole thick length of him dragging back through the mess he made."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Hold.\""
     "His weight comes down across your back, and you can't get your knees under you."
     wlf_you "\"Let go of my neck— {i}let go{/i}— I'm not low ANYTHING—!\""
@@ -18,27 +19,32 @@ label wlf_round_one_sex:
         "Order him off":
             $ wlf.say1 = "demand"
             wlf_you "\"Get OFF me— that's an ORDER— I outrank every one of you—!\""
+            show wlf_alpha flat at vn_cast_slot
             wlf_alpha "\"Loud. Good.\""
             "He drives into the same spot, unhurried."
         "Mock him":
             $ wlf.say1 = "mock"
             wlf_you "\"That's IT? That's the big bad pack? I've had rougher {i}surveys{/i}—!\""
+            show wlf_alpha flat at vn_cast_slot
             wlf_alpha "\"Hold. Take it.\""
             "His palm flattens you back down onto the furs."
         "Scream for anybody":
             $ wlf.say1 = "scream"
             wlf_you "\"SOMEBODY— anybody— get this— get him {i}OFF{/i} me—!\""
             "The cave throws it straight back at you."
+            show wlf_alpha flat at vn_cast_slot
             wlf_alpha "\"Loud.\""
             "He says it approving, while you swear at him at the top of your lungs."
     show cg wlf_r1_round_mid onlayer cgl
     vn_sfx "{i}Slap. Slap.{/i}"
     show wlf_pc flushed
     wlf_you "\"This isn't— this doesn't COUNT for rank— does it count— {i}hahh{/i}—\""
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Wet. Mine.\""
     "His teeth rest on your nape. Not biting. Just there."
     "Your hips push back onto him on their own."
     wlf_you "\"That's— that's a reflex— {i}hah{/i}— that doesn't {i}count{/i}—\""
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Full soon.\""
     "The thick base of him presses at your rim, and stays outside."
     show cg wlf_r1_round_peak onlayer cgl
@@ -50,6 +56,7 @@ label wlf_round_one_sex:
 label wlf_queue_sex:
     $ vn_enter(bg="wlf_spring", pc="furious", pc_tag="wlf_pc", cast=[], cg="wlf_queue_again")
     "They queue up again. Same order. Grey's hand is already back on the small of your back."
+    show wlf_grey flat at vn_cast_slot
     wlf_grey "\"By rank. Take it.\""
     wlf_you "\"Don't you {i}dare{/i} call that presenting— I was WASHING—!\""
     menu:
@@ -57,11 +64,13 @@ label wlf_queue_sex:
         "Order them off":
             $ wlf.say2 = "demand"
             wlf_you "\"Let me UP. I'm not asking. Let me— {i}nngh{/i}— {i}UP{/i}—!\""
+            show wlf_grey flat at vn_cast_slot
             wlf_grey "\"Second.\""
             "His hand on your nape keeps your cheek on the moss."
         "Plead with them":
             $ wlf.say2 = "plead"
             wlf_you "\"Alright— alright, you made your point— get {i}off{/i}— please— get {i}off{/i}—!\""
+            show wlf_grey flat at vn_cast_slot
             wlf_grey "\"Full already?\""
             "He doesn't wait for an answer."
         "Growl at them":
@@ -72,15 +81,19 @@ label wlf_queue_sex:
     vn_sfx "{i}Slap. Slap. Slap.{/i}"
     show wlf_pc flushed
     "One at a time. Grey, thorough, until he's done; then Notch, all hurry, grinning."
+    show wlf_notch grin at vn_cast_slot
     wlf_notch "\"My turn. {i}Mine{/i}.\""
     "He grins and doesn't let go of your hips."
     wlf_you "\"Stop finding it— stop {i}finding{/i} that— {i}ahh{/i}— I'm going to {i}kill{/i} you—\""
     "Your tiny cock's leaking all over the moss."
     wlf_you "\"That's— that's not {i}me{/i}— {i}nnh{/i}— that's not—\""
+    show wlf_bramble grin at vn_cast_slot
     wlf_bramble "\"Make full.\""
     show cg wlf_queue_again_peak onlayer cgl
+    show wlf_scrap shy at vn_cast_slot
     wlf_scrap "\"Sorry.\""
     "He doesn't stop."
+    show wlf_scrap shy at vn_cast_slot
     wlf_scrap "\"Not sorry.\""
     wlf_you "\"Don't stop— I hate you— don't you {i}stop{/i}— fill it— {i}fill{/i} it—!\"" with vnfx("shake")
     jump wlf_queue_after
@@ -88,6 +101,7 @@ label wlf_queue_sex:
 ## ---- RUNG 3's round again: Grey takes it out of your hands, and it flips at the break -----------
 label wlf_second_sex:
     $ vn_enter(bg="wlf_den", pc="furious", pc_tag="wlf_pc", cast=[], cg="wlf_second_again")
+    show wlf_grey flat at vn_cast_slot
     wlf_grey "\"Stop. Wriggling.\""
     "His fist closes round the root of your tail and holds it aside, and he's back in you before you've finished turning over."
     wlf_you "\"Not like— not like THIS— I was going to {i}ride{/i} you—!\""
@@ -97,6 +111,7 @@ label wlf_second_sex:
         "Tell him you're running this":
             $ wlf.say3 = "protest"
             wlf_you "\"I'm running this— I'm {i}running{/i} this, Grey— let me UP—!\""
+            show wlf_grey flat at vn_cast_slot
             wlf_grey "\"Stop. Wriggling.\""
             "He leans his weight on your hips until you do."
         "Grab for your tail":
@@ -106,6 +121,7 @@ label wlf_second_sex:
         "Mock him":
             $ wlf.say3 = "mock"
             wlf_you "\"Two words at a time— is that all the brain you lot— {i}nngh{/i}— can manage—?\""
+            show wlf_grey flat at vn_cast_slot
             wlf_grey "\"Second.\""
             "Like it settles something."
     show cg wlf_second_again_mid onlayer cgl
@@ -120,8 +136,10 @@ label wlf_second_sex:
     wlf_you "\"…Low pack? I'll show you low pack.\""
     "You slam back onto him."
     wlf_you "\"Again. {i}AGAIN{/i}.\""
+    show wlf_grey flat at vn_cast_slot
     wlf_grey "\"Tight. Good.\""
     "When Grey's done, Bramble's next, and Scrap after him with his face on fire, one at a time, and you call each of them up yourself."
+    show wlf_bramble grin at vn_cast_slot
     wlf_bramble "\"Messy or clean?\""
     wlf_you "\"{i}Ahh{/i}— yes— right there— that's rank, that is— that's {i}rank{/i}—!\"" with vnfx("shake")
     jump wlf_second_after
@@ -136,11 +154,13 @@ label wlf_knot_sex:
     else:
         wlf_you "\"My pace— it was supposed to be MY pace— get your hand off my {i}neck{/i}—!\""
         "He doesn't answer. His hand stays exactly where it is."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Hold.\""
     "He pushes in. Slow. Enormous. Exactly as slow as he wants, and not one inch faster."
     wlf_you "\"I said KNOT me— I didn't say hold me DOWN— let me {i}up{/i}—!\""
     show cg wlf_knot_mid onlayer cgl
     vn_sfx "{i}Slap.{/i}"
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Take it.\""
     "His hand spreads flat on the small of your back."
     show wlf_pc flushed
@@ -148,6 +168,7 @@ label wlf_knot_sex:
     wlf_you "\"It's too— it's too {i}much{/i}— why does it— why's it so {i}good{/i} pinned—\""
     "The knot thumps your rim and your whole body answers it."
     wlf_you "\"Don't— {i}don't{/i}— oh, do it— {i}don't{/i}—\""
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Breed you.\""
     "He doesn't speed up. He doesn't need to."
     show cg wlf_knot_break onlayer cgl
@@ -158,25 +179,30 @@ label wlf_knot_sex:
 label wlf_knot_locked_sex:
     $ vn_enter(bg="wlf_den", pc="flushed", pc_tag="wlf_pc", cast=[], cg="wlf_locked")
     "Still tied. Still hard. He rolls his hips, and the knot tugs inside your new cunt, and you push back for more."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Wet. Tight. Mine.\""
     menu:
         "Locked on the knot, at the back wall."
         "Order him deeper":
             $ wlf.say4 = "demand"
             wlf_you "\"Deeper. I said {i}deeper{/i}. Do I have to say it twice?\""
+            show wlf_alpha flat at vn_cast_slot
             wlf_alpha "\"Slow. There. There.\""
         "Tease him":
             $ wlf.say4 = "tease"
             wlf_you "\"You're shaking already? Go on. Earn it.\""
+            show wlf_alpha flat at vn_cast_slot
             wlf_alpha "\"Loud.\""
             "You already are."
         "Let the moan out":
             $ wlf.say4 = "moan"
             wlf_you "\"Mmh— {i}mmhh{/i}— deeper— the whole den should hear this— {i}louder{/i}—!\""
     show cg wlf_locked_mid onlayer cgl
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Good pack.\""
     "His thumb rubs the root of your tail."
     wlf_you "\"Hahh— that's it— breed it— breed it {i}properly{/i}—!\""
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Take it. All.\""
     show cg wlf_locked_peak onlayer cgl
     wlf_you "\"Don't stop— don't you {i}dare{/i} stop— I'm— {i}AHH{/i}— fill it— {i}fill{/i} it—!\"" with vnfx("shake")
@@ -186,6 +212,7 @@ label wlf_knot_locked_sex:
 label wlf_order_sex:
     $ vn_enter(bg="wlf_den", pc="smug", pc_tag="wlf_pc", cast=[], cg="wlf_order_round")
     "Scrap first again, because you say so, kneeling between your knees, careful of the belly and nothing else."
+    show wlf_scrap shy at vn_cast_slot
     wlf_scrap "\"First tonight. First.\""
     "He can't get over it."
     menu:
@@ -201,8 +228,10 @@ label wlf_order_sex:
             "You throw your head back and yell it at the roof of the cave, loud enough to carry to the lake."
             wlf_you "\"{i}YES{/i}—!\""
     show cg wlf_order_round_mid onlayer cgl
+    show wlf_notch grin at vn_cast_slot
     wlf_notch "\"Good pack. So tight.\""
     "Notch, when you swap them, fast and grinning, hands braced wide of the belly."
+    show wlf_bramble grin at vn_cast_slot
     wlf_bramble "\"Good pack. Slow.\""
     "Bramble last, slow and endless, rocking you."
     show cg wlf_order_round_peak onlayer cgl
@@ -216,12 +245,14 @@ label wlf_gift_sex:
         "You bent for him at the mouth of his own den, and he turned, and he came up on his knees behind you like it was the only thing left in the world to do."
     else:
         "You knelt behind him and opened yourself with your own fingers, wet and waiting, and he turned, and he came up on his knees behind you like it was the only thing left in the world to do."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Mine.\""
     "Low. His mouth at your throat."
     wlf_you "\"No. Mine. Slow if you want. But {i}all{/i} of it.\""
     "You tell him, and roll your hips back onto him, slow."
     show cg wlf_gift_mid onlayer cgl
     "He's the gentlest he's ever been. He lets you run it. Every stroke is yours: you rock back and he fills you, you hold and he holds, his palms spread under your belly, his thumb in slow circles on your clit."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Easy. Slow. There.\""
     menu:
         "Your den. Your pace. Him, holding still for you."
@@ -253,7 +284,12 @@ label wlf_back_wall_sex:
                       Scrap=("\"Want this. Want this.\"", "\"Good pack. So good.\""))
         _lines["Old Man"] = ("\"Easy. Good pack.\"", "\"Steady. Take it.\"")
         _w1, _w2 = _lines.get(wlf.wall, _lines["Bramble"])
+        # the speaker's sprite in the box (owner, 2026-11-15): the wolf the PC called to the back wall
+        _spr = {"Alpha": ("wlf_alpha", "flat"), "Grey": ("wlf_grey", "snarl"), "Notch": ("wlf_notch", "grin"),
+                "Bramble": ("wlf_bramble", "grin"), "Scrap": ("wlf_scrap", "eager"), "Old Man": ("wlf_oldman", "kind")}
+        _spr = _spr.get(wlf.wall, _spr["Bramble"])
     "He's in you on the first push, deep, and you rock back to meet him."
+    $ renpy.show(_spr, at_list=[vn_cast_slot])
     $ renpy.say(_who, _w1)
     menu:
         "The back wall. Whoever you called."
@@ -267,6 +303,7 @@ label wlf_back_wall_sex:
             $ wlf.say7 = "moan"
             wlf_you "\"Oh— {i}oh{/i}— good— so {i}good{/i}— don't you slow down on me—!\""
     show cg wlf_wall_mid onlayer cgl
+    $ renpy.show(_spr, at_list=[vn_cast_slot])
     $ renpy.say(_who, _w2)
     wlf_you "\"Don't stop— don't you {i}dare{/i} stop— fill it— {i}fill{/i} it—!\"" with vnfx("shake")
     jump wlf_back_wall_after

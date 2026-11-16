@@ -90,6 +90,7 @@ label scl_first_night:
     show cg scl_first_pin onlayer cgl
     show scl_pc protesting
     "A tail. Red-gold, thick as your thigh, laid across your chest and pinning both your arms under the blanket. And Long Qi, crouched over your face. Red twin tails falling either side of you. Horns black against the lamp. Robe open to the waist."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Household. Mouth.\""
     "Not cruel. Not a question either. The voice of a clerk reading out the next line of a form."
     "She's hard. Thick, heavy at the root, arching up out of a brush of copper scales between her thighs. Faint ridges run down the underside and catch the lamplight every time it twitches. A clear bead rolls off the tip and lands on your lip."
@@ -98,29 +99,35 @@ label scl_first_night:
     "The head of it is on your mouth before you've finished the word. Hot as a coal. It smells like hot metal and salt and smoke. Her claws tip your chin up, and your jaw opens because the hinge of it is in her hand."
     show scl_pc flushed
     "Under the blanket, your own small cock has gone stiff and aching just from the smell of her. You didn't tell it to. Your face burns."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Breathe, household.\""
     "She slides in."
     "No ceremony. Your lips stretch round her. The first ridge drags over your tongue, {i}bump{/i}, then the next. Her fist closes in your hair and tilts your head open, and her tail stays exactly where it is."
     vn_sfx "{i}Glk.{/i}"
     scl_you "\"Mmf— {i}mmnh{/i}— Lmmf— {i}Lady{/i}—!\""
     "You're loud from the first ridge. It's meant to be a no. It comes out round her cock as a long muffled moan, and the gallery carries it, and she doesn't care in the slightest."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Louder.\""
     "She observes it. It isn't an order. You were already louder."
     vn_sfx "{i}Glk. Glk. Hlk.{/i}"
     "You buck. The tail doesn't move. You twist your head and her hand turns it straight back. Spit runs off your chin onto her scales. She rocks, slow, relentless, a little deeper every time, until a ridge catches at the back of your throat and {i}pops{/i} past."
     scl_you "\"Hhngh— {i}mmmh{/i}— {i}mmmmh{/i}—!\""
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Good.\""
     "Simple. Satisfied. The voice of an account that balanced."
     "She pulls back. All the way, till only the head rests on your tongue, and lets you breathe. One gasp. Two. A string of spit from your lip to her tip."
     scl_you "\"Hah— {i}hah{/i}— Lady— I didn't— I'm not— that's not what household's {i}for{/i}—\""
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Household serves at night. This is the night.\""
     "Then back in. Slower. Every ridge, one at a time. {i}Bump. Bump. Bump.{/i} Your tongue finds the soft place under her head, and you didn't send it there, and she breathes out through her nose, long, and a thick pulse of pre-cum runs straight down your throat."
     "And your mouth sucks. You don't decide to. Your cheeks hollow round her all on their own, and the noise you make is wet and greedy and loud enough to wake the gallery, and inside your head you're still saying {i}no{/i}."
     scl_you "\"It's the— {i}mmf{/i}— it's the {i}steam{/i}— {i}glk{/i}—\""
     "Somewhere down the hall, a door closes, tactfully."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Louder.\""
     "She says it again, idly. You are."
     "Under your blanket your cock's leaking now. Small, and hard, and aching, and nothing's touching it. She notices. She notices everything. Her hips push in."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Household is eager.\""
     "You shake your head round her. No. No. Your hips are rolling up under the blanket the whole time."
     show cg scl_first_flood onlayer cgl
@@ -140,10 +147,12 @@ label scl_first_night:
 label scl_mouth_after:
     $ vn_enter(bg="scl_quarters_night", pc="flushed", pc_tag="scl_pc", cast=[], cg="scl_first_again_end")
     "She comes again with a low grunt, her claws tight in your hair, and you swallow all of it because she doesn't let you do anything else. It's thicker the second time."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Good.\""
     "You came again. Under the blanket, untouched, just from her in your throat. It's a mess. She looks down at the damp patch, and at your face, and doesn't say anything at all. Her tail curls a little."
     scl_you "\"Hah— {i}hah{/i}— I said— Lady, I {i}said{/i}—\""
     "Your jaw's loose and warm. Your lips are puffy and slick. You can taste her everywhere."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Noted.\"\n{size=-5}{color=#ff8fa3}▸ Lie back down{/color}{/size}"
     jump scl_first_rest
 
@@ -152,12 +161,15 @@ label scl_first_rest:
     $ scl.rung_day = vn_clock.day
     $ vn_enter(bg="scl_quarters_night", pc="flushed", pc_tag="scl_pc", cast=[], cg="scl_first_rest")
     "She wipes your chin with her thumb. Then sucks the thumb clean."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Good.\""
     "This time there's something under it. Approval."
     "You think she'll go. She doesn't. She lies down on your bedding roll, which is nowhere near big enough for her, and gathers you in. Her arm across your shoulders. Her cock resting hot against your cheek. Her tail draped heavy over your hip, so you aren't going anywhere."
     scl_you "\"Lady— I can serve— other ways— I can do the {i}floors{/i}—\""
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"You will. In the morning.\""
     "She agrees. Her cock twitches against your mouth. Your tongue comes out and licks it. Once. You didn't send it. You clamp your lips shut, face on fire, and she makes a small pleased sound into your hair."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"{i}Mm{/i}. You've tasted me. Now rest.\""
     "Her fingers slide into your hair. Not pushing. Just there."
     "You fall asleep like that, pinned under her tail, with her taste at the back of your throat."
@@ -321,16 +333,26 @@ label scl_day:
             show scl_tieshan booming at vn_cast_slot
             scl_tieshan "\"Eleven years, fourth sister! It's not a criticism, it's an {i}accounting{/i} problem!\""
             "Tie Shan, the boar lord, booms it across the stone."
+            hide scl_tieshan
+            show scl_longqi calm at vn_cast_slot
             scl_longqi "\"Noted.\""
             "She doesn't look at you. She very carefully doesn't look at you."
         elif _t == 4:
             "The docket case on your hip, your twin tails down your back. Tie Shan again:"
+            hide scl_longqi
+            show scl_tieshan booming at vn_cast_slot
             scl_tieshan "\"Eleven years, fourth sister.\""
+            hide scl_tieshan
+            show scl_longqi calm at vn_cast_slot
             scl_longqi "\"Noted.\""
             "A scribe's eyes slide from the blank line on the roll to you. And back."
         else:
             "You hold the case with your tail tucked tight against your leg."
+            hide scl_longqi
+            show scl_tieshan booming at vn_cast_slot
             scl_tieshan "\"Eleven years.\""
+            hide scl_tieshan
+            show scl_longqi calm at vn_cast_slot
             scl_longqi "\"Noted.\""
             show scl_boyan delighted at vn_cast_slot
             "Across the terrace, Bo Yan looks straight at you and smiles."
@@ -619,6 +641,7 @@ label scl_pearls_lap:
 label scl_pearls_after:
     $ vn_enter(bg="scl_cushions", pc="soft", pc_tag="scl_pc", cast=[], cg="scl_pearls_again_end")
     "She comes again, her claws dragging down your pearls, and you scream into the cushions. It's the second load tonight, and you feel all of it, hot, running down the backs of your thighs."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Good girl.\""
     "She says it again, and it lands in your stomach like the knot does."
     "You don't argue. You can't. You lie face-down in her cushions with your ass in the air and her cum leaking out of you and your pearls shining, and you make a small, happy, wrecked noise into the silk.\n{size=-5}{color=#ff8fa3}▸ Lie in her arms{/color}{/size}"
@@ -850,6 +873,7 @@ label scl_pool_rest:
     $ vn_enter(bg="scl_black_pool", pc="soft", pc_tag="scl_pc", cast=[], cg="scl_pool_lap")
     "She pulls you into her lap, sticky and dripping, her cock pressed up between your tits like a signature. Her arms go round you. You collapse against her in the steam."
     "She bends her head and takes your nipple in her mouth again, lazily, licking her own cum off it. You whimper and squirm and she holds you still with her tail and does the other one too."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"Mine.\""
     scl_you "\"Yours.\""
     "You hear yourself say it, and you don't even flinch."
@@ -1377,6 +1401,7 @@ label scl_offering:
     "Now it meets the core in your stomach, and stops."
     hide cg onlayer cgl
     "You walk to the foot of the steps. Not a knee on the stone. Your head up. Your tail heavy behind you. Your hands sweating."
+    show scl_tieshan booming at vn_cast_slot
     scl_tieshan "\"Well? Who files a petition at this hour?\""
     menu:
         "Your mouth's dry. You open it."
@@ -1393,6 +1418,7 @@ label scl_offering:
             "It comes out soft. You don't fix it."
     "Bo Yan laughs, delighted, all the way down the balustrade. Tie Shan's head inclines."
     "The dragon at the fourth perch doesn't move for a long time."
+    show scl_longqi calm at vn_cast_slot
     scl_longqi "\"If this is your will, then offer your name. The law will bind, or it will not.\""
     "Her voice is so low the stone hums. You climb onto the steps. The scribes lift their brushes."
     show cg scl_name onlayer cgl

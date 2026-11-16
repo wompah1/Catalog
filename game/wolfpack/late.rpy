@@ -95,6 +95,7 @@ label wlf_knot:
     vn_sfx "{i}Thud.{/i} {i}Thud.{/i}"
     "The knot's there, swelling at the base of him, slamming against your rim on every stroke. Fat and hot and bigger every time. Stretching you. Holding you right at the edge."
     wlf_you "\"You holding out on me? {i}Alpha.{/i} Don't you— {i}don't you dare{/i}—\""
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Take it. Breed you.\""
     "He pulls back, and drives in, and you shove back to meet him, yelling, and the stretch goes wider, and wider, so full your whole body is just {i}stretch{/i}, a huge, hot, overwhelming fullness—"
     show cg wlf_knot_pop onlayer cgl
@@ -119,6 +120,7 @@ label wlf_knot:
     show cg wlf_knot_fill onlayer cgl
     "He pumps into you."
     "Not into your ass. Into {i}that{/i}. Brand new and clamped round him, and it ripples, and {i}swallows{/i}, and he keeps coming. Load after load, thick hot pulses, the knot holding every drop in."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Full. Breed you. Full.\""
     "Into your ear."
     "And you {i}know{/i}. Flat and certain as a compass bearing."
@@ -130,9 +132,11 @@ label wlf_knot:
     "He can't pull out. He doesn't try. He rocks, tiny shallow rolls of his hips with the knot lodged deep, and every one of them grinds it against something in your new cunt that makes your toes curl."
     show wlf_pc flushed
     wlf_you "\"{i}Hahh{/i}— oh— oh that's— don't— {i}don't{/i} stop doing that—\""
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Take it.\""
     wlf_you "\"Again. Tight. {i}More.{/i}\""
     "You order him, in his own register."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Breed you. Full.\""
     "He pushes forward even though the knot can't go any further, and it {i}stretches{/i}, and you scream into the furs and come again, clenching so hard on him he groans out loud. Cum and slick drool out round the knot and down the insides of your thighs."
     wlf_you "\"You don't stop. You keep me like this. Knot me forever. Breed me {i}deep{/i}. Deeper. {i}Good.{/i} Fuck. {i}Keep going.{/i}\""
@@ -140,6 +144,7 @@ label wlf_knot:
     "Nobody in the den has ever been quiet about anything. You're the loudest of the lot."
     show cg wlf_knot_groom onlayer cgl
     "Locked, the whole middle of it goes slow. He grooms you through it, his tongue up your spine, his fingers combing your hair and tugging your ears, a big hand palming your little tits, squeezing your nipples till you squirm on the knot."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Mine now. Keep you. Take it.\""
     show cg wlf_old_back onlayer cgl
     "Up at the mouth, Old Man is untangling a hide. Very carefully. With his back to you."
@@ -159,6 +164,7 @@ label wlf_first_pack:
     "You order him, half broken."
     "He crushes you in against his chest, mouth at your ear, and says it, deep and sure."
     $ wlf_advance(4)
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"[WLF_VERDICT[4]]\""
     show wlf_pc smug
     wlf_you "\"…First pack. FIRST. Again.\""
@@ -259,6 +265,7 @@ label wlf_most_nights:
         show cg wlf_nights_notch onlayer cgl
         wlf_you "\"Notch. Here.\""
         "You lie back and spread your knees round the belly, and he's on you in a heartbeat, sliding into your cunt with a happy groan."
+        show wlf_notch grin at vn_cast_slot
         wlf_notch "\"Take all. So tight. {i}So tight.{/i}\""
         wlf_you "\"Slow {i}down{/i}— no— don't— {i}ahh{/i}—\""
         "He's fast and eager and grinning, his hands careful on the belly, his hips not careful at all, and you're squealing and laughing and coming on him before he does."
@@ -266,6 +273,7 @@ label wlf_most_nights:
         show cg wlf_nights_grey onlayer cgl
         wlf_you "\"Grey.\""
         "You hold out a hand. He takes it, and lies down behind you, and slides into your cunt from behind, slow, one arm under the belly holding the weight of it."
+        show wlf_grey flat at vn_cast_slot
         wlf_grey "\"Full already?\""
         wlf_you "\"Never.\""
         "You moan it, and push back on him, and he fucks you deep and steady while his hand cups the belly, until you're shaking and squeezing on him."
@@ -273,6 +281,7 @@ label wlf_most_nights:
         show cg wlf_nights_bramble onlayer cgl
         wlf_you "\"Bramble.\""
         "He's already there, already curled behind you, already hard. He slides into your cunt like he's coming home, and rocks."
+        show wlf_bramble grin at vn_cast_slot
         wlf_bramble "\"Slow now. Make full.\""
         wlf_you "\"{i}Mmhhh{/i}— yes— like that—\""
         "Slow and endless, his arm round the belly, his breath in your ear, until you come in long, rolling shudders that don't stop."
@@ -389,12 +398,14 @@ label wlf_order:
     wlf_you "\"Not {i}that{/i}— {i}in{/i}— get {i}in{/i} me—\""
     "You guide him with your hand. He sinks in slow, so slow, careful of the belly between you, one big hand under it holding the weight."
     wlf_you "\"{i}Ahhh{/i}— yes— {i}Scrap{/i}—\""
+    show wlf_scrap eager at vn_cast_slot
     wlf_scrap "\"Let me. Want this. {i}First tonight.{/i}\""
     "He gasps it, already in to the root."
     show cg wlf_order_scrap_milk onlayer cgl
     "He rocks into you, slow and shallow and reverent, and then he leans down and closes his mouth on your nipple, and {i}sucks{/i}."
     "Milk spurts. Hot, straight into his mouth, running down your tit, and the pull of it goes right down into your cunt."
     wlf_you "\"Oh {i}god{/i}— yes— {i}drink{/i}— don't you {i}dare{/i} stop—\""
+    show wlf_scrap eager at vn_cast_slot
     wlf_scrap "\"Breed you. Mine now. Breed you.\""
     "He pants it round your nipple."
     wlf_you "\"Louder, Scrap. Tell them you're {i}first{/i}. Tell all of them.\""
@@ -419,10 +430,12 @@ label wlf_order_notch:
     wlf_you "\"Cock. In. Now.\""
     show cg wlf_order_notch onlayer cgl
     "He fumbles. He obeys. He's in you in one slick shove, hissing."
+    show wlf_notch grin at vn_cast_slot
     wlf_notch "\"Take all. {i}Take all.{/i} So tight.\""
     wlf_you "\"Full. {i}Hard.{/i} You want a real turn, you fill me.\""
     "Every word's a crack of the whip, and he gives you everything, wild, fast, hands wide and braced either side of the belly so he never knocks it, tail going like mad."
     "You squeeze your own tit and milk spurts straight up into his face. He moans like you've shot him."
+    show wlf_notch grin at vn_cast_slot
     wlf_notch "\"Mine now. Squeeze it. Wet cunt. {i}Full—{/i}\""
     show wlf_pc flushed
     "His teeth close on your nipple and he sucks a mouthful of milk and comes, emptying into you, and the pull of his mouth sets you off again, arching, gushing milk, coming round his cock." with vnfx("shake")
@@ -444,6 +457,7 @@ label wlf_order_bramble:
     "He grins his crooked grin and sinks you down onto him."
     show wlf_pc flushed
     wlf_you "\"{i}Haaaah{/i}—\""
+    show wlf_bramble grin at vn_cast_slot
     wlf_bramble "\"Breed you. Mine now. Full.\""
     wlf_you "\"Harder— I want to feel it {i}everywhere{/i}—\""
     show cg wlf_order_bramble onlayer cgl
@@ -512,6 +526,7 @@ label wlf_den_is_yours:
     "The guard's place. The lowest post in the den."
     "He doesn't look in at you. One ear flicks at the last of the birdsong. And he says it."
     $ wlf_advance(6)
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"[WLF_VERDICT[6]]\""
     "It rings off the stone."
     "Better than the knot. Better than all of it. The top of the den, by open declaration."
@@ -617,26 +632,31 @@ label wlf_back_wall:
     elif wlf.wall == "Grey":
         wlf_you "\"Grey.\""
         "He comes straight over, gold eyes bright, and you turn and present for him, face-down, tail high."
+        show wlf_grey flat at vn_cast_slot
         wlf_grey "\"Full already?\""
         "You laugh into the furs."
     elif wlf.wall == "Notch":
         wlf_you "\"Notch.\""
         "He's there before you've finished saying it, grinning, tail going, and you go down for him on your elbows and wiggle."
+        show wlf_notch grin at vn_cast_slot
         wlf_notch "\"So tight.\""
         "He breathes it, before he's even touched you."
     elif wlf.wall == "Old Man":
         wlf_you "\"Old Man.\""
         "He gets up from the fire slowly, and comes over with every courtesy, and you present for him like a lady."
+        show wlf_oldman kind at vn_cast_slot
         wlf_old "\"Breed. Courtesy.\""
         "You snort."
     elif wlf.wall == "Scrap":
         wlf_you "\"Scrap.\""
         "His ears shoot up. He comes over like he's been promoted all over again, and you present for him and look back and wink."
+        show wlf_scrap shy at vn_cast_slot
         wlf_scrap "\"Let me.\""
         "Still. After everything."
     else:
         wlf_you "\"Bramble.\""
         "He's already halfway over, burrs and all, and you roll onto your knees and present for him with a long, lazy stretch."
+        show wlf_bramble grin at vn_cast_slot
         wlf_bramble "\"Messy or clean?\""
         wlf_you "\"{i}Messy.{/i}\""
     "You push back onto him.\n{size=-5}{color=#ff8fa3}▸ Push back onto him{/color}{/size}"

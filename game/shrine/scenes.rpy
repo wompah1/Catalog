@@ -84,10 +84,12 @@ label shr_hands_round:
 ## in your mouth, no anal.) Slate between your squeezed thighs, Flint in your left hand.
 label shr_legs_sex:
     $ vn_enter(bg="shr_gate_dusk", pc="furious", pc_tag="shr_pc", cast=[], cg="shr_legs_open")
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Tighter, Lady? Tighter. Lovely.\""
     "Your thighs squeeze on him, and you yell at them."
     shr_you "\"Put me DOWN— that's my— that's my LEG— {i}hnngh{/i}—!\""
     "Your left hand keeps on at Flint, slow and expert, root to tip, thumb over the head, the way it did to you last night."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Hold still.\""
     menu:
         "Slate between your thighs. Flint in your fist. Your legs and your hands, hers."
@@ -95,11 +97,13 @@ label shr_legs_sex:
             $ shr.say2 = "demand"
             shr_you "\"Let GO of me— both of you— and you, get OUT of my head—!\""
             "Your thighs squeeze tighter. Your fist speeds up on Flint."
+            show shr_slate grin at vn_cast_slot
             shr_slate "\"Don't look at me, she's the one doing it.\""
         "Plead with them":
             $ shr.say2 = "plead"
             shr_you "\"Make her stop— you can make her stop, can't you— {i}please{/i}—!\""
             "Flint looks at you for a long moment, your hand still working him."
+            show shr_flint flat at vn_cast_slot
             shr_flint "\"Gate's shut.\""
         "Scream for anybody":
             $ shr.say2 = "scream"
@@ -108,6 +112,7 @@ label shr_legs_sex:
     show cg shr_legs_mid onlayer cgl
     vn_sfx "{i}Shlk. Shlk. Shlk.{/i}"
     "Slate rocks up between your thighs from behind, slick now, every stroke dragging along the underside of your balls, the head of him nudging out the front of your skirt."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Evening, Lady. Brought him down again?\""
     "He laughs into your neck and keeps rocking."
     show shr_pc flushed
@@ -128,6 +133,7 @@ label shr_mouth_sex:
     $ vn_enter(bg="shr_gate_dusk", pc="possessed", pc_tag="shr_pc", cast=[], cg="shr_mouth_open")
     vn_sfx "{i}Glk. Glk.{/i}"
     "A big hand cups the back of your head and keeps it there."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Hold still.\""
     "Your right hand finds Slate without asking you and wraps round him, stroking, while your head bobs on Flint."
     shr_you "\"{i}Mmf{/i}— {i}mmh{/i}— MMF—!\""
@@ -151,6 +157,7 @@ label shr_mouth_sex:
             shr_lady "\"Too late, maiden. Open.\""
             "You open."
     show cg shr_mouth_mid onlayer cgl
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Deeper.\""
     "He doesn't push. Your own neck does it for him."
     show shr_pc flushed
@@ -158,10 +165,12 @@ label shr_mouth_sex:
     "It's meant to be {i}that's not my noise{/i}. It comes out round him as a long wet moan, and your mouth's so sensitive that every inch of him on your tongue lands like a kiss somewhere much lower."
     shr_lady "\"Again.\""
     "Your body does it again, and you moan before you can swear."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Maiden came down.\""
     "He says it to the stars, not to you."
     show cg shr_mouth_peak onlayer cgl
     "Your little cock drips under the skirt. Your hand pumps Slate faster. Flint's hips give short, heavy bucks, his hand flat on the back of your head."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Gate's shut.\""
     vn_sfx "{i}Glk. Glk. Glk.{/i}"
     "It is. It really is."
@@ -175,6 +184,7 @@ label shr_hips_sex:
     $ vn_enter(bg="shr_hall", pc="furious", pc_tag="shr_pc", cast=[], cg="shr_hips_open")
     "He pushes in. Slow. Huge. Your whole body goes rigid on the boards and then gives, an inch at a time, around him."
     shr_you "\"I'm not presenting— I'm NOT presenting, that's HER presenting—!\""
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Take it.\""
     "Flat, like a fact. Your hips take it before you can argue."
     menu:
@@ -183,6 +193,7 @@ label shr_hips_sex:
             $ shr.say4 = "protest"
             shr_you "\"Get my KNEES back together— they're MINE— {i}hnngh{/i}—!\""
             "For a heartbeat you win your hips back. His hands on them settle it."
+            show shr_flint flat at vn_cast_slot
             shr_flint "\"Hold still.\""
         "Order your tail down":
             $ shr.say4 = "tail"
@@ -194,6 +205,7 @@ label shr_hips_sex:
             $ shr.say4 = "plead"
             shr_you "\"Please— just let me have my hands back— my hips— {i}please{/i}—!\""
             "His palm presses your shoulders to the boards, and your arse goes higher for it."
+            show shr_flint flat at vn_cast_slot
             shr_flint "\"Down.\""
     show cg shr_hips_mid onlayer cgl
     vn_sfx "{i}Slap.{/i}"
@@ -206,6 +218,7 @@ label shr_hips_sex:
     shr_you "\"Why's it— why's my cock LEAKING— nobody's even TOUCHING it—!\""
     shr_you "\"Stop wagging— why's my tail wagging— I didn't— {i}ahh{/i}—!\""
     "Your tail's thrashing in your own fist. Your back's arched so deep your tits are flat to the floor."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Gate's shut.\""
     show cg shr_hips_peak onlayer cgl
     "His weight comes down on your back, a hand flat on your nape, and you hold still, and he gives it to you short and deep and heavy."
@@ -219,6 +232,7 @@ label shr_hips_sex:
 label shr_hips_slate_sex:
     $ vn_enter(bg="shr_hall", pc="flushed", pc_tag="shr_pc", cast=[], cg="shr_slate_slow_mid")
     "He goes in slow. So slow you feel every inch of him find where Flint's been, and your arse squeezes him all the way."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Evening, Lady. Got him nice and ready for me, didn't you?\""
     shr_you "\"That's not— that's not my BACK doing that— {i}nnh{/i}— that's hers—!\""
     menu:
@@ -227,17 +241,21 @@ label shr_hips_slate_sex:
             $ shr.say4b = "mock"
             shr_you "\"Is that it? Is that— {i}ohh{/i}— is that ALL the guardian of the gate has got—?\""
             "He just goes slower."
+            show shr_slate grin at vn_cast_slot
             shr_slate "\"Look at that.\""
         "Let the moan out":
             $ shr.say4b = "moan"
             "You moan so loud it rings off the gate posts. You didn't mean to. You did."
+            show shr_slate grin at vn_cast_slot
             shr_slate "\"Look at that tail go.\""
         "Beg somebody to stop her":
             $ shr.say4b = "ask"
             shr_you "\"Stop— stop STOP— somebody stop her—!\""
+            show shr_slate grin at vn_cast_slot
             shr_slate "\"Don't look at me, she's the one doing it.\""
             "You're the one pushing back. You know you're not."
     "He spreads you with his thumbs and watches himself go in."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Look at that.\""
     show cg shr_slate_slow_peak onlayer cgl
     "Slow and slow and slow, until you're sobbing for breath into your folded hands and your hips are begging him on their own."
@@ -252,6 +270,7 @@ label shr_voice_sex:
     $ vn_enter(bg="shr_steps", pc="furious", pc_tag="shr_pc", cast=[], cg="shr_voice_open")
     "He pushes in. All the way, slow, into the place you didn't have yesterday, and it's tight and slick and new and it takes him like it was made for it."
     shr_you "\"No— NO— {shr}fill me up, Slate{/shr}—\""
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Evening, Lady.\""
     "He kisses your mouth and can't tell which of you he's kissing."
     menu:
@@ -266,6 +285,7 @@ label shr_voice_sex:
         "Plead with Slate":
             $ shr.say5 = "plead"
             shr_you "\"Make her STOP— {shr}make me come{/shr}—\""
+            show shr_slate grin at vn_cast_slot
             shr_slate "\"Which one of you said that? Say it again. Both of you.\""
     show cg shr_voice_mid onlayer cgl
     vn_sfx "{i}Slap. Slap.{/i}"
@@ -273,7 +293,9 @@ label shr_voice_sex:
     "He rolls into you, long and slow and curved, and every stroke drags the head of him across something inside you that makes your back come up off the stone."
     shr_you "\"It doesn't— {shr}it does. It feels perfect{/shr}—\""
     shr_you "\"I'm not wet, I'm— {shr}soaked, darling. Soaked through{/shr}—\""
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Look at that. Look at {i}you{/i}.\""
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Don't look at me, she's the one doing it.\""
     "Your legs lock round his back."
     shr_you "\"That's not my— {shr}it's mine now, and it likes you{/shr}—\""
@@ -289,8 +311,10 @@ label shr_voice_sex:
 label shr_all_sex:
     $ vn_enter(bg="shr_gate_dusk", pc="possessed", pc_tag="shr_pc", cast=[], cg="shr_all_mid")
     vn_sfx "{i}Slap. Slap. Slap.{/i}"
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Take it.\""
     "His fist in your hair, your face down on Slate, your tits swinging."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Look at that mouth. Look at it go.\""
     shr_you "\"{i}Mmf{/i}— you bloody fox— {i}mmh{/i}— give it BACK— give me my {i}body{/i} back—!\""
     "It comes out round Slate as wet, furious noise."
@@ -309,14 +333,17 @@ label shr_all_sex:
         "Growl at the stars":
             $ shr.say6 = "growl"
             "You snarl at the stars round him. Your fangs show. In your head, {shr}she's delighted{/shr}."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Maiden came down.\""
     "He says it like a vow and buries himself."
     show shr_pc flushed
     shr_you "\"Stop squeezing— I'm not the one SQUEEZING— {i}ohh{/i}—!\""
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Evening, Lady.\""
     "He says it to the top of your head."
     shr_you "\"That noise wasn't— {i}ahh{/i}— that wasn't ME, that was HER—!\""
     show cg shr_all_peak onlayer cgl
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Hold still.\""
     "One hand on your nape, and your whole body goes still under it, and he fucks you deep and steady through it, and Slate's hips start to jerk against your face."
     shr_you "\"I hate you— I HATE you— {i}harder{/i}— no, that was— {i}ahh{/i}—!\"" with vnfx("shake")
@@ -328,6 +355,7 @@ label shr_all_sex:
 label shr_reins_sex:
     $ vn_enter(bg="shr_steps", pc="flushed", pc_tag="shr_pc", cast=[], cg="shr_reins_open")
     "You sink down on him. All of it. Yourself."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Maiden came down.\""
     "He looks up at you, and for once it sounds like a question."
     shr_you "\"That's me— that's ME doing that— {i}ahh{/i}— Flint—!\""
@@ -336,6 +364,7 @@ label shr_reins_sex:
         "Ride him harder":
             $ shr.say7 = "harder"
             shr_you "\"Up— push up— {i}harder{/i}, Flint—!\""
+            show shr_flint flat at vn_cast_slot
             shr_flint "\"Hold still—\""
             "He starts, and you don't, and he groans and lets you."
         "Tease the gate":
@@ -345,14 +374,17 @@ label shr_reins_sex:
         "Make him say yes":
             $ shr.say7 = "ask"
             shr_you "\"Again? Say yes. Say {i}yes{/i}, Flint—\""
+            show shr_flint flat at vn_cast_slot
             shr_flint "\"Yes.\""
             "One word. The first one he's ever given you that wasn't an order."
     show cg shr_reins_mid onlayer cgl
     vn_sfx "{i}Slap. Slap. Slap.{/i}"
     "His big hands sit on your hips and don't push. They just hold on."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Gate's open.\""
     shr_you "\"Nobody's holding the reins— nobody— it's just me— {i}ohh{/i}—!\""
     shr_you "\"Look at me, Flint— look— I'm doing it myself—!\""
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Take it.\""
     "You do. All of it. Yourself."
     show cg shr_reins_peak onlayer cgl

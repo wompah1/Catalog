@@ -53,6 +53,7 @@ label fs_intake:
     fs_scanner "[_fs_s]"
     vn_sfx "Ding."
     "The arch gives a happy little ding. Nobody says anything about it."
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Removal.\""
     "She points at a door marked FIT ROOM."
     show cg fs_gel onlayer cgl
@@ -521,14 +522,20 @@ label fs_depot_three:
     "She can't hear Deb, and doesn't need to."
     "You pick up the large. It's heavier than the medium. More fabric. You hold the shorts up against yourself, and they still look narrow, and you laugh out loud at the pick face."
     fs_you "\"Regan. Regan, what if the large doesn't—\""
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Then it's on the pick list.\""
     fs_you "\"And what if the—\""
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Then it's on the pick list.\""
     "On the open channel somebody asks who's been eating the mediums, and somebody else says it's the new driver who reads the terms, and three drivers laugh at once in your ear. You wave at the ceiling like they can see you."
     fs_you "\"Hi! It's me! I read the terms!\""
     fs_deb "\"They know. Everyone knows. Fit room. Your slot's open and Regan doesn't wait.\""
     "Jodie slides off her stool and follows you to the door with her coffee, eyes on your ass the whole way, typing on her phone."
     fs_you "\"What are you writing?\""
+    hide fs_regan
+    show fs_jodie grin at vn_cast_slot
     fs_jodie "\"Notes. For the review. Walk slower.\"\n{size=-5}{color=#ff8fa3}▸ Onto the scanner platform{/color}{/size}"
     hide fs_jodie
     $ vn_pass(10)
@@ -544,17 +551,29 @@ label fs_platform:
     fs_scanner "[_fs_a] [_fs_b] [_fs_c]"
     fs_regan "\"Again.\""
     "The arch sweeps again, and says the same three things, and nobody looks at the chest line."
+    hide fs_regan
+    show fs_jodie grin at vn_cast_slot
     fs_jodie "\"Four stars for the seat. Five. Sorry. {i}Five{/i}.\""
     show cg fs_platform_squat onlayer cgl
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Turn.\""
     "You turn on the plate."
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Squat.\""
     "You squat, and the open shorts creak, and your thighs spread wide and soft over your heels, and Jodie makes the kettle noise again."
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Up. Again. Slower.\""
     "You go slower: all the way down, all the way up, every eye in the room on your ass. Your small cock bobs in the pouch. It's dripping, and you hate that it's dripping."
     "The arch sweeps you again like a big blue mirror that only ever tells you you're too big for the clothes."
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Fit check needs a full range of motion. Load-bearing.\""
     "She puts the clipboard down on the rail. It's the first time you've ever seen her put it down."
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Bend.\""
     show fs_pc protesting
     fs_you "\"Bend {i}where{/i}? The fit check's the {i}scanner{/i}. It says so. 'Driver is scanned on the depot platform.' Scanned. That's the verb. That's the whole—\""
@@ -564,6 +583,8 @@ label fs_platform:
     fs_you "\"Regan— {i}Regan{/i}— load-bearing means the {i}garment{/i}—\""
     "You hear her zip. You feel the heavy hot weight of her cock land on your ass and lie there, all the way up your crack and past the small of your back."
     fs_you "\"Oh— oh, no, no, that's— that's {i}all{/i} of it? Regan, that won't— that's not a {i}fit{/i}—\""
+    hide fs_jodie
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Volume, not depth. Breathe out.\""
     "She lubes you with two fingers and a lot of lube, holding you down on the rail by the back of the collar."
     fs_you "\"I'm not breathing {i}anything{/i}—\""
@@ -592,17 +613,21 @@ label fs_platform_after:
     hide screen fs_dash
     show cg fs_platform_jodie onlayer cgl
     "And Jodie's off her stool. She crawls across the fit room floor, under the arch, onto the platform, and sits back on her heels in front of you, under you, and looks up at your small cock bouncing in the open shorts."
+    show fs_jodie grin at vn_cast_slot
     fs_jodie "\"Mine.\""
     "She takes it in her mouth."
     fs_you "\"{i}Hhhaaah{/i}— yes— {i}yes{/i}— both of you— {i}ahh{/i}—!\""
     "Regan in your ass. Jodie on your cock. The arch sweeping blue down your back on every pass."
+    show fs_jodie grin at vn_cast_slot
     fs_jodie "\"Four stars for the seat. Five for the squeal. Do it again.\""
     "She mumbles it round you, pulls off with a wet pop, jerks you while she talks, and sucks you back in. You squeal again, louder, for the rating."
     "Regan picks up the pace. Long, heavy strokes, every one dragging out of you to the tip and slamming home to the root, her hips smacking your huge new ass so hard it ripples. The platform rings under your knees."
     fs_you "\"Oh— oh, the {i}seat{/i}— it's all seat— Regan, I'm all {i}seat{/i}— don't stop, don't you {i}dare{/i} stop—!\""
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Noted.\""
     fs_you "\"Passed— {i}passed{/i}— I passed— oh, I'm coming— Jodie, I'm—\""
     "Jodie just sucks harder. You come in her mouth with Regan buried to the root in your ass, screaming at the arch, and Jodie swallows it all and pulls off and licks her lips." with vnfx("flash")
+    show fs_jodie grin at vn_cast_slot
     fs_jodie "\"Five. Obviously.\""
     show cg fs_platform_email onlayer cgl
     "Your phone's in your hand. You don't remember picking it up. You're typing."
@@ -988,24 +1013,29 @@ label fs_pallet:
     "And the largest stock Vellum carries gives up. Right down the seat, the whole back of it splitting open, your ass bursting out through the gap."
     $ fs.fit = "split"
     fs_you "\"Oh— oh, it {i}split{/i}— Regan, let me {i}up{/i}—\""
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Hold that.\""
     "She doesn't let you up. She pushes into you instead."
     fs_you "\"{i}AHHH{/i}— Regan— {i}Regan{/i}— get {i}out{/i}— that's the {i}sample{/i}, you're splitting your own {i}sample{/i}—!\""
     "Your new breathy voice cracks right up. She's so big, and your ass swallows her down to the root while you yell at it not to."
     vn_sfx "Slap. Slap. Slap."
     "The pallet creaks. The shrink-wrap squeaks under your puffy nipples. Your thighs are so thick they're pressed together round her, and she has to drive in between them, and every time she does, the split shorts tear a little further."
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Specials. Seat, special. Thigh, special. Waist, standard. Chest, standard.\""
     fs_you "\"I'm not a— {i}ahh{/i}— I'm not a special {i}order{/i}— I'm {i}staff{/i}—\""
     fs_deb "\"Logged.\""
     show cg fs_pallet_photo onlayer cgl
     vn_sfx "Click. Click."
     "Regan has her phone out in her free hand: the split uniform, your ass in it, with her in it, from the side."
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Special order.\""
     "She puts the phone away and takes your hip again."
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Nothing off the rack.\""
     "And it lands. Nothing on any shelf in this warehouse is big enough for you, and she's going to make something that is, and your ass clenches on her so hard she grunts."
     show fs_pc flushed
     fs_you "\"...To order. Make it to {i}order{/i}— oh— {i}oh{/i}— Regan— don't stop— make me to {i}order{/i}—!\""
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Stock problem. Hold still. You're splitting my sample.\""
     "She hauls your hips back onto her by the split waistband, and the split runs further."
     "You don't hold still. You can't. Your huge new ass rolls back onto her on purpose now, the way it learned at Clive's this morning: squeezing on the pull-out, swallowing her on the push."
@@ -1045,6 +1075,7 @@ label fs_five_sent:
     fs_deb "\"Five stars, no notes.\""
     "Very quietly, in your ear."
     "Regan wipes herself on a sample. She doesn't look at you. She's still hard. She lays it on your ass, heavy, and her palm comes back down flat between your shoulder blades."
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Again.\""
     fs_you "\"Regan— I've only just— I can't {i}again{/i}—\""
     menu:
@@ -1138,6 +1169,7 @@ label fs_depot_six:
     $ _fs_s = fs_scan("Seat", False)
     fs_scanner "[_fs_s]"
     fs_you "\"Regan. {i}Regan.{/i} It said within spec. The seat. It said my {i}seat{/i} was within—\""
+    show fs_regan flat at vn_cast_slot
     fs_regan "\"Made to order. It's the spec now.\""
     fs_you "\"Oh— oh, it {i}likes{/i} me— it finally {i}likes{/i} me— {i}ahh{/i}—\""
     "You do a full turn under the arch, arms out, ass swinging, and it sweeps you again and says the same thing, and you squeal at it like it's proposed."
@@ -1266,17 +1298,21 @@ label fs_door_four:
     show cg fs_door4_pile onlayer cgl
     "He takes you by the back of the neck, same as yesterday, and bends you over his returns pile. The same heap, every bag back in it, reordered."
     "Your ass goes up and up, and up, and Clive stands behind it for a long moment and says nothing at all, which is the most anyone's ever heard him say."
+    show fs_clive grumbling at vn_cast_slot
     fs_clive "\"The waistband's sitting fine. Why is the waistband sitting {i}fine{/i}.\""
     "He sounds personally betrayed."
     fs_you "\"Made to order. So you can let go of my—\""
+    show fs_clive grumbling at vn_cast_slot
     fs_clive "\"Hm.\""
     "He hooks a finger in it and peels the PRENTICE cut down just far enough, and lines himself up, and pushes in, and complains about the stitching on every stroke."
+    show fs_clive grumbling at vn_cast_slot
     fs_clive "\"Crooked. {i}Crooked.{/i} One star for the stitching.\""
     fs_you "\"Clive— Clive, it's {i}straight{/i}— {i}ahh{/i}—\""
     show fs_pc flushed
     "And it's yesterday's angle, and your ass already knows it, and it rolls back onto him before you've finished the sentence."
     fs_you "\"{i}Ahh{/i}— oh, Clive— you came {i}back{/i} for it— you {i}ordered{/i} me—!\""
     vn_sfx "Slap. Slap."
+    show fs_clive grumbling at vn_cast_slot
     fs_clive "\"I ordered a {i}replacement{/i}. For the shorts. Which were inadequate. This is also inadequate. This is {i}far{/i} too much seat for one garment.\""
     fs_you "\"{i}Ahh{/i}— it's straight— it's {i}straight{/i}— rate the {i}delivery{/i}—!\""
     fs_deb "\"Customer reports: stitching.\""
@@ -1285,6 +1321,7 @@ label fs_door_four:
     fs_you "\"{i}Hhn{/i}— you're {i}laughing{/i}—\""
     fs_deb "\"I'm noting.\""
     "He comes across your ass, over your name, and wipes it with a return." with vnfx("flash")
+    show fs_clive grumbling at vn_cast_slot
     fs_clive "\"Four stars. Delivery's fine. It's the fabric.\""
     $ fs.doors = 4
     show screen fs_manifest(fs_manifest_rows())
@@ -1443,11 +1480,14 @@ label fs_deb_door:
     show cg fs_deb_counter onlayer cgl
     "She doesn't. She comes round the counter, puts her hand flat between your shoulder blades and bends you over it." with vnfx("shake")
     "Your huge ass up, your PRENTICE cut round your thighs where she pushes it, your name on the seat right in front of her. Her voice in your ear and then over your shoulder, a half-beat apart, both at once."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"Ambassador.\" \"Ambassador.\""
     fs_you "\"Deb— {i}Deb{/i}, wait, I've got {i}questions{/i}—\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"Logged.\" \"Logged.\""
     "She pushes in. All the way. Your mouth falls open on the counter."
     fs_you "\"{i}AHHH{/i}— Deb— it's {i}you{/i}— it's {i}actually{/i} you— {i}wait{/i}—!\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"It's actually me.\" \"It's actually me.\""
     menu:
         "She's in you, bent over her counter. Her voice in your ear and over your shoulder."
@@ -1469,33 +1509,46 @@ label fs_ambassador:
     "She reaches past your head and turns the laptop so you can see it. Your dashboard. Full screen."
     show screen fs_dash(6)
     "And she reads it. All of it. In your ear and over your shoulder, every line twice, a thrust on each."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}VELLUM DRIVER, T. PRENTICE.{/i}\" \"{i}VELLUM DRIVER, T. PRENTICE.{/i}\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}Tier, Ambassador.{/i}\" \"{i}Tier, Ambassador.{/i}\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}Rating.{/i} Five full stars.\" \"Five full stars.\""
     "She leans on you."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}Route bonus. Applied overnight.{/i}\" \"{i}Applied overnight.{/i}\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}Chest.{/i}\""
     "Her hand slides up under your polo and finds your puffy nipple and pinches it, and you scream."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}Within spec. No adjustment required.{/i}\" \"{i}No adjustment required.{/i}\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}Next tier.{/i}\""
     "She drives in to the hilt and holds it there."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"{i}None.{/i}\" \"{i}None.{/i}\""
     hide screen fs_dash
     show cg fs_deb_cum onlayer cgl
     "You come so hard you see stars. All five. Your small cock spurts uselessly against her cabinet door and your ass clamps on her and your new light voice cracks right through the kitchen ceiling, and she keeps going through it." with vnfx("flash")
     fs_deb "\"Five stars, no notes.\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"Five stars, no notes.\""
     "In your ear, and then the same again, right against it, out loud."
     show cg fs_deb_standing onlayer cgl
     "She doesn't stop. She hauls you up off the counter by the hips and fucks you standing, your back to her front, her hand flat on your belly holding you on, her mouth at your ear, the mic at your ear, her voice in both."
     "Your thighs shake. Your small cock bobs and drips, useless, untouched, and she doesn't so much as glance at it."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"Every drop this week.\" \"Every drop this week.\" \"I heard every one.\" \"I heard every one.\""
     fs_you "\"{i}Ahh{/i}— Deb— you {i}heard{/i}— {i}ahh{/i}— all of it—\""
     vn_sfx "Slap. Slap. Slap."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"All of it.\" \"All of it.\" \"The deck. The rug. The platform. The carpet. The pallet.\""
     "Twice. Twice. Twice. She pulls your bob back in her fist so your mouth is by her mic."
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"That's the last drop.\" \"That's the last drop.\" \"Now beg for tomorrow's.\" \"Now beg for tomorrow's.\""
     fs_you "\"{i}Please{/i}— Deb— put me— on tomorrow's— {i}ahh{/i}—!\""
+    show fs_deb bored at vn_cast_slot
     fs_debx "\"Every night.\" \"{i}Every night.{/i}\" \"On this counter, with your name on your arse, until the app runs out of stars.\" \"Until the app runs out of stars.\""
     $ fs.ending = "ambassador"
     $ achievement.grant("Five Stars, No Notes")

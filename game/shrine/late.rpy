@@ -101,6 +101,7 @@ label shr_hips:
     show cg shr_hips_hold onlayer cgl
     show shr_pc furious
     "—and Flint's other hand lands flat on the small of your back, heavy as the gate post, and holds you down."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Hold still.\""
     "His fingers slide out. Something much, much bigger presses against your hole instead, hot and blunt and wet.\n{size=-5}{color=#ff8fa3}▸ Flint{/color}{/size}"
     jump shr_hips_sex
@@ -124,6 +125,7 @@ label shr_hips_after:
     hide shr_flint
     show cg shr_hips_slate_ready onlayer cgl
     "And Slate's there. Kneeling where Flint was, grinning, his hands on your hips, the head of his cock already nudging the hole Flint just left open and wet."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Evening, Lady. Don't look at me, she's the one holding your tail up.\""
     menu:
         "Slate's hands on your hips. Your tail in your own fist."
@@ -140,6 +142,7 @@ label shr_hips_slate_quick:
     "He slides in in one go. Flint's left you so wet and open that he goes straight to the root, and your arse squeezes him on its own, and your hips push back to meet him, hers."
     shr_you "\"I'm not pushing back. SHE'S pushing back—!\""
     "You wail it into the boards."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Course she is.\""
     "And he fucks you."
     vn_sfx "{i}Slap. Slap. Slap.{/i}"
@@ -147,6 +150,7 @@ label shr_hips_slate_quick:
     shr_you "\"{i}Ahh{/i}— {i}AHH{/i}— again— why's it doing it AGAIN—!\"" with vnfx("shake")
     show cg shr_slate_quick_cum onlayer cgl
     "He comes deep in you with a groan, and it mixes with Flint's and runs out round him down the backs of your thighs."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Look at that. Night, Lady.\""
     "He says it pulling out, admiring.\n{size=-5}{color=#ff8fa3}▸ Crawl to the maiden's room{/color}{/size}"
     $ vn_pass(10)
@@ -156,6 +160,7 @@ label shr_hips_slate_quick:
 label shr_hips_slate_after:
     $ vn_enter(bg="shr_hall", pc="dazed", pc_tag="shr_pc", cast=[], cg="shr_slate_slow_cum")
     "Slate comes in you laughing, his hands full of your arse, and it mixes with Flint's and runs out round him."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Look at that. Night, Lady. Night, {i}him{/i}.\""
     "He says it admiring his work."
     "Your hips finally let you fold up on the boards in a heap.\n{size=-5}{color=#ff8fa3}▸ Crawl to the maiden's room{/color}{/size}"
@@ -300,11 +305,13 @@ label shr_voice_after:
     "He doesn't pull out. He just lies on you, heavy and warm, still hard inside you, and starts to move again, slow, lazy, rolling his hips, and your new pussy squeezes him all on its own and drags another moan out of you."
     show shr_pc flushed
     shr_you "\"{i}Ohh{/i}— not— not again— {shr}again{/shr}— SHUT UP— {shr}again, Slate{/shr}—\""
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Which one of you was that? Go on. Say it again. Both of you.\""
     "He grins it against your neck."
     shr_you "\"{shr}{i}Again{/i}{/shr}.\""
     "You both say it, together, in the same voice, at the same time, and it's the worst thing that's ever happened to you, and he laughs and gives it to you."
     "This one's slower. It builds and builds with his weight on you and the warm stone under your back and the first stars coming out over the gate, and when it breaks you're clinging to him with both arms and both legs, tail wrapped round his thigh, shaking, gasping, laughing. You don't know why you're laughing."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Say it again. Both of you.\""
     hide cg onlayer cgl
     "He murmurs it.\n{size=-5}{color=#ff8fa3}▸ Back to the maiden's room{/color}{/size}"
@@ -398,10 +405,12 @@ label shr_all:
     show shr_pc possessed
     "Your own mouth says it, and opens."
     "Slate's cock is right there. Curved and flushed and dripping at the tip, bobbing right in front of your lips, and your tongue comes out to meet it all on its own, flat and wet, and licks the whole underside of him from the balls to the tip in one long slurp."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Oh, {i}Lady{/i}.\""
     "He breathes it."
     shr_you "\"I'm not— {i}mmh{/i}— I'm NOT—\""
     "Behind you, Flint's cock nudges your pussy open. Just the head. Your whole body clenches round it and pushes back, hard, hungry, and your hands, yours, you're nearly sure they're yours, grab Slate's hips and pull him in."
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Hold still.\""
     show cg shr_all_open onlayer cgl
     "And he sinks in to the root."
@@ -419,10 +428,12 @@ label shr_all_after:
     "Your mouth sighs it into the gravel afterwards, sticky and smiling."
     show cg shr_all_kiss onlayer cgl
     "They don't let you up. Flint's still hard. He hauls you back onto his cock by the hips, slow now, grinding, his load squelching out round him with every push, and Slate kneels in the gravel in front of you and cups your face and kisses you, deep, cum and all, like he's tasting both of you."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Evening, Lady.\""
     "He murmurs it into your mouth."
     shr_you "\"{shr}Evening, Slate.{/shr} Don't— don't stop him—\""
     "Your mouth answers him in hers, and then, in yours, before you can stop it."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Wasn't going to.\""
     show cg shr_all_again onlayer cgl
     vn_sfx "{i}Squelch. Squelch.{/i}"

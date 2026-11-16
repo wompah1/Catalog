@@ -100,13 +100,13 @@ define redlightning_face_crops = {
     ],
     "pc-r2-tee-grin": [
         73,
-        14,
+        25,
         253,
         253
     ],
     "pc-r2-tee-shocked": [
-        69,
-        13,
+        92,
+        6,
         253,
         253
     ],
@@ -285,8 +285,8 @@ define redlightning_face_crops = {
         253
     ],
     "pc-r6-nude-flushed": [
-        68,
-        21,
+        90,
+        17,
         253,
         253
     ],

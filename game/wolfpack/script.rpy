@@ -149,6 +149,7 @@ label wlf_back_of_den:
     "His ear flicks."
     show cg wlf_nape onlayer cgl
     "A hand closes on the back of your neck."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Presented.\""
     "Not a question. A {i}verdict{/i}."
     show wlf_pc furious
@@ -187,10 +188,12 @@ label wlf_rung_one:
     show wlf_pc flushed
     wlf_you "\"{i}Ahh—!{/i} Ah— get it {i}out{/i}— oh fuck— oh {i}fuck{/i}—\""
     "He opens you up in one long, slow, unstoppable slide. Stretch, and stretch, and {i}more{/i}, so full your vision sparks, so deep you feel him in your stomach. Your cock bobs under you, hard, and it's {i}leaking{/i}, and you hate it."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Breed you.\""
     "And he starts to move."
     vn_sfx "{i}Slap.{/i}"
     "Slow. Heavy. All the way out until just the head of him tugs at your rim, then all the way back in to the hilt. Every stroke shoves a noise out of you."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Mine now.\""
     show wlf_pc furious
     wlf_you "\"I'm— {i}not{/i}— yours— {i}haa{/i}—\""
@@ -198,10 +201,12 @@ label wlf_rung_one:
     show wlf_pc flushed
     wlf_you "\"{i}AHH—!{/i}\"" with vnfx("shake")
     "It has to carry all the way to the lake."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Loud.\""
     "He says it approving, and hits it again."
     wlf_you "\"Stop— stop {i}finding{/i} it— {i}ahh{/i}— not there, not {i}there{/i}—\""
     "He doesn't stop. He works it. Long, deliberate drags right over that spot, over and over, his hand still on your nape, until you're making one continuous noise and slick is running down the backs of your thighs."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Tight. Take more.\""
     wlf_you "\"I'm {i}not{/i} taking— I'm not— {i}nnhh{/i}—\""
     show cg wlf_r1_glare onlayer cgl
@@ -209,6 +214,7 @@ label wlf_rung_one:
     "Your knees skid wider in the furs. Nobody spread them. You twist your head round under his hand to glare at him, and you {i}lock eyes{/i}."
     "The third stare-down. The one you saved."
     "He stares right back. Gold eyes, flat, almost bored, except for the focus he puts into every single push. You glare murder at him. He doesn't look away. He just fucks you, slow and enormous and staring, and you're the one who moans."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Mine. Breed you. Full soon.\""
     "On the deepest stroke yet he leans in, and you feel something new: a thick swell at the base of his cock, pressing at your rim. Hot. Huge. {i}Pressing.{/i}"
     wlf_you "\"What's— what is {i}that{/i}— don't— don't you put that—\""
@@ -220,6 +226,7 @@ label wlf_rung_one:
     wlf_you "\"{i}Ahh— ahh— AHH—!{/i}\"" with vnfx("shake")
     "You come so hard your knees go out. Spurt after spurt, all over his fist and the furs and the insides of your own thighs, yelling the whole time, clenching down on him so tight he grunts."
     "He drives in to the root and stays there, and you feel him go: thick, hot pulses, pumping deep, so much of it it feels like you'll never be empty again."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Full.\""
     "Into your neck."
     wlf_you "\"You— you {i}bastard{/i}.\""
@@ -251,6 +258,7 @@ label wlf_low_pack:
     "{i}Grooming{/i} you."
     "It's the second most insulting thing that's ever happened to you, and the first was an hour ago. You open your mouth to tell him exactly what you're going to do to him."
     $ wlf_advance(1)
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"[WLF_VERDICT[1]]\""
     "You shut your mouth."
     hide cg onlayer cgl
@@ -374,6 +382,7 @@ label wlf_names:
     wlf_you "\"Scrap.\""
     "The short wiry one, at the very end, ears already flat."
     "Grey nods, once. Bramble grins wider. Scrap ducks his head, mortified to be called last. And Notch says it back under his breath, tasting it, and his tail thumps the stone."
+    show wlf_notch grin at vn_cast_slot
     wlf_notch "\"Notch.\""
     show wlf_pc smug
     "Named. Filed. {i}Yours.{/i}"
@@ -383,6 +392,7 @@ label wlf_names:
     $ vn_enter(bg="wlf_spring", pc="proud", pc_tag="wlf_pc", cast=[], cg="wlf_spring_kneel")
     "Then you go out to the spring at the mouth to wash, because you smell of {i}him{/i} and you've been smelling it all day. You strip to the skin on the moss, kneel at the water, and lean right down to splash your face."
     "Behind you, the talk stops."
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"Presented.\""
     "From the back of the den, without opening his eyes."
     show wlf_pc furious
@@ -404,10 +414,12 @@ label wlf_queue:
     $ vn_enter(bg="wlf_spring", pc="furious", pc_tag="wlf_pc", cast=[], cg="wlf_queue_line")
     if wlf.how2 == "fight":
         "You get one foot under you. Grey takes your hip in his other hand and puts you back on your knees in the moss, like setting down a cup."
+        show wlf_grey flat at vn_cast_slot
         wlf_grey "\"Queue. By rank.\""
         "Over his shoulder."
     else:
         wlf_you "\"Grey— {i}GREY{/i}— get your hand off me—\""
+        show wlf_grey flat at vn_cast_slot
         wlf_grey "\"Queue. By rank.\""
         "Over his shoulder, like you'd called him up."
     "And they {i}queue{/i}."
@@ -417,8 +429,10 @@ label wlf_queue:
     "The fat hot head of his cock against your hole. Big hands on your thighs, spreading you. Then he pushes in, slow and {i}thorough{/i}, all the way, and doesn't stop till his hips are flush."
     show wlf_pc flushed
     wlf_you "\"{i}Nnnh{/i}— get it out— oh fuck, you're {i}thick{/i}—\""
+    show wlf_grey flat at vn_cast_slot
     wlf_grey "\"Breed you. Take it.\""
     "He fucks like he's checking every inch of you off a list. Deep, deliberate, grinding at the bottom of every stroke. His hand slides to your hip and squeezes, and there's more there to squeeze than there was yesterday."
+    show wlf_grey flat at vn_cast_slot
     wlf_grey "\"Mine now. Full.\""
     wlf_you "\"Ahh— {i}ahh{/i}— stop— {i}Grey{/i}—\""
     "It comes out of you like an order. It comes out like {i}harder{/i}. He goes harder."
@@ -429,6 +443,7 @@ label wlf_queue:
     wlf_you "\"Don't— {i}Notch{/i}, don't you {i}dare{/i}—\""
     show cg wlf_queue_notch onlayer cgl
     "You get as far as your elbows. Notch is behind you before you finish his name. Hands on your hips, rough and quick, and he's in you in one shove, sharp and eager."
+    show wlf_notch grin at vn_cast_slot
     wlf_notch "\"My turn. {i}Mine.{/i} Take all. So tight—\""
     vn_sfx "{i}Slap-slap-slap-slap.{/i}"
     show wlf_pc flushed
@@ -444,6 +459,7 @@ label wlf_queue_two:
     $ vn_enter(bg="wlf_spring", pc="flushed", pc_tag="wlf_pc", cast=[], cg="wlf_queue_bramble")
     wlf_you "\"Bramble— {i}Bramble{/i}, no, I'm not—\""
     "Bramble takes his time getting into you. All the time in the world. He sinks through the mess the first two left, thick and deep and slow, and settles in like he lives there."
+    show wlf_bramble grin at vn_cast_slot
     wlf_bramble "\"Slow now. Make full.\""
     wlf_you "\"Haa— {i}haaah{/i}— don't— that's— that's {i}deep{/i}—\""
     "He rolls into you. Doesn't pound. {i}Rolls{/i}, long and heavy, hands flat on the small of your back keeping you down, waiting out every gasp and then giving you more."
@@ -455,6 +471,7 @@ label wlf_queue_two:
     wlf_you "\"Tribute. {i}Accepted.{/i}\""
     "It falls out of your mouth, with Bramble still rolling into you, half a moan. You rock back onto his cock and you can't stop it."
     "Notch's tail goes like mad."
+    show wlf_bramble grin at vn_cast_slot
     wlf_bramble "\"Breed you. Mine.\""
     "Slow, slow, slow, endless, until you're shaking and drooling on the moss and you've stopped saying no and started just saying his name, and when he finally comes it goes on and on, pulse after pulse, and he stays in you rocking till the last of it."
     "When he slides out it pours."
@@ -462,6 +479,7 @@ label wlf_queue_two:
     wlf_you "\"Old Man— no— not you {i}too{/i}—\""
     show cg wlf_queue_old onlayer cgl
     "Old Man gets up stiffly and comes over with more manners than anybody else in this cave has shown you. One hand guiding his cock, one hand steady on your hip."
+    show wlf_oldman kind at vn_cast_slot
     wlf_old "\"Breed. Courtesy.\""
     show wlf_pc flushed
     wlf_you "\"Oh, {i}courtesy{/i}. That's— {i}ahh{/i}— that's not what courtesy— {i}nnh{/i}—\""
@@ -472,9 +490,11 @@ label wlf_queue_two:
     "You yell it at the moss."
     show cg wlf_queue_scrap onlayer cgl
     "Scrap comes up shaking, tail low, cock already slick, and hovers behind you like he's scared to touch."
+    show wlf_scrap shy at vn_cast_slot
     wlf_scrap "\"Let me.\""
     "A whisper. Not quite a question."
     "He doesn't wait for the answer. He pushes in. Whines at how wet and open you are."
+    show wlf_scrap shy at vn_cast_slot
     wlf_scrap "\"Sorry. Not sorry. So full— want this— {i}want this{/i}—\""
     "He's mortified, and he's rock hard, and he lasts about a heartbeat before he yelps and fills you, nails careful on your hips."
     show cg wlf_queue_cum onlayer cgl
@@ -502,6 +522,7 @@ label wlf_low_pack_again:
     $ vn_enter(bg="wlf_den_night", pc="furious", pc_tag="wlf_pc", cast=[], cg=None)
     "From the back of the den, the black one speaks for the first time all night. Sleepy. Unmoved. Eyes still shut."
     $ wlf_advance(2)
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"[WLF_VERDICT[2]]\""
     "That's {i}it?{/i}"
     "The {i}whole pack{/i}. In order. In one night. Held down at the spring and taken by every one of them. And the word doesn't move."
@@ -569,6 +590,7 @@ label wlf_wake_bramble:
         "You wriggle down under the furs in the dark and take him in your mouth."
         vn_sfx "{i}Glk. Glk.{/i}"
         "He's thick and heavy on your tongue, and he wakes up with a groan when you suck. You don't really know how to do this and it doesn't matter: you slobber all over him, hand round the root, lips stretched, moaning around his cock."
+        show wlf_bramble grin at vn_cast_slot
         wlf_bramble "\"Messy or clean?\""
         "He mumbles it, half asleep."
         wlf_you "\"Mmh-{i}mmh{/i}.\""
@@ -577,6 +599,7 @@ label wlf_wake_bramble:
         show cg wlf_wake_hand onlayer cgl
         "You reach back under the furs and wrap your hand round him."
         "He wakes up with a rumble when you stroke. Slow, then faster, your thumb working the slick head, his hips jerking into your fist. You've never jerked anybody off but yourself in your life. Your hand learns him in about a minute flat."
+        show wlf_bramble grin at vn_cast_slot
         wlf_bramble "\"Messy or clean?\""
         "Into your hair."
         wlf_you "\"{i}Messy{/i}.\""
@@ -585,9 +608,11 @@ label wlf_wake_bramble:
         show cg wlf_wake_grind onlayer cgl
         "You push your ass back against him and grind. Slow circles. Rolling your soft new hips right into his cock."
         "He wakes up with his hands already on you, groaning into your neck, rutting between your thighs while you squeeze them round him."
+        show wlf_bramble grin at vn_cast_slot
         wlf_bramble "\"Messy or clean?\""
         wlf_you "\"Surprise me.\""
         "You moan it, and he comes between your thighs and all over the curve of your ass, hot and sticky."
+    show wlf_bramble grin at vn_cast_slot
     wlf_bramble "\"Morning.\""
     "And he goes back to sleep."
     hide cg onlayer cgl
@@ -778,6 +803,8 @@ label wlf_second_scrap:
     "He whines, high and helpless. His hips stutter up into you and he comes, spurt after spurt, both hands clamped on your soft hips while you ride him straight through it and grind down for more."
     "And from the back of the den, eyes shut, the black one rumbles:"
     $ wlf_advance(3)
+    hide wlf_scrap
+    show wlf_alpha flat at vn_cast_slot
     wlf_alpha "\"[WLF_VERDICT[3]]\""
     "A promotion. Plain as sunrise. Third, then. Behind Grey."
     wlf_you "\"Third's not good enough. Tomorrow, second. After that, first. I'm setting the schedule. Get ready.\""

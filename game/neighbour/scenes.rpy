@@ -10,13 +10,16 @@ label nb_knock_sex:
     $ nb_enc = VNState(partner_came=True, pc_orgasms=0)
     show cg nb_knock_sex_open onlayer cgl
     "You keep your hands on her. Still hot. Still hard. Still bigger than both your fists."
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"Oh god, both hands, it needs both—\""
     vn_sfx "Shlk. Shlk."
     show cg nb_knock_sex_mid onlayer cgl
     nb_ellis "\"This is just helping— it's just— {i}helping{/i}—\""
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"I'm sorry, I'm so sorry, don't stop, please don't stop—\""
     "Her hips find your rhythm. Your wrists ache. Your own cock is aching in your boxers and you don't understand why."
     show cg nb_knock_sex_peak onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Faster— no— like that, {i}like that{/i}—\""
     show cg nb_knock_sex_cum onlayer cgl
     "She goes off again over your knuckles, gasping your name, and you come in your boxers without anything touching you, eyes squeezed shut." with vnfx("flash")
@@ -29,14 +32,17 @@ label nb_again_sex:
     $ nb_enc = VNState(partner_came=True, pc_orgasms=0)
     show cg nb_again_sex_open onlayer cgl
     "Her hand stays in your hair. You open your mouth for her before she asks."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Just the tip. Just— oh fuck, your {i}mouth{/i}—\""
     vn_sfx "Mmh. Glk. Glk."
     show cg nb_again_sex_mid onlayer cgl
     "More than the tip, this time. Your jaw stretches. You moan round her and the moan goes straight up her."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Look at you. Look at you taking it.\""
     "She sounds amazed."
     nb_ellis "\"Mmf— {i}mmh{/i}—\""
     show cg nb_again_sex_peak onlayer cgl
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"I'm sorry. I'm not sorry. Keep going.\""
     show cg nb_again_sex_cum onlayer cgl
     "You come in your boxers with her in your mouth, untouched, moaning, and she comes a second after, flooding your tongue." with vnfx("flash")
@@ -49,12 +55,15 @@ label nb_throat_sex:
     $ nb_enc = VNState(partner_came=True, pc_orgasms=0)
     show cg nb_throat_sex_open onlayer cgl
     "She doesn't let you off. She just takes you back down to the root."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"All the way down. Nose in it. There you go.\""
     vn_sfx "Hlk. Hlk. Glk."
     show cg nb_throat_sex_mid onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Breathe through your nose. Good girl— good {i}boy{/i}. Good boy.\""
     "Your head goes floaty. Your hands slide off her thighs and just rest on the rug."
     show cg nb_throat_sex_peak onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Don't waste it. Don't you waste a drop.\""
     show cg nb_throat_sex_cum onlayer cgl
     "She holds you there and empties straight down your throat, and you come again in your sodden shorts, eyes rolled up, humming round her." with vnfx("flash")
@@ -68,16 +77,20 @@ label nb_inside_sex:
     show cg nb_inside_open onlayer cgl
     "She pushes in. Slow. The fat head, then the stretch, then more, and more, your knees by your ears and her arm holding them there."
     nb_ellis "\"Ahh— {i}ahh{/i}— Tessa, oh god, it's so {i}deep{/i}—\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Colour?\""
     nb_ellis "\"Green— {i}green{/i}—\""
     vn_sfx "Pap. Pap. Pap."
     show cg nb_inside_mid onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"There. Feel that? That's where I live now.\""
     "Every stroke drags over something in you that makes your whole body jolt. The cage bounces on your stomach, leaking."
     nb_ellis "\"Don't stop— please, please don't stop—\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Good girl. You take me so well, good girl.\""
     "She doesn't correct it. You don't want her to."
     show cg nb_inside_peak onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"You're mine. Say it with your ass, then. Squeeze.\""
     "You squeeze. She groans and fucks you harder, all the way in, all the way out, the bed knocking the wall."
     show cg nb_inside_cum onlayer cgl
@@ -95,12 +108,14 @@ label nb_last_dose_sex:
         "You push back onto her, all the way, and she groans into your neck."
     else:
         "You hold the pillow and take it, every slow inch."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Mine,\" she says, like she's reading it off a label. \"Mine, mine, mine.\""
     vn_sfx "Pap. Pap. Pap."
     show cg nb_last_mid onlayer cgl
     nb_ellis "\"Yours— yours— {i}ahh{/i}—\""
     "The cage swings loose under you, empty as a thimble. You don't feel it at all. You only feel her."
     show cg nb_last_peak onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Don't you dare clench me out. Stay open for me.\""
     nb_ellis "\"Deeper— Tessa, deeper—\"" with vnfx("shake")
     show cg nb_last_cum onlayer cgl
@@ -114,10 +129,12 @@ label nb_last_dose_ride:
     $ nb_enc = VNState(partner_came=True, pc_orgasms=0)
     show cg nb_ride_open onlayer cgl
     "You sink down. It spreads you, fills you, so much more than you thought could fit, and then it fits."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"There she is. There's my girl.\""
     vn_sfx "Shlk. Shlk."
     show cg nb_ride_mid onlayer cgl
     "You ride her until the bed's banging the wall. Hands on her chest, tits bouncing so hard they slap, your new pussy squeezing her on every drop."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Look at you up there. Look at my girl. Ride it. All the way down, sweetheart.\""
     nb_ellis "\"Ahh— {i}ahh{/i}— yes, yes, fuck me, Tessa, it's so good, it's so {i}good{/i}, I didn't know it could—\"" with vnfx("shake")
     show cg nb_ride_peak onlayer cgl
@@ -135,13 +152,16 @@ label nb_enough_sex:
     $ nb_enc = VNState(partner_came=True, pc_orgasms=0)
     show cg nb_enough_open onlayer cgl
     "Knees and elbows on her bed, the skirt flipped up over your ass. She slides in slow and deep."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Look at that little thing bouncing in its cage. Useless. So cute.\""
     vn_sfx "Pap. Pap. Pap."
     show cg nb_enough_mid onlayer cgl
     nb_ellis "\"More— Tessa, please, {i}more{/i}—\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Nobody's touching that, baby. You come from me now.\""
     "Your ass bounces back on her with every stroke. The cage drips onto her sheet in a long string and you don't even notice it."
     show cg nb_enough_peak onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Good girl. You take me so well, good girl.\""
     show cg nb_enough_cum onlayer cgl
     "You come somewhere in the middle of it, untouched, soft, the cage just dribbling while she fucks you, and you don't even notice till after." with vnfx("flash")

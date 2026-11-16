@@ -39,8 +39,8 @@ define shrine_face_crops = {
         253
     ],
     "pc-r1-open-furious": [
-        59,
-        7,
+        80,
+        8,
         253,
         253
     ],
@@ -81,7 +81,7 @@ define shrine_face_crops = {
         253
     ],
     "pc-r2-robes-furious": [
-        87,
+        84,
         8,
         253,
         253
@@ -105,8 +105,8 @@ define shrine_face_crops = {
         253
     ],
     "pc-r3-robes-possessed": [
-        56,
-        0,
+        107,
+        63,
         253,
         253
     ],
@@ -123,14 +123,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r4-robes-furious": [
-        136,
-        14,
+        160,
+        8,
         253,
         253
     ],
     "pc-r4-robes-possessed": [
-        128,
-        10,
+        165,
+        12,
         253,
         253
     ],
@@ -165,14 +165,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r5-robes-furious": [
-        78,
-        15,
+        157,
+        5,
         253,
         253
     ],
     "pc-r5-robes-possessed": [
-        125,
-        8,
+        174,
+        10,
         253,
         253
     ],
@@ -219,8 +219,8 @@ define shrine_face_crops = {
         253
     ],
     "pc-r6-open-possessed": [
-        140,
-        3,
+        156,
+        11,
         253,
         253
     ],

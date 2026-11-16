@@ -24,6 +24,7 @@ label hy_stay_sex:
     $ vn_enter(bg="hy_bedroom", pc="eager", pc_tag="hy_pc", cg="hy_stay_open")
     $ hy_enc = VNState(ran=True, partner_came=True, pc_orgasms=0)
     "He threads his fingers into your tails and guides the head of him to your lips."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Look up at me. Good girl. Keep your eyes on me while you do that.\""
     hy_emily "\"Mmh— {i}mmnh{/i}—!\""
     "You pull off just long enough to beam up at him."
@@ -32,12 +33,14 @@ label hy_stay_sex:
     show cg hy_stay_start onlayer cgl
     vn_sfx "Glk. Glk. Glk."
     "You fold your hands behind your back like a good girl and take him deeper, slow, to where your throat opens for him."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"That's it. All the way down. You were made for this. You just didn't know it till the flat.\""
     show hy_pc trance
     hy_emily "\"Glk— {i}glk{/i}— mmh—!\""
     "You take him to the root on your own and hum, so proud of yourself it comes out a squeal."
     show cg hy_stay_mid onlayer cgl
     "His hand settles on the top of your head and holds you there."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Listen to you. The whole landing can hear you choking on it, and you don't care.\""
     show hy_pc eager
     hy_emily "\"Use my mouth, sir— please, please, it's {i}yours{/i}— {i}mmf{/i}—!\"" with vnfx("shake")
@@ -46,8 +49,10 @@ label hy_stay_sex:
         "Your tails swing with every stroke. Drool runs down your chin onto your breasts."
     else:
         "Your tails swing with every stroke. Drool runs down your chin onto your buds."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Say it with your mouth full. Go on. Say what you are.\""
     hy_emily "\"Your girl— {i}mmh{/i}— your good girl—\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl.”{/=hy_hypno}"
     "Low, and your whole body answers it before you do."
     show cg hy_stay_cum onlayer cgl
@@ -68,6 +73,7 @@ label hy_master_sex:
         "You hold your breasts pushed together round him, the plug shifting in you every time you move."
     else:
         "You hold your buds pushed together round him, the plug shifting in you every time you move."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Your tits. Push them together for me, pet.\""
     hy_emily "\"Please, Master— please, please, I want it, I want it so {i}bad{/i}—\""
     "You're bouncing on your knees with it."
@@ -78,19 +84,24 @@ label hy_master_sex:
     else:
         "Barely anything either side of him, and he fucks it anyway, slow, the head bumping your chin every stroke."
     hy_emily "\"Is it good? Am I doing it good? Tell me I'm good— {i}please{/i}—\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl.”{/=hy_hypno}"
     show cg hy_master_mid onlayer cgl
     "You bend to him and catch the head on your tongue every time it reaches you."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Look at you leaking in that cage. You can't even touch it. Good.\""
     show hy_pc trance
     hy_emily "\"Look, it's leaking through the cage— and it's not even {i}hard{/i}— I love it, I {i}love{/i} it—!\""
     show cg hy_master_peak onlayer cgl
     if hy.full:
+        show hy_liam neutral at vn_cast_slot
         hy_liam "\"Squeeze them. Look at that. Look what you asked for.\""
     else:
+        show hy_liam neutral at vn_cast_slot
         hy_liam "\"Squeeze them. Look at that. Just enough to tell everyone you're my girl. Never more.\""
     show hy_pc eager
     hy_emily "\"Ahh— it's so {i}hot{/i}— don't stop, don't {i}stop{/i}— I'm your girl, I'm your {i}girl{/i}—!\"" with vnfx("shake")
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Whose are you? Say it.\""
     hy_emily "\"I'm yours— I'm {i}yours{/i}— I've always been yours—!\""
     show cg hy_master_cum onlayer cgl
@@ -114,22 +125,26 @@ label hy_door_sex:
     $ vn_enter(bg="hy_hallway", pc="eager", pc_tag="hy_pc", cg="hy_door_open")
     $ hy_enc = VNState(ran=True, partner_came=True, pc_orgasms=0)
     "His fist round the base of one tail, steering. The door's cold against your shoulder blades."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Louder, Emily. Let the landing hear whose girl you are.\""
     "You moan round him like it's the best thing that's ever happened to you, tails bouncing, drool on your chin."
     hy_emily "\"Mmh— {i}mmh{/i}—!\"" with vnfx("shake")
     show cg hy_door_start onlayer cgl
     vn_sfx "Glk. Glk. Glk."
     "His fists tighten in your tails."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Stay right there. Swallow.\""
     hy_emily "\"Mmh— good girl— I'm your good girl— say it, say it again—!\""
     show cg hy_door_mid onlayer cgl
     "Slow and deep, nose in his stomach. The door rattles in its frame behind your head every time he pulls you down."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"That little thing's drooling again. Useless. I love it.\""
     show hy_pc trance
     "The cage swings under your skirt with every stroke, dripping. You pull off just to giggle at it."
     hy_emily "\"Useless! It's so {i}useless{/i}— {i}ahh{/i}—!\""
     show cg hy_door_peak onlayer cgl
     "He flicks the cage."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Not even hard. You don't need it, do you, Emily?\""
     show hy_pc eager
     hy_emily "\"No, Master— it's not for anything— it's just for you to laugh at—!\""
@@ -149,20 +164,24 @@ label hy_listen_sex:
     $ hy_enc = VNState(ran=True, partner_came=True, pc_orgasms=0)
     "You sink. Slow. The head of him opens you, and then the rest, inch by inch, while you watch his face."
     hy_emily "\"Ahh— {i}ahh{/i}— it's inside— you're {i}inside{/i} me, Master— oh my {i}god{/i}—!\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Down. All the way. Look at me while you take it.\""
     show cg hy_listen_start onlayer cgl
     vn_sfx "Shlk... shlk..."
     "You lift and drop, careful at first, learning him. Awake. Every second of it yours."
     "His hands sink into your hips."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Since the flat. I've wanted this since the flat.\""
     hy_emily "\"I know. I {i}know{/i}. I asked.\""
     show cg hy_listen_mid onlayer cgl
     "Faster. Your tails swing against his cheeks, the cage bouncing soft on his stomach."
     hy_emily "\"Ahh— {i}ahh{/i}— look at me, Master— I'm riding you— I'm {i}riding{/i} you—!\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"That's my good girl. Ride it. Show me what you are.\""
     show cg hy_listen_peak onlayer cgl
     hy_emily "\"So deep— it's so {i}deep{/i}— I'm yours, I'm all yours— {i}haa{/i}—!\"" with vnfx("shake")
     "You bounce on him and squeal at the top of your lungs."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Louder. I want the whole building to know whose you are.\""
     hy_emily "\"Keep it locked, Master— keep it {i}locked{/i}— I don't need it, I've got {i}you{/i}—!\""
     show cg hy_listen_cum onlayer cgl
@@ -180,20 +199,24 @@ label hy_never_sex:
     $ hy_enc = VNState(ran=True, partner_came=True, pc_orgasms=0)
     "You sink down on him, slow, looking back at his face the way you love to, already moaning."
     hy_emily "\"Ahh— {i}ahh{/i}— it's inside— you're {i}inside{/i} me, Master— oh my {i}god{/i}—!\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"There it is. That's mine now. Squeeze.\""
     show cg hy_never_start onlayer cgl
     vn_sfx "Shlk. Shlk."
     show hy_pc trance
     hy_emily "\"Harder— {i}harder{/i}— I can take it, I can take it for you—!\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Good girl. Take it. You've been begging for this since the flat.\""
     show cg hy_never_mid onlayer cgl
     "Your ass claps down on him every drop, round and heavy, tails swinging."
     hy_emily "\"Am I good? Am I your good girl? Tell me— {i}ahh{/i}— tell me I'm good—!\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl.”{/=hy_hypno}"
     show cg hy_never_peak onlayer cgl
     show hy_pc eager
     hy_emily "\"Fill me up— please, Master, fill me {i}up{/i}— I've wanted this {i}forever{/i}—!\"" with vnfx("shake")
     "His hands sink into your hips."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Since the flat. I've wanted this since the flat.\""
     hy_emily "\"It doesn't do anything— it doesn't {i}do{/i} anything— and I don't care— {i}ahh{/i}—!\""
     show cg hy_never_cum onlayer cgl

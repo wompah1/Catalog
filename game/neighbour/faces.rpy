@@ -64,12 +64,12 @@ define neighbour_face_crops = {
     ],
     "pc-r2-apron-neutral": [
         49,
-        16,
+        15,
         253,
         253
     ],
     "pc-r2-apron-shy": [
-        49,
+        51,
         16,
         253,
         253
@@ -201,8 +201,8 @@ define neighbour_face_crops = {
         253
     ],
     "pc-r4t-apron-neutral": [
-        46,
-        19,
+        52,
+        34,
         253,
         253
     ],
@@ -249,8 +249,8 @@ define neighbour_face_crops = {
         253
     ],
     "pc-r5f-apron-neutral": [
-        43,
-        16,
+        46,
+        17,
         253,
         253
     ],

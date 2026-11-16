@@ -365,10 +365,13 @@ label co_stairwell_after:
     "His hands are still round the front of you. They've been there the whole time."
     co_voice "{=co_hypno}“Tell me what you see.”{/=co_hypno}"
     "It gasps it, and he tells you."
+    show co_cal grin at vn_cast_slot
     co_cal "\"There's a chest on you now. A handful each, small and perky and soft, bouncing every time I went in.\""
     "He says it into your ear while he's still inside you, and you clench on him so hard he laughs."
+    show co_cal grin at vn_cast_slot
     co_cal "\"And this.\""
     "One hand drops to your ass and squeezes."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Rounder every time. Look at it. It's getting {i}fat{/i}.\""
     "You moan so loud the stairwell rings with it. That moan was you."
     "Your body knew how to take him the whole way. Breathe out, open, squeeze on the way back. You never practised that."
@@ -405,9 +408,12 @@ label co_roof:
     show co_pc flushed
     co_you "{=co_hypno}“Tell me what you see.”{/=co_hypno}"
     "That one is yours. The first one. You pant it at the stars, bouncing on him, and you want the answer."
+    show co_cal hungry at vn_cast_slot
     co_cal "\"Your waist. Look at this. My hands nearly meet.\""
+    show co_cal hungry at vn_cast_slot
     co_cal "\"You've got a waist like a pin-up and tits bouncing in my face, and you can't see any of it.\""
     "His grip tightens and he drags you down onto him, hard."
+    show co_cal hungry at vn_cast_slot
     co_cal "\"{i}Chin up{/i}.\""
     show cg co_roof_tits onlayer cgl
     "{color=#ff5fb8}You grab your own tits mid-bounce. They overflow your hands now, a D, heavy and swinging, nipples hard as stones in the wind.{/color}"
@@ -564,6 +570,7 @@ label co_look_down:
     vn_sfx "Click."
     co_you "\"Oh.\""
     "It's the same voice. Exactly the same: low and warm and husky, with nothing round your neck at all. It's just yours now."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Chin up.\""
     "He says it by reflex. And the collar isn't holding it any more."
     "So you look down."
@@ -576,6 +583,7 @@ label co_look_down:
     "You grab them with both hands, and they're {i}huge{/i}, DDs spilling over your fingers, nipples fat and pink, and you can finally watch yourself squeeze."
     "You moan at the sight. You squeeze harder just to watch them bulge."
     co_you "\"Cal, look at my {i}tits{/i}—\""
+    show co_cal grin at vn_cast_slot
     co_cal "\"I've been looking for weeks.\""
     "And he slams in."
     "And your cock."
@@ -591,6 +599,7 @@ label co_look_down:
     "The voice. Hers. Yours."
     show cg co_can_i onlayer cgl
     "Cal's stopped moving. He's looking down too. His cock slides out of your ass, and the head of it settles, hot and slick, against your brand-new cunt."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Can I?\""
     "\n{size=-5}{color=#ff8fa3}▸ Say yes in your own voice{/color}{/size}"
     jump co_first_vaginal
@@ -605,6 +614,7 @@ label co_first_vaginal:
     show cg co_vaginal_mid onlayer cgl
     "It's nothing like anything. Tight and wet and so {i}deep{/i}, a stretch that goes all the way up inside you."
     "You watch him sink into you, inch after thick inch, because you can. You don't ask him to tell you what he sees. You're looking."
+    show co_cal grin at vn_cast_slot
     co_cal "\"Look at you. Look at my {i}girl{/i}.\""
     co_you "{=co_hypno}“Fuck me.”{/=co_hypno}"
     "Filthy and delighted, your hands on your own breasts, your eyes on where he disappears into you."

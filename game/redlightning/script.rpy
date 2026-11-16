@@ -118,12 +118,15 @@ label rl_opener:
     "His eyes go to your face. Then down."
     "The towel. Your hip. The freckles across your thigh."
     "Back up. Fast."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Maybe next time the wind'll give me a break.\""
     rl_rory "\"Next time you'll have a secret weapon!\""
     "You squeeze his shoulder."
     rl_rory "\"Cycle of rivalry, mate. Else what's the fun?\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Yeah.\""
     "He doesn't smile."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Maybe I'll scheme something.\""
     rl_rory "\"HA! Scheme away! You know I never lose!\"" with vnfx("shake")
     "You slap his back again and stand, towel nearly gone, and stroll off to the showers."
@@ -462,15 +465,20 @@ label rl_end:
     "You gasp it at the sky, delighted."
     show cg rl_sa_rlend onlayer cgl
     "Miles rolls his head over to look at you. Red hair everywhere. Tits heaving. That grin."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Neither do I.\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Now.\""
     if _rlEnd == "confront":
+        show miles neutral at vn_cast_slot
         rl_miles "\"You knew.\""
         "Still breathless."
+        show miles neutral at vn_cast_slot
         rl_miles "\"Since the orange one. You looked me in the eye and drank it.\""
         rl_rory "\"Every bottle after. Every single one.\""
         rl_rory "\"Next colour, Miles.\""
     else:
+        show miles neutral at vn_cast_slot
         rl_miles "\"You never said. Not till the shed. You let me keep handing them over.\""
         rl_rory "\"Best mates don't spoil a good scheme.\""
         "You squeeze his hand."
@@ -512,11 +520,13 @@ label rl_epilogue_stay:
     show rory flushed at vn_pc_slot
     rl_rory "\"Mmmf— mmmhh— MMMF—!\""
     "Fucking you fast and deep until your legs shake."
+    show miles blush at vn_cast_slot
     rl_miles "\"For luck.\""
     "In your ear."
     "You run the anchor leg with your thighs still sticky and win anyway."
     show cg rl_drink_luck onlayer cgl
     "And before every race, at the blocks, Miles hands you a bottle."
+    show miles blush at vn_cast_slot
     rl_miles "\"For luck.\""
     "You drink it in one go, looking right at him."
     ## After the epilogue, back to route select (owner, 2026-10-19; vn.twee's <<route_return>>). The storyline finishes here, as <<sl_exit>> did; a route save chooses another story, and free play goes on at the track.
@@ -951,6 +961,7 @@ label rl_blue_locker:
     rl_rory "\"Oi— OI— what's the—\""
     "You yank. Your arms don't move. He's got the whole knot of cotton in one fist, pinned over your head against the metal."
     rl_rory "\"Dogpile?! Is this a DOGPILE? That's two-on-one, that's not—\""
+    show miles hungry at vn_cast_slot
     rl_miles "\"Shut up.\""
     "Low. Not steady."
     "His free hand lands on your chest."
@@ -969,6 +980,7 @@ label rl_blue_locker:
     rl_rory "\"{i}Hhhnnn{/i}— stop— stop it, that's— they're all {i}raw{/i}, you can't just— {i}ahh{/i}—\""
     "Your hips jerk forward on their own."
     rl_rory "\"—t-tap out— I'm not tapping out— I'm NOT—\""
+    show miles hungry at vn_cast_slot
     rl_miles "\"Nobody asked you to.\""
     "Into your neck."
     "One hand leaves your chest. Slides down your side. Shoves into the back of your boxers."
@@ -1068,8 +1080,10 @@ label rl_blue_after:
     rl_rory "\"Oh, that's a good face. You should make that face at the finish line.\""
     "You beam at him through the steam."
     rl_rory "\"Good rep?\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"You idiot.\""
     "Forehead on the tiles."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Even now—\""
     rl_rory "\"Sounds like a challenge, mate. You know I never lose.\""
     jump rl_hub
@@ -1262,6 +1276,7 @@ label rl_karaoke_song:
     rl_rory "\"Is that— HA!\""
     "You twist round, mic still in your fist."
     rl_rory "\"THORNE! Let me UP, you're cheating— this is a SOLO, you can't tackle the lead singer—\""
+    show miles blush at vn_cast_slot
     rl_miles "\"Sing.\""
     "Into your back."
     rl_rory "\"I— let GO—\""
@@ -1279,6 +1294,7 @@ label rl_karaoke_song:
     vn_th "(Because you are NOT losing a sing-off.)"
     rl_rory "\"You okay back there, Thorne?\""
     "You pant it into the mic, and the bar howls."
+    show miles blush at vn_cast_slot
     rl_miles "\"Shut up and sing.\""
     rl_rory "\"Ohh— the lyrics have gone— stop— stop {i}moving{/i} me, I can't— {i}oh{/i}, that's— why is that GOOD—\""
     "His hips jerk up into you. He drags you down harder."
@@ -1382,8 +1398,10 @@ label rl_orange:
     "Miles. He's slid in beside you out of nowhere, thumb hooked in your waistband."
     "He isn't looking at you. He's looking at Lenny's hand on your arse."
     "Lenny takes his hand back very fast."
+    show miles blush at vn_cast_slot
     rl_miles "\"It's a supplement. L-carnitine. BCAAs. I drink it too.\""
     rl_lenny "\"Then I want some. Give us a bottle, Thorne. Team spirit.\""
+    show miles blush at vn_cast_slot
     rl_miles "\"No.\""
     hide cg onlayer cgl
     show miles blush at vn_cast_slot
@@ -1646,8 +1664,10 @@ label rl_stretches_after:
     rl_rory "\"Bit like the green one.\""
     "He makes a noise like a man falling down a staircase."
     rl_rory "\"How was that? Be honest. Was that a good rep?\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"You idiot.\""
     "Staring down at you."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Even now you're grinning.\""
     rl_rory "\"Sounds like a challenge. You know I never lose.\"\n{size=-5}{color=#ff8fa3}▸ Hit the showers and sleep it off{/color}{/size}"
     call vn_night(7)
@@ -1886,14 +1906,18 @@ label rl_shed_after:
     if rl_enc.pc_orgasms > 0:
         "You came too. Your tiny cock's still twitching between you, dribbling on his stomach."
         "Your arse is still squeezing him in little aftershocks."
+    show miles neutral at vn_cast_slot
     rl_miles "\"You idiot.\""
     "He gasps it into your neck."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Even now—\""
     show rory grin at vn_pc_slot
     rl_rory "\"Best— celebration— EVER.\""
     "You pant it. Legs still locked round him. Sweat everywhere. Grinning."
     rl_rory "\"You really know how to celebrate a win, Thorne.\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"If you won't get it with words, I'll show you.\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Every day. Until you do.\""
     rl_rory "\"Sounds like a challenge.\""
     vn_sfx "Mwah."
@@ -1906,8 +1930,10 @@ label rl_shed_after:
     rl_rory "\"Again?\""
     "You whisper it into his mouth, thrilled, and squeeze him."
     rl_rory "\"Already?\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"Not here.\""
     "Rough."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Mine. Tonight. My room.\"\n{size=-5}{color=#ff8fa3}▸ His room, for the night{/color}{/size}"
     call vn_night(7)
     jump rl_shed_morning
@@ -2090,6 +2116,7 @@ label rl_girlfriend_room:
     if _rl_feel:
         "{color=#e40081}[_rl_feel]{/color}"
     "He makes a sound that's half laugh, half sob. His thumbs part you. He stares."
+    show miles hungry at vn_cast_slot
     rl_miles "\"I've wanted— I want {i}you{/i}.\""
     show rory grin at vn_pc_slot
     rl_rory "\"Teamwork, mate.\""
@@ -2140,16 +2167,20 @@ label rl_girlfriend_after:
     if rl_enc.pc_orgasms > 0:
         "You came again round him. Your new pussy's still squeezing him, little greedy flutters."
         "You're laughing breathlessly at the ceiling."
+    show miles neutral at vn_cast_slot
     rl_miles "\"Your hips know it already.\""
     "Wrecked."
+    show miles neutral at vn_cast_slot
     rl_miles "\"How do they know it already?\""
     "They do. Up, down, squeeze. First time, and you're {i}good{/i} at it."
     show rory grin at vn_pc_slot
     rl_rory "\"Natural talent, mate.\""
     rl_rory "\"Two in one morning. That's a PERSONAL BEST.\""
+    show miles neutral at vn_cast_slot
     rl_miles "\"You idiot.\""
     vn_sfx "Mwah."
     "He kisses you."
+    show miles neutral at vn_cast_slot
     rl_miles "\"My idiot.\""
     "He doesn't pull out. He rolls you on top of him, still inside you."
     "You sit up on him with his hands on your hips and your tits swaying over his face, and rock. Lazy. Just to feel it."

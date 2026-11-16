@@ -445,6 +445,7 @@ label shr_mouth:
     show cg shr_flint_cock onlayer cgl
     "Flint steps in close. His trousers come down, and his cock swings out right in front of your face, thick and grey-veined and heavy, already hard, so big it blocks out the gate behind him."
     shr_lady "\"Oh, I remember {i}that{/i}.\""
+    show shr_flint flat at vn_cast_slot
     shr_flint "\"Hold still.\""
     "He doesn't push. He doesn't have to. Your head goes forward on its own, your open mouth sliding down over the fat head of him, your tongue curling under it, your lips sealing round the shaft. Your mouth's so sensitive that the first touch of him on your tongue makes your eyes roll."
     shr_you "\"{i}Mmmf{/i}— MMF— {i}mmnnh{/i}—!\""
@@ -464,6 +465,7 @@ label shr_mouth_after:
     shr_you "\"No— {i}no{/i}— I've done— I've DONE one—\""
     show cg shr_mouth_slate onlayer cgl
     "Your head turns. Your hand lets go of Slate's cock and guides it straight to your lips instead, and your mouth opens wide and takes him, all the way, in one long slurp, while Slate laughs, breathless, and holds your ears."
+    show shr_slate grin at vn_cast_slot
     shr_slate "\"Oh, these are {i}new{/i}. Look at that. She's got your mouth now.\""
     "He rubs them with his thumbs."
     vn_sfx "{i}Glk. Glk. Glk.{/i}"

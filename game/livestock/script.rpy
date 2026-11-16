@@ -65,11 +65,14 @@ label ls_trough_one:
     hide ls_petal
     "Buttercup kneels next to you and shows you: chest up, lips loose, a long flat lick through the mash."
     vn_sfx "Shlllk."
+    show ls_buttercup grin at vn_cast_slot
     ls_buttercup "\"Like that. Don't bite. Breathe through your nose.\""
     "You put your face in the trough. It's sweet. Creamy-sweet, warm, and it slides down your throat like it's been waiting for you. You go back in before you've decided to."
     "By the third mouthful you've got mash on your nose and your cock is half hard under the blanket and you have {i}no{/i} idea why."
+    show ls_petal bossy at vn_cast_slot
     ls_petal "\"Ooh. Somebody likes breakfast.\""
     ls_you "\"I don't— that's not—\""
+    show ls_buttercup grin at vn_cast_slot
     ls_buttercup "\"Sugar, nobody here minds. Wait till nine. You'll see.\""
     "She licks her lips clean, slow, and stretches, and her tits roll under her smock like two warm hams."
     ls_you "\"What happens at nine?\""
@@ -133,6 +136,7 @@ label ls_night:
     if _ls_r == 1:
         "Back in your stall, shaking. Hester writes on her clipboard on the way past and doesn't stop."
         "Buttercup's arm comes over the partition and pats your head."
+        show ls_buttercup grin at vn_cast_slot
         ls_buttercup "\"Every night, sugar. You'll stop shaking by Thursday.\""
     elif _ls_r == 2:
         "Hester takes the card off your gate, writes, puts it back. You read it upside down. {i}Double mash.{/i}"
@@ -141,13 +145,16 @@ label ls_night:
     elif _ls_r == 3:
         "You lie in the straw and touch your nipple, and your finger comes away wet. The bell on your collar tinks every time you breathe."
         ls_you "\"[ls_pc_name]. My name's {i}[ls_pc_name]{/i}.\""
+        show ls_buttercup grin at vn_cast_slot
         ls_buttercup "\"Night, Cherry.\""
         "Over the partition, and your nipples go hard at it."
     elif _ls_r == 4:
         "Out in the yard the twins are scrubbing the gutters in the dark, and grumbling, and you can hear every word."
         ls_you "\"Good. {i}Good.{/i}\""
         "Your hole twitches at their voices anyway."
+        show ls_billy grin at vn_cast_slot
         ls_billy "\"Worth it.\""
+        show ls_bart grin at vn_cast_slot
         ls_bart "\"{i}So{/i} worth it.\""
     elif _ls_r == 5:
         "The cage sits cold between your legs and your tits are full again already, heavy and throbbing. You fall asleep with one hand on each."
@@ -160,10 +167,12 @@ label ls_night:
     elif _ls_r == 7:
         show bg ls_trailer onlayer bgl
         "The trailer rocks you home in the dark, your ribbon on your chest, Buttercup's head on your shoulder."
+        show ls_buttercup grin at vn_cast_slot
         ls_buttercup "\"Blue ribbon. First go. Nobody does that.\""
         "Half asleep. She pats your tit like a pillow and goes back to sleep on it."
     else:
         "You sleep in Marigold's stall tonight. You try for your own gate twice, and twice her arm comes over you, heavy and warm, and hauls you back into the straw."
+        show ls_marigold fond at vn_cast_slot
         ls_marigold "\"Mine now, Cherry. Sleep.\""
         "Her tits leak on your back, and yours leak on the straw. Your hand keeps drifting down between your legs. Just to check. Every time, it's still there, wet and soft, and every time you moan into her arm, and every time she chuckles."
     show screen ls_card
@@ -193,6 +202,7 @@ label ls_chore:
 
 label ls_milking_1:
     show cg ls_milk_1_strap onlayer cgl
+    show ls_hester flat at vn_cast_slot
     ls_hester "\"Bench. Face down.\""
     ls_you "\"No. {i}No.{/i} I'm not getting on that—\""
     "Petal and Buttercup put you on it. Face down on the padded bench, on the haybale, blanket gone, knees in the straw. Hester buckles a leather strap round one wrist on the bar."
@@ -202,6 +212,7 @@ label ls_milking_1:
     "She fits the cups over your nipples. Cold. {i}Thnk-thnk-thnk{/i}, and they suck. There's nothing there to suck. Flat chest, little pink nipples, tugged out and let go, tugged out and let go."
     "Then cold lube, right on your hole."
     ls_you "\"Wh— hey— {i}HEY{/i}— not there— don't you {i}dare{/i}—\""
+    show ls_hester flat at vn_cast_slot
     ls_hester "\"Breathe out.\""
     show cg ls_milk_1_plug onlayer cgl
     "She doesn't wait for you to. You thrash, and she holds your hip down with one rubber glove like she's done it a thousand times, and the plug pushes in, fat and smooth and slick, and it slides and slides and seats, and the tip of it sits right on—"
@@ -216,6 +227,7 @@ label ls_milking_1:
     "The plug doesn't stop. You go off again. Thinner. Dribbling. Your toes curl in the straw and you're screaming like nobody's listening, and the whole barn is listening."
     show cg ls_saucer_dry onlayer cgl
     "The cups on your chest go {i}thnk, thnk, thnk{/i}, sucking at nothing. Hester taps the saucer under your chest line. {i}Tink.{/i} Dry."
+    show ls_hester flat at vn_cast_slot
     ls_hester "\"Not a saucer's worth.\""
     show cg ls_marigold_rail onlayer cgl
     show ls_marigold fond at vn_cast_slot
@@ -226,6 +238,7 @@ label ls_milking_1:
     ls_you "\"Get me— {i}hah{/i}— get me {i}out{/i} of this—\""
     "She smiles, slow, fond, like you're a gate that sticks. Lets go. Walks off down the line."
     hide ls_marigold
+    show ls_buttercup grin at vn_cast_slot
     ls_buttercup "\"That's Marigold. Boss of the line. Oooh, she {i}looked{/i} at you.\"\n{size=-5}{color=#ff8fa3}▸ Go on{/color}{/size}"
     jump ls_night
 
@@ -251,10 +264,14 @@ label ls_day_2:
     "She leans in and lets one out, low and round and long, right from her chest. Her tits jiggle with it."
     ls_buttercup "\"Your go.\""
     ls_you "\"I'm not—\""
+    hide ls_buttercup
+    show ls_petal grin at vn_cast_slot
     ls_petal "\"Moo for it.\""
     "Petal holds up a candied apple slice. You want the apple slice. You want it a ridiculous amount."
     ls_you "\"Mm— {i}mmh{/i}— mm—\""
     "It comes out strangled, half a moo, half a cough. Petal laughs so hard she snorts. Buttercup claps."
+    hide ls_petal
+    show ls_buttercup grin at vn_cast_slot
     ls_buttercup "\"Close! Give it a week.\""
     hide ls_buttercup
     call ls_chore
@@ -325,8 +342,10 @@ label ls_two_tap_after:
         "Again. And she gives you again like she gave you the first: slow, heavy, all of it, her big hand holding your head the whole time, till you've swallowed every drop and moaned for the last of it."
     else:
         "She lets you go, eventually, and pats your cheek."
+        show ls_marigold fond at vn_cast_slot
         ls_marigold "\"Save some room.\""
     "You lie in her straw afterwards, coughing, swearing at the rafters, your belly warm and your mouth tingling and your cock still dripping, untouched. She strokes your hair like you're something she owns."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Bell's at nine. Don't be late, ma'am's little discrepancy.\"\n{size=-5}{color=#ff8fa3}▸ Nine o'clock{/color}{/size}"
     $ vn_until(21)
     jump ls_bell
@@ -336,6 +355,7 @@ label ls_milking_2:
     "Bench. Bar. Cups. The plug slides in like it lives there."
     vn_sfx "Vrrrm."
     "You don't last any longer this time. Then you're coming, hips jerking on the bench, cock spurting into the tray, and the back line drinks it up, {i}shlp, shlp{/i}, and the tank behind you is brimming." with vnfx("flash")
+    show ls_hester flat at vn_cast_slot
     ls_hester "\"Tomorrow's mash.\""
     "Tapping the glass. Your mouth waters. Your {i}mouth waters.{/i}"
     ls_you "\"{i}Hhah{/i}— again— it's going again—\""
@@ -361,6 +381,7 @@ label ls_day_3:
     "{color=#ff5fb8}Your waist dips in where it didn't before. Your hips have gone soft and round under your palms. Your lips are fat and so sensitive that licking them makes you whimper out loud.{/color}"
     "{color=#ff5fb8}Your hair's down past your ears. You push it back and your fingers catch on something hard on your head. Two of them. Two hard little nubs, one each side, under the hair.{/color}"
     ls_you "\"Hay does that.\""
+    show ls_buttercup grin at vn_cast_slot
     ls_buttercup "\"Does it, sugar.\""
     "Over the partition, chewing. At the trough you lap your mash and think about Marigold's cock the whole time."
     show ls_buttercup soft at vn_cast_slot
@@ -403,13 +424,16 @@ label ls_three_stall:
     $ vn_enter(bg="ls_marigold_stall", pc="defiant", pc_tag="ls_pc", cast=[], cg="ls_stall_down")
     show cg ls_stall_down onlayer cgl
     "Her stall. Deep straw. The smell of her, clover and heat."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Knees and elbows. In the straw.\""
     ls_cherry "\"No— I'm not— {i}hey{/i}—!\""
     "One big hand between your shoulder blades, and you're down. Knees. Elbows. Your face in the hay and your ass up. Your bell tinks against the straw."
     "She kneels behind you. She's so {i}big.{/i} Her thighs bracket yours and pin them. Her cock lies along the crack of your ass, hot and heavy, and it goes right up your back."
     ls_cherry "\"Ma'am— ma'am, {i}don't{/i}— please— I'm not a—\""
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Easy.\""
     "A big hand spreads on the small of your back and holds you flat. Oil, warm. Her thumb circles your hole, slow, and slips in, and the no comes out of you as a moan, straight into the straw."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"There's the honest noise.\""
     "The ridged head of her cock presses where her thumb was. And pushes. You clench. It doesn't matter. Your hole opens round it, slick and greedy, the traitor."
     ls_cherry "\"{i}Ohhhh{/i}— no— {i}NO{/i}— take it out—!\""
@@ -434,12 +458,14 @@ label ls_claimed_after:
         "She stays buried in you, both of you shaking, her chest heaving on your back."
     "You're screaming. You've been screaming the whole time. Your face is in the straw and your cock is drooling a long clear string onto the hay under you, untouched, twitching, and you can't stop clenching on her."
     "She doesn't pull out."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Again.\""
     ls_cherry "\"No— ma'am— {i}ma'am{/i}— not again— {i}ahh{/i}— {i}ahhh{/i}—!\""
     vn_sfx "Pap. Pap. Pap."
     "Slow. Huge. All the way in, all the way out, the ridged head catching on your rim every time, and every stroke drags across that spot until your eyes roll back and the no falls out of your mouth and doesn't come back."
     ls_cherry "\"Don't— don't stop— {i}why{/i} am I— don't {i}stop{/i}— ma'am— {i}please{/i}—!\"" with vnfx("shake")
     "You come with nobody touching your cock. It just spills, in pulses, while she fucks you through it, and she groans and grinds in deep and floods you again." with vnfx("flash")
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Mine. Cherry.\""
     "Patting your ass."
     ls_cherry "\"...Not. Not yours.\""
@@ -505,18 +531,24 @@ label ls_four_rail:
     $ vn_enter(bg="ls_yard", pc="shocked", pc_tag="ls_pc", cast=[], cg="ls_rail_grab")
     show cg ls_rail_grab onlayer cgl
     "You're carrying a pail of mash along the yard fence, tits bouncing, when two sets of arms grab you from behind."
+    show ls_billy grin at vn_cast_slot
     ls_billy "\"Got her!\""
+    show ls_bart grin at vn_cast_slot
     ls_bart "\"{i}We{/i} got her!\""
     "The Haskett twins. Billy and Bart, the yard hands. Same curly horns, same short tails, same gap-toothed grin. You still can't tell which is which."
     show cg ls_rail_over onlayer cgl
     "They haul you up and over the top rail, belly down on wood rubbed glassy smooth by years of bellies, ass up, the pail rolling away in the mud."
     ls_cherry "\"Hey— {i}hey!{/i} Put me {i}down{/i}— get your hands off—!\""
     "You kick. One of them catches your ankle, cheerful as anything, and tucks it under his arm. The other one's got both your wrists on the far side of the rail."
+    show ls_billy grin at vn_cast_slot
     ls_billy "\"Look at {i}that.{/i}\""
     vn_sfx "Smack."
     "He smacks your ass. It jiggles. They both whoop."
+    show ls_bart grin at vn_cast_slot
     ls_bart "\"She's coming on lovely!\""
+    show ls_billy grin at vn_cast_slot
     ls_billy "\"Me first, I grabbed her!\""
+    show ls_bart grin at vn_cast_slot
     ls_bart "\"You grabbed her {i}arm!{/i}\""
     ls_cherry "\"I'll tell Hester— I'll tell {i}Hester{/i}—!\""
     "\"Hester's up the top field!\" they chorus, delighted."
@@ -536,12 +568,15 @@ label ls_four_rail_after:
     show cg ls_rail_swap onlayer cgl
     $ _ls_f = ls_fight_line()
     "[_ls_f]"
+    show ls_billy grin at vn_cast_slot
     ls_billy "\"Swap! Swap swap swap!\""
     "One pulls out of your ass with a wet pop and comes round the front, and the other one goes round the back, and they're laughing the whole time like it's a three-legged race."
     ls_cherry "\"No— not my {i}mouth{/i}— don't you— {i}mmf{/i}—!\""
     "Cock in your mouth. Cock in your ass. Both at once. The rail creaks."
     vn_sfx "Squeak, squeak, squeak."
+    show ls_bart grin at vn_cast_slot
     ls_bart "\"Barn-broke, this one!\""
+    show ls_billy grin at vn_cast_slot
     ls_billy "\"Told you she'd take to it!\""
     ls_cherry "\"{i}Mmf{/i}— I'm {i}not{/i}— {i}mmnf{/i}—!\""
     "You're stuffed at both ends and your tiny cock is rubbing on the wood and leaking all over it and your new tits are squashed on the rail and squirting, and you're still trying to say no round him, and the twin behind you hits {i}that{/i} spot, and something comes up out of your chest instead—"
@@ -549,7 +584,9 @@ label ls_four_rail_after:
     ls_cherry "\"{i}Mmmmmmooooooo{/i}—!\"" with vnfx("shake")
     "Long and low and loud. A real one. Your first real one, forced out of you round a goat-man's cock."
     "Both twins freeze."
+    show ls_bart grin at vn_cast_slot
     ls_bart "\"...Did she just—\""
+    show ls_billy grin at vn_cast_slot
     ls_billy "\"She {i}mooed!{/i}\""
     "And they go at you twice as hard, cackling, and the moos keep coming, one every thrust, and the no's stop coming at all."
     ls_cherry "\"{i}Mmmoo{/i}— {i}mmmmoooo{/i}—!\""
@@ -648,10 +685,12 @@ label ls_five_bench_after:
     show cg ls_bench_drink onlayer cgl
     "She swallows. And swallows. She groans round your nipple and her hips start rocking, and her cock's grinding hot and slick up your belly, and she switches tits and drinks from the other one and grinds faster—"
     ls_cherry "\"Don't— {i}don't{/i}— oh god don't stop— {i}mmmoooo{/i}—!\""
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Good girl. {i}Good{/i} girl.\""
     show cg ls_bench_paint onlayer cgl
     "And she cums all up your stomach, hot and thick, in long lazy spurts that pool in your belly button." with vnfx("flash")
     "She lets your wrists go. You lie there leaking from both nipples, panting, painted. Your hands drift to your tits on their own and squeeze, and milk runs over your fingers, and you know exactly how to do it now. Thumb, fingers, roll. You didn't tell your hands to. They do it anyway."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"There. Now the machine'll have something to do.\""
     "And she licks her lips.\n{size=-5}{color=#ff8fa3}▸ After lunch{/color}{/size}"
     jump ls_five_cage
@@ -699,6 +738,7 @@ label ls_milking_5:
     hide ls_petal
     show cg ls_glass_toast onlayer cgl
     "Marigold leans over the rail and lifts the full glass to the lamp, white and frothy, like a toast. She drinks half of it. Not a drop of hers has ever touched your tongue, and here she is, drinking yours."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Good girl.\""
     "Milk on her lip. You moo so hard the cups slip.\n{size=-5}{color=#ff8fa3}▸ Go on{/color}{/size}"
     jump ls_night
@@ -754,6 +794,7 @@ label ls_six_pen:
     hide ls_angus
     show cg ls_pen_down onlayer cgl
     "Calm as weather. He crosses the straw in two steps, takes your horns, one in each fist, and steers you down. Not hard. Just all the way. Knees in the straw, elbows in the straw, your face in the straw, your ass up."
+    show ls_angus still at vn_cast_slot
     ls_angus "\"Still.\""
     menu:
         "He says it like a fact."
@@ -776,15 +817,18 @@ label ls_six_pen_after:
     show cg ls_pen_again onlayer cgl
     "And he doesn't stop. He takes your horns, one in each fist, and steers you back onto him."
     ls_cherry "\"Sir— {i}sir{/i}— no more— it's so {i}big{/i}— I'm so {i}full{/i}— I can't—\""
+    show ls_angus still at vn_cast_slot
     ls_angus "\"Still.\""
     vn_sfx "Splt. Splt."
     "He stretches you wide and keeps you there. It's so big it's stupid. It's so big you can feel it in your {i}throat{/i}, and every slow stroke pushes the milk out of your tits onto the straw, and your caged nub leaks a steady drip through the bars the whole time, useless, forgotten."
     ls_cherry "\"Sir— {i}ahh{/i}— sir— don't— don't {i}stop{/i}— why did I— don't {i}stop{/i}—!\"" with vnfx("shake")
+    show ls_angus still at vn_cast_slot
     ls_angus "\"Good. Leaking through the cage. Good stock.\""
     ls_cherry "\"{i}Mmmmmmooooooo{/i}—!\""
     show cg ls_pen_flood onlayer cgl
     "He pulls you back by the horns until you're flush on his hips and holds you there and floods you again. You feel it go in. You feel it fill you. When he finally pulls out, it gushes out of you and runs down your thighs in thick hot streams." with vnfx("flash")
     "You can't feel your knees. You can feel {i}everything{/i} else. Your ass gapes and clenches on nothing, and you swear at it, and it clenches again."
+    show ls_angus still at vn_cast_slot
     ls_angus "\"Mm.\""
     "He pats your head, and sits back down on his bale.\n{size=-5}{color=#ff8fa3}▸ Nine o'clock{/color}{/size}"
     $ vn_until(21)
@@ -1005,6 +1049,7 @@ label ls_milking_7:
     "The plug hums in your ass and your caged nub doesn't even twitch. The back line sucks at nothing. Dry."
     show cg ls_pail_over onlayer cgl
     "The pail fills, and fills, and slops over the top."
+    show ls_hester flat at vn_cast_slot
     ls_hester "\"Show record. Write it up.\""
     "And for once she doesn't sound bored at all.\n{size=-5}{color=#ff8fa3}▸ Go on{/color}{/size}"
     jump ls_night
@@ -1044,17 +1089,21 @@ label ls_eight_drink:
     ls_cherry "\"No— I'm not— I'm not drinking from— {i}mmf{/i}—\""
     "She presses it in. Her hand comes round the back of your head, and holds, gentle and total, and your face is in her tit and her nipple's on your tongue."
     "You've never tasted her. Not once. Not in all of it."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"It's for your own good, Cherry. Drink.\""
     show cg ls_drink_deep onlayer cgl
     "Her milk floods your mouth, thick, rich, sweeter than the mash, sweeter than anything, and you swallow because you have to, and then you {i}moan{/i}, and then—"
     ls_cherry "\"{i}Mmf{/i}— no— {i}mmmh{/i}—\""
     "You're sucking harder."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"That's it. Drink up.\""
     "You drink like you were born to, swearing into her tit between pulls. Long pulls, throat working, your tongue flat on her nipple the way she did yours. She hums."
     "And then the heat comes."
     "It starts low, in your belly, and rolls out through your hips like warm syrup. Then it's not warm. It's {i}hot.{/i} Your thighs fall open on their own. Your caged nub throbs so hard against the steel you whimper round her nipple."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Mm. There it is.\""
     ls_cherry "\"{i}Mmmh{/i}— what's— what did you— what's {i}happening{/i}—\""
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Keep drinking.\""
     "Her hand on your head doesn't move.\n{size=-5}{color=#ff8fa3}▸ She holds you on it{/color}{/size}"
     jump ls_eight_heat
@@ -1119,6 +1168,7 @@ label ls_eight_taste:
     ls_cherry "\"Don't stop— {i}don't stop{/i}— please— {i}please{/i}—!\"" with vnfx("shake")
     show cg ls_taste_cum onlayer cgl
     "You come on her tongue. Then again. The third time you just moo, long and helpless, and she laughs into you." with vnfx("flash")
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Sweet. Saving the rest for the herd.\""
     "Licking her lips.\n{size=-5}{color=#ff8fa3}▸ Nine o'clock{/color}{/size}"
     $ vn_until(21)
@@ -1127,6 +1177,7 @@ label ls_eight_taste:
 label ls_milking_8:
     show cg ls_plug_shelf onlayer cgl
     "The plug's on the shelf. Hester's put it away. Washed and dried and put away."
+    show ls_hester flat at vn_cast_slot
     ls_hester "\"No need.\""
     show cg ls_milk_8 onlayer cgl
     "Just the cups tonight. Just the front. You lie on the bench with your knees spread and your new pussy dripping on the pad, and the cups go on, and Hester rolls the churn under the line."
@@ -1156,6 +1207,7 @@ label ls_day_9:
     hide ls_buttercup
     "Marigold's hand squeezes your hip. You feel her cock stir against your ass, and your pussy clenches on nothing, and you get it."
     ls_cherry "\"{i}Oh.{/i} No. No, no, absolutely not, not in front of— not {i}that{/i}—\""
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Shh. Forms are final, Cherry.\""
     "Into your hair, fond."
     $ ls.fit = "show"
@@ -1165,10 +1217,13 @@ label ls_day_9:
     "And your hand keeps going between your legs. You pull it away. It goes back. Nobody tells you to stop, and you can't."
     show cg ls_herd_trough onlayer cgl
     "At the trough the whole herd makes room for you in the middle. Cow-girls either side, warm shoulders, swinging tits, everybody's tails going. Petal ladles the creamed mash, the good stuff, into your bit first."
+    show ls_petal grin at vn_cast_slot
     ls_petal "\"Ribbon cow eats first. That's the rule.\""
     "You put your face in it. It's sweet. You moo into it without meaning to, and the cow-girls either side moo back, and it goes down the line, and you've got mash on your nose and your face is burning."
     "The Hasketts come past with a bale each and both of them stop dead and stare at the panties."
+    show ls_billy grin at vn_cast_slot
     ls_billy "\"Is that—\""
+    show ls_bart grin at vn_cast_slot
     ls_bart "\"It {i}is!{/i}\""
     "\"Congratulations!\" they chorus, beaming, and walk straight into a post.\n{size=-5}{color=#ff8fa3}▸ Evening{/color}{/size}"
     $ vn_until(20)
@@ -1198,11 +1253,13 @@ label ls_herd_night:
     hide ls_hester
     show cg ls_herd_marigold onlayer cgl
     "Marigold steps up onto the bales. Apron off. Horns garlanded. Her tits heave and leak. Her cock stands up from her hips, huge and ridged and dripping, and she looks at you like she's waited all season for this. She has."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Lie back, Cherry. Let them see.\""
     "So the whole barn hears."
     ls_cherry "\"No. {i}No.{/i} Not in front of everyone— not {i}there{/i}— Marigold, I'm {i}not{/i}—\""
     show cg ls_herd_open onlayer cgl
     "She lays you back on the bales herself. One big hand on your chest, gentle, total. She takes your knees and opens them, and holds them open, slick and shining, and the whole herd leans in."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"It's for your own good, Cherry.\""
     "Fond as anything. She kneels between them. The fat ridged head of her cock rubs up and down your wet new lips, once, twice, and you buck, and it doesn't matter, and then it presses in, and your pussy opens round it, and the head slips inside you in front of everybody."
     ls_cherry "\"{i}Ahhhhh{/i}— no— take it {i}out{/i}— Marigold— {i}Marigold{/i}—!\"" with vnfx("shake")
@@ -1238,6 +1295,7 @@ label ls_herd_after:
     ls_cherry "\"{i}MMMMMMMMMOOOOOOOOOOOOO{/i}—!\"" with vnfx("shake")
     "The whole barn moos back. It shakes the lanterns."
     "Your new pussy grips her like it's been doing it for years. Squeezing. Milking her. Rolling up to meet every stroke. You didn't tell it to. You can't make it stop."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"Gonna fill you. In front of all of them.\""
     "Growling it in your ear."
     ls_cherry "\"Don't— don't— {i}mmmoo{/i}— don't stop— {i}please{/i}— fill me— oh god {i}fill me{/i}— {i}mmmmoooo{/i}—!\""
@@ -1245,6 +1303,7 @@ label ls_herd_after:
     "She slams home and holds and floods you. Hot. Thick. So much it gushes out round her cock and runs down your thighs onto the hay, and you come so hard you black out for a second, mooing, begging, tits pouring." with vnfx("flash")
     show cg ls_herd_kiss onlayer cgl
     "When you come back, she's kissing you. The herd's still cheering. Your tits are still pouring. You're still moaning {i}more{/i} into her mouth, and you don't remember starting."
+    show ls_marigold fond at vn_cast_slot
     ls_marigold "\"There. {i}Now{/i} you're done proper.\"\n{size=-5}{color=#ff8fa3}▸ Nine o'clock{/color}{/size}"
     $ vn_until(21)
     jump ls_herd_churn
@@ -1281,6 +1340,7 @@ label ls_blue_ribbon:
     "You lie in the straw with the herd round you, warm and full and empty all at once."
     "Horns. Ears. A tail. Huge tits, leaking. Wide hips. A pussy still dripping Marigold. A bell on your collar and a blue ribbon on your chest."
     "The card on the gate says {color=#ffd700}COW. DAIRY PRIME.{/color} It's right. It was always going to be right."
+    show ls_hester flat at vn_cast_slot
     ls_hester "\"Forms are final.\""
     "On her way past."
     menu:

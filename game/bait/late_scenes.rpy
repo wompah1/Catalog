@@ -150,8 +150,10 @@ label bai_court:
     "\"I remember these tits. Used to be you bounced. Now you anchor.\""
     bai_you "\"{i}Hahh{/i}— you {i}dropped{/i} me on a {i}branch{/i}— {i}ahh{/i}— harder—\""
     if bai.ask == "beg":
+        show bai_sable polite at vn_cast_slot
         bai_sable "\"You begged so prettily the first time. Ask again.\""
     else:
+        show bai_sable polite at vn_cast_slot
         bai_sable "\"You asked so plainly the first time. Ask again.\""
     "Sable is next, and asks, and you say yes."
     "\"Do you wish more, my Queen?\" she asks, later, her hand on your thigh."

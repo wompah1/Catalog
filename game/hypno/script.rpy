@@ -605,6 +605,7 @@ label hy_stay_after:
         hy_emily "\"On me, on me, sir, {i}please{/i}—\""
         "Mouth open, begging, until you're dripping." with vnfx("flash")
     $ hy.fit = "panties"
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Look at you.\""
     hy_emily "\"Look at {i}me{/i}.\""
     "Delighted, you look down at yourself. It's cooling on your skin."
@@ -616,6 +617,7 @@ label hy_stay_after:
     "He holds out two fingers, wet with it."
     "You suck them clean, eyes on his, making small happy noises, and lick the gap between them too."
     hy_emily "\"{i}Mmh{/i}— thank you, sir— {i}mmh{/i}—\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl,”{/=hy_hypno} he says."
     show hy_pc eager at vn_pc_slot
     hy_emily "\"Ahhhn—! Again. Say it again. I'll do anything.\""
@@ -626,6 +628,7 @@ label hy_stay_after:
     "He tells you what you are, low and even, and you say it back louder every time—"
     hy_emily "\"Your girl, your good girl, yours—\""
     "—until you're saying it before he's asked. Until the window goes grey."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Shower. Forget.”{/=hy_hypno}"
     hy_emily "\"Okay.\""
     "Emily kisses him goodnight at dawn."
@@ -767,12 +770,14 @@ label hy_master:
     "Face in the pillow, ass up, shorts and panties peeled to your thighs by your own eager hands."
     "The cool air makes you shiver and giggle at once."
     hide hy_liam
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Open yourself up for me. Show me how.”{/=hy_hypno}"
     "He sits in your desk chair and doesn't touch you."
     show cg hy_plug_fingers onlayer cgl
     "Two slick fingers to your hole. Cool, slippery, {i}tight{/i}."
     "One fingertip slides in and you gasp so loud it's nearly a squeal."
     hy_emily "\"{i}Hah{/i}— oh— oh, Master, are you watching? I'm doing it, I'm doing it for you—\""
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Deeper.”{/=hy_hypno}"
     hy_emily "\"Yes, Master—\""
     vn_sfx "Shlk."
@@ -780,13 +785,16 @@ label hy_master:
     vn_sfx "Shlk shlk shlk."
     "Your caged cock drips a long clear string onto the sheet."
     hy_emily "\"{i}Ahh{/i}— ah— it's so good— it's so {i}good{/i}—\""
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“What do you want?”{/=hy_hypno}"
     hy_emily "\"The plug. Please, Master, I want the plug, I want to be full—\""
     hy_emily "\"—I want to be your good girl with my ass full for you, {i}please{/i}—\""
     "You whine it."
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Louder.”{/=hy_hypno}" with vnfx("shake")
     hy_emily "\"{i}PLEASE{/i} let me have the plug, Master! Please, please, I'll be so good, I'll be the best girl—!\"" with vnfx("shake")
     "The whole landing can hear it. You don't care. You want them to."
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Go on, then.”{/=hy_hypno}"
     show cg hy_sa_plug onlayer cgl
     "Your hand shakes with how much you want it."
@@ -801,6 +809,7 @@ label hy_master:
     hy_emily "\"{i}Ahh{/i}— ah— Master— {i}thank you{/i}—!\""
     hy_emily "\"Didn't— didn't even— hehe— it didn't even get {i}hard{/i}!\""
     "You giggle into the pillow, delighted with yourself."
+    show hy_liam stern at vn_cast_slot
     hy_liam "\"Look at you. Perfect.\""
     "Master laughs softly."
     hide cg onlayer cgl
@@ -862,6 +871,7 @@ label hy_master_after:
             "You hold your buds together for him and beg for every drop."
     $ hy.fit = "panties"
     "You squeezed them round him at exactly the right moment, every stroke. You just knew."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Clean up, pet.”{/=hy_hypno}"
     show hy_pc trance at vn_pc_slot
     hy_emily "\"Yes, Master!\""
@@ -870,6 +880,7 @@ label hy_master_after:
     ## The plug goes in the nightstand, and in DoL's own toy inventory with it, so it's yours to use. Once only.
     if not hy.plug:
         $ hy.plug = True
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl.”{/=hy_hypno}\n{size=-5}{color=#ff8fa3}▸ Later{/color}{/size}"
     $ vn_pass(120)
     jump hy_his_bed
@@ -894,6 +905,7 @@ label hy_his_bed:
     "You sigh the biggest, happiest sigh of your life and wriggle back into him."
     hy_emily "\"Night, Master.\""
     "You whisper it."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Stay under. All night, and all tomorrow.”{/=hy_hypno}"
     show hy_pc trance at vn_pc_slot
     hy_emily "\"Mm-hm.\""
@@ -914,10 +926,12 @@ label hy_day:
     "You wake in his bed, his arm over your hip, the plug still in."
     "Before good morning, before anything, he says the six words into the back of your neck, just to keep you there."
     show cg hy_trigger_day onlayer cgl
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}Open and listen, now.{/=hy_hypno}"
     show hy_pc eager at vn_pc_slot
     hy_emily "\"Morning, Master.\""
     "You sigh it, and wriggle."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Breakfast. In my tee. Nothing else.”{/=hy_hypno}"
     show bg hy_kitchen onlayer bgl
     $ hy.fit = "tee"
@@ -938,6 +952,7 @@ label hy_day:
     "A man in his headphones talks about a deadline."
     hy_emily "\"You're on a {i}call{/i}.\""
     "You whisper it up at him, thrilled, and take him in your mouth."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Yeah, no, that works.\""
     "He's telling the laptop."
     vn_sfx "Glk. Glk."
@@ -946,6 +961,7 @@ label hy_day:
     hy_emily "\"{i}Mmmh{/i}—\""
     "It comes out loud. You don't mean to. You're not sorry."
     "The fist tightens."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Sorry. Kettle.\""
     "Perfectly calm, to the laptop."
     "That nearly makes you come on your own."
@@ -953,6 +969,7 @@ label hy_day:
     "Sloppier and wetter, until his thighs tense."
     "He mutes the call with one finger and comes down your throat without a sound, holding your head while you swallow and swallow." with vnfx("flash")
     hy_emily "\"Mmmhh— {i}thank you{/i}—\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl,”{/=hy_hypno} he says, and unmutes."
     show cg hy_worktop onlayer cgl
     "Again at lunch: your cheek on the cold worktop, his hand on your neck, you giggling at the toaster."
@@ -963,6 +980,7 @@ label hy_day:
     "Louder each time."
     vn_sfx "THUMP. THUMP. THUMP." with vnfx("shake")
     "Until somebody downstairs bangs on the ceiling with a broom."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Louder.”{/=hy_hypno}"
     "You get louder."
     show cg hy_day_cum onlayer cgl
@@ -1037,6 +1055,7 @@ label hy_out:
     "You know how to stand, too. Hip out, back arched, chin down, looking up through your lashes."
     "You've always known."
     "{color=#ff5fb8}You can feel the cage under the satin, though.{/color}"
+    show hy_liam smile at vn_cast_slot
     hy_liam "{color=#ff5fb8}\"Not enough left in there to call a cock.\"{/color}"
     "{color=#ff5fb8}Liam says it fondly.{/color}"
     "You go red to your collarbones, and then you giggle, because he's right: it's a soft little nothing that drips every time you squeeze your ass."
@@ -1124,15 +1143,23 @@ label hy_stairs:
     hy_emily "\"Yes!\"" with vnfx("shake")
     "You say it before he can open his mouth. You stick your hand out."
     hy_emily "\"Hi! I'm Emily. I'm his girlfriend.\""
+    hide hy_cass
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Yeah.\""
     "His arm tightens round your waist."
+    hide hy_cass
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"She is.\""
     "One word. Easy."
     "Cass shakes your hand."
     hy_emily "\"I {i}love{/i} your coat!\""
+    hide hy_liam
+    show hy_cass neutral at vn_cast_slot
     hy_cass "\"Aw! I love your hair.\""
     "She's lived below Ethan since the spring. She's taken in his parcels."
     "She never looks twice. She chats about the bins."
+    hide hy_liam
+    show hy_cass neutral at vn_cast_slot
     hy_cass "\"Lovely to meet you, Emily.\""
     "She means it, and goes down."
     hide hy_cass
@@ -1158,11 +1185,13 @@ label hy_door:
     vn_sfx "SMACK." with vnfx("shake")
     "Then one hard slap. Your ass jiggles. You moan."
     hy_emily "\"{i}Yes{/i}— Master, yes, I've been waiting {i}all night{/i}—\""
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“On your knees.”{/=hy_hypno}"
     show cg hy_sa_door onlayer cgl
     "You drop. Heels kicked off, skirt round your hips, tails down your bare back, mouth already open."
     hy_emily "\"Here? Right here? She's right under— {i}mmf{/i}—\""
     "He feeds you his cock in one smooth push and grabs the base of one tail like a handle."
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Show me how much you loved being paraded round.”{/=hy_hypno}"
     hy_emily "\"{i}Mmmh{/i}—!\"" with vnfx("shake")
     "So loud the door rattles behind your head."
@@ -1191,6 +1220,7 @@ label hy_door_after:
         "He pulls out of your mouth with a wet pop and smears his cock across your cheek."
         "You chase it with your tongue, giggling."
     $ hy.fit = "mini"
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Not done. Couch.”{/=hy_hypno}"
     hy_emily "\"Not done!\""
     "Thrilled.\n{size=-5}{color=#ff8fa3}▸ The couch{/color}{/size}"
@@ -1214,13 +1244,16 @@ label hy_couch:
         show cg hy_couch_breasts onlayer cgl
         "He kneels over you and takes them in both hands, weighing them, like a man checking what he's been sent."
         hy_emily "\"{i}Mmh{/i}— Master—\""
+        show hy_liam stern at vn_cast_slot
         hy_liam "{=hy_hypno}“Hands over your head. Don't move them.”{/=hy_hypno}"
         "You don't. You grip the arm of the couch and arch up into his palms."
         vn_sfx "Squeeze."
         "He squeezes. He rolls your nipples between finger and thumb, slow, then pinches, and the sound you make isn't a word at all."
         hy_emily "\"{i}Ahh{/i}— ah— they're so— Master, they're so {i}sensitive{/i}, I can't, I {i}can't{/i}—\""
+        show hy_liam stern at vn_cast_slot
         hy_liam "\"Look at you. Look what you grew for me.\""
         "His mouth on one, sucking hard; his hand on the other, kneading. Your caged cock leaks on your stomach, and nobody touches it."
+        show hy_liam stern at vn_cast_slot
         hy_liam "{=hy_hypno}“You'll come from these. Only these.”{/=hy_hypno}"
         hy_emily "\"I will— I will, I'll come for you, from my {i}tits{/i}, Master, {i}please{/i}—\""
         vn_sfx "Shlrp. Shlrp."
@@ -1235,6 +1268,7 @@ label hy_couch:
     else:
         "Skirt round your waist, tank rucked under your arms, buds out, nipples hard."
         "He pins your wrists over your head with one hand, and you squirm under it, grinning up at him."
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Legs together.”{/=hy_hypno}"
     "Your thighs press together, soft and slick."
     show cg hy_couch onlayer cgl
@@ -1243,14 +1277,17 @@ label hy_couch:
     "The head slides out between your thighs every stroke and bumps your caged cock, hard plastic against him."
     "You can't touch it. You don't want to. You {i}squeal{/i} with how good it is."
     hy_emily "\"{i}Ahh{/i}— ah, Master— oh {i}fuck{/i}, oh fuck, your cock, between my {i}thighs{/i}—\""
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Squeeze.”{/=hy_hypno}"
     "You squeeze till you shake: tight on the way in, loose on the way out, and you never had to learn it."
     vn_sfx "Pap. Pap. Pap."
     "He lets go of one wrist, and your hand goes straight behind his cock, fingers on your hole, rubbing, pushing, desperate."
     vn_th "(Because it's empty. Because he still won't.)"
     hy_emily "\"Please. Please, Master, I want it, I want {i}you{/i}, inside, I've been so good, {i}please{/i}—\""
+    show hy_liam stern at vn_cast_slot
     hy_liam "\"Not yet.\""
     "Harder."
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Say what you are.”{/=hy_hypno}"
     hy_emily "\"Your slut— your {i}sissy{/i}— your girlfriend, your show-off, your Emily, your— {i}ahhh{/i}—!\"" with vnfx("shake")
     "The whole list, at the top of your lungs, proud of every word, the cage leaking all over your stomach."
@@ -1264,6 +1301,7 @@ label hy_couch:
     show hy_pc trance at vn_pc_slot
     hy_emily "\"Didn't even need it. It doesn't {i}do{/i} anything. I love that.\""
     "You giggle it, panting."
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Worship your mess.”{/=hy_hypno}"
     vn_sfx "Pat."
     "He slaps your thigh."
@@ -1277,6 +1315,7 @@ label hy_couch:
     show cg hy_morning_coffee onlayer cgl
     "In the morning you're in the kitchen in the camisole and nothing else, still under, humming, making his coffee."
     "He comes up behind you and says one word in your ear."
+    show hy_liam stern at vn_cast_slot
     hy_liam "{=hy_hypno}“Slut.”{/=hy_hypno}"
     "And the rest of the weekend goes.\n{size=-5}{color=#ff8fa3}▸ The weekend{/color}{/size}"
     $ vn_pass(30)
@@ -1300,8 +1339,10 @@ label hy_weekend:
     hy_emily "\"{i}Ah{/i}— ah— Master, they're— {i}more{/i}, they're so—\""
     "Two fingers curled in you. Your caged cock drooling on the worktop."
     "Slut and sissy and yours, louder every time he bites."
+    show hy_liam smile at vn_cast_slot
     hy_liam "{=hy_hypno}“Whose?”{/=hy_hypno} he says against your chest."
     hy_emily "\"{i}Yours{/i}—!\""
+    show hy_liam smile at vn_cast_slot
     hy_liam "{=hy_hypno}“Louder.”{/=hy_hypno}" with vnfx("shake")
     hy_emily "\"Yours, yours, I'm yours, I'm your {i}slut{/i}, I'm your {i}girlfriend{/i}—!\"" with vnfx("shake")
     show cg hy_counter_cum onlayer cgl
@@ -1318,11 +1359,14 @@ label hy_weekend:
         "He soaps his hands and takes them from behind, slow circles, the lather sliding over the tops of them."
         hy_emily "\"{i}Mmmh{/i}... Master...\""
         "He lifts them, lets go, and watches them bob. You giggle, and then gasp, when his thumbs find your nipples under the suds."
+        show hy_liam smile at vn_cast_slot
         hy_liam "{=hy_hypno}“Whose are these?”{/=hy_hypno}"
         hy_emily "\"Yours.\""
+        show hy_liam smile at vn_cast_slot
         hy_liam "{=hy_hypno}“Louder.”{/=hy_hypno}"
         hy_emily "\"{i}Yours{/i}! They're yours, Master, I grew them for you, I {i}asked{/i} for them for you—\"" with vnfx("shake")
         "He pinches and rolls and pinches while the water slops at the rim, and you squirm back against his cock, hard against the small of your back."
+        show hy_liam smile at vn_cast_slot
         hy_liam "\"That's it. Good girl. Give it to me.\""
         hy_emily "\"Ah— ah— {i}Master{/i}— I'm going to— in the {i}bath{/i}—\""
         show cg hy_bath_cum onlayer cgl
@@ -1335,6 +1379,7 @@ label hy_weekend:
     show hy_pc trance at vn_pc_slot
     hy_emily "\"Mmmmm...\""
     "You hum, boneless. He's kind to you for an hour, the way he always is after. That's the currency."
+    show hy_liam smile at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl,”{/=hy_hypno} he says into your wet hair."
     show hy_pc eager at vn_pc_slot
     hy_emily "\"Say it again.\""
@@ -1353,6 +1398,7 @@ label hy_weekend:
     $ vn_pass(hy_to_weekday(1, 22))
     show cg hy_towel_night onlayer cgl
     "Sunday night, your own bed, hair in a towel. He kisses your forehead."
+    show hy_liam smile at vn_cast_slot
     hy_liam "{=hy_hypno}“Forget. Wake up Monday.”{/=hy_hypno}"
     show hy_pc trance at vn_pc_slot
     hy_emily "\"Love you...\""
@@ -1624,8 +1670,10 @@ label hy_listen_after:
     "You ride him till the bed's banging the wall."
     vn_sfx "Bang. Bang. Bang."
     hy_emily "\"I'm yours— I'm yours, I'm your girl, I'm your Emily, I {i}asked{/i} for this— {i}ahh{/i}— Master, I asked—\""
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"I know. I know you did.\""
     "He's holding your hips."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“Louder.”{/=hy_hypno}" with vnfx("shake")
     "Your hips know the rhythm before you do. Drop, roll, squeeze."
     "You never practised that awake. You just know."
@@ -1635,6 +1683,7 @@ label hy_listen_after:
     "You scream it: the name nobody gave you and the word he did."
     "He comes with you, deep, holding you down on him, and you moan at how much you want to feel it."
     "He glances down at the cage, soft and tiny and still leaking on him."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "\"Useless.\""
     "Fondly."
     hy_emily "\"I {i}know{/i}! Isn't it great?\""
@@ -1786,17 +1835,20 @@ label hy_never_ride:
     hy_emily "\"Please— please, Master, eat me, make me your slut, your girl, your twin-tailed— {i}ohh{/i}— please don't stop, please don't {i}ever{/i} stop—!\"" with vnfx("shake")
     "He doesn't. He tongues you open until your hole is fluttering and wet and so empty it throbs."
     "Your caged cock has made a puddle on your stomach."
+    show hy_liam smile at vn_cast_slot
     hy_liam "{=hy_hypno}“Tell me what you want.”{/=hy_hypno}"
     hy_emily "\"{i}You{/i}.\""
     "It's a wail."
     hy_emily "\"Inside. Please. I've been so good, I've been so good since the flat, please, {i}please{/i}, I've waited so long—\""
     hide cg onlayer cgl
+    show hy_liam smile at vn_cast_slot
     hy_liam "{=hy_hypno}“Up. On my lap.”{/=hy_hypno}"
     if hy.full:
         "You scramble into his lap, tails brushing his cheeks, your breasts pressed to his chest."
     else:
         "You scramble into his lap, tails brushing his cheeks, buds on his chest."
     "You reach back and hold the head of him hot and slick against your hole, look into his face the way you love to, and start to sink, already moaning."
+    show hy_liam smile at vn_cast_slot
     hy_liam "{=hy_hypno}“Good girl. Show me how you ride.”{/=hy_hypno}\n{size=-5}{color=#ff8fa3}▸ Ride him{/color}{/size}"
     jump hy_never_sex
 
@@ -1811,6 +1863,7 @@ label hy_never_after:
     "You ride him like you were made for nothing else."
     hy_emily "\"I'm yours, I'm yours, your sissy, your girl, your good girl— {i}Master{/i}, please— {i}more{/i}— {i}ahh{/i}—!\""
     "Tails flying, bed creaking, his hands on your hips guiding every drop and grind, and you chant it louder every time."
+    show hy_liam neutral at vn_cast_slot
     hy_liam "{=hy_hypno}“That's it. Let go.”{/=hy_hypno}"
     "Your hips know the rhythm before you do. Drop, roll, squeeze."
     "You never learned it. It was put there, and you love it."

@@ -50,14 +50,19 @@ label nb_knock:
     show cg nb_knock_tent onlayer cgl
     "Grey hoodie, grey sweats, face red to the collar. She's not looking at you. She's looking down at the front of her sweats, tented so far the waistband's drum-tight across her stomach."
     "You look too. You can't not."
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"It won't go down. I woke up with it. I've had it all day. I can't think. I can't walk.\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Cold shower, everything— and my hands don't—\""
     "She grabs it through the sweats, squeezes, and only whimpers."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"See? {i}Nothing{/i}. It just {i}throbs{/i}—\""
     "The smell of her hits you. Heat and salt and something sweet, like warm sugar. You back into the wall."
     nb_ellis "\"Tessa—\""
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"I can't go to anyone. You're right {i}here{/i}.\""
     "She's shaking."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Please. I know what I'm asking. Just this once.\""
     nb_ellis "\"Okay. Okay. Just this once.\""
     menu:
@@ -76,6 +81,7 @@ label nb_knock_hands:
         "You look."
         "It's {i}huge{/i}. Thick and veined, the head flushed nearly purple, a fat clear bead rolling down the underside. Under her balls she's soaking too, glistening down her thighs."
         "It throbs. It throbs {i}at{/i} you."
+        show nb_tessa mortified at vn_cast_slot
         nb_tess "\"Don't look at it like that. Don't—\""
         "You squeeze your eyes shut. Too late."
     else:
@@ -83,12 +89,15 @@ label nb_knock_hands:
     show cg nb_knock_hands onlayer cgl
     "Knees. Your own rug. You reach out like it's a hot pan."
     "It's hot as a fever and hard as a table leg. One hand doesn't close round it. Two don't either."
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"Oh. Oh god. That works— your hands {i}work{/i}—\""
     vn_sfx "Shlk. Shlk. Shlk."
     "You stroke her, clumsy, both fists. Pre-cum runs over your knuckles."
     nb_ellis "\"I'm not gay! I'm not gay! This is just helping! This is just— {i}helping{/i}—\"" with vnfx("shake")
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"I know. I know, you're helping so much, I'm sorry, don't stop—\""
     "Her hips go. Little jerks, then bigger, fucking up into your fists. Her hand clamps on your shoulder. It swells in your grip, harder still."
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"Oh god— oh god— I'm sorry, I'm gonna—\""
     show cg nb_knock_cum onlayer cgl
     "It goes off like a hose." with vnfx("flash")
@@ -111,6 +120,7 @@ label nb_knock_after:
         "She comes again, on her knees on your rug with her forehead on your shoulder, saying sorry into your neck the whole time. This time it finally goes down."
     else:
         "She stops your hands with hers, shaking."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"It's going. It's going down. Oh my god.\""
     "\n{size=-5}{color=#ff8fa3}▸ Go and scrub it off{/color}{/size}"
     jump nb_knock_scrub
@@ -119,6 +129,7 @@ label nb_knock_scrub:
     $ nb_advance(1)
     $ vn_enter(bg="nb_bathroom", pc="shy", pc_tag="nb_pc", cast=[], cg=None)
     show bg nb_bathroom onlayer bgl
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"Thank you, sorry, thank you, {i}sorry{/i}—\""
     "She's gone before you've got your breath back. Sweats up, hoodie down, door banging."
     show cg nb_scrub onlayer cgl
@@ -205,15 +216,18 @@ label nb_visit:
     if nb.tier == 1:
         "A knock. Three polite raps this time."
         "Tessa. Grey sweats, tented to the waistband. Arms crossed low over it. Face scarlet."
+        show nb_tessa mortified at vn_cast_slot
         nb_tess "\"It's back. I'm sorry. I'm {i}so{/i} sorry. I tried everything. It's back.\""
     elif nb.tier == 3:
         "She's already on your sofa when you come out. Your spare key on your coffee table. Feet up."
         "Gym shorts, the hem barely covering the root of it, the rest lying fat along her thigh."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Hey. You took ages.\""
     else:
         $ nb.fit = "skirt"
         "Her text came before your alarm: {color=#e0559a}be ready. skirt. latch off.{/color}"
         "So you're on the edge of your bed in the skirt, knees together, latch off. Your door clicks shut."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Good. Good. Lie back.\""
     menu:
         "How do you ask?"
@@ -237,17 +251,20 @@ label nb_visit:
         "Sofa. She stands over you; you sit on the edge with your eyes screwed shut and both hands round her. They don't close. She's bigger than last night."
         vn_sfx "Shlk. Shlk. Shlk."
         nb_ellis "\"I'm not gay! This is just helping! I'm {i}helping{/i}!\"" with vnfx("shake")
+        show nb_tessa mortified at vn_cast_slot
         nb_tess "\"I know— oh god, you're helping so much— don't stop—\""
         "She doesn't last. She comes with a gasp, hand clamped on your shoulder, hot and thick over your knuckles and up your forearms." with vnfx("flash")
         $ _nb_m = nb_map("hands")
     elif nb.tier == 3:
         show cg nb_visit_3 onlayer cgl
         "Knees. Your own rug, between her spread thighs. She tugs the shorts aside and you don't pretend to look away any more."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Breathe through your nose.\""
         "Her hand on the back of your head, and she takes you down. You know how now. Throat open. Nose in her."
         vn_sfx "Hlk. Hlk. Glk."
         "Your eyes roll up happily. Your caged cock leaks, useless."
         nb_ellis "\"Mmnh— I'm not— {i}mmf{/i}—\""
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Not gay. I know. Good girl. Boy. Good boy.\""
         "She finishes straight down your throat. All of it, warm, into your stomach." with vnfx("flash")
         $ _nb_m = nb_map("mouth", "throat")
@@ -257,12 +274,14 @@ label nb_visit:
         "One big hand squeezes your knees shut round it. She rocks."
         vn_sfx "Shlk. Shlk. Shlk."
         "The head bumps your stomach. Your cage rubs the top of it. You can't stop moaning."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"You're not gay.\""
         "She says it for you."
         nb_ellis "\"…right. Right— yeah— Tessa, finish on me, finish {i}on{/i} me, all over me, please—\""
         if nb_femboy():
             "She does: up your stomach, across the hem, then she pulls back and paints your thighs, and rubs it in with her palm while you whimper." with vnfx("flash")
             "Your caged cock lies in the mess, soft and tiny. She rubs round it. Never on it."
+            show nb_tessa grin at vn_cast_slot
             nb_tess "\"That's not for anything.\""
             "You giggle, because it isn't."
             $ _nb_m = nb_map("stomach", "thighs")
@@ -348,8 +367,10 @@ label nb_again:
     show cg nb_again_splash onlayer cgl
     "—and she comes." with vnfx("flash")
     "A shocked {i}ah{/i}, and it splashes across your mouth, lips, chin, cheek, and some lands right on your tongue."
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"Sorry— sorry, oh my god, it's been all {i}day{/i}—\""
     "It tastes like her smell. Your face is dripping. She's still {i}completely{/i} hard."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Just the tip.\""
     "Hoarse. She puts her hand in your hair. Gentle. Guiding."
     show cg nb_again_suck onlayer cgl
@@ -358,6 +379,7 @@ label nb_again:
     "Only the head fits, and it stretches your jaw. You suck it like a sweet, both fists pumping below your lips. Drool runs down your wrists. You're moaning round her and you can't stop."
     nb_ellis "\"It's not gay if it's— {i}mmf{/i}—\""
     "She pushes back in on the word. She laughs, shaky, keeps going, and you forget what it wasn't."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Your {i}mouth{/i}, oh my god— I'm gonna— swallow, please, please swallow—\""
     show cg nb_again_swallow onlayer cgl
     "She comes in your mouth. It floods your tongue so fast your cheeks puff out. You panic, then swallow. Gulp. Again. Again." with vnfx("flash")
@@ -447,22 +469,26 @@ label nb_throat:
     show cg nb_throat_down onlayer cgl
     "She takes you down slow. The head over your tongue. Then more. Past where it always stopped."
     "Your throat flutters round her, and you moan. She holds you there and strokes your hair with her thumb."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Nose. In through your nose. Then swallow. Like a pill.\""
     "You breathe in. You swallow. Your throat opens round her."
     vn_sfx "Hlk."
     show cg nb_throat_root onlayer cgl
     "She slides in, thick and endless, your eyes rolling up, hands clutching her thighs, until your nose is pressed into the hot damp skin at her base. That's all there is to breathe."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Good girl. Boy. Good {i}boy{/i}. God. All the way down.\""
     "She sounds surprised."
     vn_sfx "Glk. Glk. Hlk. Glk."
     "Short strokes, never letting you off. Your head goes light and floaty. Drool down your chin. Your own cock's rock hard in your shorts, nothing touching it."
     "She lets you up once. You come off gasping, strings of spit from your lips to her."
     nb_ellis "\"I'm not— I'm {i}not{/i}—\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Not gay. I know.\""
     "Kindly. She puts you back down to the root."
     show cg nb_throat_cum onlayer cgl
     "And you come. In your shorts. Untouched. Just her in your throat and her hand in your hair." with vnfx("flash")
     "Your hips jerk at nothing, you moan so loud it buzzes in her, and it soaks through your shorts in hot pulses."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Did you just—? Oh my {i}god{/i}. Did you just come from that?\""
     "She comes a few strokes later, straight down your throat. No taste this time. Just heat, pumping into your stomach."
     $ _nb_m = nb_map("mouth", "throat")
@@ -480,6 +506,7 @@ label nb_throat_after:
     show bg nb_flat onlayer bgl
     if nb_enc.partner_came:
         "She holds you to the root while she comes. You swallow round her without being told."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Good boy.\""
     else:
         "She lets you off at last. You fall back against the sofa, throat buzzing, chin soaked, grinning at her like an idiot."
@@ -567,12 +594,15 @@ label nb_skirt_scene:
     show cg nb_skirt_thighs onlayer cgl
     "She climbs over you and takes it out. It's {i}enormous{/i} now, lying across your stomach from the hem to past your belly button, heavy as a rolling pin."
     "She slides it in under the hem, between your thighs from below, hot and slick, and squeezes your knees shut round it with one hand."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"There. Oh, {i}there{/i}.\""
     vn_sfx "Shlk. Shlk. Shlk."
     "It slides through the tight squeeze of your thighs. The head pops out the top of the hem and bumps your stomach, drags over the cage on the way back, and you {i}moan{/i}."
     nb_ellis "\"Ahh— {i}ahh{/i}— Tessa— oh god, that's so— {i}ahh{/i}—\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Good girl. Good— boy. Good boy. Squeeze.\""
     "You squeeze. She groans. Skirt rucked round your waist, bed creaking, your thighs getting slicker every stroke, until it runs down onto your sheets."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"You're not gay. Go on, I know you're about to say it. You're not gay.\""
     nb_ellis "\"…right. Right— yeah— Tessa, please, finish on me, I want it all over me, please, {i}please{/i}—\""
     ## skirt-cum: three passes (v1h-v1j) drew the pair as one merged figure; the skirt-thighs frame
@@ -580,8 +610,10 @@ label nb_skirt_scene:
     show cg nb_skirt_thighs onlayer cgl
     "She pulls back and comes up your body. A long thick rope to your sternum. Across your chest. Again, again, pooling in your waist, over your nipples, up to your collarbone." with vnfx("flash")
     "You lie there in the wreck of the skirt, panting, painted. Tessa sits back on her heels between your knees."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Rub it in.\""
     nb_ellis "\"What?\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Rub it in. Don't waste it.\""
     "You look down at yourself. At her, all over you. At your hands."
     menu:
@@ -598,11 +630,14 @@ label nb_fork_chest:
     show cg nb_fork_chest onlayer cgl
     "You put your hands flat on your chest and rub it in."
     "Slow circles at first. Then faster. Over your nipples, stiff and so sensitive every pass makes you twitch, until it's not on you any more. It's {i}in{/i} you, a warm tight glow under the skin."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"That's it. All of it.\""
     "You scoop the last off your stomach and rub that in too. Your chest tingles so hard you can feel your heartbeat in your nipples."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Good girl. ...Boy.\""
     $ _nb_m = nb_map("chest", "stomach")
     "She lies beside you, propped on an elbow, and lays two fingers on your sternum."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"It's warm. Is it supposed to be warm?\""
     nb_ellis "\"I don't know.\""
     "Nobody does.\n{size=-5}{color=#ff8fa3}▸ Sleep it off{/color}{/size}"
@@ -613,11 +648,14 @@ label nb_fork_thighs:
     $ vn_enter(bg="nb_bedroom", pc="shy", pc_tag="nb_pc", cast=[], cg="nb_fork_thighs")
     show cg nb_fork_thighs onlayer cgl
     "You grab the sheet and start wiping your chest. Tessa laughs, big and disbelieving, and catches your wrist."
+    show nb_tessa mortified at vn_cast_slot
     nb_tess "\"No. Oh no. Not on my watch.\""
     "She scoops a thick white smear off your stomach, shoves the skirt up, and rubs it into your thighs herself. The soft insides. The backs. Up under the curve of your ass, both hands, kneading, until your thighs are slick and hot and shaking."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"There. If you won't put it where it goes, I'll put it where I want it.\""
     nb_ellis "\"Where's that?\""
     "She grabs a handful of your ass, hard. You squeak."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Guess.\""
     $ _nb_m = nb_map("thighs", "ass")
     "\n{size=-5}{color=#ff8fa3}▸ Sleep it off{/color}{/size}"
@@ -697,23 +735,30 @@ label nb_her_door:
     show cg nb_her_bed onlayer cgl
     "Then she takes you to bed. On your back in the middle of it. She kneels between your knees, pushes the skirt up, and smiles at the cage."
     "A bottle from the drawer. She slicks two fingers while you watch."
+    show nb_tessa certain at vn_cast_slot
     nb_tess "\"Colour?\""
     nb_ellis "\"...what?\""
+    show nb_tessa certain at vn_cast_slot
     nb_tess "\"Colour. Green's go. Yellow's slow down. Red's stop.\""
     "Cool wet fingers between your thighs, under the cage, finding you."
+    show nb_tessa certain at vn_cast_slot
     nb_tess "\"Colour?\""
     nb_ellis "\"Green.\""
     show cg nb_her_fingers onlayer cgl
     "One finger. Circling, pressing, in. You gasp at her ceiling. She waits till you breathe, then goes on. Two fingers. Curling, stretching, working you looser until you're rocking down onto her hand, whimpering, the cage leaking on your stomach."
+    show nb_tessa certain at vn_cast_slot
     nb_tess "\"Colour?\""
     nb_ellis "\"{i}Green{/i}. Green, green, Tessa, please—\""
     "Her fingers slide out. You actually whine. The towel drops."
     "It's bigger than it's ever been. She pushes your knees up to your chest and holds them with one arm, slicks the whole length, and lines it up."
+    show nb_tessa certain at vn_cast_slot
     nb_tess "\"Say it. I know you want to say it.\""
     nb_ellis "\"I'm not gay.\""
     "It comes out tiny."
+    show nb_tessa certain at vn_cast_slot
     nb_tess "\"No.\""
     "She presses the fat head of it against you."
+    show nb_tessa certain at vn_cast_slot
     nb_tess "\"You're just mine.\"\n{size=-5}{color=#ff8fa3}▸ Green{/color}{/size}"
     jump nb_inside_sex
 
@@ -729,11 +774,13 @@ label nb_inside_after:
         "Your cock never even got hard. It just bounced in its cage the whole time, soft and tiny, drooling all over your stomach, and nobody touched it once."
         nb_ellis "\"Didn't need it. Didn't need it {i}at all{/i}.\""
         "You giggle up at her, dazed."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Nope.\""
         "She flicks the cage, and you squeal."
     $ _nb_m = nb_map("inside")
     if _nb_m:
         "{color=#ff5fb8}[_nb_m]{/color}"
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Stay. I'm not taking it out.\""
     "It's not a question. She lowers your legs and settles on top of you, cock still deep, and pulls the sheet over you both. You fall asleep pinned under her, full of her.\n{size=-5}{color=#ff8fa3}▸ Sleep with her still in you{/color}{/size}"
     call vn_night(7)
@@ -766,8 +813,10 @@ label nb_inside_morning:
         "{color=#ff5fb8}[_nb_feel]{/color}"
     "You clench, and something low down clenches back, slow and knowing. You never practised that."
     hide cg onlayer cgl
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Come back to bed.\""
     "She says it from her pillow, eyes shut. When you do, she curls round you, mouth at your ear."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"My door's open. Every night. You know where it is.\"\n{size=-5}{color=#ff8fa3}▸ Stay in her bed{/color}{/size}"
     if nb_femboy():
         jump nb_exactly_enough
@@ -781,6 +830,7 @@ label nb_last_dose:
     "Morning. Face-down in her bed. She's lying along your back, heavy and warm, and hard, the long hot weight of it in the crease of your ass."
     "The cage is barely hanging on. It swings loose against the sheet. There's hardly anything left in it."
     "Tessa wakes the way she does now: all at once, mouth on the back of your neck, hand already reaching for the bottle."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Morning. Mine.\""
     "You open your mouth to say the thing you always said. It isn't there. What comes out, high and sweet, is:"
     nb_ellis "\"Yours.\""
@@ -811,6 +861,7 @@ label nb_last_dose_shift:
     vn_sfx "Click."
     "The cage slides off. Nothing left to hold it. It drops onto the sheet between your knees."
     "{color=#ff5fb8}And it's everywhere at once. Your tits swell down into the mattress, heavy, spilling out under you, way past handfuls. Your hips spread. Your ass rounds out under her. Hair slithers down over your shoulders. Your waist pulls in tight. Petite and stacked, in her bed, with her still inside you.{/color}"
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Oh. Oh, {i}there{/i} she is.\""
     show cg nb_shift_back onlayer cgl
     "She pulls out slow and rolls you onto your back. Your tits, heavy and round, wobbling as you breathe. Your hips. And between your legs, where the cage was: a pussy, puffy and pink and soaking."
@@ -819,11 +870,14 @@ label nb_last_dose_shift:
     nb_ellis "\"Ahh— my {i}tits{/i}— Tessa, I've got {i}tits{/i}— {i}ahh{/i}—\""
     if _nb_feel:
         "{color=#ff5fb8}[_nb_feel]{/color}"
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"You don't need it.\""
     "She holds the cage up between you."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"You've got me.\""
     show cg nb_ride_lap onlayer cgl
     "She leans back against the headboard and hauls you onto her lap by your hips. You're straddling her, thighs spread, her cock standing up between your legs, the head nudging your new lips."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Go on. Your turn.\""
     menu:
         "Your turn."
@@ -838,14 +892,17 @@ label nb_last_dose_shift:
         nb_ellis "\"Wait— Tessa— it's so {i}big{/i}—\""
     elif nb.ride == "grind":
         "Not yet. You sit down on it lengthways, the whole hot shaft pressed up between your new lips, and grind. Forwards, back. It slides over your clit every time. You're moaning before you've started."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Tease.\""
         nb_ellis "\"Ahh— {i}mine{/i}.\""
         "You lift up, and hold the head against you, right there, slick and ready."
     else:
         "You lower yourself slowly, her hands on your hips, not pushing. The head kisses your new lips. Spreads them. You stop, gasping, hovering. Your thighs are shaking."
     nb_ellis "\"Oh my god. Tessa, it's never going to fit, it's so {i}big{/i}—\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"It will.\""
     "She's staring up at you. Her hands slide up to your tits and squeeze, and your whole body clenches."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Down. Ride it. Show me.\"\n{size=-5}{color=#ff8fa3}▸ Ride her{/color}{/size}"
     jump nb_last_dose_ride
 
@@ -854,6 +911,7 @@ label nb_last_dose_after:
     show cg nb_ride_after onlayer cgl
     "You lie on her, sweaty and boneless, tits squashed on her chest, her cock softening in you at last. Every bit of you is soft. Every bit of you is {i}finished{/i}."
     "Her hand strokes your hair. The other rests on your ass like she owns it."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"You okay?\""
     "You reach for the old word, the one you said over and over. It isn't there. There's only the one that is."
     nb_ellis "\"Yours.\""
@@ -865,6 +923,7 @@ label nb_end_last:
     $ vn_enter(bg="nb_tessa_bedroom", pc="neutral", pc_tag="nb_pc", cast=[], cg="nb_end_last")
     show cg nb_end_last onlayer cgl
     "Later, on her pillow, Tessa holds her hand out flat between you. The cage is in her palm. Small as a knuckle."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"You don't need it. You have me.\""
     "You're sprawled against her side, tits heavy on her ribs, pussy still slick and throbbing from her. When you open your mouth the voice is sweet and light and yours."
     nb_ellis "\"Yours.\""
@@ -910,12 +969,15 @@ label nb_enough_after:
     show cg nb_enough_after onlayer cgl
     if nb_enc.partner_came:
         "She finishes deep, holding your hips, every drop."
+        show nb_tessa mortified at vn_cast_slot
         nb_tess "\"Morning dose. Can't have my girl going soft.\""
     else:
         "She stops buried in you, then comes slow and deep without moving, until you're full."
+        show nb_tessa grin at vn_cast_slot
         nb_tess "\"Morning dose. There.\""
     "Your cage swung and drooled under you the whole time, soft and tiny. Nobody touched it."
     "She keeps you on it, kneeling up behind you, thumbs circling the dimples at the base of your spine until you stop shaking."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Feel that? That's you sorted till tonight.\""
     "Warm, heavy, full. The hum gone quiet. Exactly enough. Not a drop over."
     $ _nb_feel = nb_body(6)
@@ -924,20 +986,26 @@ label nb_enough_after:
     show bg nb_mirror onlayer bgl
     show cg nb_mirror_look onlayer cgl
     "Then she stands you in front of her wardrobe mirror, chin on top of your head."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Look.\""
     "{color=#ff5fb8}A pretty face, lips full and pink, hair spilling past your shoulders. The skirt hugging your ass like it was cut for it. Thighs thick and soft and pressed together. Your waist tiny between it all. The cage snug under the hem.{/color}"
     "You reach back and grab it. Your fingers sink in and it spills over them, fat and heavy, bigger than it was last night."
     nb_ellis "\"Ohh— {i}fuck{/i}, look at it—\""
     "Her hand cups your chest, the soft little puff of it under her palm, your nipples poking into it."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Puffy here.\""
     "Her other hand takes a big soft handful of your ass and squeezes."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Round here.\""
     nb_ellis "\"{i}Hnnh{/i}— squeeze it more—\""
     "She does. The cage drips onto her carpet. She glances down at it. Tiny, soft, leaking, not even trying."
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Cute. Useless. Cute.\""
     nb_ellis "\"Don't need it. Never did.\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"You don't need anything else. You've got me. Exactly enough of me. Say it.\""
     nb_ellis "\"Say what?\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Say you're my girlfriend.\""
     menu:
         "Say you're my girlfriend."
@@ -972,6 +1040,7 @@ label nb_end_enough:
     nb_ellis "\"You know. I was never gay.\""
     "She starts to laugh. You poke her and say it properly."
     nb_ellis "\"I'm your girlfriend.\""
+    show nb_tessa grin at vn_cast_slot
     nb_tess "\"Yeah. You are.\""
     "And she kisses the top of your head, and doesn't laugh at all."
     jump nb_epilogue_choice
