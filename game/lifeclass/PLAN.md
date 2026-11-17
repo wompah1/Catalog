@@ -163,3 +163,27 @@ Every question above is answered with its recommendation ("All four as recommend
 - Ending marker: the epilogue's Stay/Go ("Keep your name on the schedule" / "Sit for Dario"), as Red Lightning's is.
 
 The plan stands otherwise as written. Built on branch `lifeclass` in `catalog-renpy-lifeclass`; this file moves to `game/lifeclass/PLAN.md`.
+
+## The alternate route: PIN ONE BACK UP (owner, 2026-11-13 about 1:37 pm ET, "I like all but 5"; twinetesting-c9)
+
+- **Fork:** the end of rung 4. Dot and Roz have taken the chest sheets down, and one has dropped by the stand. "Pin it back up" or "Hand it to Roz", marked as deciding the ending.
+- **How it works:** the rule is unchanged (you match the wall). The one chest sheet in the bare cork keeps the chest study open, and it takes late. Nobody connects the drawing to the body, Dot speaks only crit, and Dario's stack stays all cock.
+- **The chest** (`lc.grown`):
+  - small on rung 5's morning (sprites 4s);
+  - medium-large from the back study, where Roz turns her easel round and fills the band (5m);
+  - large and heavy at rung 6, when Dot calls "Chest study" from the doorway (6l).
+- **Gino's wrong explanations, two apologies each:** the café's soup, the fixative spray, the radiator.
+- **Swapped lines:**
+  - the morning mirror;
+  - the wall (the one sheet in the band);
+  - Dot's "The chest's coming through.";
+  - the red dot, on Roz's chest sheet;
+  - the flat file;
+  - the hoodie;
+  - the show's chest wall;
+  - the epilogue's coat;
+  - both epilogues (Roz's hands, Dario won't draw it);
+  - the feat "The Chest Study Took".
+- **New beats (pinned.rpy):** the fork; Roz at the sink with her charcoal hands (rung 5, consensual); Dot's call in the doorway and the chest taking (rung 6).
+- **Art:** 5 own beats, 31 twins (`<frame>-ch.jpg`, shown in place while `lc.pinned`), 8 sprites, all marked `"alt": "pinned"` and merged by `runs/_c9/alt_merge.py lc`. Queued last (nqalt/110).
+- **Walk d:** walk a, on the lane.
