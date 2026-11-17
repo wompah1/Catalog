@@ -45,284 +45,284 @@ define scales_face_crops = {
         253
     ],
     "pc-r0-robe-flushed": [
-        24,
-        45,
+        64,
+        61,
         253,
         253
     ],
     "pc-r0-robe-protesting": [
-        38,
-        45,
+        70,
+        71,
         253,
         253
     ],
     "pc-r0-robe-soft": [
-        24,
-        52,
+        59,
+        61,
         253,
         253
     ],
     "pc-r0-robe-stubborn": [
-        53,
+        22,
         49,
         253,
         253
     ],
     "pc-r0-village-protesting": [
-        75,
-        86,
+        63,
+        74,
         253,
         253
     ],
     "pc-r0-village-stubborn": [
-        75,
-        76,
+        74,
+        60,
         253,
         253
     ],
     "pc-r1-nude-flushed": [
-        7,
-        30,
-        253,
-        253
-    ],
-    "pc-r1-nude-protesting": [
-        49,
-        30,
-        253,
-        253
-    ],
-    "pc-r1-nude-stubborn": [
-        13,
-        29,
-        253,
-        253
-    ],
-    "pc-r1-robe-protesting": [
-        0,
-        354,
-        253,
-        253
-    ],
-    "pc-r1-robe-soft": [
-        23,
-        37,
-        253,
-        253
-    ],
-    "pc-r1-robe-stubborn": [
-        63,
-        50,
-        253,
-        253
-    ],
-    "pc-r2-nude-flushed": [
-        73,
         58,
-        253,
-        253
-    ],
-    "pc-r2-nude-protesting": [
-        50,
-        55,
-        253,
-        253
-    ],
-    "pc-r2-nude-soft": [
-        36,
-        28,
-        253,
-        253
-    ],
-    "pc-r2-nude-stubborn": [
-        59,
-        58,
-        253,
-        253
-    ],
-    "pc-r2-robe-flushed": [
-        82,
-        41,
-        253,
-        253
-    ],
-    "pc-r2-robe-protesting": [
-        84,
-        35,
-        253,
-        253
-    ],
-    "pc-r2-robe-stubborn": [
-        20,
-        32,
-        253,
-        253
-    ],
-    "pc-r3-nude-flushed": [
-        47,
-        12,
-        253,
-        253
-    ],
-    "pc-r3-nude-soft": [
-        45,
-        37,
-        253,
-        253
-    ],
-    "pc-r3-nude-stubborn": [
-        34,
-        51,
-        253,
-        253
-    ],
-    "pc-r3-robe-protesting": [
-        67,
-        33,
-        253,
-        253
-    ],
-    "pc-r3-robe-stubborn": [
-        64,
-        33,
-        253,
-        253
-    ],
-    "pc-r4-nude-flushed": [
-        111,
-        30,
-        253,
-        253
-    ],
-    "pc-r4-nude-protesting": [
-        119,
-        33,
-        253,
-        253
-    ],
-    "pc-r4-nude-soft": [
-        78,
-        27,
-        253,
-        253
-    ],
-    "pc-r4-nude-stubborn": [
-        122,
-        30,
-        253,
-        253
-    ],
-    "pc-r4-robe-flushed": [
-        160,
-        36,
-        253,
-        253
-    ],
-    "pc-r4-robe-protesting": [
-        161,
-        37,
-        253,
-        253
-    ],
-    "pc-r4-robe-soft": [
-        152,
-        36,
-        253,
-        253
-    ],
-    "pc-r4-robe-stubborn": [
-        152,
-        39,
-        253,
-        253
-    ],
-    "pc-r5-nude-flushed": [
-        165,
-        1,
-        253,
-        253
-    ],
-    "pc-r5-nude-soft": [
-        153,
-        26,
-        253,
-        253
-    ],
-    "pc-r5-robe-soft": [
-        143,
-        19,
-        253,
-        253
-    ],
-    "pc-r5-robe-stubborn": [
-        142,
-        19,
-        253,
-        253
-    ],
-    "pc-r6-court-protesting": [
-        137,
-        18,
-        253,
-        253
-    ],
-    "pc-r6-court-soft": [
-        133,
-        13,
-        253,
-        253
-    ],
-    "pc-r6-court-stubborn": [
-        132,
-        15,
-        253,
-        253
-    ],
-    "pc-r6-nude-flushed": [
-        167,
-        1,
-        253,
-        253
-    ],
-    "pc-r6-nude-soft": [
-        152,
-        0,
-        253,
-        253
-    ],
-    "pc-r6-robe-protesting": [
-        144,
-        50,
-        253,
-        253
-    ],
-    "pc-r7-court-flushed": [
-        234,
-        22,
-        253,
-        253
-    ],
-    "pc-r7-court-soft": [
-        238,
-        13,
-        253,
-        253
-    ],
-    "pc-r7-court-stubborn": [
-        239,
         14,
         253,
         253
     ],
+    "pc-r1-nude-protesting": [
+        58,
+        20,
+        253,
+        253
+    ],
+    "pc-r1-nude-stubborn": [
+        47,
+        48,
+        253,
+        253
+    ],
+    "pc-r1-robe-protesting": [
+        25,
+        45,
+        253,
+        253
+    ],
+    "pc-r1-robe-soft": [
+        28,
+        69,
+        253,
+        253
+    ],
+    "pc-r1-robe-stubborn": [
+        32,
+        118,
+        253,
+        253
+    ],
+    "pc-r2-nude-flushed": [
+        68,
+        8,
+        253,
+        253
+    ],
+    "pc-r2-nude-protesting": [
+        66,
+        9,
+        253,
+        253
+    ],
+    "pc-r2-nude-soft": [
+        64,
+        9,
+        253,
+        253
+    ],
+    "pc-r2-nude-stubborn": [
+        66,
+        7,
+        253,
+        253
+    ],
+    "pc-r2-robe-flushed": [
+        47,
+        90,
+        253,
+        253
+    ],
+    "pc-r2-robe-protesting": [
+        65,
+        121,
+        253,
+        253
+    ],
+    "pc-r2-robe-stubborn": [
+        47,
+        90,
+        253,
+        253
+    ],
+    "pc-r3-nude-flushed": [
+        59,
+        13,
+        253,
+        253
+    ],
+    "pc-r3-nude-soft": [
+        50,
+        44,
+        253,
+        253
+    ],
+    "pc-r3-nude-stubborn": [
+        49,
+        44,
+        253,
+        253
+    ],
+    "pc-r3-robe-protesting": [
+        64,
+        68,
+        253,
+        253
+    ],
+    "pc-r3-robe-stubborn": [
+        34,
+        70,
+        253,
+        253
+    ],
+    "pc-r4-nude-flushed": [
+        94,
+        20,
+        253,
+        253
+    ],
+    "pc-r4-nude-protesting": [
+        89,
+        19,
+        253,
+        253
+    ],
+    "pc-r4-nude-soft": [
+        89,
+        17,
+        253,
+        253
+    ],
+    "pc-r4-nude-stubborn": [
+        93,
+        21,
+        253,
+        253
+    ],
+    "pc-r4-robe-flushed": [
+        222,
+        11,
+        253,
+        253
+    ],
+    "pc-r4-robe-protesting": [
+        118,
+        27,
+        253,
+        253
+    ],
+    "pc-r4-robe-soft": [
+        220,
+        10,
+        253,
+        253
+    ],
+    "pc-r4-robe-stubborn": [
+        118,
+        26,
+        253,
+        253
+    ],
+    "pc-r5-nude-flushed": [
+        146,
+        8,
+        253,
+        253
+    ],
+    "pc-r5-nude-soft": [
+        124,
+        10,
+        253,
+        253
+    ],
+    "pc-r5-robe-soft": [
+        148,
+        22,
+        253,
+        253
+    ],
+    "pc-r5-robe-stubborn": [
+        147,
+        25,
+        253,
+        253
+    ],
+    "pc-r6-court-protesting": [
+        145,
+        11,
+        253,
+        253
+    ],
+    "pc-r6-court-soft": [
+        200,
+        5,
+        253,
+        253
+    ],
+    "pc-r6-court-stubborn": [
+        146,
+        12,
+        253,
+        253
+    ],
+    "pc-r6-nude-flushed": [
+        141,
+        13,
+        253,
+        253
+    ],
+    "pc-r6-nude-soft": [
+        206,
+        4,
+        253,
+        253
+    ],
+    "pc-r6-robe-protesting": [
+        146,
+        8,
+        253,
+        253
+    ],
+    "pc-r7-court-flushed": [
+        191,
+        15,
+        253,
+        253
+    ],
+    "pc-r7-court-soft": [
+        145,
+        10,
+        253,
+        253
+    ],
+    "pc-r7-court-stubborn": [
+        146,
+        9,
+        253,
+        253
+    ],
     "pc-r7-nude-flushed": [
-        192,
-        0,
+        146,
+        9,
         253,
         253
     ],
     "pc-r7-nude-soft": [
-        196,
-        3,
+        144,
+        10,
         253,
         253
     ],

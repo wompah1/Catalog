@@ -69,242 +69,242 @@ define fivestars_face_crops = {
         253
     ],
     "pc-r0-nude-eager": [
-        0,
-        71,
+        58,
+        11,
         253,
         253
     ],
     "pc-r0-own-eager": [
-        9,
-        118,
+        56,
+        13,
         253,
         253
     ],
     "pc-r0-own-neutral": [
-        11,
-        118,
+        54,
+        10,
         253,
         253
     ],
     "pc-r1-kit-eager": [
-        42,
-        101,
+        61,
+        12,
         253,
         253
     ],
     "pc-r1-kit-flushed": [
-        14,
-        71,
+        28,
+        22,
         253,
         253
     ],
     "pc-r1-kit-neutral": [
-        9,
-        112,
+        32,
+        23,
         253,
         253
     ],
     "pc-r1-kit-protesting": [
-        24,
-        64,
+        27,
+        23,
         253,
         253
     ],
     "pc-r1-nude-eager": [
-        20,
-        71,
+        64,
+        7,
         253,
         253
     ],
     "pc-r1-nude-flushed": [
-        20,
-        72,
+        64,
+        6,
         253,
         253
     ],
     "pc-r2-kit-eager": [
-        52,
-        41,
+        62,
+        22,
         253,
         253
     ],
     "pc-r2-kit-flushed": [
-        40,
-        41,
+        59,
+        5,
         253,
         253
     ],
     "pc-r2-kit-neutral": [
-        29,
-        43,
+        63,
+        22,
         253,
         253
     ],
     "pc-r2-kit-protesting": [
-        55,
-        41,
+        67,
+        22,
         253,
         253
     ],
     "pc-r2-nude-flushed": [
-        22,
-        23,
+        66,
+        10,
         253,
         253
     ],
     "pc-r2-nude-protesting": [
-        23,
-        23,
+        66,
+        9,
         253,
         253
     ],
     "pc-r3-kit-eager": [
-        123,
-        27,
+        58,
+        10,
         253,
         253
     ],
     "pc-r3-kit-flushed": [
-        39,
-        26,
+        62,
+        14,
         253,
         253
     ],
     "pc-r3-kit-neutral": [
-        39,
-        27,
+        46,
+        22,
         253,
         253
     ],
     "pc-r3-kit-protesting": [
-        32,
-        38,
+        58,
+        11,
         253,
         253
     ],
     "pc-r3-nude-flushed": [
-        26,
-        39,
+        81,
+        22,
         253,
         253
     ],
     "pc-r3-nude-protesting": [
-        80,
-        35,
+        64,
+        9,
         253,
         253
     ],
     "pc-r4-kit-eager": [
-        45,
-        42,
+        64,
+        12,
         253,
         253
     ],
     "pc-r4-kit-flushed": [
-        46,
-        41,
+        45,
+        23,
         253,
         253
     ],
     "pc-r4-kit-neutral": [
-        45,
-        41,
+        44,
+        23,
         253,
         253
     ],
     "pc-r4-kit-protesting": [
-        46,
-        40,
+        55,
+        11,
         253,
         253
     ],
     "pc-r4-nude-flushed": [
-        25,
-        16,
+        63,
+        6,
         253,
         253
     ],
     "pc-r4-nude-protesting": [
-        20,
-        39,
+        62,
+        13,
         253,
         253
     ],
     "pc-r5-kit-eager": [
-        126,
-        34,
+        73,
+        11,
         253,
         253
     ],
     "pc-r5-kit-flushed": [
-        123,
-        34,
+        59,
+        10,
         253,
         253
     ],
     "pc-r5-kit-neutral": [
-        51,
-        34,
+        68,
+        11,
         253,
         253
     ],
     "pc-r5-kit-protesting": [
-        126,
-        34,
+        69,
+        11,
         253,
         253
     ],
     "pc-r5-nude-flushed": [
-        53,
-        44,
+        80,
+        5,
         253,
         253
     ],
     "pc-r5-split-flushed": [
-        60,
-        34,
+        70,
+        11,
         253,
         253
     ],
     "pc-r5-split-protesting": [
-        55,
-        41,
+        59,
+        10,
         253,
         253
     ],
     "pc-r6-nude-eager": [
-        99,
-        45,
+        97,
+        11,
         253,
         253
     ],
     "pc-r6-nude-flushed": [
-        88,
-        45,
+        93,
+        23,
         253,
         253
     ],
     "pc-r6-prentice-eager": [
-        150,
-        34,
+        83,
+        11,
         253,
         253
     ],
     "pc-r6-prentice-flushed": [
-        148,
-        34,
+        75,
+        11,
         253,
         253
     ],
     "pc-r6-prentice-neutral": [
-        150,
-        33,
+        75,
+        11,
         253,
         253
     ],
     "pc-r6-prentice-protesting": [
-        146,
-        34,
+        83,
+        11,
         253,
         253
     ],

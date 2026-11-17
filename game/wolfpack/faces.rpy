@@ -69,38 +69,38 @@ define wolfpack_face_crops = {
         253
     ],
     "pc-r0-own-flushed": [
-        46,
-        46,
+        63,
+        62,
         253,
         253
     ],
     "pc-r0-own-furious": [
-        46,
-        61,
+        64,
+        62,
         253,
         253
     ],
     "pc-r0-own-proud": [
-        52,
+        66,
         62,
         253,
         253
     ],
     "pc-r0-own-smug": [
-        46,
+        64,
         61,
         253,
         253
     ],
     "pc-r1-nude-flushed": [
-        69,
-        62,
+        47,
+        26,
         253,
         253
     ],
     "pc-r1-nude-furious": [
-        69,
-        64,
+        56,
+        20,
         253,
         253
     ],
@@ -111,194 +111,194 @@ define wolfpack_face_crops = {
         253
     ],
     "pc-r1-own-flushed": [
-        65,
-        30,
+        60,
+        61,
         253,
         253
     ],
     "pc-r1-own-furious": [
-        51,
-        36,
+        62,
+        61,
         253,
         253
     ],
     "pc-r1-own-proud": [
-        48,
+        61,
         61,
         253,
         253
     ],
     "pc-r1-own-smug": [
-        65,
-        29,
+        61,
+        62,
         253,
         253
     ],
     "pc-r2-nude-flushed": [
-        41,
-        25,
+        66,
+        5,
         253,
         253
     ],
     "pc-r2-nude-proud": [
-        41,
-        7,
+        63,
+        8,
         253,
         253
     ],
     "pc-r2-nude-smug": [
-        40,
-        7,
+        62,
+        8,
         253,
         253
     ],
     "pc-r2t-nude-flushed": [
-        80,
-        26,
-        253,
-        253
-    ],
-    "pc-r2t-nude-furious": [
-        85,
-        7,
-        253,
-        253
-    ],
-    "pc-r2t-nude-smug": [
         67,
         5,
         253,
         253
     ],
+    "pc-r2t-nude-furious": [
+        66,
+        8,
+        253,
+        253
+    ],
+    "pc-r2t-nude-smug": [
+        70,
+        8,
+        253,
+        253
+    ],
     "pc-r2t-own-flushed": [
-        59,
-        7,
+        68,
+        6,
         253,
         253
     ],
     "pc-r2t-own-proud": [
-        172,
-        9,
+        68,
+        5,
         253,
         253
     ],
     "pc-r2t-own-smug": [
-        173,
-        10,
+        68,
+        5,
         253,
         253
     ],
     "pc-r3-nude-flushed": [
-        107,
-        25,
+        194,
+        17,
         253,
         253
     ],
     "pc-r3-nude-furious": [
-        109,
-        2,
+        90,
+        15,
         253,
         253
     ],
     "pc-r3-nude-proud": [
-        122,
-        4,
+        61,
+        14,
         253,
         253
     ],
     "pc-r3-nude-smug": [
-        104,
+        61,
         15,
         253,
         253
     ],
     "pc-r3f-nude-flushed": [
-        106,
-        25,
+        179,
+        17,
         253,
         253
     ],
     "pc-r3f-nude-furious": [
-        109,
-        2,
-        253,
-        253
-    ],
-    "pc-r3f-nude-smug": [
-        105,
+        91,
         14,
         253,
         253
     ],
-    "pc-r4-nude-flushed": [
-        46,
-        32,
-        253,
-        253
-    ],
-    "pc-r4-nude-proud": [
+    "pc-r3f-nude-smug": [
         127,
-        6,
+        0,
         253,
         253
     ],
-    "pc-r4-nude-smug": [
-        89,
-        15,
-        253,
-        253
-    ],
-    "pc-r5-jacket-flushed": [
-        160,
-        19,
-        253,
-        253
-    ],
-    "pc-r5-jacket-smug": [
-        157,
-        6,
-        253,
-        253
-    ],
-    "pc-r5b-jacket-flushed": [
-        158,
-        23,
-        253,
-        253
-    ],
-    "pc-r5b-jacket-smug": [
-        177,
+    "pc-r4-nude-flushed": [
+        53,
         13,
         253,
         253
     ],
-    "pc-r5m-jacket-flushed": [
-        188,
-        18,
-        253,
-        253
-    ],
-    "pc-r5m-jacket-smug": [
-        183,
-        15,
-        253,
-        253
-    ],
-    "pc-r6-nude-flushed": [
-        118,
+    "pc-r4-nude-proud": [
+        41,
         3,
         253,
         253
     ],
+    "pc-r4-nude-smug": [
+        53,
+        5,
+        253,
+        253
+    ],
+    "pc-r5-jacket-flushed": [
+        108,
+        18,
+        253,
+        253
+    ],
+    "pc-r5-jacket-smug": [
+        100,
+        14,
+        253,
+        253
+    ],
+    "pc-r5b-jacket-flushed": [
+        98,
+        18,
+        253,
+        253
+    ],
+    "pc-r5b-jacket-smug": [
+        193,
+        0,
+        253,
+        253
+    ],
+    "pc-r5m-jacket-flushed": [
+        137,
+        6,
+        253,
+        253
+    ],
+    "pc-r5m-jacket-smug": [
+        192,
+        0,
+        253,
+        253
+    ],
+    "pc-r6-nude-flushed": [
+        189,
+        0,
+        253,
+        253
+    ],
     "pc-r6-nude-proud": [
-        124,
-        9,
+        106,
+        12,
         253,
         253
     ],
     "pc-r6-nude-smug": [
-        128,
-        6,
+        106,
+        12,
         253,
         253
     ],

@@ -9,164 +9,164 @@ define bait_face_crops = {
         253
     ],
     "pc-r0-nude-alarmed": [
-        15,
-        22,
+        66,
+        11,
         253,
         253
     ],
     "pc-r0-trapper-alarmed": [
-        40,
-        23,
+        90,
+        6,
         253,
         253
     ],
     "pc-r0-trapper-cheerful": [
-        51,
-        48,
-        253,
-        253
-    ],
-    "pc-r1-nude-alarmed": [
-        110,
-        9,
-        253,
-        253
-    ],
-    "pc-r1-nude-flushed": [
-        114,
-        56,
-        253,
-        253
-    ],
-    "pc-r1-trapper-cheerful": [
         65,
         14,
         253,
         253
     ],
+    "pc-r1-nude-alarmed": [
+        97,
+        7,
+        253,
+        253
+    ],
+    "pc-r1-nude-flushed": [
+        100,
+        19,
+        253,
+        253
+    ],
+    "pc-r1-trapper-cheerful": [
+        201,
+        28,
+        253,
+        253
+    ],
     "pc-r2-nude-alarmed": [
-        47,
-        16,
+        69,
+        4,
         253,
         253
     ],
     "pc-r2-nude-cheerful": [
-        43,
-        17,
+        154,
+        18,
         253,
         253
     ],
     "pc-r2-nude-flushed": [
-        42,
-        17,
+        157,
+        24,
         253,
         253
     ],
     "pc-r2-trapper-cheerful": [
-        64,
-        14,
+        65,
+        6,
         253,
         253
     ],
     "pc-r2-trapper-flushed": [
-        57,
-        14,
+        150,
+        22,
         253,
         253
     ],
     "pc-r4-nude-alarmed": [
-        107,
-        3,
+        74,
+        37,
         253,
         253
     ],
     "pc-r4-nude-cheerful": [
-        47,
-        3,
+        94,
+        19,
         253,
         253
     ],
     "pc-r4-nude-flushed": [
-        115,
+        98,
         18,
         253,
         253
     ],
     "pc-r4-scraps-alarmed": [
-        127,
-        4,
+        94,
+        46,
         253,
         253
     ],
     "pc-r4-scraps-cheerful": [
-        139,
-        9,
+        100,
+        3,
         253,
         253
     ],
     "pc-r6-nude-alarmed": [
-        109,
-        7,
+        106,
+        12,
         253,
         253
     ],
     "pc-r6-nude-flushed": [
-        130,
-        17,
+        86,
+        3,
         253,
         253
     ],
     "pc-r6-scraps-alarmed": [
-        131,
-        6,
+        105,
+        2,
         253,
         253
     ],
     "pc-r6-scraps-cheerful": [
-        87,
-        0,
+        61,
+        27,
         253,
         253
     ],
     "pc-r8-nude-cheerful": [
-        161,
-        11,
+        76,
+        14,
         253,
         253
     ],
     "pc-r8-nude-flushed": [
-        116,
-        9,
+        89,
+        3,
         253,
         253
     ],
     "pc-r9-mantle-regal": [
-        156,
-        5,
+        154,
+        12,
         253,
         253
     ],
     "pc-r9-nude-alarmed": [
-        171,
-        11,
+        93,
+        46,
         253,
         253
     ],
     "pc-r9-nude-cheerful": [
-        165,
-        10,
+        73,
+        9,
         253,
         253
     ],
     "pc-r9-nude-flushed": [
-        123,
-        6,
+        75,
+        11,
         253,
         253
     ],
     "pc-r9-nude-regal": [
-        115,
-        2,
+        180,
+        8,
         253,
         253
     ],
