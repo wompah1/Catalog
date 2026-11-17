@@ -185,7 +185,7 @@ label vt_red_four:
     $ vn_until(13)
     $ vn_enter(bg="vt_lingerie", pc="smirk", pc_tag="vt_pc", cast=[], cg="vt_r4_fitting")
     "On your break you march into the lingerie shop on the upper level and make the fitter measure you up with the curtain half open, because you can't be bothered to shut it."
-    vt_clerk "\"You're a D. Easily a D. Are you— is this for a costume?\""
+    vt_clerk "\"You're a C. Easily a C. Are you— is this for a costume?\""
     vt_you "\"It's for {i}me{/i}.\""
     "You buy a bra that fits. You wear it out of the shop."
     $ vt.fit = "bra"
