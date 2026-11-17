@@ -254,6 +254,11 @@ init -50 python:
 
     def _vn_show(name, at_list=[], layer=None, what=None, **kw):
         nm = tuple(name.split()) if isinstance(name, str) else tuple(name)
+        if nm[0] == "cg" and what is None and not renpy.has_image(nm, exact=True):
+            # `show cg <key>` for a key with no picture landed: clear the old CG so the room
+            # shows, never Ren'Py's "Image not found" text (QA camellia 2f90ff35)
+            _vn_hide0("cg", layer)
+            return
         if _vn_cast_asked(at_list, layer, what) and (kw.get("tag") or nm[0]) in vn_sprite_resolvers:
             return vn_cast_show(name, list(at_list), layer=layer, show=_vn_show0, what=what, **kw)
         return _vn_show0(name, at_list=at_list, layer=layer, what=what, **kw)
@@ -272,6 +277,10 @@ init -50 python:
         """A passage's stage row, as framework/vn-screen.js resolves it: the background (or None),
         the PC's face on pc_tag, the cast (a list of (tag, face)), and the CG (or None)."""
         store.vn_talk = None
+        # a CG key with no picture landed ("no picture" is a valid pick) shows the room, never
+        # Ren'Py's "Image not found" text (QA camellia 2f90ff35)
+        if cg and not renpy.has_image(("cg",) + tuple(cg.split()), exact=True):
+            cg = None
         # a new place or picture dissolves in with the box out of the way (no empty box over the
         # old frame); the same place carries straight on, as the DoL screen does
         def _now(tag, layer):
