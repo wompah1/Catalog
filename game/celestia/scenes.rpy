@@ -41,7 +41,6 @@ label ce_orbit_sex:
     ce_nightshade "\"Struggle. It tastes better.\""
     ce_you "\"Get it— get it away from my— I didn't say yes— I didn't say ANYTHING—!\""
     vn_sfx "Shlk. Shlk."
-    show cg ce_orbit_sex_mid onlayer cgl
     "Up to your chin, down, up, bumping your mouth every time you open it to yell at him."
     menu:
         "Every time you open your mouth."

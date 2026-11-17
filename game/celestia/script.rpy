@@ -1217,7 +1217,6 @@ label ce_warehouse:
     show ce_nightshade smile at vn_cast_slot
     ce_nightshade "\"Looking for me, precious things?\""
     "Nightshade, on a dais at the far end, coat collar framing his face like black petals. The velvet comes alive."
-    show cg ce_wh_pippa_bound onlayer cgl
     "Ribbons whip round Pippa's wrists and pin her to a pillar. Nothing else touches her."
     ce_you "\"Don't you {i}touch{/i} her—\""
     ce_nightshade "\"I wouldn't dream of it. She's the audience.\""

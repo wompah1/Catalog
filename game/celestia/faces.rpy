@@ -15,8 +15,8 @@ define celestia_face_crops = {
         253
     ],
     "form-dark-flushed": [
-        154,
-        26,
+        183,
+        7,
         253,
         253
     ],
@@ -39,20 +39,20 @@ define celestia_face_crops = {
         253
     ],
     "form-r1-shining": [
-        231,
+        171,
         33,
         253,
         253
     ],
     "form-r1-shocked": [
-        211,
-        42,
+        201,
+        31,
         253,
         253
     ],
     "form-r1-snark": [
-        179,
-        44,
+        203,
+        30,
         253,
         253
     ],
@@ -63,14 +63,14 @@ define celestia_face_crops = {
         253
     ],
     "form-r2-shining": [
-        228,
-        33,
+        192,
+        31,
         253,
         253
     ],
     "form-r2-shocked": [
-        207,
-        43,
+        157,
+        23,
         253,
         253
     ],
@@ -87,20 +87,20 @@ define celestia_face_crops = {
         253
     ],
     "form-r3-shining": [
-        228,
-        41,
+        145,
+        18,
         253,
         253
     ],
     "form-r3-shocked": [
-        207,
-        43,
+        200,
+        30,
         253,
         253
     ],
     "form-r3-snark": [
-        167,
-        43,
+        185,
+        4,
         253,
         253
     ],
@@ -111,20 +111,20 @@ define celestia_face_crops = {
         253
     ],
     "form-r4-shining": [
-        228,
-        32,
+        190,
+        31,
         253,
         253
     ],
     "form-r4-shocked": [
-        208,
-        42,
+        200,
+        30,
         253,
         253
     ],
     "form-r4-snark": [
-        193,
-        39,
+        204,
+        31,
         253,
         253
     ],
@@ -135,20 +135,20 @@ define celestia_face_crops = {
         253
     ],
     "form-r5-shining": [
-        209,
+        193,
         33,
         253,
         253
     ],
     "form-r5-shocked": [
-        191,
-        19,
+        202,
+        30,
         253,
         253
     ],
     "form-r5-snark": [
-        172,
-        34,
+        202,
+        30,
         253,
         253
     ],
@@ -159,14 +159,14 @@ define celestia_face_crops = {
         253
     ],
     "form-r6-shining": [
-        231,
-        33,
+        194,
+        30,
         253,
         253
     ],
     "form-r6-shocked": [
-        205,
-        42,
+        201,
+        33,
         253,
         253
     ],
@@ -177,20 +177,20 @@ define celestia_face_crops = {
         253
     ],
     "luna-deadpan": [
-        101,
-        28,
+        75,
+        11,
         253,
         253
     ],
     "luna-flat": [
-        99,
-        18,
+        167,
+        11,
         253,
         253
     ],
     "luna-smug": [
-        101,
-        27,
+        47,
+        12,
         253,
         253
     ],
@@ -213,20 +213,20 @@ define celestia_face_crops = {
         253
     ],
     "pc-r0-vest-shocked": [
-        39,
-        20,
+        56,
+        45,
         253,
         253
     ],
     "pc-r0-vest-snark": [
-        37,
-        16,
+        65,
+        13,
         253,
         253
     ],
     "pc-r1-nude-flushed": [
-        51,
-        15,
+        61,
+        10,
         253,
         253
     ],
@@ -237,235 +237,235 @@ define celestia_face_crops = {
         253
     ],
     "pc-r1-tee-flushed": [
-        33,
-        21,
+        58,
+        18,
         253,
         253
     ],
     "pc-r1-tee-shocked": [
-        58,
-        21,
-        253,
-        253
-    ],
-    "pc-r1-vest-shocked": [
-        63,
-        19,
-        253,
-        253
-    ],
-    "pc-r1-vest-snark": [
-        39,
-        21,
-        253,
-        253
-    ],
-    "pc-r2-casual-flushed": [
         41,
-        30,
-        253,
-        253
-    ],
-    "pc-r2-casual-shocked": [
-        94,
-        19,
-        253,
-        253
-    ],
-    "pc-r2-casual-snark": [
-        40,
         22,
         253,
         253
     ],
+    "pc-r1-vest-shocked": [
+        66,
+        14,
+        253,
+        253
+    ],
+    "pc-r1-vest-snark": [
+        68,
+        14,
+        253,
+        253
+    ],
+    "pc-r2-casual-flushed": [
+        60,
+        10,
+        253,
+        253
+    ],
+    "pc-r2-casual-shocked": [
+        61,
+        9,
+        253,
+        253
+    ],
+    "pc-r2-casual-snark": [
+        37,
+        5,
+        253,
+        253
+    ],
     "pc-r2-sweater-flushed": [
-        65,
-        6,
+        79,
+        10,
         253,
         253
     ],
     "pc-r2-sweater-snark": [
-        42,
-        21,
+        77,
+        9,
         253,
         253
     ],
     "pc-r2-vest-shocked": [
-        94,
+        66,
         9,
         253,
         253
     ],
     "pc-r2-vest-snark": [
-        23,
-        19,
+        65,
+        9,
         253,
         253
     ],
     "pc-r3-casual-flushed": [
-        42,
-        14,
+        37,
+        13,
         253,
         253
     ],
     "pc-r3-casual-shocked": [
-        44,
-        14,
+        69,
+        11,
         253,
         253
     ],
     "pc-r3-casual-snark": [
-        39,
-        20,
+        49,
+        10,
         253,
         253
     ],
     "pc-r3-nude-flushed": [
-        98,
-        23,
+        39,
+        29,
         253,
         253
     ],
     "pc-r3-nude-shocked": [
-        95,
-        25,
+        67,
+        13,
         253,
         253
     ],
     "pc-r3-vest-shocked": [
-        27,
-        12,
+        61,
+        11,
         253,
         253
     ],
     "pc-r3-vest-snark": [
-        21,
-        20,
+        56,
+        11,
         253,
         253
     ],
     "pc-r4-casual-flushed": [
-        86,
-        25,
+        71,
+        5,
         253,
         253
     ],
     "pc-r4-casual-shocked": [
-        86,
-        24,
+        63,
+        11,
         253,
         253
     ],
     "pc-r4-casual-snark": [
-        44,
-        24,
+        58,
+        23,
         253,
         253
     ],
     "pc-r4-nude-flushed": [
-        86,
-        18,
+        62,
+        31,
         253,
         253
     ],
     "pc-r4-vest-shocked": [
-        86,
-        24,
+        72,
+        10,
         253,
         253
     ],
     "pc-r4-vest-snark": [
-        25,
-        24,
+        61,
+        16,
         253,
         253
     ],
     "pc-r5-casual-flushed": [
-        96,
-        23,
+        73,
+        5,
         253,
         253
     ],
     "pc-r5-casual-shocked": [
-        93,
-        23,
+        74,
+        10,
         253,
         253
     ],
     "pc-r5-casual-snark": [
-        41,
-        25,
+        55,
+        32,
         253,
         253
     ],
     "pc-r5-nude-flushed": [
-        98,
-        18,
+        80,
+        13,
         253,
         253
     ],
     "pc-r6-casual-glad": [
-        156,
-        24,
-        253,
-        253
-    ],
-    "pc-r6-casual-shocked": [
-        154,
+        116,
         23,
         253,
         253
     ],
+    "pc-r6-casual-shocked": [
+        178,
+        22,
+        253,
+        253
+    ],
     "pc-r6-casual-snark": [
-        158,
-        26,
+        175,
+        10,
         253,
         253
     ],
     "pc-r6-nude-flushed": [
-        150,
-        20,
+        144,
+        60,
         253,
         253
     ],
     "pc-r6-nude-glad": [
-        150,
-        24,
+        115,
+        33,
         253,
         253
     ],
     "pc-r6-nude-shocked": [
-        153,
-        20,
+        171,
+        16,
         253,
         253
     ],
     "pc-r6-vest_open-glad": [
-        157,
-        18,
+        177,
+        23,
         253,
         253
     ],
     "pc-r6dark-casual-glad": [
-        157,
-        24,
+        149,
+        13,
         253,
         253
     ],
     "pc-r6dark-casual-snark": [
-        159,
-        24,
+        125,
+        22,
         253,
         253
     ],
     "pc-r6dark-nude-flushed": [
-        152,
-        19,
+        173,
+        18,
         253,
         253
     ],
     "pc-r6dark-nude-glad": [
-        111,
+        197,
         21,
         253,
         253
