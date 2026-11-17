@@ -26,6 +26,13 @@ if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
     echo "publish: commit or stash tracked changes first (the snapshot is HEAD's tree)" >&2; exit 1
 fi
 
+# Owner, 2026-11-17: every story gets tags for the story menu's filter. A route with no line in
+# game/catalog/tags.rpy (or a bad one) doesn't publish; tools/tags_check.py --format <route> helps write one.
+if ! python3 -I tools/tags_check.py --rev HEAD; then
+    if [ "$DRY" = 1 ]; then echo "publish: a real publish stops here (story tags)"; else
+        echo "publish: not publishing: add the route's tags line to game/catalog/tags.rpy" >&2; exit 1; fi
+fi
+
 # Owner, 2026-11-15: "walk throughs should be done after redraws to ensure quality". Every route whose art changed since
 # the last publish (a redraw, a re-encode, a reused room) gets the full play-order walk first: walksheet in play order,
 # every frame against its line, plus its rptest walks. This lists them; it can't check that the walks were done.

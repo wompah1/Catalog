@@ -488,8 +488,86 @@ init -50 python:
     vn_routes = []
 
     def vn_register_route(id, title, blurb, cover, label):
-        """A card on the route select: the cover, the title, the blurb; Play jumps to `label`."""
-        vn_routes.append(dict(id=id, title=title, blurb=blurb, cover=cover, label=label))
+        """A card on the route select: the cover, the title, the blurb; Play jumps to `label`. Its tags and the day it
+        was built come from game/catalog/tags.rpy (a route with no line there has no tags and sorts last by Newest)."""
+        built, tags = vn_route_tags.get(id, ("", ""))
+        vn_routes.append(dict(id=id, title=title, blurb=blurb, cover=cover, label=label,
+                              tags=frozenset(tags.split()), built=built))
+
+    # ---- the route select's tag filter (owner, 2026-11-17: "filter by tag and each story gets tags", "have a and
+    # and or option", "no consent tags"). The picks, the match mode and the sort are kept in persistent. -----------
+    VN_ROUTE_PAGE = 20      # cards drawn at once; "Show more" adds as many again (each card loads a cover)
+    VN_SORTS = [("new", _("Newest")), ("az", _("A–Z")), ("todo", _("Not finished"))]
+    vn_route_yadj = ui.adjustment()     # the card list's scroll, back to the top when the filter changes
+
+    def vn_tag_pick():
+        """The picked tags (any no longer in tags.rpy's vocabulary dropped)."""
+        return frozenset(t for t in (persistent.vn_tag_pick or ()) if t in VN_TAG_LABEL)
+
+    def vn_tag_mode():
+        return "any" if persistent.vn_tag_mode == "any" else "all"
+
+    def vn_route_sort():
+        return persistent.vn_route_sort if persistent.vn_route_sort in ("new", "az", "todo") else "new"
+
+    def _vn_title_key(r):
+        t = r["title"].lower()
+        return t[4:] if t.startswith("the ") else t
+
+    def vn_routes_shown():
+        """The cards the filter leaves, in the chosen order. All: a story has every picked tag; Any: at least one."""
+        pick, mode, sort = vn_tag_pick(), vn_tag_mode(), vn_route_sort()
+        if not pick:
+            rs = list(vn_routes)
+        elif mode == "all":
+            rs = [r for r in vn_routes if pick <= r["tags"]]
+        else:
+            rs = [r for r in vn_routes if pick & r["tags"]]
+        rs.sort(key=_vn_title_key)
+        if sort != "az":
+            rs.sort(key=lambda r: r["built"], reverse=True)     # stable: a day's routes stay A-Z
+        if sort == "todo":
+            done = persistent.catalog_done or ()
+            rs.sort(key=lambda r: r["id"] in done)
+        return rs
+
+    def vn_tag_count(tag, shown):
+        """The number on a chip. All: the stories in the list that have it (what picking it leaves). Any: every story
+        that has it (what picking it adds)."""
+        base = shown if vn_tag_mode() == "all" else vn_routes
+        return sum(1 for r in base if tag in r["tags"])
+
+    def vn_tags_line(r):
+        ## the dot holds to the tag before it (a no-break space), so a wrapped line never starts with one
+        return "\u00a0·  ".join(VN_TAG_LABEL[t] for t in VN_TAG_ORDER if t in r["tags"])
+
+    def vn_route_reset():
+        """Back to the first page and the top of the list (the filter changed, or the screen opened)."""
+        store.vn_route_limit = VN_ROUTE_PAGE
+        vn_route_yadj.change(0)
+
+    def vn_tag_toggle(tag):
+        persistent.vn_tag_pick = set(vn_tag_pick() ^ {tag})
+        vn_route_reset()
+
+    def vn_tag_clear():
+        persistent.vn_tag_pick = set()
+        vn_route_reset()
+
+    def vn_tag_set_mode(mode):
+        persistent.vn_tag_mode = mode
+        vn_route_reset()
+
+    def vn_route_set_sort(sort):
+        persistent.vn_route_sort = sort
+        vn_route_reset()
+
+    def vn_route_sort_cycle():
+        keys = [k for k, lab in VN_SORTS]
+        vn_route_set_sort(keys[(keys.index(vn_route_sort()) + 1) % len(keys)])
+
+    def vn_route_more():
+        store.vn_route_limit += VN_ROUTE_PAGE
 
     def _vn_main_bg(st, at):
         """The main menu's backdrop: the registered routes' covers in a row, dimmed, on the
@@ -535,6 +613,10 @@ default vn_clock = VNState(day=0, hour=12, minute=0)
 default vn_route = None
 default vn_art = {}
 default persistent.vn_fx_off = False
+default persistent.vn_tag_pick = set()     # the route select's filter (vn_routes_shown)
+default persistent.vn_tag_mode = "all"
+default persistent.vn_route_sort = "new"
+default vn_route_limit = VN_ROUTE_PAGE
 
 define narrator = VNChar(None)
 define vn_th = VNChar(None, what_italic=True, what_color="#e6e6efd9")
@@ -616,51 +698,296 @@ screen vn_face(face=None):
         add (face if face is not None else vn_face_portrait()) xysize (VN_FACE, VN_FACE) xalign 0.5 yalign 0.5
         add "gui/vn/face_frame.png" xysize (VN_FACE + 8, VN_FACE + 8)
 
-## The route select (DoL's New Game cards): the cover left of the title, the blurb and Play.
+## The route select (DoL's New Game cards): the cover left of the title, the blurb, the tags and Play. The tag filter
+## (owner, 2026-11-17) sits on the left; on a phone it's a full-screen panel behind a Filter button (vn_tag_panel).
+## Twenty cards at a time, since each card loads a cover.
 screen vn_route_select():
     add Solid("#0b0b10")
-    ## a test walk's plan picks the card by its title (game/catalog/vntrace.rpy)
+    on "show" action Function(vn_route_reset)
+    on "hide" action Hide("vn_tag_panel")
+    ## a test walk's plan picks the card by its title (game/catalog/vntrace.rpy); it searches every route, filter or not
     $ _vn_route_pick = vn_test_route_pick()
     if _vn_route_pick is not None:
         timer 0.05 action [Function(vn_test_picked), Return(_vn_route_pick)]
-    vbox:
-        xalign 0.5
-        ypos 56
-        spacing 30
-        text _("Choose a story") size 56 color "#f2f2f6" xalign 0.5
+    $ shown = vn_routes_shown()
+    frame:
+        style "vnf_side"
+        xpos 30
+        ypos 30
+        xsize 500
+        ysize 1020
         viewport:
-            xsize 1580
-            ysize 900
             mousewheel True
             draggable True
-            ## a scrollbar only once the cards run past the screen (two fit)
-            scrollbars ("vertical" if len(vn_routes) > 2 else None)
+            scrollbars "vertical"
+            side_spacing 6
+            use vn_tag_filter(shown)
+    text _("Choose a story") size 52 color "#f2f2f6" xpos 566 ypos 26
+    use vn_route_list(shown, (560, 108, 1340, 952), 1300)
+
+## the phone: the cards full width, bigger type, and a top bar with Filter, Sort and the count
+screen vn_route_select():
+    variant "small"
+    add Solid("#0b0b10")
+    on "show" action Function(vn_route_reset)
+    on "hide" action Hide("vn_tag_panel")
+    $ _vn_route_pick = vn_test_route_pick()
+    if _vn_route_pick is not None:
+        timer 0.05 action [Function(vn_test_picked), Return(_vn_route_pick)]
+    $ shown = vn_routes_shown()
+    $ _n = len(vn_tag_pick())
+    hbox:
+        xpos 40
+        ypos 22
+        spacing 22
+        textbutton ((_("Filter · %d on") % _n) if _n else _("Filter")):
+            style_prefix "vnf_chip"
+            selected (_n > 0)
+            action Show("vn_tag_panel")
+        textbutton (_("Sort: %s") % dict(VN_SORTS)[vn_route_sort()]):
+            style_prefix "vnf_chip"
+            action Function(vn_route_sort_cycle)
+        text (_("%d of %d") % (len(shown), len(vn_routes))) style "vnf_count" yalign 0.5
+    use vn_route_list(shown, (40, 124, 1860, 946), 1810, small=True)
+
+screen vn_route_list(shown, box, card_w, small=False):
+    viewport:
+        pos box[:2]
+        xysize box[2:]
+        yadjustment vn_route_yadj
+        mousewheel True
+        draggable True
+        scrollbars "vertical"
+        vbox:
+            spacing 22
+            for r in shown[:vn_route_limit]:
+                use vn_route_card(r, card_w, small)
+            if not shown:
+                null height 40
+                text (_("No story has all of these tags.") if vn_tag_mode() == "all" else _("No story has any of these tags.")) style "vnf_empty"
+                textbutton _("Clear all") style_prefix "vnf_chip" action Function(vn_tag_clear)
+            elif len(shown) > vn_route_limit:
+                textbutton (_("Show more  (%d more)") % (len(shown) - vn_route_limit)):
+                    style_prefix "vnf_chip"
+                    xalign 0.5
+                    action Function(vn_route_more)
+                null height 20
+
+## One card. The cover sits in a fixed box, so the text column always fits the card and wraps inside it
+## (2026-11-13: the landscape covers, 1216x832, once pushed an over-wide column past the card's edge).
+screen vn_route_card(r, card_w, small=False):
+    $ _cov = (600, 410) if small else (440, 302)
+    button:
+        xsize card_w
+        padding (24, 22, 30, 22)
+        background Frame("gui/vn/card.png", 18, 18)
+        hover_background Frame("gui/vn/card_hover.png", 18, 18)
+        action Return(r["label"])
+        hbox:
+            spacing 30
+            fixed:
+                xysize _cov
+                add Transform(vn_pic(r["cover"]), fit="contain", xysize=_cov) align (0.5, 0.5)
             vbox:
-                spacing 26
-                for r in vn_routes:
-                    button:
-                        xsize 1540
-                        padding (24, 22, 30, 22)
-                        background Frame("gui/vn/card.png", 18, 18)
-                        hover_background Frame("gui/vn/card_hover.png", 18, 18)
-                        action Return(r["label"])
-                        ## the cover in a fixed box, so the text column always fits the card and wraps
-                        ## inside it (2026-11-13: the new landscape covers, 1216x832, came out 585 wide at
-                        ## this height and pushed an 1150-wide column past the card's right edge):
-                        ## 1540 - 24 - 30 padding - 560 cover - 34 spacing = 892
-                        hbox:
-                            spacing 34
-                            fixed:
-                                xysize (560, 400)
-                                add Transform(vn_pic(r["cover"]), fit="contain", xysize=(560, 400)) align (0.5, 0.5)
-                            vbox:
-                                spacing 18
-                                xsize 892
-                                text r["title"] size 38 bold True color "#ffffff"
-                                if r["id"] in (persistent.catalog_done or ()):
-                                    text _("✓ Finished") size 24 color "#7fd08a"
-                                text r["blurb"] size 26 color "#d4d4dc" line_spacing 7
-                                text _("▸ Play") size 32 color "#ff8fa3"
+                spacing (16 if small else 12)
+                xsize card_w - 54 - _cov[0] - 30
+                text r["title"] style "vnf_card_title"
+                if r["id"] in (persistent.catalog_done or ()):
+                    text _("✓ Finished") style "vnf_card_done"
+                text r["blurb"] style "vnf_card_blurb"
+                if r["tags"]:
+                    text vn_tags_line(r) style "vnf_card_tags"
+                text _("▸ Play") style "vnf_card_play"
+
+## The filter: the count and Clear all, Match All/Any, the sort (the phone's is in its top bar), then each group's
+## chips. A chip's number is what picking it would leave (All) or how many stories have it (Any); a chip that would
+## leave nothing is greyed.
+screen vn_tag_filter(shown, small=False):
+    $ _pick, _mode = vn_tag_pick(), vn_tag_mode()
+    vbox:
+        style "vnf_vbox"
+        if not small:
+            hbox:
+                spacing 14
+                text (_("Showing %d of %d") % (len(shown), len(vn_routes))) style "vnf_count" yalign 0.5
+                textbutton _("Clear all"):
+                    style_prefix "vnf_chip"
+                    sensitive bool(_pick)
+                    action Function(vn_tag_clear)
+        hbox:
+            spacing 10
+            text _("Match") style "vnf_head" yalign 0.5
+            textbutton _("All") style_prefix "vnf_chip" selected (_mode == "all") action Function(vn_tag_set_mode, "all")
+            textbutton _("Any") style_prefix "vnf_chip" selected (_mode == "any") action Function(vn_tag_set_mode, "any")
+        text (_("Stories with every tag you pick") if _mode == "all" else _("Stories with at least one tag you pick")) style "vnf_hint"
+        if not small:
+            text _("Sort") style "vnf_head"
+            hbox:
+                spacing 10
+                for _k, _lab in VN_SORTS:
+                    textbutton _lab style_prefix "vnf_chip" selected (vn_route_sort() == _k) action Function(vn_route_set_sort, _k)
+        for _gid, _head, _one, _items in VN_TAG_GROUPS:
+            text _head style "vnf_head"
+            hbox:
+                style "vnf_chips"
+                for _t, _lab in _items:
+                    $ _c = vn_tag_count(_t, shown)
+                    textbutton "%s  {alpha=*0.6}%d{/alpha}" % (_lab, _c):
+                        style_prefix "vnf_chip"
+                        selected (_t in _pick)
+                        sensitive (_t in _pick or _c > 0)
+                        action Function(vn_tag_toggle, _t)
+
+## the phone's filter panel, over the route select
+screen vn_tag_panel():
+    modal True
+    zorder 50
+    add Solid("#0b0b10")
+    $ shown = vn_routes_shown()
+    text _("Filter") size 64 bold True color "#f2f2f6" xpos 60 ypos 28
+    viewport:
+        xpos 60
+        ypos 120
+        xsize 1800
+        ysize 800
+        mousewheel True
+        draggable True
+        scrollbars "vertical"
+        use vn_tag_filter(shown, small=True)
+    hbox:
+        xpos 60
+        ypos 952
+        spacing 30
+        textbutton _("Clear all"):
+            style_prefix "vnf_chip"
+            sensitive bool(vn_tag_pick())
+            action Function(vn_tag_clear)
+        textbutton (_("Show %d stories") % len(shown)):
+            style_prefix "vnf_chip"
+            selected True
+            action Hide("vn_tag_panel")
+
+style vnf_side is default:
+    background Frame("gui/vn/card.png", 18, 18)
+    padding (22, 20, 10, 20)
+
+style vnf_vbox is vbox:
+    spacing 14
+    xsize 440
+
+style vnf_vbox:
+    variant "small"
+    spacing 24
+    xsize 1740
+
+style vnf_chips is hbox:
+    box_wrap True
+    spacing 10
+    box_wrap_spacing 10
+    xmaximum 440
+
+style vnf_chips:
+    variant "small"
+    spacing 18
+    box_wrap_spacing 18
+    xmaximum 1740
+
+style vnf_chip_button is default:
+    padding (16, 7, 16, 9)
+    background Frame(Transform("gui/vn/pill.png", matrixcolor=TintMatrix("#262632")), 10, 10)
+    hover_background Frame(Transform("gui/vn/pill.png", matrixcolor=TintMatrix("#4a2c3a")), 10, 10)
+    selected_background Frame(Transform("gui/vn/pill.png", matrixcolor=TintMatrix("#ff8fa3")), 10, 10)
+    selected_hover_background Frame(Transform("gui/vn/pill.png", matrixcolor=TintMatrix("#ffb1c0")), 10, 10)
+    insensitive_background Frame(Transform("gui/vn/pill.png", matrixcolor=TintMatrix("#191920")), 10, 10)
+
+style vnf_chip_button:
+    variant "small"
+    padding (28, 14, 28, 16)
+
+style vnf_chip_button_text is default:
+    size 23
+    color "#e6e6ee"
+    hover_color "#ffffff"
+    selected_color "#1c0f14"
+    selected_hover_color "#1c0f14"
+    insensitive_color "#5a5a66"
+
+style vnf_chip_button_text:
+    variant "small"
+    size 40
+
+style vnf_head is default:
+    size 22
+    bold True
+    color "#9a9aa8"
+    kerning 1
+
+style vnf_head:
+    variant "small"
+    size 36
+
+style vnf_hint is default:
+    size 19
+    italic True
+    color "#7d7d8a"
+
+style vnf_hint:
+    variant "small"
+    size 30
+
+style vnf_count is default:
+    size 26
+    color "#f2f2f6"
+
+style vnf_count:
+    variant "small"
+    size 40
+
+style vnf_empty is default:
+    size 34
+    color "#d4d4dc"
+
+style vnf_card_title is default:
+    size 34
+    bold True
+    color "#ffffff"
+
+style vnf_card_title:
+    variant "small"
+    size 50
+
+style vnf_card_done is default:
+    size 22
+    color "#7fd08a"
+
+style vnf_card_done:
+    variant "small"
+    size 34
+
+style vnf_card_blurb is default:
+    size 24
+    color "#d4d4dc"
+    line_spacing 6
+
+style vnf_card_blurb:
+    variant "small"
+    size 36
+
+style vnf_card_tags is default:
+    size 20
+    color "#8e8e9c"
+
+style vnf_card_tags:
+    variant "small"
+    size 30
+
+style vnf_card_play is default:
+    size 28
+    color "#ff8fa3"
+
+style vnf_card_play:
+    variant "small"
+    size 44
 
 ## The gallery (main menu and game menu): each route's pictures in story order, the ones seen so
 ## far as thumbnails, the rest locked; a thumbnail opens the viewer.
