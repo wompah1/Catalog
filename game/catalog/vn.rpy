@@ -492,11 +492,13 @@ init -50 python:
         was built come from game/catalog/tags.rpy (a route with no line there has no tags and sorts last by Newest)."""
         built, tags = vn_route_tags.get(id, ("", ""))
         vn_routes.append(dict(id=id, title=title, blurb=blurb, cover=cover, label=label,
-                              tags=frozenset(tags.split()), built=built))
+                              tags=frozenset(vn_tag_split(tags)), built=built))
 
     # ---- the route select's tag filter (owner, 2026-11-17: "filter by tag and each story gets tags", "have a and
-    # and or option", "no consent tags"). The picks, the match mode and the sort are kept in persistent. -----------
+    # and or option"; 4:08 pm: nhentai's tags, a flat chip cloud by count; 4:13 pm: its consent tags are fine). The
+    # picks, the match mode and the sort are kept in persistent. --------------------------------------------------
     VN_ROUTE_PAGE = 20      # cards drawn at once; "Show more" adds as many again (each card loads a cover)
+    VN_TAG_TOP = 20         # chips shown before "More tags" (picked ones always show)
     VN_SORTS = [("new", _("Newest")), ("az", _("A–Z")), ("todo", _("Not finished"))]
     vn_route_yadj = ui.adjustment()     # the card list's scroll, back to the top when the filter changes
 
@@ -511,8 +513,12 @@ init -50 python:
         return persistent.vn_route_sort if persistent.vn_route_sort in ("new", "az", "todo") else "new"
 
     def _vn_title_key(r):
+        """A-Z ignores a leading The, A or An."""
         t = r["title"].lower()
-        return t[4:] if t.startswith("the ") else t
+        for art in ("the ", "an ", "a "):
+            if t.startswith(art):
+                return t[len(art):]
+        return t
 
     def vn_routes_shown():
         """The cards the filter leaves, in the chosen order. All: a story has every picked tag; Any: at least one."""
@@ -536,6 +542,19 @@ init -50 python:
         that has it (what picking it adds)."""
         base = shown if vn_tag_mode() == "all" else vn_routes
         return sum(1 for r in base if tag in r["tags"])
+
+    def vn_tag_cloud():
+        """nhentai's tags that some story has, the most used first (ties A-Z): the filter's chips."""
+        n = dict((t, 0) for t in VN_TAGS)
+        for r in vn_routes:
+            for t in r["tags"]:
+                if t in n:
+                    n[t] += 1
+        return sorted((t for t in VN_TAGS if n[t]), key=lambda t: (-n[t], t))
+
+    def vn_story_row():
+        """The Story row's tags that some story has, in their own order."""
+        return [(t, lab) for t, lab in VN_STORY_TAGS if any(t in r["tags"] for r in vn_routes)]
 
     def vn_tags_line(r):
         ## the dot holds to the tag before it (a no-break space), so a wrapped line never starts with one
@@ -615,6 +634,7 @@ default vn_art = {}
 default persistent.vn_fx_off = False
 default persistent.vn_tag_pick = set()     # the route select's filter (vn_routes_shown)
 default persistent.vn_tag_mode = "all"
+default vn_tag_more = False                 # the filter's More tags open
 default persistent.vn_route_sort = "new"
 default vn_route_limit = VN_ROUTE_PAGE
 
@@ -799,8 +819,8 @@ screen vn_route_card(r, card_w, small=False):
                     text vn_tags_line(r) style "vnf_card_tags"
                 text _("▸ Play") style "vnf_card_play"
 
-## The filter: the count and Clear all, Match All/Any, the sort (the phone's is in its top bar), then each group's
-## chips. A chip's number is what picking it would leave (All) or how many stories have it (Any); a chip that would
+## The filter: the count and Clear all, Match All/Any, the sort (the phone's is in its top bar), then nhentai's tags
+## by count and the Story row. A chip's number is what picking it would leave (All) or how many stories have it (Any); a chip that would
 ## leave nothing is greyed.
 screen vn_tag_filter(shown, small=False):
     $ _pick, _mode = vn_tag_pick(), vn_tag_mode()
@@ -826,17 +846,36 @@ screen vn_tag_filter(shown, small=False):
                 spacing 10
                 for _k, _lab in VN_SORTS:
                     textbutton _lab style_prefix "vnf_chip" selected (vn_route_sort() == _k) action Function(vn_route_set_sort, _k)
-        for _gid, _head, _one, _items in VN_TAG_GROUPS:
-            text _head style "vnf_head"
-            hbox:
-                style "vnf_chips"
-                for _t, _lab in _items:
-                    $ _c = vn_tag_count(_t, shown)
-                    textbutton "%s  {alpha=*0.6}%d{/alpha}" % (_lab, _c):
-                        style_prefix "vnf_chip"
-                        selected (_t in _pick)
-                        sensitive (_t in _pick or _c > 0)
-                        action Function(vn_tag_toggle, _t)
+        ## nhentai's tags, the most used first; the top VN_TAG_TOP plus any picked, the rest behind More tags
+        $ _cloud = vn_tag_cloud()
+        $ _chips = _cloud if vn_tag_more else [t for i, t in enumerate(_cloud) if i < VN_TAG_TOP or t in _pick]
+        text _("Tags") style "vnf_head"
+        hbox:
+            style "vnf_chips"
+            for _t in _chips:
+                $ _c = vn_tag_count(_t, shown)
+                textbutton "%s  {alpha=*0.6}%d{/alpha}" % (VN_TAG_LABEL[_t], _c):
+                    style_prefix "vnf_chip"
+                    selected (_t in _pick)
+                    sensitive (_t in _pick or _c > 0)
+                    action Function(vn_tag_toggle, _t)
+            if vn_tag_more:
+                textbutton _("Fewer tags") style_prefix "vnf_chip" action SetVariable("vn_tag_more", False)
+            elif len(_chips) < len(_cloud):
+                textbutton (_("More tags (%d)") % (len(_cloud) - len(_chips))):
+                    style_prefix "vnf_chip"
+                    action SetVariable("vn_tag_more", True)
+        ## the Story row: the change's pace and the counted format tags
+        text _("Story") style "vnf_head"
+        hbox:
+            style "vnf_chips"
+            for _t, _lab in vn_story_row():
+                $ _c = vn_tag_count(_t, shown)
+                textbutton "%s  {alpha=*0.6}%d{/alpha}" % (_lab, _c):
+                    style_prefix "vnf_chip"
+                    selected (_t in _pick)
+                    sensitive (_t in _pick or _c > 0)
+                    action Function(vn_tag_toggle, _t)
 
 ## the phone's filter panel, over the route select
 screen vn_tag_panel():
@@ -862,7 +901,7 @@ screen vn_tag_panel():
             style_prefix "vnf_chip"
             sensitive bool(vn_tag_pick())
             action Function(vn_tag_clear)
-        textbutton (_("Show %d stories") % len(shown)):
+        textbutton (_("Show 1 story") if len(shown) == 1 else _("Show %d stories") % len(shown)):
             style_prefix "vnf_chip"
             selected True
             action Hide("vn_tag_panel")

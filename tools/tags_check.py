@@ -2,7 +2,7 @@
 
   python3 tools/tags_check.py               # every registered route has a valid tags line
   python3 tools/tags_check.py --rev HEAD    # the same for a commit's tree (publish.sh runs this: it ships HEAD)
-  python3 tools/tags_check.py --format ID   # the Format tags a route's script counts out to, for its tags line
+  python3 tools/tags_check.py --format ID   # the Story row's counted tags for a route's tags line
 
 Owner, 2026-11-17: every story gets tags for the story menu's filter, and an untagged route doesn't publish.
 """
@@ -48,7 +48,7 @@ def format_tags(d):
     menus = len(re.findall(r"^\s*menu\b", text, re.M))
     endings = len(re.findall(r"ending\s*=\s*True", text))
     words = len(text.split())
-    tags = (["branching"] if menus >= 12 else []) + (["endings"] if endings >= 2 else [])
+    tags = (["branching"] if menus >= 12 else []) + (["multiple endings"] if endings >= 2 else [])
     tags += ["short"] if words < 7000 else (["long"] if words >= 15000 else [])
     return tags, menus, endings, words
 
@@ -69,12 +69,12 @@ def main(argv):
                 print("tags: %s isn't registered in this checkout" % rid, file=sys.stderr)
                 return 1
             tags, m, e, w = format_tags(reg[rid])
-            print("%s: %s   (%d menus, %d endings, %d words)" % (rid, " ".join(tags) or "(none)", m, e, w))
+            print("%s: %s   (%d menus, %d endings, %d words)" % (rid, ", ".join(tags) or "(none)", m, e, w))
         return 0
     missing = sorted(set(reg) - set(table))
     if missing:
         print("tags: no tags line in game/catalog/tags.rpy for: %s" % " ".join(missing), file=sys.stderr)
-        print("tags: add one per route (rules at the top of the file; --format ID prints its Format tags)", file=sys.stderr)
+        print("tags: add one per route (rules at the top of the file; --format ID prints its counted Story tags)", file=sys.stderr)
         return 1
     print("tags: %d registered routes tagged (%d lines)" % (len(reg), len(table)))
     return 0
