@@ -522,7 +522,8 @@ label ce_day:
 ## A shift at ElectroMart (Celestia Shift): the vest, the metronome.
 label ce_shift:
     $ _ce_t = ce_vest_n()
-    $ ce.fit = "vest"
+    # stage 5 wears the vest open; stage 6 leaves it on the break-room hook (CE_VEST), so: your own clothes
+    $ ce.fit = "casual" if _ce_t >= 6 else ("vest_open" if _ce_t == 5 else "vest")
     $ vn_enter(bg="ce_shop", pc="snark", pc_tag="ce_pc", cast=[], cg=None)
     show bg ce_shop onlayer bgl
     $ _ce_v = ce_vest()

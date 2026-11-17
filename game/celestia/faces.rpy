@@ -224,6 +224,12 @@ define celestia_face_crops = {
         253,
         253
     ],
+    "pc-r1-casual-snark": [
+        42,
+        10,
+        253,
+        253
+    ],
     "pc-r1-nude-flushed": [
         61,
         10,
@@ -404,6 +410,12 @@ define celestia_face_crops = {
         253,
         253
     ],
+    "pc-r5-vest_open-snark": [
+        110,
+        15,
+        253,
+        253
+    ],
     "pc-r6-casual-glad": [
         116,
         23,
@@ -443,6 +455,12 @@ define celestia_face_crops = {
     "pc-r6-vest_open-glad": [
         177,
         23,
+        253,
+        253
+    ],
+    "pc-r6-vest_open-snark": [
+        107,
+        19,
         253,
         253
     ],

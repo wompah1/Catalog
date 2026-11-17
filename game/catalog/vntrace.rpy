@@ -48,7 +48,20 @@ init 100 python:
         if tr:
             pc, cast, fit = tr()
         else:
-            pc = rl_pc_file(rl_face_now()).rsplit("/", 1)[-1] if renpy.showing("rory") else None
+            # any route that registers its PC with vn_sprite_image (a tag ending "_pc"): the file its
+            # resolver gives for the shown face, flagged " MISSING" when that file isn't loadable
+            # (d1/ff, 2026-11-17: celestia's empty r1 casual slot left pc null on every row)
+            pc = None
+            for _tag, _res in vn_sprite_resolvers.items():
+                if _tag.endswith("_pc") and renpy.showing(_tag):
+                    try:
+                        _f = _res((attrs(_tag) or "").split(" ")[0])
+                        pc = _f.rsplit("/", 1)[-1] + ("" if renpy.loadable(_f) else " MISSING")
+                    except Exception as _e:
+                        pc = "ERROR %s" % _e
+                    break
+            if pc is None and renpy.showing("rory"):
+                pc = rl_pc_file(rl_face_now()).rsplit("/", 1)[-1]
             cast = ("miles " + attrs("miles")) if renpy.showing("miles") else None
             fit = rl.fit
         row = {
