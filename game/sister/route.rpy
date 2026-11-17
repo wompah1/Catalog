@@ -141,10 +141,11 @@ init -10 python:
 
     def si_pc_file(face):
         r, m, fit = max(0, min(7, si.body or 0)), ("m" if si.mode == "mae" else "h"), si.fit
+        dflt = "eager" if m == "m" else "neutral"   # Mae has no neutral face (ff's sweep, 11-17)
         names = []
         if fit:
-            names += ["pc-r%d%s-%s-%s" % (r, m, fit, face), "pc-r%d%s-%s-neutral" % (r, m, fit)]
-        names += ["pc-r%d%s-%s" % (r, m, face), "pc-r%d%s-neutral" % (r, m)]
+            names += ["pc-r%d%s-%s-%s" % (r, m, fit, face), "pc-r%d%s-%s-%s" % (r, m, fit, dflt)]
+        names += ["pc-r%d%s-%s" % (r, m, face), "pc-r%d%s-%s" % (r, m, dflt)]
         for n in names:
             if _si_has(n):
                 return SI + n + ".png"

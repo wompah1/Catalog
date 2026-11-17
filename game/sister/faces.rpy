@@ -80,6 +80,18 @@ define sister_face_crops = {
         253,
         253
     ],
+    "pc-r0m-eager": [
+        79,
+        59,
+        253,
+        253
+    ],
+    "pc-r0m-nude-eager": [
+        37,
+        18,
+        253,
+        253
+    ],
     "pc-r1h-neutral": [
         54,
         41,

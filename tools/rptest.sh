@@ -14,6 +14,10 @@ out=${2:?trace file}
 secs=${3:-600}
 here=$(cd "$(dirname "$0")/.." && pwd)
 sdk="$here/../renpy-8.5.3-sdk"
+# The owner (2026-11-17): walk windows open on the second monitor. game/catalog/testwindow.rpy places the window there
+# at init (nothing happens with one display). RPTEST_DISPLAY=main keeps it on the main display; a number picks SDL
+# display n.
+export RPTEST_DISPLAY="${RPTEST_DISPLAY-second}"
 rm -f "$out" "$here/traceback.txt"
 # a throwaway save folder: a test walk never touches the player's saves or persistent data
 # (completion marks, preferences), and two worktrees' tests can't collide
@@ -49,6 +53,7 @@ status=$?
 grep -E '^\[rpytest\] (Test cases|Status)|FAIL|Error' "$out.log" | head -8
 [ -f "$here/traceback.txt" ] && { echo "--- traceback.txt"; grep -A4 'While running' "$here/traceback.txt" | head -8; }
 echo "lines traced: $( [ -f "$out" ] && wc -l < "$out" || echo 0 )  exit: $status"
+grep -m1 '^\[rptest-window\]' "$out.log"
 
 # The owner (2026-11-15): the person talking has the right picture in the box, checked on every walk. vn.rpy writes a
 # speaker_miss row when a cast speaker's sprite isn't on stage and a face_miss row when a cast speaker over a CG has no
