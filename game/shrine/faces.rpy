@@ -27,13 +27,13 @@ define shrine_face_crops = {
         253
     ],
     "pc-r1-open-dazed": [
-        44,
-        30,
+        75,
+        11,
         253,
         253
     ],
     "pc-r1-open-flushed": [
-        49,
+        75,
         8,
         253,
         253
@@ -51,14 +51,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r1-robes-dazed": [
-        61,
-        15,
+        73,
+        24,
         253,
         253
     ],
     "pc-r1-robes-flushed": [
-        55,
-        5,
+        50,
+        22,
         253,
         253
     ],
@@ -69,14 +69,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r2-robes-dazed": [
-        54,
-        2,
+        79,
+        9,
         253,
         253
     ],
     "pc-r2-robes-flushed": [
-        87,
-        2,
+        79,
+        6,
         253,
         253
     ],
@@ -87,14 +87,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r3-robes-dazed": [
-        77,
-        11,
+        93,
+        65,
         253,
         253
     ],
     "pc-r3-robes-flushed": [
-        58,
-        14,
+        60,
+        12,
         253,
         253
     ],
@@ -111,14 +111,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r4-robes-dazed": [
-        80,
-        14,
+        153,
+        4,
         253,
         253
     ],
     "pc-r4-robes-flushed": [
-        148,
-        14,
+        159,
+        4,
         253,
         253
     ],
@@ -135,14 +135,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r5-open-dazed": [
-        91,
-        4,
+        156,
+        7,
         253,
         253
     ],
     "pc-r5-open-flushed": [
-        92,
-        4,
+        91,
+        6,
         253,
         253
     ],
@@ -153,14 +153,14 @@ define shrine_face_crops = {
         253
     ],
     "pc-r5-robes-dazed": [
-        73,
-        15,
+        131,
+        4,
         253,
         253
     ],
     "pc-r5-robes-flushed": [
-        78,
-        16,
+        137,
+        2,
         253,
         253
     ],
@@ -177,8 +177,8 @@ define shrine_face_crops = {
         253
     ],
     "pc-r6-hitched-dazed": [
-        101,
-        11,
+        158,
+        7,
         253,
         253
     ],
@@ -201,20 +201,20 @@ define shrine_face_crops = {
         253
     ],
     "pc-r6-nude-flushed": [
-        183,
-        0,
+        155,
+        12,
         253,
         253
     ],
     "pc-r6-open-dazed": [
-        92,
+        158,
         4,
         253,
         253
     ],
     "pc-r6-open-flushed": [
-        111,
-        4,
+        172,
+        7,
         253,
         253
     ],
@@ -225,26 +225,26 @@ define shrine_face_crops = {
         253
     ],
     "pc-r7-nude-dazed": [
-        221,
-        40,
+        228,
+        9,
         253,
         253
     ],
     "pc-r7-nude-flushed": [
-        223,
+        244,
         7,
         253,
         253
     ],
     "pc-r7-open-flushed": [
-        193,
-        19,
+        233,
+        10,
         253,
         253
     ],
     "pc-r7-robes-flushed": [
-        272,
-        6,
+        259,
+        40,
         253,
         253
     ],
