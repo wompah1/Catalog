@@ -82,10 +82,10 @@ label si_movie_night:
     jump si_bath_night
 
 label si_bath_night:
-    $ si.fit = "nude"
     $ vn_enter(bg="si_bathroom", pc="eager", pc_tag="si_pc", cast=[], cg="si_bath_run")
     show cg si_bath_run onlayer cgl
     "You sit on the edge of the bath testing the water, cold, hot, cold, until it's perfect. Bubbles. A ridiculous amount of bubbles, from the good glass bottle big sis saves for special occasions, because bath night is one."
+    $ si.fit = "nude"
     "You undress without thinking, like taking your shoes off. Your cock hangs soft against your thigh. It's just there, like an elbow."
     $ si_body(1)
     "{color=#ff5fb8}Your legs are smooth as anything. Every hair, gone. You run a hand up your shin in the steam and go \"{i}ooh{/i}\" out loud, because it feels {i}lovely{/i}, and do it again.{/color}"

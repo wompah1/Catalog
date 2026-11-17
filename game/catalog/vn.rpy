@@ -4,7 +4,8 @@
 ##   - a background full-bleed (layer bgl), or a CG over it (layer cgl): the CG sits wholly above
 ##     the textbox (owner, 2026-11-10: "being able to better see the art"), a blurred copy of
 ##     itself filling the sides
-##   - the PC sprite left, one cast sprite right (master layer); the speaker lit, the other dimmed
+##   - the PC sprite left, up to two cast sprites, right and centre (master layer; the cast stage
+##     below); the speaker lit, the others dimmed
 ##   - the textbox: two lines tall, growing for a third (owner, 2026-11-12: smaller box, more
 ##     picture; the CG area is 832, so a landscape frame draws at native size); the name plate a
 ##     tab on its top edge in the speaker's colour; one beat per click; SFX lines big and centred;
@@ -128,13 +129,15 @@ init -50 python:
     VN_DIM = TintMatrix("#b8b8b8") * SaturationMatrix(0.85)
 
     def vn_dimmed(who):
-        """The other sprite steps back while someone with a sprite speaks."""
+        """The other sprites step back while someone with a sprite speaks: the PC's while a cast sprite
+        talks, a cast sprite's while the PC or another cast sprite talks (owner, 2026-11-17: two cast
+        sprites side by side, the one not talking dimmed)."""
         talk = store.vn_talk
         if talk is None or talk == who:
             return False
         if who == "pc":
             return renpy.showing(talk)
-        return talk == "pc"
+        return talk == "pc" or (talk in vn_sprite_resolvers and renpy.showing(talk))
 
     def _vn_sprite(st, at, resolve, who, face):
         d = vn_figure(vn_art_file(resolve(face)))
@@ -151,6 +154,119 @@ init -50 python:
         for f in faces:
             renpy.image((tag, f), DynamicDisplayable(_vn_sprite, resolve, who or tag, f))
 
+    # ---- the cast stage: two cast sprites side by side ------------------------------------
+    # The owner (2026-11-17, via Supervisor): routes show each NPC `at vn_cast_slot` in turn and never hide the one
+    # before, so they stacked on one spot. Now the two most recent cast sprites stand side by side: the first keeps the
+    # right spot (vn_cast_slot), a newcomer takes the centre (vn_cast_mid), and nobody moves while they stay. A third
+    # pushes out the one least recently shown or heard (the current speaker and the last other stay); it's parked
+    # (vn_cast_park, invisible) rather than hidden, so it still counts as on stage (the speaker check, vn_face,
+    # `show <tag> <face>`, the face tab over a CG) and comes back when it speaks or is shown again, in the spot the
+    # one it replaces leaves. When one is hidden, the most recent parked one comes back. No route changes: the show
+    # and hide statements go through config.show/config.hide below, and a renpy.show() at vn_cast_slot (wolfpack) is
+    # sorted out when the next line starts.
+    # Measured 2026-11-17 on the 11 routes that stack cast (every sprite pair at stage height): with the centre spot at
+    # the screen's middle no face is ever crossed; 1% of pairs touch at an elbow or hair, by 18 px at most.
+    # State lives in the store and the scene lists, so rollback and saves follow it.
+
+    def _vn_cast_slots():
+        return {"r": vn_cast_slot, "m": vn_cast_mid, "p": vn_cast_park}
+
+    def vn_cast_slot_of(tag):
+        """'r', 'm' or 'p' for a cast sprite on the master layer, else None (not showing, or not in a cast slot)."""
+        at = renpy.get_at_list(tag, layer="master")
+        if at is None:
+            return None
+        for s, t in _vn_cast_slots().items():
+            if any(x is t for x in at):
+                return s
+        # a face change without `at` keeps the running transform (and empties the at list); after a load the list holds
+        # copies: either way the spot last given
+        return store.vn_cast_slots.get(tag)
+
+    def _vn_cast_note(tag, slot):
+        if store.vn_cast_slots.get(tag) != slot:
+            d = dict(store.vn_cast_slots)
+            d[tag] = slot
+            store.vn_cast_slots = d
+
+    def _vn_cast_bump(tag):
+        store.vn_cast_order = [t for t in store.vn_cast_order if t != tag] + [tag]
+
+    def _vn_cast_place(tag, slot):
+        """Re-show a cast sprite in `slot`, with its face and any other transforms it had."""
+        attrs = tuple(renpy.get_attributes(tag, layer="master") or ())
+        slots = list(_vn_cast_slots().values())
+        at = renpy.get_at_list(tag, layer="master") or []
+        if any(x is t for x in at for t in slots):
+            new = [_vn_cast_slots()[slot] if any(x is t for t in slots) else x for x in at]
+        else:
+            new = [_vn_cast_slots()[slot]]          # re-shown without `at`, or loaded from a save
+        renpy.show((tag,) + attrs, at_list=new, layer="master")
+        _vn_cast_note(tag, slot)
+
+    def vn_cast_arrange(incoming=None):
+        """Put the two most recent cast sprites in the right and centre spots and park the rest; `incoming` is a sprite
+        about to be shown (the caller shows it). Returns incoming's spot."""
+        showing = list(renpy.get_showing_tags("master", sort=True))     # back to front: shown first, first
+        cur = {}
+        for t in showing:
+            if t in vn_sprite_resolvers:
+                s = vn_cast_slot_of(t)
+                if s is not None:
+                    cur[t] = s
+        if incoming is not None:
+            cur[incoming] = cur.get(incoming) if incoming in showing else None
+        order = [t for t in store.vn_cast_order if t in cur]
+        order = [t for t in cur if t not in order] + order      # never bumped (old saves): oldest
+        vis, parked = order[-2:], order[:-2]
+        spots = {}
+        for t in vis:
+            if cur[t] in ("r", "m") and cur[t] not in spots.values():
+                spots[t] = cur[t]
+        for t in vis:
+            if t not in spots:
+                spots[t] = "r" if "r" not in spots.values() else "m"
+        for t in parked:
+            spots[t] = "p"
+        for t, s in spots.items():
+            if t != incoming and (s != cur[t] or store.vn_cast_slots.get(t) != s):
+                if s != cur[t]:
+                    _vn_cast_place(t, s)
+                else:
+                    _vn_cast_note(t, s)
+        return spots.get(incoming)
+
+    def vn_cast_show(name, at_list, layer=None, show=None, **kw):
+        """Show a cast sprite asked for at vn_cast_slot in its spot on the cast stage."""
+        nm = tuple(name.split()) if isinstance(name, str) else tuple(name)
+        tag = kw.get("tag") or nm[0]
+        _vn_cast_bump(tag)
+        s = vn_cast_arrange(incoming=tag)
+        at_list = [_vn_cast_slots()[s] if x is vn_cast_slot else x for x in at_list]
+        (show or renpy.show)(name, at_list=at_list, layer=layer, **kw)
+        _vn_cast_note(tag, s)
+
+    def _vn_cast_asked(at_list, layer, what):
+        return what is None and layer in (None, "master") and any(x is vn_cast_slot for x in (at_list or ()))
+
+    _vn_show0 = config.show
+    _vn_hide0 = config.hide
+
+    def _vn_show(name, at_list=[], layer=None, what=None, **kw):
+        nm = tuple(name.split()) if isinstance(name, str) else tuple(name)
+        if _vn_cast_asked(at_list, layer, what) and (kw.get("tag") or nm[0]) in vn_sprite_resolvers:
+            return vn_cast_show(name, list(at_list), layer=layer, show=_vn_show0, what=what, **kw)
+        return _vn_show0(name, at_list=at_list, layer=layer, what=what, **kw)
+
+    def _vn_hide(name, layer=None):
+        _vn_hide0(name, layer)
+        tag = (tuple(name.split()) if isinstance(name, str) else tuple(name))[0]
+        if layer in (None, "master") and tag in store.vn_cast_slots:
+            vn_cast_arrange()
+
+    config.show = _vn_show
+    config.hide = _vn_hide
+
     # ---- the stage ------------------------------------------------------------------------
     def vn_enter(bg=None, pc=None, pc_tag=None, cast=(), cg=None, trans=True):
         """A passage's stage row, as framework/vn-screen.js resolves it: the background (or None),
@@ -165,6 +281,8 @@ init -50 python:
         changed = (_now("bg", "bgl") != bg) or (_now("cg", "cgl") != cg)
         renpy.scene(layer="cgl")
         renpy.scene(layer="master")
+        store.vn_cast_order = []
+        store.vn_cast_slots = {}
         if bg:
             renpy.show("bg " + bg, layer="bgl")
         else:
@@ -172,7 +290,7 @@ init -50 python:
         if pc and pc_tag:
             renpy.show(pc_tag + " " + pc, at_list=[vn_pc_slot])
         for tag, face in cast:
-            renpy.show(tag + " " + face, at_list=[vn_cast_slot])
+            vn_cast_show(tag + " " + face, [vn_cast_slot])
         if cg:
             renpy.show("cg " + cg, layer="cgl")
         if trans and changed and not renpy.is_skipping():
@@ -289,6 +407,10 @@ init -50 python:
         if event == "begin":
             store.vn_talk = who
             store.vn_line_who = who
+            # a cast speaker steps forward: back from parked into the spot of the one least recently shown or heard
+            if who and who != "pc" and who in vn_sprite_resolvers and vn_cast_slot_of(who) is not None:
+                _vn_cast_bump(who)
+                vn_cast_arrange()
             tp_ = getattr(store, "_vn_trace_path", None)
             # a cast speaker over a CG whose face can't be cut (no head crop: faces.rpy not regenerated) shows no tab
             if tp_ and who and who != "pc" and who in vn_sprite_resolvers and renpy.showing(who) and vn_cg_on() \
@@ -381,7 +503,15 @@ transform vn_pc_slot:
     xanchor 0.0 xpos VN_SIDE yanchor 1.0 ypos VN_H + 22
 
 transform vn_cast_slot:
-    xanchor 1.0 xpos VN_W - VN_SIDE yanchor 1.0 ypos VN_H + 22
+    xanchor 1.0 xpos VN_W - VN_SIDE yanchor 1.0 ypos VN_H + 22 alpha 1.0
+
+## the cast stage's second spot (a newcomer while the first stays right) and a parked third (vn_cast_arrange). Each
+## sets every property, since a re-show carries the old transform's state into the new one.
+transform vn_cast_mid:
+    xanchor 0.5 xpos VN_W // 2 yanchor 1.0 ypos VN_H + 22 alpha 1.0
+
+transform vn_cast_park:
+    xanchor 1.0 xpos VN_W - VN_SIDE yanchor 1.0 ypos VN_H + 22 alpha 0.0
 
 image vn_black = Solid("#000")
 image vn_main_bg = DynamicDisplayable(_vn_main_bg)
@@ -390,6 +520,8 @@ image vn_missing = Fixed(Solid("#1b1b23"), Text("?", size=120, color="#3a3a46", 
 
 default vn_talk = None
 default vn_line_who = None   # this line's speaker tag (None for narration); the box's face follows it
+default vn_cast_order = []   # cast sprite tags, least recently shown or heard first (the cast stage)
+default vn_cast_slots = {}   # cast sprite tag -> the spot last given: "r", "m" or "p" (parked)
 default vn_clock = VNState(day=0, hour=12, minute=0)
 default vn_route = None
 default vn_art = {}
