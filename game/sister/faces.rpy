@@ -15,14 +15,14 @@ define sister_face_crops = {
         253
     ],
     "kate-neutral": [
-        55,
-        45,
+        86,
+        23,
         253,
         253
     ],
     "kate-smile": [
-        57,
-        45,
+        74,
+        41,
         253,
         253
     ],
@@ -69,8 +69,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r0h-neutral": [
-        41,
-        16,
+        54,
+        40,
         253,
         253
     ],
@@ -82,7 +82,7 @@ define sister_face_crops = {
     ],
     "pc-r1h-neutral": [
         54,
-        57,
+        41,
         253,
         253
     ],
@@ -105,8 +105,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r1m-eager": [
-        51,
-        22,
+        42,
+        32,
         253,
         253
     ],
@@ -123,8 +123,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r2h-neutral": [
-        33,
-        43,
+        67,
+        45,
         253,
         253
     ],
@@ -189,8 +189,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r3m-blueskirt-beaming": [
-        60,
-        40,
+        89,
+        33,
         253,
         253
     ],
@@ -213,8 +213,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r4h-neutral": [
-        59,
-        26,
+        44,
+        21,
         253,
         253
     ],
@@ -303,8 +303,8 @@ define sister_face_crops = {
         253
     ],
     "pc-r6m-skirt-beaming": [
-        84,
-        21,
+        188,
+        26,
         253,
         253
     ],
@@ -315,38 +315,38 @@ define sister_face_crops = {
         253
     ],
     "pc-r6m-skirt-eager": [
-        103,
-        32,
+        59,
+        28,
         253,
         253
     ],
     "pc-r7m-beaming": [
-        128,
-        30,
+        144,
+        18,
         253,
         253
     ],
     "pc-r7m-blissful": [
-        111,
-        14,
+        107,
+        25,
         253,
         253
     ],
     "pc-r7m-eager": [
-        152,
+        143,
         17,
         253,
         253
     ],
     "pc-r7m-nude-blissful": [
-        124,
-        14,
+        113,
+        16,
         253,
         253
     ],
     "pc-r7m-nude-eager": [
-        153,
-        18,
+        155,
+        23,
         253,
         253
     ]
