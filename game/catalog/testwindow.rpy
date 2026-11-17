@@ -56,3 +56,30 @@ init 999 python hide:
 
         except Exception as e:
             print("[rptest-window] couldn't place the window (%r); Ren'Py's own placement" % (e,))
+
+
+## Test runs only: test clicks count wherever the real cursor is.
+##
+## On macOS, when the real cursor leaves the game window, SDL sends a mouse-focus-lost ACTIVEEVENT. Ren'Py then
+## sets interface.mouse_focused to False and moves every later mouse event to (-1, -1) (core.py, the
+## `if not self.mouse_focused` check), test clicks included, until the cursor comes back over the window. A walk
+## window on the second display rarely has the cursor over it, so `click pos` and `click "label"` missed (QA
+## checker, 2026-11-17). Ren'Py asks testmouse.get_mouse_pos for every event's position just before that check.
+## While a test is driving the mouse (testmouse.mouse_pos is set, which only test nodes do), this keeps
+## mouse_focused True. In normal play mouse_pos stays None and nothing changes.
+
+init 999 python hide:
+    try:
+        import renpy.test.testmouse as testmouse
+
+        test_get_mouse_pos = testmouse.get_mouse_pos
+
+        def get_mouse_pos(x, y):
+            if testmouse.mouse_pos is not None:
+                renpy.display.interface.mouse_focused = True
+            return test_get_mouse_pos(x, y)
+
+        testmouse.get_mouse_pos = get_mouse_pos
+
+    except Exception as e:
+        print("[rptest-window] couldn't keep test clicks focused (%r)" % (e,))
