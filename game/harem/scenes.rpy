@@ -492,7 +492,6 @@ label hrm_bath:
     hide hrm_kasim
     show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Yes, Majesty.\""
-    show cg hrm_slab onlayer cgl
     "The Sultan, still hard, gets up. He lays Dahlia over the slab on her front, with her face between Zarina's thighs, and oils her ass, and pushes in."
     vn_sfx "{i}Shhlk.{/i}"
     hrm_dahlia "\"{i}Ahh{/i}— yes— oh, yes— all of it, my sultan— {i}mmh{/i}— all the way—\""
@@ -521,7 +520,6 @@ label hrm_bath:
     vn_sfx "{i}Pap. Pap. Pap. Pap.{/i}"
     "The steam rolls over everything. It hides the small golden cage swinging between her thighs. He never looks down. He never sees it."
     hrm_dahlia "\"Harder, my sultan— {i}mmh{/i}— harder— I want to feel it in my {i}teeth{/i}—\""
-    show cg hrm_slab_end onlayer cgl
     hide hrm_kasim
     show hrm_zarina wicked at vn_cast_slot
     hrm_zarina "\"Dahlia— I'm— {i}AHH{/i}—!\""
@@ -552,7 +550,6 @@ label hrm_festival:
     show hrm_kasim lazy at vn_cast_slot
     hrm_kasim "\"Isn't she {i}wonderful?{/i}\""
     hrm_dahlia "\"{i}Mmh{/i}— {i}mmph{/i}— Captain— {i}mmh{/i}—\""
-    show cg hrm_spit_hands onlayer cgl
     "Zarina, Leyla and Nasrin wade up in the water round her, and reach up, and their hands are on her huge breasts: lifting, oiling, squeezing, pinching, six hands, while the Sultan rocks her onto the captain's cock and back onto his own."
     if hrm.bet == "leyla":
         hide hrm_brask

@@ -3,8 +3,8 @@
 
 define harem_face_crops = {
     "brask-earnest": [
-        128,
-        29,
+        169,
+        11,
         253,
         253
     ],
@@ -21,8 +21,8 @@ define harem_face_crops = {
         253
     ],
     "leyla-giggle": [
-        79,
-        46,
+        149,
+        32,
         253,
         253
     ],
@@ -39,68 +39,68 @@ define harem_face_crops = {
         253
     ],
     "pc-r0-shift-startled": [
-        57,
-        3,
+        80,
+        26,
         253,
         253
     ],
     "pc-r0-shirt-grin": [
-        69,
-        57,
+        94,
+        20,
         253,
         253
     ],
     "pc-r0-shirt-startled": [
-        73,
-        58,
+        62,
+        9,
         253,
         253
     ],
     "pc-r1-nude-flushed": [
-        57,
-        32,
+        162,
+        13,
         253,
         253
     ],
     "pc-r1-nude-startled": [
-        65,
-        33,
+        166,
+        26,
         253,
         253
     ],
     "pc-r2-nude-flushed": [
-        38,
-        23,
+        135,
+        0,
         253,
         253
     ],
     "pc-r2-veils-grin": [
-        114,
-        4,
+        58,
+        32,
         253,
         253
     ],
     "pc-r2-veils-startled": [
-        118,
-        2,
+        58,
+        32,
         253,
         253
     ],
     "pc-r3-nude-flushed": [
-        77,
-        11,
+        83,
+        0,
         253,
         253
     ],
     "pc-r3-silks-grin": [
-        118,
-        40,
+        147,
+        5,
         253,
         253
     ],
     "pc-r3-silks-startled": [
-        107,
-        40,
+        144,
+        16,
         253,
         253
     ],
@@ -111,14 +111,14 @@ define harem_face_crops = {
         253
     ],
     "pc-r4-sheer-grin": [
-        49,
-        27,
+        143,
+        11,
         253,
         253
     ],
     "pc-r4-sheer-startled": [
-        45,
-        27,
+        134,
+        12,
         253,
         253
     ],
@@ -135,8 +135,8 @@ define harem_face_crops = {
         253
     ],
     "pc-r4c-sheer-startled": [
-        85,
-        15,
+        70,
+        24,
         253,
         253
     ],
