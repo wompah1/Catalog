@@ -266,6 +266,12 @@ define greathawk_face_crops = {
         253,
         253
     ],
+    "pc-r7-flannel-stubborn": [
+        221,
+        26,
+        253,
+        253
+    ],
     "pc-r7-nude-overwhelmed": [
         227,
         28,

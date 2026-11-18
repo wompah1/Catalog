@@ -76,8 +76,10 @@ init -10 python:
 
     def grh_pc_file(face):
         r, fit = grh.row or "0", grh.fit or "own"
-        names = ["pc-r%s-%s-%s" % (r, fit, face), "pc-r%s-%s-stubborn" % (r, fit),
-                 "pc-r%s-own-%s" % (r, face), "pc-r%s-own-stubborn" % r]
+        names = ["pc-r%s-%s-%s" % (r, fit, face), "pc-r%s-%s-stubborn" % (r, fit)]
+        # the same outfit's other faces before falling back to "own" (QA b7af73d6: rung 7 has no "own" sprite)
+        names += ["pc-r%s-%s-%s" % (r, fit, f) for f in ("flushed", "furious", "overwhelmed")]
+        names += ["pc-r%s-own-%s" % (r, face), "pc-r%s-own-stubborn" % r]
         for n in names:
             if _grh_has(n):
                 return GRH + n + ".png"

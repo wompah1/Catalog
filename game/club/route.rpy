@@ -117,8 +117,14 @@ init -10 python:
 
     def clb_pc_file(face):
         r, fit = clb.row or "0", clb.fit or "own"
-        names = ["pc-r%s-%s-%s" % (r, fit, face), "pc-r%s-%s-deadpan" % (r, fit),
-                 "pc-r%s-u1-%s" % (r, face), "pc-r%s-u1-deadpan" % r]
+        names = ["pc-r%s-%s-%s" % (r, fit, face), "pc-r%s-%s-deadpan" % (r, fit)]
+        names += ["pc-r%s-%s-%s" % (r, fit, f) for f in ("soft", "flustered", "loud")]
+        names += ["pc-r%s-u1-%s" % (r, face), "pc-r%s-u1-deadpan" % r]
+        # The same outfit a rung down when this rung has no sprite in it (QA 9860a908: dogpile keeps the u4 kit
+        # into rung 6, inspection wears u3 for two lines at rung 4). Never nude: a lower rung could put the cock back.
+        if fit != "nude":
+            for rr in range(int(r) - 1, -1, -1):
+                names += ["pc-r%d-%s-%s" % (rr, fit, face), "pc-r%d-%s-deadpan" % (rr, fit)]
         for n in names:
             if _clb_has(n):
                 return CLB + n + ".png"
