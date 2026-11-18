@@ -22,8 +22,33 @@ IDENT_EMAIL=wompah1@users.noreply.github.com
 DENY=${CATALOG_PUBLISH_DENY:-$HOME/.config/catalog-publish-deny.txt}
 DRY=0; [ "${1:-}" = "--dry-run" ] && DRY=1
 
+# One publish at a time (C9, 2026-11-18 2:45 pm ET: six publishes from different worktrees in ten minutes raced on
+# the shared public / public-art-N refs, and an art push lost to another's mid-upload). Every worktree shares the
+# lock in the common git dir; a lock whose process is gone is cleared. A dry run takes it too (it moves the refs).
+LOCK="$(cd "$(git rev-parse --git-common-dir)" && pwd)/publish.lock"
+waited=0
+until mkdir "$LOCK" 2>/dev/null; do
+    holder=$(cat "$LOCK/pid" 2>/dev/null || true)
+    if [ -n "$holder" ] && ! kill -0 "$holder" 2>/dev/null; then
+        echo "publish: clearing a stale lock (pid $holder is gone)" >&2; rm -rf "$LOCK"; continue
+    fi
+    [ "$waited" = 0 ] && echo "publish: waiting for pid ${holder:-?} ($(cat "$LOCK/who" 2>/dev/null || echo starting))" >&2
+    if [ "$waited" -ge 1800 ]; then echo "publish: still locked after 30 min ($LOCK); giving up" >&2; exit 1; fi
+    sleep 10; waited=$((waited + 10))
+done
+echo $$ > "$LOCK/pid"; echo "$(pwd) since $(date -u +%H:%M:%SZ)" > "$LOCK/who"
+trap 'rm -rf "$LOCK"' EXIT
+
 if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
     echo "publish: commit or stash tracked changes first (the snapshot is HEAD's tree)" >&2; exit 1
+fi
+
+# A stale checkout must not roll the site back: HEAD has to contain the commit the last publish was made from
+# (refs/published/source, set after each successful push). Otherwise routes published since would come off.
+LAST_SRC=$(git rev-parse -q --verify refs/published/source 2>/dev/null || true)
+if [ -n "$LAST_SRC" ] && ! git merge-base --is-ancestor "$LAST_SRC" HEAD; then
+    echo "publish: HEAD $(git rev-parse --short HEAD) doesn't contain the last published commit $(git rev-parse --short "$LAST_SRC"): merge main (or that commit) first, or the site loses what was published since" >&2
+    [ "$DRY" = 1 ] || exit 1
 fi
 
 # Owner, 2026-11-17: every story gets tags for the story menu's filter. A route with no line in
@@ -112,12 +137,25 @@ while read -r N REPO KEY; do
         echo "publish: art $N snapshot $SC for $REPO"
     fi
     if [ "$DRY" = 1 ]; then echo "publish: dry run, not pushing art $N"; continue; fi
-    GIT_SSH_COMMAND="ssh -F /dev/null -i $KEY -o IdentitiesOnly=yes" \
-        git push --force "git@github.com:$REPO.git" "refs/heads/public-art-$N:refs/heads/main"
+    # leased on what this repo last pushed there: a push from anywhere else since stops the publish instead of
+    # being overwritten. A failed art push stops before Catalog's, so the game never goes up without its art.
+    APREV=$(git rev-parse -q --verify "refs/published/art-$N" 2>/dev/null || true)
+    LEASE=--force; [ -n "$APREV" ] && LEASE="--force-with-lease=refs/heads/main:$APREV"
+    if ! GIT_SSH_COMMAND="ssh -F /dev/null -i $KEY -o IdentitiesOnly=yes" \
+        git push "$LEASE" "git@github.com:$REPO.git" "refs/heads/public-art-$N:refs/heads/main"; then
+        echo "publish: art $N push failed; Catalog NOT pushed. If $REPO main moved since $APREV, someone published from elsewhere: check it (git ls-remote) before re-running" >&2
+        exit 1
+    fi
     # what the art site serves (public-art-N also moves on a dry run); sceneart.py prune reads it
     git update-ref "refs/published/art-$N" "refs/heads/public-art-$N"
 done <<< "$SHARD_LIST"
 
 if [ "$DRY" = 1 ]; then echo "publish: dry run, not pushing"; exit 0; fi
-git push --force "$REMOTE" "refs/heads/$PUBLIC_BRANCH:refs/heads/$REMOTE_BRANCH"
+CPREV=$(git rev-parse -q --verify refs/published/catalog 2>/dev/null || true)
+LEASE=--force; [ -n "$CPREV" ] && LEASE="--force-with-lease=refs/heads/$REMOTE_BRANCH:$CPREV"
+if ! git push "$LEASE" "$REMOTE" "refs/heads/$PUBLIC_BRANCH:refs/heads/$REMOTE_BRANCH"; then
+    echo "publish: Catalog push failed (the art repos are already up; re-run when fixed)" >&2; exit 1
+fi
+git update-ref refs/published/catalog "refs/heads/$PUBLIC_BRANCH"
+git update-ref refs/published/source HEAD
 echo "publish: pushed; GitHub Pages rebuilds from it"
