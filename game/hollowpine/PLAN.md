@@ -98,3 +98,41 @@ All four questions are answered with the recommendation:
 - the book's ending, with no epilogue;
 - Elliot's hair short and mint green;
 - in the art, short but clearly adult: an adult face, a man's jaw and an adam's apple on every frame, and no carried frames.
+
+## The book pass (2026-11-13, twinetesting-c9)
+
+The book (ca44ecf5, *She Booked Me Into the Women-Only Resort as Ellie*) turned up in the moved exports after the build; it is the
+same story as the package. Its lines are folded in without changing the structure or the non-con pass: the gate and the desk
+("Vance goes by Ellie this week"), the toast's chorus ("No casualties! Everyone makes checkout! No oopsies this year!"), Casey's
+"Everyone soaks, everyone drains", Renee and Fox (the technician is Fox now) with the sample procedure and the intercom gag,
+Delaney's locker-room tease, the desk's protocol speeches, June's printout patter, Robin's two questions and "faster than I
+did", the Expansion Packages at the sudoku desk, the posture chart's commands, the statement's lines, and the last day's
+booking ("Same-day Retention Observation"). Percentages and millilitres stay out (the no-numbers rule).
+
+## Production rewrite (2026-11-13, twinetesting-c9; the owner: "Rewrite all, before art")
+
+- **Same plan, "It's on the card" pass and ending; depth only.** About 8,700 words (was about 6,400), 93 picture beats (was 45). The book (18,300 words) is the source for the new beats.
+- **Every treatment runs long:**
+  - the soak and the calves before the towel, the stroke, the intercom, the dish labelled and filed;
+  - three hydrations on the page;
+  - the fingers and the slow infusion, June's magazine, the two laps in the tub;
+  - the morning fill and the careful walk to breakfast, the thighs, then the break;
+  - the chart, Robin's hand, the swaps, the heap of robes;
+  - day 6 from morning to the last candle, with Casey's kiss.
+- **The days gain their middles:** Delaney at the lockers, the card in bed, the smooth shins in the tub, the printouts, Robin's first question, the consent sheet, the fish and the capers, the leaflet, the lantern place ("I came back"), the shop, the marker dot, Casey's doorway, after the correction, the car park run long, back in, Robin's second question answered, the photo being taken.
+- **Choices that carry forward (four new):**
+  - name1, "Elliot" or "Ellie" (June's line at day 2's printout);
+  - hyd2, ask how far or go for it (Delaney at day 3);
+  - sell3, the napkin diagram or the slap (Nadine at day 6, who booked an infusion);
+  - confess5, four years or just ask her out (Casey at day 6's kiss).
+- **Walks:** tests/hollowpine.rpy rebuilt; lint clean but for the art still to come.
+
+## The alternate route: THE DELUXE (owner, 2026-11-13 about 1:37 pm ET, "I like all but 5"; twinetesting-c9)
+
+- **Fork:** day 4's night desk, where the canon sets the pen back: "Book the Deluxe" or "Stay on the current protocol", marked as deciding the ending.
+- **How it works:** the Expansion Package adds the Upper Contour Infusion to every card left: the same enzyme, topical. Delaney and June finish on his chest and Fox works it in under a warm compress. The desk says "volume"; he hears gym volume, toning, a sports massage for the chest. Nobody lies to him.
+- **The chest:** small at day 4 (the plateau); medium-large on day 5's morning (`hol.grown` 1, sprites 5d); large from day 5's statement (`hol.grown` 2, sprites 6d, 7d). The cock stays small, femboy, he/him.
+- **Swapped lines:** the printouts (upper contour), June's dot (and a second), the statement (six signatures, four upgrades, the Deluxe line), the car park (the heavy chest, the cardigan that won't close), day 6's bra, Robin ("It means volume"), the ending's body line, the photo wall, next year's card with Deluxe ticked, and the feat "Ellie's Deluxe".
+- **New beats (deluxe.rpy, and two in scenes.rpy):** the booking; the first Upper Contour (day 4's register: non-con, breaking into begging); the morning wake; Nadine's fitting with Robin's question; Casey's mouth on his chest opening the correction (non-con); Delaney's titfuck on day 6, which he booked (consensual).
+- **Art:** 13 own beats, 29 twins (`<frame>-dx.jpg`, shown in place while `hol.deluxe`), 10 sprites. Queued last (nqalt, the owner's ruling): `routes/hollowpine.json` entries marked `"alt": "deluxe"`, merged by `runs/_c9/hol_dx_merge.py` without touching a canon entry.
+- **Walk c** (tests/hollowpine.rpy): walk a on the Deluxe.
