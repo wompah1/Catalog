@@ -214,6 +214,7 @@ init -55 python:
         "sexcross": ("2026-11-17", "tsf, futanari, huge breasts, kimono, gradual, short"),
         "shipsstores": ("2026-11-12", "tsf, breast expansion, sole female, group, big breasts, anal, rape, lingerie, gradual, branching, multiple endings, long"),
         "shrine": ("2026-11-12", "tsf, transformation, breast expansion, possession, sole female, monster, kemonomimi, tail, miko, big breasts, anal, masturbation, rape, gradual, multiple endings, long"),
+        "sideeffects": ("2026-11-17", "tsf, breast expansion, corruption, group, office lady, huge breasts, blowjob, paizuri, nakadashi, masturbation, strap-on, prostitution, rape, blackmail, drugs, chikan, sudden, branching, multiple endings"),
         "silo": ("2026-11-13", "feminization, males only, rape, gradual, short"),
         "sissyedition": ("2026-11-12", "feminization, trap, sex toys, strap-on, rape, drugs, gradual, short"),
         "sister": ("2026-11-11", "tsf, breast expansion, females only, yuri, futanari, big breasts, rape, gradual, multiple endings, long"),
