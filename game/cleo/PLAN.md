@@ -108,3 +108,53 @@ None beyond the book's six, apart from each week's short surfacing beat. That be
 - **The ending:** "Book's ending, no epilogue": week 6 ends mid-act on "I am". There's no ending choice.
 - **The looks:** "Lavender bob". Steph has a sleek lavender bob, and Cleo's loosens into longer soft waves as she drifts. Danny has short black hair and brown skin.
 - **Abarus:** an Abarus set (femboy, the 1:56 pm rule).
+
+## The book pass (2026-11-13, twinetesting-c9)
+
+The book (3d8b9866, *He's Been Making Me Into His Ex, and Lately She's Not Quite His Ex Anymore*) turned up in the moved exports
+after the build. Its lines are folded in without changing the structure or the wrong-line pass: Nate's real corrections in week 1
+("Come on, baby, fill my mouth"; "Missed this, didn't you? All smug"), Danny's kitchen dialogue every week (the advice in the
+book's words, "Taken the plunge", the Halo line, "two days early", "Comfort's allowed", the rye starter and "slipper respect",
+"That's a better fridge"), the custard-creams joke, "Fine, fine, Mr Fussy", "Best money I ever spent", "Hands off the wheel".
+The ending was already the book's.
+
+## Production rewrite (2026-11-13, twinetesting-c9; the owner: "Rewrite all, before art")
+
+- **Same plan, wrong-line pass and ending; depth only.** About 9,800 words (was about 6,400), 84 picture beats (was 43). The book (14,500 words) is the source for the new session beats and Nate's lines.
+- **Danny's half each week, now with its middle:**
+  - the shopping list and the moved photo, tea at the hob, the talk at the table, Nate in the doorway;
+  - the eggs and "Taken the plunge", Halo on Wednesday;
+  - the toast and the whistling, the counter on Wednesday;
+  - the jeans and the dryer, the pizza and the olives, the box in the hall;
+  - the gown on the door, the theory at the table, the bag and the pink slippers;
+  - the paper and the lipstick mug, the photos down, the fridge all her, Nate's bread on the Tuesday.
+- **The sessions, run long:**
+  - week 1: deeper, he comes and stays hard, the surfacing;
+  - week 2: the crawl up the bed, the squeeze, he comes on her thighs, "I'm a terrible person";
+  - week 3: fingers, slow and face to face, he comes in her;
+  - week 4: the stockings rolled on, from behind ("Good girl"), he comes in her before the non-decision;
+  - week 5: she pins his wrists, makes him beg, rides reverse, tells him when;
+  - week 6: her mouth first, on her side, in his lap, then "I am".
+- **The calendar fixed:** day 1 is a Friday, so the Fridays are days 1, 8, 15, 22, 29 and 36. Every "It's Friday" used to land on a Thursday or a Wednesday, and week 6 said it on a Saturday night.
+- **Choices that carry forward (seven new):** greet1 (his correction, or not, and week 2's greeting); halo (week 3's breakfast); talk2 (the week's last line); ask3; jeans4 (week 5's belt); stock4; photo6 (the frame by the bed in week 6). The cook now carries into week 2's fridge.
+- **Walks:** tests/cleo.rpy rebuilt (a, b, c); lint clean but for the art still to come.
+
+## The alternate routes (owner, 2026-11-13 about 1:37 pm ET, "I like all but 5"; twinetesting-c9; lanes.rpy)
+
+- **3a SOMETHING IN HER SIZE** (`cle.lane = "bra"`, a tits route).
+  - **Fork:** week 5's pizza. Nate asks "What am I missing?", and Danny says "Slippers", or adds "A proper bra. In her size". Marked.
+  - **How it works:** the ratchet, as always. Friday's bag holds two bras, Cleo keeps hers, and from week 6's Saturday Danny has her chest, medium-large (row 6b; twins `<frame>-b`).
+  - **Danny's wrong explanations:** Nate's cooking and the third slice of toast, "a bulk", and a sports bra "for running". Danny never finds out.
+  - **New beats:** the box under the tissue paper; Nate unhooking the new bra at session five; the kettle; the second bra in the bathroom mirror; a titjob at session six; a Saturday coda.
+- **3b ASK HER TO STAY** (`cle.lane = "stay"`, TSF, Vanripper only).
+  - **Fork:** week 6's last advice, "Take the photos down" or "Ask her to stay the weekend". Marked; not offered on 3a.
+  - **How it works:** Nate asks after "I am", and she says yes. Then a new weekend in Cleo's voice (Saturday to Monday):
+    - week 1's dish, Danny's apron, the slippers;
+    - Steph's last photo, taken down by her own hand;
+    - Danny's room, where he surfaces once ("You need to talk to somebody about this"), lets go and doesn't come back;
+    - the sofa, where the cock she never uses is shrinking;
+    - the bath, the bread, and Sunday night, when it's gone;
+    - Monday, her first time with a pussy, consensual; "It's Monday" (the feat).
+- **Fixed on the way:** the canon looked for Cleo's session sprites as `pc-rw<n>-…`, but the art map names them `pc-r<n>-…`; route.rpy now asks for `pc-r<n>-…`.
+- **Art:** 3a 15 entries (cleA1), 3b 22 (cleA2), marked `"alt"` in routes/cleo.json by `runs/_c9/alt_merge.py cle`; queued last (nqalt/120, 121).
+- **Walks:** d (3a) and e (3b).
