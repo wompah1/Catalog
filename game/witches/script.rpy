@@ -59,7 +59,7 @@ label wit_corridor:
     wit_niall "\"Smell that?\""
     show wit_rufus steady at vn_cast_slot
     wit_rufus "\"Subsidence.\""
-    hide cg onlayer cgl  # ff 1:46 am ET 11-18: no picture, wit_corridor_sign failed 4 draws (SCENES.md witches v4)
+    show cg wit_corridor_sign onlayer cgl  # ff 2:13 pm 11-18: v2 gen-1351752986 landed (QA checker 2:10 pm)
     "At the end of the corridor there's a stairwell, a set of double doors, and a sign with an arrow, the old painted kind: WARDS ONE TO FOUR. ADMISSIONS. MATRON. Rufus stops under it and shines his torch on his map."
     show wit_rufus steady at vn_cast_slot
     wit_rufus "\"Right. We'll cover more ground if we split up.\""
@@ -284,7 +284,7 @@ label wit_linen_room:
     show cg wit_grit onlayer cgl
     "You get the bag of grit off your shoulder, rip the top open, and empty half of it at her in one long white swing."
     "It goes everywhere. It pours over her hat and down her front and into the sack on the trolley and all over the floor, a little avalanche of salt, rattling on the lino for ages."
-    hide cg onlayer cgl  # ff 1:46 am ET 11-18: no picture, wit_rowena_laugh failed 4 draws (SCENES.md witches v4)
+    show cg wit_rowena_laugh onlayer cgl  # ff 2:13 pm 11-18: v4 gen-1515493745 landed (QA checker 2:10 pm)
     "She looks down at herself. She looks up at you. And she laughs. She laughs so hard she has to hold onto the trolley, she laughs till she snorts, and then she laughs at the snort, and wipes her eyes on her sleeve, and shakes salt out of her hat."
     wit_rowena "\"Oh, I {i}like{/i} you. I'm Rowena. Here. Have one of mine.\""
     "She wheezes it. She holds up her palm, flat, like she's offering you a sweet, and blows across it. A warm pink puff, soft as breath on a cold window, drifts across the linen room and right into your face."
@@ -494,7 +494,7 @@ label wit_dawn_four:
     hide cg onlayer cgl
     wit_you "\"Oh, you are JOKING—\""
     $ wit_body(4)
-    hide cg onlayer cgl  # ff 1:46 am ET 11-18: no picture, wit_four_polo failed 4 draws (SCENES.md witches v4)
+    show cg wit_four_polo onlayer cgl  # ff 2:13 pm 11-18: v4 gen-220597679 landed (QA checker 2:10 pm)
     "{color=#ff5fb8}You sit up, and the polo slides off one shoulder. Your shoulders are slight now. Narrow and smooth and sloping, and the collar of your polo just falls off the edge of one like it's given up. You grab it and drag it back, and your fingertips brush your chest through the cotton.{/color}"
     wit_you "\"{i}Hnn{/i}—!\""
     "{color=#ff5fb8}Your nipples. You pull the polo up and look, and your chest is still flat, still a man's chest, smooth and flat, but your nipples have gone puffy. Pink and swollen and soft, standing up in two puffy pink points, like they're begging for something, and the cotton dragging over them felt like a tongue.{/color}"
@@ -511,7 +511,7 @@ label wit_dawn_four:
     show screen wit_report(4)
     "In {i}Action taken{/i} you write one word."
     hide screen wit_report
-    hide cg onlayer cgl  # ff 1:46 am ET 11-18: no picture, wit_stores_kit failed 4 draws (SCENES.md witches v4)
+    show cg wit_stores_kit onlayer cgl  # ff 2:13 pm 11-18: v4 gen-840982669 landed (QA checker 2:10 pm)
     "None of your kit fits. The polo hangs off your shoulders, the trousers won't stay up even with the belt on its last notch, and the hi-vis is a tent. You go to the stores cupboard at the back of the hut and dig through the boxes, and the only things in your size are the women's cut: a black fitted polo, short in the sleeve, and black trousers, slim through the leg."
     "You stare at them for a long time."
     $ wit.fit = "women"
@@ -522,7 +522,7 @@ label wit_dawn_four:
     wit_you "\"Look at me. LOOK at me. Look at what they're DOING to—\""
     wit_super "\"Firm's sent an upgrade.\""
     "She fills in a word."
-    hide cg onlayer cgl  # ff 2:36 am: no picture, extinguisher failed 4 draws (SCENES.md witches v5)
+    show cg wit_extinguisher onlayer cgl  # ff 2:13 pm 11-18: v5 gen-656153608 landed (QA checker 2:10 pm)
     "It's a fire extinguisher. A big red one, the proper kind, with a hose and a pin and a tag on the handle in the Northcott office's handwriting: {i}REFILLED: ROCK SALT{/i}."
     wit_you "\"Right. {i}Right.{/i}\""
     "You hug it to your chest.\n{size=-5}{color=#ff8fa3}▸ Sleep through the day{/color}{/size}"
@@ -594,7 +594,7 @@ label wit_exam_room:
         "Count her in first, properly":
             wit_you "\"I'm going to count to three. One. Two—\""
             "She giggles on two. That'll do."
-    hide cg onlayer cgl  # ff 2:36 am: no picture, salt-cloud failed 4 draws (SCENES.md witches v5)
+    show cg wit_salt_cloud onlayer cgl  # ff 2:13 pm 11-18: v2 gen-1706400773 landed (QA checker 2:10 pm)
     "You yank the pin out of the extinguisher, aim the hose at the screen, and squeeze the handle as hard as you can."
     vn_sfx "{i}FWOOOOOOOSSSHHH.{/i}" with vnfx("shake")
     "It goes off like a jet engine. A great roaring white cloud of rock salt blasts out of the hose and hits the screen and knocks it flat and keeps going. It goes over the couch and up the walls and into the cabinet and across the ceiling. You hold the handle down with your teeth gritted and sweep it left and right and up and down until the extinguisher coughs and splutters and gives one last sad {i}pfft{/i} and stops."
@@ -906,7 +906,7 @@ label wit_matron:
     "Up through the wing. Past the day room, where the telly's on low and the bells go {i}ting{/i} as you pass. Past the examination room, still white. Past the nurses' station and its stopped clock, past the linen room and the porter's chair, past Ward Four with its long rows of iron beds. Up the last stairs, to the top, to the door at the very end with the brass plate on it: MATRON."
     "It's open. It's warm inside. It's lamplit."
     "The matron's office. A big room under the roof, with a sloping ceiling and a thick rug and a fire going in a little iron grate. A heavy old desk. A row of brass hooks by the door. And taking up the whole far end, a bed. A huge old bed, the kind with four posts and a canopy, heaped with cushions and quilts, the curtains tied back."
-    hide cg onlayer cgl  # ff 2:36 am: no picture, coven failed 4 draws (SCENES.md witches v5)
+    show cg wit_coven onlayer cgl  # ff 2:13 pm 11-18: v5 gen-202157322 landed (QA checker 2:10 pm)
     "And the coven."
     "All of them. Bryony, curled up on a cushion by the fire, waving at you. Rowena, sitting on the desk, swinging her legs, with a notebook. Cressida in a wingback chair, reading. Elspeth, bouncing on her toes. Isolde, by the window, arms folded. And Niall in his robe, leaning in the corner, grinning, his old lanyard round his neck."
     "And by the door, in his blue pyjamas and his collar, holding a tray of tea, Rufus. His bell goes {i}ting{/i}. He smiles at you."
