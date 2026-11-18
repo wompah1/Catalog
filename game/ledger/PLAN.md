@@ -5,7 +5,7 @@
 ## What stays exactly as signed off (2026-10-15, with the 2026-10-19/20 rulings)
 
 - **The cast:**
-  - **Owen Thorne, 24**, the PC. A burnt swordsman with yang meridians that will never spend qi again, only hold it. He's a smug haggler. The Hall registers him as **Jiu**. The name box changes the first name.
+  - **Ruan Jiu, 24**, the PC (the owner's choice, spec decision 2: Chinese names for the sect routes; this plan first said "Owen Thorne" from the spec's body text, corrected 2026-11-12). A burnt swordsman with yang meridians that will never spend qi again, only hold it. He's a smug haggler. The name box changes the given name; the Hall registers him as **Jiu** whatever he's called, and the Ledger's page stays the Ruan page.
   - **Bai Lian, 31:** the First Flower. Very tall, futa, dry and unhurried. She leads every scene, and she's the only person who ever touches him for sex. She can leave the chair only by training a successor who asks for it, out loud, owing nothing.
   - **Elder Gu, 58:** appraises, keeps the registry, receipts everything, and complains about supply. Cheerfully clinical, never cruel.
   - **Xue'er, 25:** a junior Blossom who laces him each dawn. She's gossipy and fond, and she runs the pool on how long before he knocks.
