@@ -84,3 +84,25 @@ The book's intimacy is all willing. This pass makes the early sessions non-con, 
 ## Signed off (owner, 2026-11-12, about 9:57 pm ET)
 
 All four answered as recommended: the non-con pass "The water holds" as written; a marked Close/Restore ending, with Restore as new writing; the book's names and the onsen inn in the town's spa district; all 12 chapters as shorter days.
+
+## Production rewrite (2026-11-13, twinetesting-c9; the owner: "Rewrite all, before art")
+
+- **Same plan, "The water holds" pass and both endings; depth only.** About 8,000 words (was about 4,900), 99 picture beats (was about 45). The book (25,300 words) is the source.
+- **Every soak and scene runs long:**
+  - ch 1: the change step by step (hair, breasts, legs folding, hips) to the forced finish;
+  - ch 3: the night soak, several times over;
+  - ch 4: Iori's hand, held and talked through;
+  - ch 5: the break;
+  - ch 6: the slow first time;
+  - ch 7: the daylight ask, a kiss, then she rides;
+  - ch 8: she leads, slowly;
+  - ch 9: Hazuki, then Iori;
+  - ch 10: the quiet night;
+  - ch 11 and 12: the last change and the last bath.
+- **The days gain their middles:** the deed, Nao's books, Iori in the corridor, the minute in the car, the shift and the tea, the margin, the board, the month's end, the voice in the kitchen, the contractors, the note, the fitting room, Hazuki at the desk, the drive home and the drive in, Nao turning the board, the ledger dropped on the stones, the festival run, the pool closed, the proposal read by Nao and Iori, the sign coming down to applause, the restored side's opening night, the wall coming down.
+- **Choices that carry forward (three new):**
+  - tell2, the lie or the truth to Nao (her board in ch 3);
+  - write4, "Voice: stays." or nothing (ch 5's ledger and Gorou's margins in ch 8);
+  - note6, keep Hazuki's note or write back (ch 9 and ch 12).
+- **Art:** Nao lost her reading glasses (a partner's glasses bleed onto the PC).
+- **Walks:** tests/womensbath.rpy updated; lint clean but for the art still to come.
