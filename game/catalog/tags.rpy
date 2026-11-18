@@ -178,6 +178,7 @@ init -55 python:
         "pavilion": ("2026-11-12", "soft tsf, feminization, crossdressing, breast expansion, sole male, futanari, big breasts, anal, femdom, rape, gradual, multiple endings, long"),
         "payback": ("2026-11-15", "tsf, breast expansion, mind control, big breasts, leash, rape, lingerie, gradual, multiple endings"),
         "petticoat": ("2026-11-14", "feminization, trap, crossdressing, futanari, rape, maid, lingerie, stockings, branching, multiple endings"),
+        "pitfall": ("2026-11-17", "feminization, trap, crossdressing, corruption, tentacles, big ass, anal, rape, gradual, branching, multiple endings"),
         "playlists": ("2026-11-12", "futanari, rape, short"),
         "plug": ("2026-11-12", "tsf, transformation, females only, yuri, futanari, tail, collar, leash, rape, gradual, branching"),
         "poll": ("2026-11-12", "futanari, sex toys, strap-on, rape"),
