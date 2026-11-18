@@ -109,6 +109,7 @@ init -55 python:
         "dance": ("2026-11-17", "tsf, breast expansion, mind control, corruption, yuri, group, futanari, big breasts, big ass, anal, blowjob, nakadashi, double penetration, exhibitionism, virginity, rape, gradual, branching, multiple endings"),
         "dani": ("2026-11-12", "feminization, crossdressing, rape, gradual, short"),
         "daria": ("2026-11-13", "tsf, breast expansion, tentacles, big breasts, anal, bondage, rape, gradual, multiple endings"),
+        "debuffed": ("2026-11-17", "soft tsf, crossdressing, breast expansion, mind control, sole male, group, monster, slime, demon girl, tail, horns, wings, cowgirl, huge breasts, big ass, lactation, anal, blowjob, paizuri, femdom, rape, gradual, branching, multiple endings"),
         "deepcover": ("2026-11-12", "tsf, feminization, breast expansion, sole female, big breasts, rape, gradual, multiple endings"),
         "delilah": ("2026-11-12", "feminization, trap, crossdressing, rape, sudden, short"),
         "dollapp": ("2026-11-16", "feminization, trap, crossdressing, mind control, males only, anal, rape, multiple endings, short"),
