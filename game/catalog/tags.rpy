@@ -205,6 +205,7 @@ init -55 python:
         "screenaccurate": ("2026-11-12", "tsf, trap, body swap, mind control, females only, yuri, futanari, big breasts, paizuri, masturbation, sex toys, rape, lingerie, pantyhose, cosplaying, gradual, multiple endings"),
         "season": ("2026-11-13", "tsf, breast expansion, big breasts, rape, gradual, branching, multiple endings"),
         "secondvial": ("2026-11-12", "tsf, breast expansion, big breasts, lactation, rape, sudden"),
+        "senpai": ("2026-11-17", "tsf, breast expansion, sole female, group, huge breasts, big ass, mind break, anal, blowjob, nakadashi, masturbation, virginity, exhibitionism, bikini, rape, gradual, multiple endings"),
         "sexcross": ("2026-11-17", "tsf, futanari, huge breasts, kimono, gradual, short"),
         "shipsstores": ("2026-11-12", "tsf, breast expansion, sole female, group, big breasts, anal, rape, lingerie, gradual, branching, multiple endings, long"),
         "shrine": ("2026-11-12", "tsf, transformation, breast expansion, possession, sole female, monster, kemonomimi, tail, miko, big breasts, anal, masturbation, rape, gradual, multiple endings, long"),

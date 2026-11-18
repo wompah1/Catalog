@@ -17,8 +17,11 @@ game/art. Patterns (non-cone sparse checkout; later patterns win):
     /game/art/<route>.*/**
 
 Which routes a worktree owns: the `game/<x>/route.rpy` folders it has that the main checkout
-(this repo's root) lacks, plus the route its folder is named after (`catalog-renpy-<route>`)
-when that `game/<route>/` exists in it. `--route <id>` adds one by hand. The main checkout is
+(this repo's root) lacks, plus the route its folder is named after (`catalog-renpy-<route>`),
+always, even before its `game/<route>/` exists (b0 2026-11-18: worktrees slimmed before their
+route.rpy lost their own art when main was merged in), plus every route its sparse list already
+keeps, so re-slimming never drops a route that has since merged to main. `--route <id>` adds one
+by hand. The main checkout is
 never slimmed.
 
 Excluded files are skip-worktree, not deleted from git: `git status` stays clean, commits and
@@ -28,6 +31,7 @@ merges work as before, and merging main later leaves other routes' new art out a
 import argparse
 import os
 import pathlib
+import re
 import subprocess
 import sys
 
@@ -56,10 +60,19 @@ def route_dirs(game):
 def own_routes(wt, extra=()):
     own = route_dirs(wt / "game") - route_dirs(ROOT / "game")
     suffix = wt.name.split("catalog-renpy-", 1)[-1] if wt.name.startswith("catalog-renpy-") else ""
-    if suffix and (wt / "game" / suffix / "route.rpy").exists():
+    if suffix:
         own.add(suffix)
+    own.update(kept_routes(wt))
     own.update(extra)
     return sorted(own)
+
+
+def kept_routes(wt):
+    """The routes the worktree's current sparse list keeps (none when it isn't sparse)."""
+    r = subprocess.run(["git", "-C", str(wt), "sparse-checkout", "list"], capture_output=True, text=True)
+    if r.returncode:
+        return set()
+    return {m.group(1) for m in re.finditer(r"^/game/art/([^/*.]+)/\*\*$", r.stdout, re.M)}
 
 
 def patterns(routes):
