@@ -128,6 +128,7 @@ init -55 python:
         "gains": ("2026-11-12", "tsf, females only, yuri, futanari, paizuri, rape, sudden, branching, short"),
         "girlpill": ("2026-11-12", "tsf, sole female, big penis, rape, sudden, short"),
         "glutes": ("2026-11-12", "soft tsf, feminization, crossdressing, breast expansion, corruption, males only, big breasts, big ass, anal, rape, gradual, branching, multiple endings, long"),
+        "goesdark": ("2026-11-17", "tsf, feminization, trap, transformation, breast expansion, corruption, magical girl, group, futanari, monster, tentacles, horns, huge breasts, big ass, anal, blowjob, nakadashi, masturbation, collar, rape, kimono, gradual, branching, multiple endings"),
         "greathawk": ("2026-11-12", "tsf, transformation, breast expansion, sole female, monster, tail, wings, huge breasts, anal, rape, gradual, branching, multiple endings, long"),
         "guild": ("2026-11-12", "tsf, breast expansion, milf, tentacles, huge breasts, anal, nakadashi, rape, bikini, lingerie, sudden, multiple endings, long"),
         "gyaru": ("2026-11-16", "tsf, mind control, futanari, gyaru, huge breasts, gradual, short"),
