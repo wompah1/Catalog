@@ -1670,7 +1670,7 @@ label prs_epilogue:
     $ prs.fit = "track"
     $ vn_enter(bg="prs_pool", pc="wanting", pc_tag="prs_pc", cast=[], cg=None)
     "Monday. The chair."
-    hide cg onlayer cgl  # ff 2:27 am: no picture, epi-chair failed 4 draws (SCENES.md pressit v4)
+    show cg prs_epi_chair onlayer cgl  # ff 1:58 pm 11-18: v2 gen-2086978070 landed (owner ~1:50 pm)
     "You're up it in the black staff tracksuit, which zips to just under your enormous chest and stops there, because it physically can't go any further. Your hair's in a ponytail down your back. Under the jacket the red bikini top is doing absolutely nothing. Under everything, the heat is just on. It's on the way the pool lights are on. It's on the way the water's wet."
     "The afternoon regulars look up at you. You look down at them. Some of them are keepers. You notice that about yourself, and grin."
     show screen prs_phone([("TRAVIS", "his shifts this week, every one of them"), ("TRAVIS", "door's open?"), ("TRAVIS", "a picture of a swimsuit on a hook")])

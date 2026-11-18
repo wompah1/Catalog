@@ -134,7 +134,6 @@ label mr_suite_sex:
     mr_vic "\"Why are they— why are my nipples— {i}ohh{/i}— stop rubbing the— don't {i}stop{/i}— {i}STOP{/i}—\""
     "Your hands are holding them round her now. You don't know when that started."
     mr_vic "\"That's— that's not me— {i}mmh{/i}—\""
-    show cg mr_suite_peak onlayer cgl
     vn_sfx "Pap pap pap pap."
     show mr_simone neutral at vn_cast_slot
     mr_simone "\"Mm. Say no again. The book doesn't have a column for it.\""

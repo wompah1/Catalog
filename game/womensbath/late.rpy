@@ -259,7 +259,7 @@ label wom_ch11_restore:
     $ vn_enter(bg="wom_men_bath", pc="stubborn", pc_tag="wom_pc", cast=[], cg="wom_restore")
     "She restores it. New tile. New cedar. A plumber who stays the whole winter. The men's side opens again to a full first night, and makes money in its first month, honestly."
     "She hires a manager for it, a nice man who will never need the women's side badly enough, and writes him a clean ledger with no losses in it at all."
-    hide cg onlayer cgl  # ff 2:32 am: no picture, restore-open failed 4 draws (SCENES.md womensbath v4)
+    show cg wom_restore_open onlayer cgl  # ff 2:13 pm 11-18: v4 gen-1187023809 landed (QA checker 2:10 pm)
     "Opening night on the men's side: new cedar smelling like a forest, the tile white as teeth, the pipes quiet for the first time in living memory, and a queue. An actual queue of men in yukata, laughing in the lane, and the manager taking their money at a desk she bought him."
     "She stands at the far end of the corridor in her uniform and watches it fill, and doesn't go in. She can't, now. She doesn't want to. She watches it the way you'd watch a boat you built go out of the harbour with somebody else at the wheel."
     show wom_nao grin at vn_cast_slot

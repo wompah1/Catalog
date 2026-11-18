@@ -152,7 +152,7 @@ label wom_night_iori:
     vn_sfx "{i}Splsh. Splsh. Splsh.{/i}"
     "And then, halfway through, the fight just goes out of you. Like a plug pulled. You feel it go, and you can't find it again, and you stop looking."
     $ wom.broke = True
-    hide cg onlayer cgl  # ff 2:32 am: no picture, five-beg failed 4 draws (SCENES.md womensbath v4)
+    show cg wom_five_beg onlayer cgl  # ff 2:13 pm 11-18: v4 gen-962609108 landed (QA checker 2:10 pm)
     wom_you "\"Don't— don't stop— Iori— {i}please{/i}— more, please, more—!\"" with vnfx("flash", "shake")
     "You beg her through it, loud, the way you'd never let yourself in the daytime, grinding down on her fingers, your hand over hers on your breast, and she gives you every bit, and another, and another."
     wom_iori "\"There you are.\""
@@ -204,7 +204,7 @@ label wom_iori_full:
 label wom_ask:
     $ wom.fit = "nude"
     $ wom_soak(True)
-    $ vn_enter(bg="wom_private_bath", pc="begging", pc_tag="wom_pc", cast=[("wom_iori", "soft")], cg=None)  # ff 2:32 am: no picture, seven-ask failed 4 draws (SCENES.md womensbath v4)
+    $ vn_enter(bg="wom_private_bath", pc="begging", pc_tag="wom_pc", cast=[("wom_iori", "soft")], cg="wom_seven_ask")  # ff 2:13 pm 11-18: v3 gen-292034736 landed (QA checker 2:10 pm)
     "Daylight in the private bath. Nowhere to hide in it. Iori's in the water with a ledger on the edge, doing the morning's bookings with a pencil, and she looks up."
     "Tsubaki stands on the step with the red roots in her hair and nothing on, and makes herself say it, in the daylight, out loud."
     $ wom.asked = True

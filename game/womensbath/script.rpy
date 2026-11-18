@@ -132,7 +132,7 @@ label wom_ch3:
     "A week of shifts. Four hours, then five, then a double on Saturday. You stop sitting on the step to change. You just walk in to the knee and wait, and walk out a woman, and pick up the towels."
     "Every time, the timer's longer afterwards. Fifty minutes. An hour. You write each one in the margin, and the column starts to look like a column."
     hide cg onlayer cgl
-    $ vn_enter(bg="wom_corridor", pc="uneasy", pc_tag="wom_pc", cast=[("wom_iori", "patient")], cg=None)  # ff 2:32 am: no picture, private-key failed 4 draws (SCENES.md womensbath v4)
+    $ vn_enter(bg="wom_corridor", pc="uneasy", pc_tag="wom_pc", cast=[("wom_iori", "patient")], cg="wom_private_key")  # ff 2:13 pm 11-18: v4 gen-1810562961 landed (QA checker 2:10 pm)
     "Closing. The register locked, the last receipts in their sleeve. Iori's waiting, still in uniform, and holds out a key on a red tag: the women's private bath."
     wom_iori "\"It settles better alone. And at night.\""
     wom_you "\"What does settles mean?\""
@@ -190,7 +190,7 @@ label wom_ch4:
     "You don't check the timer. You already know it'll be half a day at least."
     hide screen wom_timer
     hide cg onlayer cgl
-    $ vn_enter(bg="wom_men_bath", pc="uneasy", pc_tag="wom_pc", cast=[], cg=None)  # ff 2:32 am: no picture, contractors failed 4 draws (SCENES.md womensbath v4)
+    $ vn_enter(bg="wom_men_bath", pc="uneasy", pc_tag="wom_pc", cast=[], cg="wom_contractors")  # ff 1:58 pm 11-18: v4 gen-1202784898 landed (owner ~1:50 pm)
     "The contractors for the main valve come at nine. You show them round the men's side in your man's clothes with your woman's voice, and they look at you a beat too long, and then decide not to have noticed."
     "Most people do that. They register something they can't name, and file it under none of their business. Your skin is new everywhere the shirt touches."
     "The valve will cost more than the men's side takes in three months. You sign for it anyway. Stubborn."

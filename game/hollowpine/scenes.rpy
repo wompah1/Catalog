@@ -430,7 +430,7 @@ label hol_full_package:
     hol_you "\"Hello. Don't talk. Fuck me.\""
     vn_sfx "{i}Pap. Pap. Pap.{/i}"
     "She does, and you ride her, and you come on her before breakfast with your hands on her shoulders and your forehead on her collarbone, which is where your eyes come to now if you're sitting in her lap."
-    hide cg onlayer cgl  # ff 1:57 am: no picture, full-tub failed 5 draws (SCENES.md hollowpine v5)
+    show cg hol_full_tub onlayer cgl
     "Midday, the hot tub: passed from June to Delaney to June, your mouth on one and your arse on the other, and you don't say no once. You say more."
     hol_you "\"More— more, June— Delaney, your turn, please, your turn—\""
     show cg hol_full_pin onlayer cgl
@@ -470,7 +470,7 @@ label hol_full_package:
         show hol_nadine brisk at vn_cast_slot
         hol_nadine "\"I booked an infusion, you know. After you slapped your own arse at the pool. Very persuasive.\""
     hol_you "\"{i}Mmh{/i}— good— you'll love it— {i}mmh{/i}—\""
-    hide cg onlayer cgl  # ff 1:57 am: no picture, full-cum failed 5 draws (SCENES.md hollowpine v5)
+    show cg hol_full_cum onlayer cgl
     hol_you "\"Fill me up— both of you— please— {i}please{/i}—!\"" with vnfx("shake")
     vn_sfx "{i}Splurt. Splurt.{/i}"
     "Cum everywhere: on your chest, in your mouth, dripping down the backs of your thighs, on Nadine's clothes, which she says she'll launder before you leave, so you can pack cleanly."

@@ -15,8 +15,8 @@ define corps_face_crops = {
         253
     ],
     "bogon-neutral": [
-        221,
-        130,
+        156,
+        48,
         253,
         253
     ],

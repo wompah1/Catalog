@@ -502,7 +502,9 @@ label hol_day_six:
 
 label hol_ending:
     $ hol_body(7)
-    $ vn_enter(bg="hol_desk", pc="earnest", pc_tag="hol_pc", cast=[("hol_casey", "pleased")], cg="hol_group_photo")
+    # ff 1:57 pm 11-18: group-photo no picture (owner ~1:50 pm, "we can just put some sprites on the screen at once"):
+    # the cast is staged in front of the photo wall when the photo goes up, below
+    $ vn_enter(bg="hol_desk", pc="earnest", pc_tag="hol_pc", cast=[("hol_casey", "pleased")])
     if hol.deluxe:
         "{color=#9fe3cf}Your arse and thighs have gone all the way: huge, soft, heavy, the robe gives up on them. Your chest went with them: huge now, an H-cup, round and heavy and sitting out over your ribs, Deluxe all the way to the label. Your cock is still there, small, exactly where it's always been, and nobody at Hollow Pine has ever once been bothered by it.{/color}"
     else:
@@ -512,11 +514,15 @@ label hol_ending:
     hol_casey "\"Come on, Ellie. Up front.\""
     "Delaney behind you, your head well under her chin now, level with her sternum, where it's come to sit this week. June with her magazine. Nadine fixing your cardigan on your shoulder. Robin beside you, her shoulder against yours."
     "The camera clicks. Everybody smiles. You smile too. You find you mean it, which is the strangest part of the whole week."
+    hide cg onlayer cgl
+    hide hol_casey
+    $ vn_enter(bg="hol_desk", pc="earnest", pc_tag="hol_pc", cast=[("hol_delaney", "amused"), ("hol_robin", "kind")])
     if hol.deluxe:
         "The group photo goes up on the wall by reception. Six. Five tall women at the back, and the short one in front, beaming, with the biggest chest on the whole wall."
     else:
         "The group photo goes up on the wall by reception. Six. Five tall women at the back, and the short one in front, beaming."
-    hide cg onlayer cgl
+    hide hol_delaney
+    hide hol_robin
     show cg hol_next_card onlayer cgl
     if hol.deluxe:
         "Then a card on the desk: next year's reservation. Six lines. Five names, and one blank, and beside your own name, in the desk's neat hand, one box already ticked: {i}Expansion Package: Deluxe.{/i}"
