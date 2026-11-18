@@ -27,8 +27,8 @@ define conrad_face_crops = {
         253
     ],
     "neil-soft": [
-        51,
-        25,
+        136,
+        93,
         253,
         253
     ],
