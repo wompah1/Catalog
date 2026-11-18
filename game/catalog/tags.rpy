@@ -106,6 +106,7 @@ init -55 python:
         "cure": ("2026-11-13", "feminization, crossdressing, males only, rape, gradual, short"),
         "curses": ("2026-11-13", "feminization, crossdressing, big breasts, exhibitionism, rape, lingerie, gradual"),
         "curve": ("2026-11-12", "tsf, females only, yuri, futanari, rape, gradual"),
+        "dance": ("2026-11-17", "tsf, breast expansion, mind control, corruption, yuri, group, futanari, big breasts, big ass, anal, blowjob, nakadashi, double penetration, exhibitionism, virginity, rape, gradual, branching, multiple endings"),
         "dani": ("2026-11-12", "feminization, crossdressing, rape, gradual, short"),
         "daria": ("2026-11-13", "tsf, breast expansion, tentacles, big breasts, anal, bondage, rape, gradual, branching, multiple endings"),
         "deepcover": ("2026-11-12", "tsf, feminization, breast expansion, sole female, big breasts, rape, gradual, multiple endings"),
