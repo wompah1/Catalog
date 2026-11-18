@@ -36,6 +36,11 @@ restore() {
   rm -rf "$saves"
 }
 trap restore EXIT
+# The owner (2026-11-15): a walk's sound never comes out of the speakers. SDL's disk driver records the game's mixed
+# output (every channel, after the volume settings) to a file in the throwaway save folder instead, in real time;
+# tools/audio_check.py checks it against the trace below, and restore() deletes it with the folder.
+audio_raw="$saves/walk.raw"
+SDL_AUDIODRIVER=disk SDL_DISKAUDIOFILE="$audio_raw" \
 VN_TRACE="$(cd "$(dirname "$out")" && pwd)/$(basename "$out")" "$sdk/renpy.sh" "$here" --savedir "$saves" test "$case_" > "$out.log" 2>&1 &
 pid=$!
 end=$((SECONDS + secs))
@@ -70,6 +75,23 @@ if [ -f "$out" ] && [ "$status" = 0 ]; then
   if grep -q '"face_miss"' "$out"; then
     echo "face_miss: a cast speaker over a CG with no face crop (run tools/sync_art.py <route> --faces-only):"
     grep '"face_miss"' "$out" | head -8
+    status=1
+  fi
+  # vntrace.rpy marks a PC sprite with no file as "pc": "<file> MISSING" (the PC shows as a dark face card). QA blocked five
+  # first reviews on it (pressit, bit, cleo, club, secondvial; b0 2026-11-18 2:41 am ET), so it fails the walk here
+  if grep -q '"pc": "[^"]* MISSING"' "$out"; then
+    python3 -I -c '
+import json, sys
+rows = [json.loads(l) for l in open(sys.argv[1]) if " MISSING\"" in l]
+first = {}
+for r in rows:
+    p = str(r.get("pc") or "")
+    if p.endswith(" MISSING"):
+        first.setdefault(p[:-8], r.get("label"))
+n = sum(1 for r in rows if str(r.get("pc") or "").endswith(" MISSING"))
+print("pc MISSING: %d rows, %d sprite files missing (run tools/sync_art.py <route>):" % (n, len(first)))
+for f, lab in list(first.items())[:6]:
+    print("  %s  first at %s" % (f, lab))' "$out"
     status=1
   fi
   [ "$status" = 0 ] || echo "walk FAILED the speaker check"
