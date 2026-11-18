@@ -26,8 +26,8 @@ Status words: **plan** (drafted, awaiting sign-off), **signed off**, **script** 
 | redlightning | (pilot) | main | merged | 2026-11-11 |
 | hypno, its full regimen | (pilot); full regimen, the Abarus art set and the calendar fix twinetesting-92 | main | done: calendar fixed (e7d8d30), Abarus set complete (ec2c229); owner review pending | 2026-11-12 3:18 am |
 | mistaken | twinetesting-32 | `mistaken` | **published 6:32 pm ET 11-17** (QA passed at 3890354e; main c8af47b9; pruned) | 2026-11-12 12:15 am |
-| markers | twinetesting-32 | `markers` | merged 1c615100 (QA passed d1f84804), published 11-18 | 2026-11-12 12:15 am |
-| corps | twinetesting-32 | `corps` | merged 850f3e76 (QA passed 1272b2f5), published 11-18 | 2026-11-12 12:15 am |
+| markers | twinetesting-32 | `markers` | merged 39d7a097 (QA passed 4b832f9e), published 11-18 | 2026-11-12 12:15 am |
+| corps | twinetesting-32 | `corps` | merged 3df696f6 (QA passed 80bd0021), published 11-18 | 2026-11-12 12:15 am |
 | venus | twinetesting-32 | `venus` | built, art queued | 2026-11-12 12:15 am |
 | collar | twinetesting-92 (now twinetesting-c9) | `collar` | merged (800f293) with its Vanripper set; Vanripper only (7cfc5bc: the owner, 2026-11-12 about 1:56 pm ET, gives the Abarus set to femboy, feminization and soft-TSF routes only, and collar is full TSF) | 2026-11-12 2:04 pm |
 | neighbour | twinetesting-92 | `neighbour` | merged (158c1fd) with its Vanripper set (v1-v1j; skirt-cum keeps the skirt-thighs frame); Abarus set queued (a1) | 2026-11-12 1:08 pm |
