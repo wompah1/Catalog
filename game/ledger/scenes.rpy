@@ -65,8 +65,8 @@ label led_mirror_sex:
 ## (rungs.twee :: Ledger Offering Sex; lead Bai Lian, anal, doggy, lock, inside, noncon, pool ledger,
 ## flip break)
 label led_offering_sex:
-    $ vn_enter(bg="led_registry", pc="outraged", pc_tag="led_pc", cg=None)
-    hide cg onlayer cgl  # ff 2:01 am: no picture, offering-open failed 5 draws (SCENES.md ledger v5)
+    $ vn_enter(bg="led_registry", pc="outraged", pc_tag="led_pc", cg="led_offering_open")
+    show cg led_offering_open onlayer cgl  # ff 2:13 pm 11-18: v2 gen-1682459633 landed (QA checker 2:10 pm)
     "You breathe out. She pushes in. Slow." with vnfx("shake")
     show led_bailian dry at vn_cast_slot
     led_bailian "\"Breathe out. It's already filed.\""
@@ -96,7 +96,7 @@ label led_offering_sex:
     show led_bailian dry at vn_cast_slot
     led_bailian "\"It's entered, Jiu. One offering, appointment seven.\""
     led_you "\"I still object— I {i}still{/i}— {i}nnngh{/i}— why am I pushing BACK—\""
-    hide cg onlayer cgl  # ff 2:01 am: no picture, offering-peak failed 5 draws (SCENES.md ledger v5)
+    show cg led_offering_peak onlayer cgl  # ff 2:13 pm 11-18: v4 gen-915133834 landed (QA checker 2:10 pm)
     show led_bailian dry at vn_cast_slot
     led_bailian "\"The register doesn't have a column for asking.\""
     led_you "\"Enter it— ENTER it— Grandad's interest, PAID, just don't stop—!\"" with vnfx("shake")
@@ -128,7 +128,7 @@ label led_knock_sex:
     show led_bailian dry at vn_cast_slot
     led_bailian "\"Your little cock's dripping again. Good. Let it.\""
     "She doesn't touch it."
-    hide cg onlayer cgl  # ff 3:46 am: no picture, knock-peak failed 4 draws (SCENES.md ledger v7)
+    show cg led_knock_peak onlayer cgl  # ff 2:13 pm 11-18: v2 gen-595464636 landed (QA checker 2:10 pm)
     show led_bailian dry at vn_cast_slot
     led_bailian "\"Mine. Say it louder than that.\""
     led_you "\"{i}Yours{/i}— yours, yours, I'm YOURS— {i}ahh{/i}—\"" with vnfx("shake")
@@ -139,8 +139,8 @@ label led_knock_sex:
 ## Rung 6, optional: the real chest round her again. Consensual. (rungs.twee :: Ledger Unlaced Sex;
 ## lead Bai Lian, titjob)
 label led_unlaced_sex:
-    $ vn_enter(bg="led_dressing", pc="wanting", pc_tag="led_pc", cg=None)
-    hide cg onlayer cgl  # ff 2:01 am: no picture, unlaced-tits failed 5 draws (SCENES.md ledger v5)
+    $ vn_enter(bg="led_dressing", pc="wanting", pc_tag="led_pc", cg="led_unlaced_tits")
+    show cg led_unlaced_tits onlayer cgl  # ff 2:13 pm 11-18: v4 gen-1527122190 landed (QA checker 2:10 pm)
     "You squeeze them round her again, and she's still hard, and she laughs."
     show led_bailian dry at vn_cast_slot
     led_bailian "\"Junior sister.\""

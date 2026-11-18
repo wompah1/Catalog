@@ -680,7 +680,7 @@ label boy_spotlight:
     "Caspian's free hand goes down to your thigh. To the top of the left stocking. To the garter. And comes back up with the mask."
     $ boy.mask = "face"
     $ boy.fit = "k4m"
-    show cg boy_mask_on onlayer cgl
+    hide cg onlayer cgl  # ff 1:58 pm 11-18: no picture, mask-on (owner ~1:50 pm, SCENES.md boytoy)
     "He shakes it out. He holds it up to the light. Black, domino, hand-sewn. And before you can grab it, he puts it on you, over your eyes, and ties it at the back of your curls in one neat bow."
     show boy_caspian showman at vn_cast_slot
     boy_caspian "\"Ladies and gentlemen, the {i}Bantam{/i}!\""
@@ -754,7 +754,7 @@ label boy_bedsit_five:
     jump boy_vip_floor
 
 label boy_vip_floor:
-    $ vn_enter(bg="boy_lift_hall", pc="heroic", pc_tag="boy_pc", cast=[], cg="boy_hanger")
+    $ vn_enter(bg="boy_lift_inside", pc="heroic", pc_tag="boy_pc", cast=[], cg="boy_hanger")  # ff 2:11 pm 11-18: lift-inside v6 gen-1263831577 landed
     show cg boy_hanger onlayer cgl
     "The kit for the next floor up is waiting in the lift on a gold hanger. A gold micro-bikini top, two triangles and some string. A gold thong, less than that. Gold heels. And a robe of sheer black chiffon that floats when you move and hides nothing at all."
     $ boy.fit = "k5"
@@ -915,7 +915,7 @@ label boy_bedsit_six:
 label boy_penthouse:
     $ boy.fit = "k6m"
     $ boy.mask = "face"
-    $ vn_enter(bg="boy_lift_hall", pc="heroic", pc_tag="boy_pc", cast=[], cg=None)
+    $ vn_enter(bg="boy_lift_inside", pc="heroic", pc_tag="boy_pc", cast=[], cg=None)  # ff 2:11 pm 11-18: lift-inside v6 landed
     show screen boy_card("", ["{i}Come as you are. The stockings, if you like. And the mask, please.{/i}"])
     "There's no kit in the lift tonight. Just a note on the gold hanger, in a hand you haven't seen before, warm and looping."
     hide screen boy_card
@@ -953,7 +953,7 @@ label boy_penthouse:
             pass
     "You put your fists down."
     "It's the easiest thing you've ever done. They just come down. Dorian watches them go, and smiles."
-    hide cg onlayer cgl  # ff 2:18 am: no picture, mask-off failed 4 draws (SCENES.md boytoy v4)
+    show cg boy_mask_off onlayer cgl  # ff 1:58 pm 11-18: v1 gen-517095305 landed (owner ~1:50 pm)
     "You reach up behind your curls, and untie the bow Caspian tied, and take off the mask."
     "It's warm from your face. Black. Domino. Hand-sewn, every stitch, on the camp bed with the telly on, a long time ago. You hold it in both hands for a moment, and look at it."
     "Then you hold it out to him."

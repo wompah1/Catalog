@@ -952,7 +952,7 @@ label led_oil:
 ## own voice. Gu strikes Intake and writes Blossom. She. Just like that. "Junior sister."
 label led_offering_after:
     $ vn_enter(bg="led_registry", pc="wanting", pc_tag="led_pc", cast=[], cg=None)
-    hide cg onlayer cgl  # ff 3:46 am: no picture, offering-cum failed 4 draws (SCENES.md ledger v7)
+    show cg led_offering_cum onlayer cgl  # ff 2:13 pm 11-18: v2 gen-655973359 landed (QA checker 2:10 pm)
     "She comes deep, buried to the root, hands on your hips holding you on her, and the heat pumps into you and keeps going until you feel {i}full{/i}. In the mirrors your mouth hangs open and your eyes have gone somewhere else entirely." with vnfx("flash", "shake")
     "You came untouched. Your cock never got a look in. It just leaked through the jade and twitched while your ass did all the work, and somewhere in the middle of it the objecting stopped and the begging started."
     led_you "\"Look at it. It didn't even get {i}hard{/i}. It doesn't {i}matter{/i}.\""
@@ -1141,7 +1141,7 @@ label led_knock_after:
     led_you "\"I asked.\""
     show led_bailian dry at vn_cast_slot
     led_bailian "\"Nobody's ever asked.\""
-    hide cg onlayer cgl  # ff 3:47 am: no picture, knock-clean failed 4 draws (SCENES.md ledger v8)
+    show cg led_knock_clean onlayer cgl  # ff 2:13 pm 11-18: v1 gen-218626115 landed (QA checker 2:10 pm)
     "Then she rolls you onto your back, kneels over your face, and lets her softening cock rest on your lips, wet with both of you."
     show led_bailian dry at vn_cast_slot
     led_bailian "\"Show me.\""
@@ -1194,7 +1194,7 @@ label led_unlaced:
     show led_bailian dry at vn_cast_slot
     led_bailian "\"Out.\""
     "To the room. They go. Not far. Mostly as far as the door."
-    hide cg onlayer cgl  # ff 2:01 am: no picture, unlaced-tits failed 5 draws (SCENES.md ledger v5)
+    show cg led_unlaced_tits onlayer cgl  # ff 2:13 pm 11-18: v4 gen-1527122190 landed (QA checker 2:10 pm)
     "She sits you on the dressing table in front of the mirror, kneels up, and lays her cock between your new breasts."
     "The jade sits forgotten in your lap, the nub inside it soft as a petal, leaking on the lacquer. Nobody so much as glances at it. Least of all you."
     led_you "\"Is this— is this {i}real{/i}?\""
