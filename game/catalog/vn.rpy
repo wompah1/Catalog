@@ -64,18 +64,24 @@ init -50 python:
 
     def vn_art_file(path):
         """The picture to show for `path` (art/<route>/<file>, or art/<route>/scenes/<file>): the
-        chosen set's file of the same name if it has one, else the default's."""
+        chosen set's file of the same name if it has one, else the default's; "vn_missing" (the dark
+        card) when neither is in this checkout. QA checker, 11-17: route portraits crop this path raw
+        (Crop(rect, vn_art_file(...)) in 23 route.rpy files), so a missing PC sprite printed Ren'Py's
+        "Couldn't find file" in the face tab over a CG; now the tab shows a dark tile."""
         parts = path.split("/")
         if len(parts) < 3 or parts[0] != "art":
             return path
         route = parts[1]
         set_id = (store.vn_art or {}).get(route) if route in vn_art_sets else None
-        if not set_id:
-            return path
-        alt = "art/%s.%s/%s" % (route, set_id, parts[-1])
-        if alt not in _vn_loadable:
-            _vn_loadable[alt] = renpy.loadable(alt)
-        return alt if _vn_loadable[alt] else path
+        if set_id:
+            alt = "art/%s.%s/%s" % (route, set_id, parts[-1])
+            if alt not in _vn_loadable:
+                _vn_loadable[alt] = renpy.loadable(alt)
+            if _vn_loadable[alt]:
+                return alt
+        if path not in _vn_loadable:
+            _vn_loadable[path] = renpy.loadable(path)
+        return path if _vn_loadable[path] else "vn_missing"
 
     def vn_art_cycle(route):
         sets = vn_art_sets.get(route) or [("", "")]
